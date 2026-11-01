@@ -1,0 +1,60 @@
+AtracDEnc-AAL 0.2.0 — third-party notices
+
+The newly written independent AAL framing, deterministic integer predictor,
+enhancement compressor, C API, CLI and optional Windows interface are provided
+under LGPL-2.1-or-later, matching the included AtracDEnc library. See LICENSE.
+This distribution includes the complete corresponding source and build scripts.
+
+AtracDEnc, by its respective contributors
+https://github.com/dcherednik/atracdenc
+License: GNU Lesser General Public License, version 2.1 or later.
+Original source notices are retained in core/atracdenc-master.
+The downloaded source archive SHA-256 is:
+fb3d8b83870c7d17b5f83abe1ab1b0862f7ee39b1effde2f5c4cf3db06e06355
+The project's own build compiles ATRAC3 and ATRAC3plus subsets; no libsndfile, FFmpeg,
+Media Foundation, installed Sony codec or .NET is used at runtime.
+Some unused upstream source files retain their original FFmpeg LGPL notices.
+The ATRAC3plus PQF implementation credits Musepack as its reference, and its
+filter/Huffman numerical tables retain the upstream FFmpeg LGPL attribution.
+Two upstream files, src/atrac/at3p/at3p_bitstream.h and .cpp, are modified to
+expose the final emitted spectrum for an additional independent parser check.
+Independent adapters, restricted core parser, integer reconstruction and
+2048-sample AAL enhancement support are in core/plus and compression.
+
+KISS FFT
+Copyright (c) 2003-2010, Mark Borgerding. All rights reserved.
+Redistribution and use in source and binary forms, with or without modification,
+are permitted provided that the following conditions are met:
+* Redistributions of source code must retain the above copyright notice, this
+  list of conditions and the following disclaimer.
+* Redistributions in binary form must reproduce the above copyright notice,
+  this list of conditions and the following disclaimer in the documentation
+  and/or other materials provided with the distribution.
+* Neither the author nor the names of any contributors may be used to endorse
+  or promote products derived from this software without specific prior written
+  permission.
+THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS"
+AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE
+IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE
+ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT OWNER OR CONTRIBUTORS BE
+LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR
+CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF
+SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS
+INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN
+CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE)
+ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE
+POSSIBILITY OF SUCH DAMAGE.
+
+Prebuilt binary support runtimes
+The binaries were built with Zig 0.14.1. Statically linked C++ standard-library,
+ABI and unwind support come from LLVM libc++, libc++abi and libunwind under
+Apache-2.0 with LLVM exceptions. Windows CRT support includes MinGW-w64 code;
+its component notices are reproduced in licenses/MinGW-w64-COPYING.txt.
+Zig runtime support is under the MIT (Expat) license. Full upstream license
+texts are reproduced in licenses/. The compiler is a build-time tool only.
+
+Sony, Walkman and ATRAC names identify interoperability targets only.
+Sony software was an external research oracle. Its executables, libraries,
+instruction captures and private analysis tools are absent from this package.
+The conformance fixtures are encoded data generated from synthetic audio,
+not executable code. They run without Sony software.

@@ -1,0 +1,108 @@
+# 构建与验证 / Building and testing
+
+从项目根目录构建，所需 AtracDEnc 源码已经随仓库提供。运行编码器不需要安装音频组件。
+
+Build from this repository's root. The required AtracDEnc source is vendored. No external audio component is required to run the encoder.
+
+## Windows x64
+
+本发行版使用 Zig 0.14.1 构建；需要 PowerShell 和该编译器。`-Gui` 同时构建测试界面。
+
+This release uses Zig 0.14.1 and PowerShell. `-Gui` also builds the test interface.
+
+```powershell
+.\build.ps1 -Zig "C:\tools\zig\zig.exe" -Gui
+.\bin\atracdenc-aal.exe --version
+.\bin\atracdenc-aal.exe --self-test-all
+.\bin\aal-conformance.exe tests\enhancement-vectors.bin
+.\bin\aal-conformance.exe tests\plus-enhancement-vectors.bin
+.\bin\aal-c-api-test.exe
+```
+
+输出包含 `atracdenc-aal.exe`、`AtracDEnc-AAL-GUI.exe`、测试程序和 `libatracdenc_aal-x86_64-windows-gnu.a`。预构建静态库用于 GNU / Zig 工具链，不宣称兼容 MSVC ABI；其他工具链需要自行构建和验证。
+
+Outputs include the CLI, test GUI, test programs and `libatracdenc_aal-x86_64-windows-gnu.a`. The prebuilt static library targets GNU / Zig tooling; MSVC ABI compatibility is not claimed. Other toolchains require their own build and validation.
+
+## macOS
+
+需要 Apple clang（Xcode Command Line Tools）及系统的 `ar`。最低目标系统为 macOS 11。
+
+Requires Apple clang from Xcode Command Line Tools and the system `ar`. The deployment target is macOS 11 or later.
+
+```bash
+bash build.sh
+./bin/atracdenc-aal --self-test-all
+./bin/aal-conformance tests/enhancement-vectors.bin
+./bin/aal-conformance tests/plus-enhancement-vectors.bin
+./bin/aal-c-api-test
+./bin/aal-gui-i18n-test
+```
+
+可通过 `CC` / `CXX` 指定编译器，或向脚本追加编译选项，例如 `bash build.sh -arch arm64`。脚本为当前选定架构生成程序及 `bin/libatracdenc_aal.a`。
+
+Use `CC` / `CXX` to select compilers or pass extra compiler options, such as `bash build.sh -arch arm64`. The script produces executables and `bin/libatracdenc_aal.a` for the selected architecture.
+
+## CMake
+
+提供 CMake 3.16+ / C++17 工程。以下命令适用于 macOS 原生构建；Windows 本地验证使用上面的 Zig 脚本。
+
+A CMake 3.16+ / C++17 project is included. These commands cover a native macOS build; local Windows validation uses the Zig script above.
+
+```bash
+cmake -S . -B build/cmake -DCMAKE_BUILD_TYPE=Release
+cmake --build build/cmake --config Release --parallel
+ctest --test-dir build/cmake -C Release --output-on-failure
+```
+
+使用 `-DAAL_BUILD_GUI=ON` 启用 Windows GUI；核心库 CMake 目标保留为 `independent_aal`，同时提供 `AtracDEncAAL::encoder` 别名，输出库名为 `atracdenc_aal`。
+
+`-DAAL_BUILD_GUI=ON` enables the Windows GUI. The library target retains `independent_aal`, also available as `AtracDEncAAL::encoder`, with the output name `atracdenc_aal`.
+
+## macOS 交叉编译 / macOS cross-compilation
+
+Windows 上可使用同一 Zig 编译器构建两种 Mac 架构：
+
+The same Zig compiler can cross-compile both Mac architectures on Windows:
+
+```powershell
+.\build.ps1 -Zig "C:\tools\zig\zig.exe" -Target aarch64-macos
+.\build.ps1 -Zig "C:\tools\zig\zig.exe" -Target x86_64-macos
+python tools/make_universal_macos.py
+```
+
+通用文件为 `bin/atracdenc-aal-macos-universal`。交叉编译不等于实机执行，仍需在目标 Mac 上运行测试。
+
+The universal executable is `bin/atracdenc-aal-macos-universal`. Cross-compilation does not establish native execution; tests must still be run on the target Mac.
+
+## 离线检查 / Offline checks
+
+Python 3.9+ 可统一执行检查；Python 仅为开发工具，不是编码器运行依赖：
+
+Python 3.9+ can run the combined checks; it is a development tool, not an encoder runtime dependency:
+
+```bash
+python tools/run_checks.py --bin-dir bin
+python tools/verify_repository.py
+```
+
+`run_checks.py` 执行十档内存往返、两套官方增强数据对照、C ABI 和 GUI 语言无窗口测试。两套夹具必须分别得到 **3017 包 / 5,855,736 字节**、**1566 包 / 4,071,400 字节**全部一致。
+
+`run_checks.py` runs ten-profile in-memory round trips, both official enhancement fixtures, the C ABI test and headless GUI language checks. The fixture results must be **3,017 packets / 5,855,736 bytes** and **1,566 packets / 4,071,400 bytes**, with exact payload and padding matches.
+
+## GitHub CI
+
+[CI 工作流](../.github/workflows/ci.yml) 在 Windows x64、macOS arm64 和 macOS Intel 上构建与执行离线测试，并保存构建产物。它不安装 Sony 工具、不测试 Walkman 硬件，也不自动创建 GitHub Release。Actions 与编译器版本固定；首次远程运行之前不将其记为已通过。
+
+The [CI workflow](../.github/workflows/ci.yml) builds and runs offline tests on Windows x64, macOS arm64 and macOS Intel, then uploads artifacts. It does not install Sony tools, test Walkman hardware or automatically create a GitHub Release. Action and compiler versions are pinned; CI is not recorded as passing before an actual run.
+
+## 本地发行打包 / Local release packaging
+
+```bash
+python tools/package_release.py --platform windows-x64
+python tools/package_release.py --platform macos-universal
+python tools/package_release.py --platform source
+```
+
+按实际已构建的平台选择命令，文件写入 `dist/` 并附 SHA-256。源码包排除 `bin/`、`build/`、`dist/` 和本地 Git 元数据，保留完整生产源、许可证和两套数据夹具。
+
+Choose the platform actually built. Packages and SHA-256 checksums are written to `dist/`. Source archives exclude build outputs and local Git metadata while retaining the complete production source, licenses and both data fixtures.

@@ -1,0 +1,135 @@
+AAL3 132 kbps enhancement syntax, verified 2026-11-01
+=================================================
+
+Scope
+-----
+Independent C++ implementation: compression/rice.hpp, enhancement.hpp,
+analysis.{hpp,cpp}, independent_lpc.{h,cpp}, decorrelation.{hpp,cpp}.
+The production sources contain no captured instructions and do not call Sony,
+TraConv, or an installed codec. Sony SMLE was used only as a research oracle.
+All test audio was generated for this investigation.
+
+An AAL3 BLK contains a 384-byte ATRAC3 core followed by the enhancement.
+Ordinal 0 contains only a priming core. Enhancement ordinals >=1 contain
+1024 samples per channel. All bit fields below are MSB-first without implicit
+alignment between channels or Rice partitions.
+
+Global header
+-------------
+1 bit: 0 (reserved).
+2 bits: 2 (two channels).
+2 bits: coding mode, 0 predicted/Rice or 1 raw signed PCM residual.
+
+Raw mode
+--------
+After the five-bit 01001 header, write 1024 signed-width words for the left
+channel followed by 1024 words for the right channel. AAL3 uses width16.
+These are deterministic-core prediction errors, not absolute source PCM.
+End marker and padding follow as specified below. The result is 4104 bytes,
+with 4097 meaningful bytes and BLK byte-padding count7.
+
+Predicted/Rice mode
+-------------------
+2 bits: channel decorrelation mode.
+    0: encoded channels = L,R.
+    1: encoded channels = L,L-R.
+    2: encoded channels = R,L-R.
+    3: invalid.
+Differences and decoded reconstruction are wrapped to the declared width.
+
+For each encoded channel, in order:
+    4 bits: temporal prediction mode.
+        0: no prediction.
+        1..7: fixed order2 predictors.
+        8: order8 LPC.
+    If mode8, write two 11-bit unsigned coefficient codes followed by six
+    6-bit unsigned coefficient codes. Fixed modes carry no coefficients.
+    2 bits: partition count minus1. The original AAL3 writer always writes1.
+    For each of the two 512-sample partitions, write one Rice block.
+
+Rice block
+----------
+5 bits: Rice parameter k, 0..width-1.
+Fold signed temporal residual x to unsigned u:
+    x>=0: u=2*x
+    x<0:  u=-2*x-1
+For all 512 samples, write the quotient q=u>>k using the code below.
+Only after all quotients, write all 512 remainders u & ((1<<k)-1), each k bits.
+At k=0 there are no remainder bits.
+
+ q   length   code
+ 0      1     1
+ 1      2     00
+ 2      3     011
+ 3      4     0100
+ 4      5     01011
+ 5      6     010100
+ 6      7     0101011
+ 7      8     01010100
+ 8      9     010101011
+ 9     10     0101010100
+10     11     01010101011
+11     12     010101010100
+12     13     0101010101011
+13     14     01010101010100
+14     15     010101010101011
+>=15   16     0101010101010100, then q in width bits.
+
+Official k selection loops k from0 through width-1. It scores each sample as
+q+k+1 for q<15, or width+16 for escaped q>=15. The first strict minimum wins.
+The escape score does not include its separately written k-bit remainder;
+this original behavior must be retained for byte-identical parameter choices.
+
+End marker and padding
+----------------------
+Write exactly two zero end bits. Then zero-align to the next byte.
+MeaningfulBytes = ceil((BitsBeforeEndMarker+2)/8).
+Then append zero whole bytes to an 8-byte boundary:
+    PaddingBytes = (-MeaningfulBytes) & 7.
+BLK byte3 stores PaddingBytes, not the count of unused bits in the last byte.
+Sony rejects an extra meaningful byte even when that byte is zero.
+The all-zero example has 2087 bits before its end marker, followed by the
+two zero bits and seven byte-alignment zeros: 262 meaningful bytes, two whole
+padding bytes, and a total 264-byte enhancement.
+
+Official raw fallback
+---------------------
+After making the predicted/Rice representation, select raw mode if its
+meaningful byte length is greater than 95% of the raw PCM byte length
+(4096 for 16-bit stereo AAL3). Compare meaningful, not 8-byte-padded length.
+The raw representation always uses the original pre-decorrelation residuals.
+
+Prediction and state
+--------------------
+Channel analysis searches temporal modes0,1,2,3,8 using mean absolute wrapped
+residual, with strict improvement and earlier candidates winning ties.
+The recovered active AAL3 channel routine clears its eight-sample working
+history before its fixed/LPC filters. An otherwise present argument for old
+context history is never read. No cross-packet temporal-prediction history is
+needed by this recovered AAL3 implementation.
+The caller still maintains deterministic core decoder state and places the
+138-sample priming delay before these enhancement input arrays.
+
+Verification evidence
+---------------------
+rice-verification.json:
+    260 isolated native numerical-oracle cases, 122120 samples, widths1/8/16/
+    24/31 and bit prefixes0..7. The complete k and packed bytes exactly match
+    independent C++, and independent decode(encode) exactly reconstructs input.
+
+lpc-packet-verification.json:
+    Seven 10-second sources, 6174000 signed PCM samples. Original audible cores
+    preserved; independently encoded enhancements decoded by Sony with zero
+    sample differences. Every oracle conversion returned exit0 and wrote a
+    fresh output file. Includes channel decorrelation and temporal LPC.
+
+official-enhancement-verification.json:
+    Seven official files, 431 enhancement packets each, 3017/3017 payloads and
+    padding-byte counts exactly identical. Total5855736 enhancement bytes.
+    Input arrays include all first/last packet padding samples, recovered via
+    inventory's shifted silent-core experiment, not inferred or zero-filled.
+    Concatenated payload SHA256 is identical independently for each source.
+
+This establishes the enhancement compressor for the tested AAL3 configuration.
+It does not establish byte identity of a separately generated ATRAC3 core,
+AALP configurations, or untested bit depths/channel counts.

@@ -1,0 +1,57 @@
+{
+  "baseline": "Independent AAL 0.2, the validated predecessor of AtracDEnc-AAL 0.2.0",
+  "reference": "Sony SMLE 7.1.00.11181 / TraConv 111029, QA only",
+  "baseline_cli_sha256": "b23059203b4003606d51d3f9119f6770790fc02467314bcbc0f4e6e3b6145b46",
+  "source_archive_sha256": "0c745de9a652e107f0de94c02d3c0c912c8baadad8ee57ec052eaf59d5769c25",
+  "input": "44100 Hz signed16 stereo PCM",
+  "profiles": [
+    "aalp-352",
+    "aalp-192",
+    "aal3-132",
+    "aalp-48",
+    "aalp-64",
+    "aalp-96",
+    "aalp-128",
+    "aalp-160",
+    "aalp-256",
+    "aalp-320"
+  ],
+  "pcm": {
+    "positiveCases": 122,
+    "rejectionCases": 13,
+    "allSampleAndLengthExact": true,
+    "frames": 1102673,
+    "signed16Samples": 2205346,
+    "profileCount": 10
+  },
+  "long_stream": {
+    "frames": 441000,
+    "signed16_samples": 882000,
+    "all_exact": true
+  },
+  "enhancement": {
+    "aal3_packets": 3017,
+    "aal3_payload_bytes": 5855736,
+    "aalp_packets": 1566,
+    "aalp_payload_bytes": 4071400,
+    "all_payload_and_padding_exact": true
+  },
+  "compression": {
+    "pairs": 70,
+    "sony_decodes": 140,
+    "all_pcm_exact": true,
+    "comparison_convention": "Compare each independent output only with the official output at the identical nominal rate and verified actual core frame size/rate. Subtract official ID3 metadata for a fair container-size comparison; both still include OMA/BLK/core framing."
+  },
+  "runtime_modules": [
+    "aalenc.exe",
+    "ntdll.dll",
+    "KERNEL32.DLL",
+    "KERNELBASE.dll",
+    "ucrtbase.dll"
+  ],
+  "windows_sony_runtime_dependency": false,
+  "whole_file_byte_identical_to_sony": false,
+  "native_macos_execution_tested": false,
+  "walkman_hardware_tested": false,
+  "scope_note": "These are predecessor conformance results. Current branded-binary checks are recorded separately in release-verification.json."
+}

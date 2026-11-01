@@ -1,0 +1,1497 @@
+{
+  "baseline_cli_sha256": "b23059203b4003606d51d3f9119f6770790fc02467314bcbc0f4e6e3b6145b46",
+  "cases": [
+    {
+      "id": "default-profile-odd-junk",
+      "profile": "aalp-352",
+      "category": "default-and-RIFF",
+      "frames": 4097,
+      "referencePcmSha256": "8ab83f87b75b6aabb5142b6f65eb03725b1bbf846a124d08393064486fc9318e",
+      "decodedPcmSha256": "8ab83f87b75b6aabb5142b6f65eb03725b1bbf846a124d08393064486fc9318e",
+      "exactPcm": true,
+      "badSamples": 0,
+      "encoded_oma_sha256": "8efc841932f672f33a3f6811ab96375069f62f582e524f6517f0b0fb05caa609"
+    },
+    {
+      "id": "aalp-192--native-cap-regression",
+      "profile": "aalp-192",
+      "category": "known-native-predictor-regression",
+      "frames": 8192,
+      "referencePcmSha256": "7d506370002e2c0ec04573466453b8d719e92b226f2ec656376dee099ae08a09",
+      "decodedPcmSha256": "7d506370002e2c0ec04573466453b8d719e92b226f2ec656376dee099ae08a09",
+      "exactPcm": true,
+      "badSamples": 0,
+      "encoded_oma_sha256": "5cb171e4682fffa5cf27d1bacd1734e1ec71ee71a3681744c98dd0d57e5fe32c"
+    },
+    {
+      "id": "aalp-352--silence",
+      "profile": "aalp-352",
+      "category": "all-profile-signals",
+      "frames": 4097,
+      "referencePcmSha256": "b815d7028f96923cddafd95a57213c77ad0d693121ad04f59ac1273c04510f21",
+      "decodedPcmSha256": "b815d7028f96923cddafd95a57213c77ad0d693121ad04f59ac1273c04510f21",
+      "exactPcm": true,
+      "badSamples": 0,
+      "encoded_oma_sha256": "8571e49cd2134d445149b5cbd0f2c447ef52278839afd3bb194194a84144f148"
+    },
+    {
+      "id": "aalp-352--noise",
+      "profile": "aalp-352",
+      "category": "all-profile-signals",
+      "frames": 4097,
+      "referencePcmSha256": "deb7daf080a324117817fd85ec62128ff9e081ccdc8b29e9c2ad7138e270c498",
+      "decodedPcmSha256": "deb7daf080a324117817fd85ec62128ff9e081ccdc8b29e9c2ad7138e270c498",
+      "exactPcm": true,
+      "badSamples": 0,
+      "encoded_oma_sha256": "c81e35c348ffb9eca3da2ff1152d006fe93e7d69e6525025c89733cd66bee5a5"
+    },
+    {
+      "id": "aalp-352--fullscale-impulses-alternating",
+      "profile": "aalp-352",
+      "category": "all-profile-signals",
+      "frames": 4097,
+      "referencePcmSha256": "7e73e191fda80219b9990a80bbe26ddbbe599a167ecbac6b9a64ec4b825c3aae",
+      "decodedPcmSha256": "7e73e191fda80219b9990a80bbe26ddbbe599a167ecbac6b9a64ec4b825c3aae",
+      "exactPcm": true,
+      "badSamples": 0,
+      "encoded_oma_sha256": "68f2c2e23339927194e6c64fa38f35f872afd3bc7df42bd6e583fae8b85e7441"
+    },
+    {
+      "id": "aalp-352--low-level",
+      "profile": "aalp-352",
+      "category": "all-profile-signals",
+      "frames": 4097,
+      "referencePcmSha256": "3e6232b498ce9dbd972360a98ac5d5ad83952d88cb6016f59fac19c65614c5b8",
+      "decodedPcmSha256": "3e6232b498ce9dbd972360a98ac5d5ad83952d88cb6016f59fac19c65614c5b8",
+      "exactPcm": true,
+      "badSamples": 0,
+      "encoded_oma_sha256": "e626c540e2b8ff761d75393634c1b125441fc181274f1b8df0dfc22e435ebdf7"
+    },
+    {
+      "id": "aalp-352--multitone-chirp",
+      "profile": "aalp-352",
+      "category": "all-profile-signals",
+      "frames": 16384,
+      "referencePcmSha256": "d2c5f11cd779eb3c8f29080655704121bd3ee2421b8b693b3c3445641872ec65",
+      "decodedPcmSha256": "d2c5f11cd779eb3c8f29080655704121bd3ee2421b8b693b3c3445641872ec65",
+      "exactPcm": true,
+      "badSamples": 0,
+      "encoded_oma_sha256": "af899f993e6f4b2091dbedc283139a1f7041dd6e22b37c551971f1d5fee84d74"
+    },
+    {
+      "id": "aalp-352--speech-like",
+      "profile": "aalp-352",
+      "category": "all-profile-signals",
+      "frames": 16384,
+      "referencePcmSha256": "fb8f7ddfcd6d8e0e08c358fe423de40baea8aa7a915808180bf611257359d511",
+      "decodedPcmSha256": "fb8f7ddfcd6d8e0e08c358fe423de40baea8aa7a915808180bf611257359d511",
+      "exactPcm": true,
+      "badSamples": 0,
+      "encoded_oma_sha256": "1ed684c48065aa369a066a9c86bd12fb0e72d6030dda6c057b85c2c130b53342"
+    },
+    {
+      "id": "aal3-132--silence",
+      "profile": "aal3-132",
+      "category": "all-profile-signals",
+      "frames": 4097,
+      "referencePcmSha256": "b815d7028f96923cddafd95a57213c77ad0d693121ad04f59ac1273c04510f21",
+      "decodedPcmSha256": "b815d7028f96923cddafd95a57213c77ad0d693121ad04f59ac1273c04510f21",
+      "exactPcm": true,
+      "badSamples": 0,
+      "encoded_oma_sha256": "c2d1df0a4399edcace5469f89f0b1d3d58ea31158b1b8e41f8ba3ad7bb16b820"
+    },
+    {
+      "id": "aal3-132--noise",
+      "profile": "aal3-132",
+      "category": "all-profile-signals",
+      "frames": 4097,
+      "referencePcmSha256": "deb7daf080a324117817fd85ec62128ff9e081ccdc8b29e9c2ad7138e270c498",
+      "decodedPcmSha256": "deb7daf080a324117817fd85ec62128ff9e081ccdc8b29e9c2ad7138e270c498",
+      "exactPcm": true,
+      "badSamples": 0,
+      "encoded_oma_sha256": "8a31ac34d78734f8f515fc13d8da66196311fef3a39ad1030cd224ef85b5caa6"
+    },
+    {
+      "id": "aal3-132--fullscale-impulses-alternating",
+      "profile": "aal3-132",
+      "category": "all-profile-signals",
+      "frames": 4097,
+      "referencePcmSha256": "7e73e191fda80219b9990a80bbe26ddbbe599a167ecbac6b9a64ec4b825c3aae",
+      "decodedPcmSha256": "7e73e191fda80219b9990a80bbe26ddbbe599a167ecbac6b9a64ec4b825c3aae",
+      "exactPcm": true,
+      "badSamples": 0,
+      "encoded_oma_sha256": "8466b55f0848e1833c5a6568813a5b943e7bb75941eeb20ce88bc385858b60fa"
+    },
+    {
+      "id": "aal3-132--low-level",
+      "profile": "aal3-132",
+      "category": "all-profile-signals",
+      "frames": 4097,
+      "referencePcmSha256": "3e6232b498ce9dbd972360a98ac5d5ad83952d88cb6016f59fac19c65614c5b8",
+      "decodedPcmSha256": "3e6232b498ce9dbd972360a98ac5d5ad83952d88cb6016f59fac19c65614c5b8",
+      "exactPcm": true,
+      "badSamples": 0,
+      "encoded_oma_sha256": "99a08f99ca9ebf0ef5e3b55a87023fcce4a36c14c4f2c77611dd466c4b4b7524"
+    },
+    {
+      "id": "aal3-132--multitone-chirp",
+      "profile": "aal3-132",
+      "category": "all-profile-signals",
+      "frames": 16384,
+      "referencePcmSha256": "d2c5f11cd779eb3c8f29080655704121bd3ee2421b8b693b3c3445641872ec65",
+      "decodedPcmSha256": "d2c5f11cd779eb3c8f29080655704121bd3ee2421b8b693b3c3445641872ec65",
+      "exactPcm": true,
+      "badSamples": 0,
+      "encoded_oma_sha256": "decf67f967c8cfa81d2a868577fa1151a8b1c0be7b02e8a9b3fad0d7181024e5"
+    },
+    {
+      "id": "aal3-132--speech-like",
+      "profile": "aal3-132",
+      "category": "all-profile-signals",
+      "frames": 16384,
+      "referencePcmSha256": "fb8f7ddfcd6d8e0e08c358fe423de40baea8aa7a915808180bf611257359d511",
+      "decodedPcmSha256": "fb8f7ddfcd6d8e0e08c358fe423de40baea8aa7a915808180bf611257359d511",
+      "exactPcm": true,
+      "badSamples": 0,
+      "encoded_oma_sha256": "fecb1bbf03bc2a991b8c8473a814b39b7639b10a196a36ec7c75ad049bcc7656"
+    },
+    {
+      "id": "aalp-48--silence",
+      "profile": "aalp-48",
+      "category": "all-profile-signals",
+      "frames": 4097,
+      "referencePcmSha256": "b815d7028f96923cddafd95a57213c77ad0d693121ad04f59ac1273c04510f21",
+      "decodedPcmSha256": "b815d7028f96923cddafd95a57213c77ad0d693121ad04f59ac1273c04510f21",
+      "exactPcm": true,
+      "badSamples": 0,
+      "encoded_oma_sha256": "21fd1f3164e58790ecdfe4df4f8d17003cd9d8f73b1cc262fc5ce8b133705c30"
+    },
+    {
+      "id": "aalp-48--noise",
+      "profile": "aalp-48",
+      "category": "all-profile-signals",
+      "frames": 4097,
+      "referencePcmSha256": "deb7daf080a324117817fd85ec62128ff9e081ccdc8b29e9c2ad7138e270c498",
+      "decodedPcmSha256": "deb7daf080a324117817fd85ec62128ff9e081ccdc8b29e9c2ad7138e270c498",
+      "exactPcm": true,
+      "badSamples": 0,
+      "encoded_oma_sha256": "d3b41aaa5c6d95900c17c7116035897668aeb994630e9b10e43d9f778e771802"
+    },
+    {
+      "id": "aalp-48--fullscale-impulses-alternating",
+      "profile": "aalp-48",
+      "category": "all-profile-signals",
+      "frames": 4097,
+      "referencePcmSha256": "7e73e191fda80219b9990a80bbe26ddbbe599a167ecbac6b9a64ec4b825c3aae",
+      "decodedPcmSha256": "7e73e191fda80219b9990a80bbe26ddbbe599a167ecbac6b9a64ec4b825c3aae",
+      "exactPcm": true,
+      "badSamples": 0,
+      "encoded_oma_sha256": "bc6b298516fc67c3e83b8ee6f37d8196ff691391a15de1d3793f4abd49f58a2c"
+    },
+    {
+      "id": "aalp-48--low-level",
+      "profile": "aalp-48",
+      "category": "all-profile-signals",
+      "frames": 4097,
+      "referencePcmSha256": "3e6232b498ce9dbd972360a98ac5d5ad83952d88cb6016f59fac19c65614c5b8",
+      "decodedPcmSha256": "3e6232b498ce9dbd972360a98ac5d5ad83952d88cb6016f59fac19c65614c5b8",
+      "exactPcm": true,
+      "badSamples": 0,
+      "encoded_oma_sha256": "092d437decb3c51395e029e697f87093cc753ec7097ff404be85a30325aac67f"
+    },
+    {
+      "id": "aalp-48--multitone-chirp",
+      "profile": "aalp-48",
+      "category": "all-profile-signals",
+      "frames": 16384,
+      "referencePcmSha256": "d2c5f11cd779eb3c8f29080655704121bd3ee2421b8b693b3c3445641872ec65",
+      "decodedPcmSha256": "d2c5f11cd779eb3c8f29080655704121bd3ee2421b8b693b3c3445641872ec65",
+      "exactPcm": true,
+      "badSamples": 0,
+      "encoded_oma_sha256": "9ebd3b5b16d789c11b8ead11c3ddce0124bc49663cc577f0a1af42908e8e9a0b"
+    },
+    {
+      "id": "aalp-48--speech-like",
+      "profile": "aalp-48",
+      "category": "all-profile-signals",
+      "frames": 16384,
+      "referencePcmSha256": "fb8f7ddfcd6d8e0e08c358fe423de40baea8aa7a915808180bf611257359d511",
+      "decodedPcmSha256": "fb8f7ddfcd6d8e0e08c358fe423de40baea8aa7a915808180bf611257359d511",
+      "exactPcm": true,
+      "badSamples": 0,
+      "encoded_oma_sha256": "8597feda9b05785fea16dcaa6d5eb6a7dd4354d75761e0a75a93067348da4c11"
+    },
+    {
+      "id": "aalp-64--silence",
+      "profile": "aalp-64",
+      "category": "all-profile-signals",
+      "frames": 4097,
+      "referencePcmSha256": "b815d7028f96923cddafd95a57213c77ad0d693121ad04f59ac1273c04510f21",
+      "decodedPcmSha256": "b815d7028f96923cddafd95a57213c77ad0d693121ad04f59ac1273c04510f21",
+      "exactPcm": true,
+      "badSamples": 0,
+      "encoded_oma_sha256": "158536b0a9f133290fe2e053516f30e240cc3596e5a0690c77cebbc6d8764a7f"
+    },
+    {
+      "id": "aalp-64--noise",
+      "profile": "aalp-64",
+      "category": "all-profile-signals",
+      "frames": 4097,
+      "referencePcmSha256": "deb7daf080a324117817fd85ec62128ff9e081ccdc8b29e9c2ad7138e270c498",
+      "decodedPcmSha256": "deb7daf080a324117817fd85ec62128ff9e081ccdc8b29e9c2ad7138e270c498",
+      "exactPcm": true,
+      "badSamples": 0,
+      "encoded_oma_sha256": "6ce3b648addd62597c096ca2bb91ddc16f62d497602bcb234ac0b0209a210b92"
+    },
+    {
+      "id": "aalp-64--fullscale-impulses-alternating",
+      "profile": "aalp-64",
+      "category": "all-profile-signals",
+      "frames": 4097,
+      "referencePcmSha256": "7e73e191fda80219b9990a80bbe26ddbbe599a167ecbac6b9a64ec4b825c3aae",
+      "decodedPcmSha256": "7e73e191fda80219b9990a80bbe26ddbbe599a167ecbac6b9a64ec4b825c3aae",
+      "exactPcm": true,
+      "badSamples": 0,
+      "encoded_oma_sha256": "9e96dea3ccb6719cad4111b0b54f4c94c877554087500ba7ba7f2ac89d858e92"
+    },
+    {
+      "id": "aalp-64--low-level",
+      "profile": "aalp-64",
+      "category": "all-profile-signals",
+      "frames": 4097,
+      "referencePcmSha256": "3e6232b498ce9dbd972360a98ac5d5ad83952d88cb6016f59fac19c65614c5b8",
+      "decodedPcmSha256": "3e6232b498ce9dbd972360a98ac5d5ad83952d88cb6016f59fac19c65614c5b8",
+      "exactPcm": true,
+      "badSamples": 0,
+      "encoded_oma_sha256": "f9da77b13545cea6a1ae55ada5d074e928668247b102e6e4548a20c093eb4287"
+    },
+    {
+      "id": "aalp-64--multitone-chirp",
+      "profile": "aalp-64",
+      "category": "all-profile-signals",
+      "frames": 16384,
+      "referencePcmSha256": "d2c5f11cd779eb3c8f29080655704121bd3ee2421b8b693b3c3445641872ec65",
+      "decodedPcmSha256": "d2c5f11cd779eb3c8f29080655704121bd3ee2421b8b693b3c3445641872ec65",
+      "exactPcm": true,
+      "badSamples": 0,
+      "encoded_oma_sha256": "93aea4e349ab4a23fe77b8ac1121e58cab17a6876b29d9b0603a86e2895c57e5"
+    },
+    {
+      "id": "aalp-64--speech-like",
+      "profile": "aalp-64",
+      "category": "all-profile-signals",
+      "frames": 16384,
+      "referencePcmSha256": "fb8f7ddfcd6d8e0e08c358fe423de40baea8aa7a915808180bf611257359d511",
+      "decodedPcmSha256": "fb8f7ddfcd6d8e0e08c358fe423de40baea8aa7a915808180bf611257359d511",
+      "exactPcm": true,
+      "badSamples": 0,
+      "encoded_oma_sha256": "b2a8021f4f80a3c49d9c6c8f997da19d6ed6e252522ec13b8eaa2c9be7a87cf9"
+    },
+    {
+      "id": "aalp-96--silence",
+      "profile": "aalp-96",
+      "category": "all-profile-signals",
+      "frames": 4097,
+      "referencePcmSha256": "b815d7028f96923cddafd95a57213c77ad0d693121ad04f59ac1273c04510f21",
+      "decodedPcmSha256": "b815d7028f96923cddafd95a57213c77ad0d693121ad04f59ac1273c04510f21",
+      "exactPcm": true,
+      "badSamples": 0,
+      "encoded_oma_sha256": "bb1b5bed1b44cac6d0d21916c8d237a01957ccdc71443d7030731fbaaed5b936"
+    },
+    {
+      "id": "aalp-96--noise",
+      "profile": "aalp-96",
+      "category": "all-profile-signals",
+      "frames": 4097,
+      "referencePcmSha256": "deb7daf080a324117817fd85ec62128ff9e081ccdc8b29e9c2ad7138e270c498",
+      "decodedPcmSha256": "deb7daf080a324117817fd85ec62128ff9e081ccdc8b29e9c2ad7138e270c498",
+      "exactPcm": true,
+      "badSamples": 0,
+      "encoded_oma_sha256": "04a80c62c19630aafec11f29875c5ba8d011a0d019e5a23038b7b4d549565878"
+    },
+    {
+      "id": "aalp-96--fullscale-impulses-alternating",
+      "profile": "aalp-96",
+      "category": "all-profile-signals",
+      "frames": 4097,
+      "referencePcmSha256": "7e73e191fda80219b9990a80bbe26ddbbe599a167ecbac6b9a64ec4b825c3aae",
+      "decodedPcmSha256": "7e73e191fda80219b9990a80bbe26ddbbe599a167ecbac6b9a64ec4b825c3aae",
+      "exactPcm": true,
+      "badSamples": 0,
+      "encoded_oma_sha256": "cce994e26cb812ae65b7574d932686124b8ea558695320ba80f4d6b5954606b8"
+    },
+    {
+      "id": "aalp-96--low-level",
+      "profile": "aalp-96",
+      "category": "all-profile-signals",
+      "frames": 4097,
+      "referencePcmSha256": "3e6232b498ce9dbd972360a98ac5d5ad83952d88cb6016f59fac19c65614c5b8",
+      "decodedPcmSha256": "3e6232b498ce9dbd972360a98ac5d5ad83952d88cb6016f59fac19c65614c5b8",
+      "exactPcm": true,
+      "badSamples": 0,
+      "encoded_oma_sha256": "75ab323eeeb274890d4de4e2263bf52f68704885cd638a87b948097c23e49b21"
+    },
+    {
+      "id": "aalp-96--multitone-chirp",
+      "profile": "aalp-96",
+      "category": "all-profile-signals",
+      "frames": 16384,
+      "referencePcmSha256": "d2c5f11cd779eb3c8f29080655704121bd3ee2421b8b693b3c3445641872ec65",
+      "decodedPcmSha256": "d2c5f11cd779eb3c8f29080655704121bd3ee2421b8b693b3c3445641872ec65",
+      "exactPcm": true,
+      "badSamples": 0,
+      "encoded_oma_sha256": "4069fc5f527cde555a5e41996a0f5451cf25ed2a6c07c353ef384523b9af30fd"
+    },
+    {
+      "id": "aalp-96--speech-like",
+      "profile": "aalp-96",
+      "category": "all-profile-signals",
+      "frames": 16384,
+      "referencePcmSha256": "fb8f7ddfcd6d8e0e08c358fe423de40baea8aa7a915808180bf611257359d511",
+      "decodedPcmSha256": "fb8f7ddfcd6d8e0e08c358fe423de40baea8aa7a915808180bf611257359d511",
+      "exactPcm": true,
+      "badSamples": 0,
+      "encoded_oma_sha256": "628c1ca63ff4f0ada1bf43b9a171663cb0379f6f519590ab567d8a0eb99f1f0a"
+    },
+    {
+      "id": "aalp-128--silence",
+      "profile": "aalp-128",
+      "category": "all-profile-signals",
+      "frames": 4097,
+      "referencePcmSha256": "b815d7028f96923cddafd95a57213c77ad0d693121ad04f59ac1273c04510f21",
+      "decodedPcmSha256": "b815d7028f96923cddafd95a57213c77ad0d693121ad04f59ac1273c04510f21",
+      "exactPcm": true,
+      "badSamples": 0,
+      "encoded_oma_sha256": "9b0ed42c10c58d293d97d44e00376a810509f2a74a2bc04263cacb74ebc3a33c"
+    },
+    {
+      "id": "aalp-128--noise",
+      "profile": "aalp-128",
+      "category": "all-profile-signals",
+      "frames": 4097,
+      "referencePcmSha256": "deb7daf080a324117817fd85ec62128ff9e081ccdc8b29e9c2ad7138e270c498",
+      "decodedPcmSha256": "deb7daf080a324117817fd85ec62128ff9e081ccdc8b29e9c2ad7138e270c498",
+      "exactPcm": true,
+      "badSamples": 0,
+      "encoded_oma_sha256": "73fbb97ae4ffb3ab07f4f30d295f246b6b0cd012e64c9e252cd31e9ebc9ece42"
+    },
+    {
+      "id": "aalp-128--fullscale-impulses-alternating",
+      "profile": "aalp-128",
+      "category": "all-profile-signals",
+      "frames": 4097,
+      "referencePcmSha256": "7e73e191fda80219b9990a80bbe26ddbbe599a167ecbac6b9a64ec4b825c3aae",
+      "decodedPcmSha256": "7e73e191fda80219b9990a80bbe26ddbbe599a167ecbac6b9a64ec4b825c3aae",
+      "exactPcm": true,
+      "badSamples": 0,
+      "encoded_oma_sha256": "77ea35ff08090ea214b9ae5c4144e5aed4a4f462c5f3b1e4ed586465d6e27309"
+    },
+    {
+      "id": "aalp-128--low-level",
+      "profile": "aalp-128",
+      "category": "all-profile-signals",
+      "frames": 4097,
+      "referencePcmSha256": "3e6232b498ce9dbd972360a98ac5d5ad83952d88cb6016f59fac19c65614c5b8",
+      "decodedPcmSha256": "3e6232b498ce9dbd972360a98ac5d5ad83952d88cb6016f59fac19c65614c5b8",
+      "exactPcm": true,
+      "badSamples": 0,
+      "encoded_oma_sha256": "83bcc347ad31fdab469e78c6e2b668d9dcd7e03674ebb7db02457e8f9f13d4da"
+    },
+    {
+      "id": "aalp-128--multitone-chirp",
+      "profile": "aalp-128",
+      "category": "all-profile-signals",
+      "frames": 16384,
+      "referencePcmSha256": "d2c5f11cd779eb3c8f29080655704121bd3ee2421b8b693b3c3445641872ec65",
+      "decodedPcmSha256": "d2c5f11cd779eb3c8f29080655704121bd3ee2421b8b693b3c3445641872ec65",
+      "exactPcm": true,
+      "badSamples": 0,
+      "encoded_oma_sha256": "3488a6818cce6e7e8d0fb507c7f2ea7d2bb0840ad298b81f733c367e1e69d01f"
+    },
+    {
+      "id": "aalp-128--speech-like",
+      "profile": "aalp-128",
+      "category": "all-profile-signals",
+      "frames": 16384,
+      "referencePcmSha256": "fb8f7ddfcd6d8e0e08c358fe423de40baea8aa7a915808180bf611257359d511",
+      "decodedPcmSha256": "fb8f7ddfcd6d8e0e08c358fe423de40baea8aa7a915808180bf611257359d511",
+      "exactPcm": true,
+      "badSamples": 0,
+      "encoded_oma_sha256": "ad972cdbda31453fe6f481178ed1ca01993f3a75d6e5b8c99ce67a84e23ed79d"
+    },
+    {
+      "id": "aalp-160--silence",
+      "profile": "aalp-160",
+      "category": "all-profile-signals",
+      "frames": 4097,
+      "referencePcmSha256": "b815d7028f96923cddafd95a57213c77ad0d693121ad04f59ac1273c04510f21",
+      "decodedPcmSha256": "b815d7028f96923cddafd95a57213c77ad0d693121ad04f59ac1273c04510f21",
+      "exactPcm": true,
+      "badSamples": 0,
+      "encoded_oma_sha256": "2ba1f53c5b1817fe6cee3e5b8905d24bc3589dd65bc58a820bb7dc5ad7dbaa6a"
+    },
+    {
+      "id": "aalp-160--noise",
+      "profile": "aalp-160",
+      "category": "all-profile-signals",
+      "frames": 4097,
+      "referencePcmSha256": "deb7daf080a324117817fd85ec62128ff9e081ccdc8b29e9c2ad7138e270c498",
+      "decodedPcmSha256": "deb7daf080a324117817fd85ec62128ff9e081ccdc8b29e9c2ad7138e270c498",
+      "exactPcm": true,
+      "badSamples": 0,
+      "encoded_oma_sha256": "a9ddf80e056c60432b4155819ab240fd66a02d63a7f328134f22fb03e58fd6f8"
+    },
+    {
+      "id": "aalp-160--fullscale-impulses-alternating",
+      "profile": "aalp-160",
+      "category": "all-profile-signals",
+      "frames": 4097,
+      "referencePcmSha256": "7e73e191fda80219b9990a80bbe26ddbbe599a167ecbac6b9a64ec4b825c3aae",
+      "decodedPcmSha256": "7e73e191fda80219b9990a80bbe26ddbbe599a167ecbac6b9a64ec4b825c3aae",
+      "exactPcm": true,
+      "badSamples": 0,
+      "encoded_oma_sha256": "782fa3da1c6845b29494fe8f8250fbc38805235f6fc57b154d50d4cbd05045d8"
+    },
+    {
+      "id": "aalp-160--low-level",
+      "profile": "aalp-160",
+      "category": "all-profile-signals",
+      "frames": 4097,
+      "referencePcmSha256": "3e6232b498ce9dbd972360a98ac5d5ad83952d88cb6016f59fac19c65614c5b8",
+      "decodedPcmSha256": "3e6232b498ce9dbd972360a98ac5d5ad83952d88cb6016f59fac19c65614c5b8",
+      "exactPcm": true,
+      "badSamples": 0,
+      "encoded_oma_sha256": "1db2086b61de67597470def1537fe6ce58af64e1f440fe2a03b675c9f7cd4f5c"
+    },
+    {
+      "id": "aalp-160--multitone-chirp",
+      "profile": "aalp-160",
+      "category": "all-profile-signals",
+      "frames": 16384,
+      "referencePcmSha256": "d2c5f11cd779eb3c8f29080655704121bd3ee2421b8b693b3c3445641872ec65",
+      "decodedPcmSha256": "d2c5f11cd779eb3c8f29080655704121bd3ee2421b8b693b3c3445641872ec65",
+      "exactPcm": true,
+      "badSamples": 0,
+      "encoded_oma_sha256": "ef1bc477d44e0d5ab455683d9f900b1f5943dd8432845b4258c8d44b3d361691"
+    },
+    {
+      "id": "aalp-160--speech-like",
+      "profile": "aalp-160",
+      "category": "all-profile-signals",
+      "frames": 16384,
+      "referencePcmSha256": "fb8f7ddfcd6d8e0e08c358fe423de40baea8aa7a915808180bf611257359d511",
+      "decodedPcmSha256": "fb8f7ddfcd6d8e0e08c358fe423de40baea8aa7a915808180bf611257359d511",
+      "exactPcm": true,
+      "badSamples": 0,
+      "encoded_oma_sha256": "ccfd8b820a9e1d149d9729c44c4f5be21c1c01528e7021a73aa5fc95d2cc8f9e"
+    },
+    {
+      "id": "aalp-192--silence",
+      "profile": "aalp-192",
+      "category": "all-profile-signals",
+      "frames": 4097,
+      "referencePcmSha256": "b815d7028f96923cddafd95a57213c77ad0d693121ad04f59ac1273c04510f21",
+      "decodedPcmSha256": "b815d7028f96923cddafd95a57213c77ad0d693121ad04f59ac1273c04510f21",
+      "exactPcm": true,
+      "badSamples": 0,
+      "encoded_oma_sha256": "397ef6890b90e24ac37f6d0c10638461b9d8ca812e5a4b19fe56262a9c6e9104"
+    },
+    {
+      "id": "aalp-192--noise",
+      "profile": "aalp-192",
+      "category": "all-profile-signals",
+      "frames": 4097,
+      "referencePcmSha256": "deb7daf080a324117817fd85ec62128ff9e081ccdc8b29e9c2ad7138e270c498",
+      "decodedPcmSha256": "deb7daf080a324117817fd85ec62128ff9e081ccdc8b29e9c2ad7138e270c498",
+      "exactPcm": true,
+      "badSamples": 0,
+      "encoded_oma_sha256": "2e69abbf0f623f5bfc0bef8ff4bd3a42deb786e8406904c6cb1ed303905ab94c"
+    },
+    {
+      "id": "aalp-192--fullscale-impulses-alternating",
+      "profile": "aalp-192",
+      "category": "all-profile-signals",
+      "frames": 4097,
+      "referencePcmSha256": "7e73e191fda80219b9990a80bbe26ddbbe599a167ecbac6b9a64ec4b825c3aae",
+      "decodedPcmSha256": "7e73e191fda80219b9990a80bbe26ddbbe599a167ecbac6b9a64ec4b825c3aae",
+      "exactPcm": true,
+      "badSamples": 0,
+      "encoded_oma_sha256": "fe684e7a427e0f1fbca1541d04d54f42e42ca00227496365cdab39d04ca96b53"
+    },
+    {
+      "id": "aalp-192--low-level",
+      "profile": "aalp-192",
+      "category": "all-profile-signals",
+      "frames": 4097,
+      "referencePcmSha256": "3e6232b498ce9dbd972360a98ac5d5ad83952d88cb6016f59fac19c65614c5b8",
+      "decodedPcmSha256": "3e6232b498ce9dbd972360a98ac5d5ad83952d88cb6016f59fac19c65614c5b8",
+      "exactPcm": true,
+      "badSamples": 0,
+      "encoded_oma_sha256": "0b40bf7804ffd3a4d1f1dc5b7820b6cf2add5a8664f45c61832d292cf1ccaefc"
+    },
+    {
+      "id": "aalp-192--multitone-chirp",
+      "profile": "aalp-192",
+      "category": "all-profile-signals",
+      "frames": 16384,
+      "referencePcmSha256": "d2c5f11cd779eb3c8f29080655704121bd3ee2421b8b693b3c3445641872ec65",
+      "decodedPcmSha256": "d2c5f11cd779eb3c8f29080655704121bd3ee2421b8b693b3c3445641872ec65",
+      "exactPcm": true,
+      "badSamples": 0,
+      "encoded_oma_sha256": "89fabcd6396929002da5548d06ca84fb34262d31085e89ea7acfa8ce8525b20f"
+    },
+    {
+      "id": "aalp-192--speech-like",
+      "profile": "aalp-192",
+      "category": "all-profile-signals",
+      "frames": 16384,
+      "referencePcmSha256": "fb8f7ddfcd6d8e0e08c358fe423de40baea8aa7a915808180bf611257359d511",
+      "decodedPcmSha256": "fb8f7ddfcd6d8e0e08c358fe423de40baea8aa7a915808180bf611257359d511",
+      "exactPcm": true,
+      "badSamples": 0,
+      "encoded_oma_sha256": "27394db4e9db02afb4bbfb7dd035f6cafd234cc4fc7bfb6513d7b435d34eda44"
+    },
+    {
+      "id": "aalp-256--silence",
+      "profile": "aalp-256",
+      "category": "all-profile-signals",
+      "frames": 4097,
+      "referencePcmSha256": "b815d7028f96923cddafd95a57213c77ad0d693121ad04f59ac1273c04510f21",
+      "decodedPcmSha256": "b815d7028f96923cddafd95a57213c77ad0d693121ad04f59ac1273c04510f21",
+      "exactPcm": true,
+      "badSamples": 0,
+      "encoded_oma_sha256": "cc5b1b48067bad0d8eb2aba12a3f4a18b9678b1ee8e2a4ebc0c0c19818a6c034"
+    },
+    {
+      "id": "aalp-256--noise",
+      "profile": "aalp-256",
+      "category": "all-profile-signals",
+      "frames": 4097,
+      "referencePcmSha256": "deb7daf080a324117817fd85ec62128ff9e081ccdc8b29e9c2ad7138e270c498",
+      "decodedPcmSha256": "deb7daf080a324117817fd85ec62128ff9e081ccdc8b29e9c2ad7138e270c498",
+      "exactPcm": true,
+      "badSamples": 0,
+      "encoded_oma_sha256": "01483beb2d52d46a7e0c694ada1faec20d2c330443a5f4f2f3e0a30f50e9af4b"
+    },
+    {
+      "id": "aalp-256--fullscale-impulses-alternating",
+      "profile": "aalp-256",
+      "category": "all-profile-signals",
+      "frames": 4097,
+      "referencePcmSha256": "7e73e191fda80219b9990a80bbe26ddbbe599a167ecbac6b9a64ec4b825c3aae",
+      "decodedPcmSha256": "7e73e191fda80219b9990a80bbe26ddbbe599a167ecbac6b9a64ec4b825c3aae",
+      "exactPcm": true,
+      "badSamples": 0,
+      "encoded_oma_sha256": "f67276c9acd0cb2008d549d74b05f403b00cbfd1f3abe31ea45b2f55599391db"
+    },
+    {
+      "id": "aalp-256--low-level",
+      "profile": "aalp-256",
+      "category": "all-profile-signals",
+      "frames": 4097,
+      "referencePcmSha256": "3e6232b498ce9dbd972360a98ac5d5ad83952d88cb6016f59fac19c65614c5b8",
+      "decodedPcmSha256": "3e6232b498ce9dbd972360a98ac5d5ad83952d88cb6016f59fac19c65614c5b8",
+      "exactPcm": true,
+      "badSamples": 0,
+      "encoded_oma_sha256": "8f189071f3e9c5ac68af2f14a414a2436c2360f26559a4a9d018fec0db5b91f2"
+    },
+    {
+      "id": "aalp-256--multitone-chirp",
+      "profile": "aalp-256",
+      "category": "all-profile-signals",
+      "frames": 16384,
+      "referencePcmSha256": "d2c5f11cd779eb3c8f29080655704121bd3ee2421b8b693b3c3445641872ec65",
+      "decodedPcmSha256": "d2c5f11cd779eb3c8f29080655704121bd3ee2421b8b693b3c3445641872ec65",
+      "exactPcm": true,
+      "badSamples": 0,
+      "encoded_oma_sha256": "651b8bc650487746e82da7cd6ff4981c1c81d254b9b1bbfd696c007f4c892ac8"
+    },
+    {
+      "id": "aalp-256--speech-like",
+      "profile": "aalp-256",
+      "category": "all-profile-signals",
+      "frames": 16384,
+      "referencePcmSha256": "fb8f7ddfcd6d8e0e08c358fe423de40baea8aa7a915808180bf611257359d511",
+      "decodedPcmSha256": "fb8f7ddfcd6d8e0e08c358fe423de40baea8aa7a915808180bf611257359d511",
+      "exactPcm": true,
+      "badSamples": 0,
+      "encoded_oma_sha256": "e384fac6e8d5fcd59268f24a52002e3e3679a637ca3c5155d17fa26648a7583b"
+    },
+    {
+      "id": "aalp-320--silence",
+      "profile": "aalp-320",
+      "category": "all-profile-signals",
+      "frames": 4097,
+      "referencePcmSha256": "b815d7028f96923cddafd95a57213c77ad0d693121ad04f59ac1273c04510f21",
+      "decodedPcmSha256": "b815d7028f96923cddafd95a57213c77ad0d693121ad04f59ac1273c04510f21",
+      "exactPcm": true,
+      "badSamples": 0,
+      "encoded_oma_sha256": "fe28b103391ad36b391c8fd27a37bd45b6ba6d03c7f6c163dbb71ddc5508f523"
+    },
+    {
+      "id": "aalp-320--noise",
+      "profile": "aalp-320",
+      "category": "all-profile-signals",
+      "frames": 4097,
+      "referencePcmSha256": "deb7daf080a324117817fd85ec62128ff9e081ccdc8b29e9c2ad7138e270c498",
+      "decodedPcmSha256": "deb7daf080a324117817fd85ec62128ff9e081ccdc8b29e9c2ad7138e270c498",
+      "exactPcm": true,
+      "badSamples": 0,
+      "encoded_oma_sha256": "f6f145e1e5c8762c5c7b885d50a17668fa630365a38c193f61de008bf4ec232f"
+    },
+    {
+      "id": "aalp-320--fullscale-impulses-alternating",
+      "profile": "aalp-320",
+      "category": "all-profile-signals",
+      "frames": 4097,
+      "referencePcmSha256": "7e73e191fda80219b9990a80bbe26ddbbe599a167ecbac6b9a64ec4b825c3aae",
+      "decodedPcmSha256": "7e73e191fda80219b9990a80bbe26ddbbe599a167ecbac6b9a64ec4b825c3aae",
+      "exactPcm": true,
+      "badSamples": 0,
+      "encoded_oma_sha256": "affaba6af818c0fbb9b52378af817b213fdebfc0a77d73ae1ae255129a43af14"
+    },
+    {
+      "id": "aalp-320--low-level",
+      "profile": "aalp-320",
+      "category": "all-profile-signals",
+      "frames": 4097,
+      "referencePcmSha256": "3e6232b498ce9dbd972360a98ac5d5ad83952d88cb6016f59fac19c65614c5b8",
+      "decodedPcmSha256": "3e6232b498ce9dbd972360a98ac5d5ad83952d88cb6016f59fac19c65614c5b8",
+      "exactPcm": true,
+      "badSamples": 0,
+      "encoded_oma_sha256": "b7dc6abebffe676d52a2b8b0ec082a182c34e3041d33f61496abcf137a5364c3"
+    },
+    {
+      "id": "aalp-320--multitone-chirp",
+      "profile": "aalp-320",
+      "category": "all-profile-signals",
+      "frames": 16384,
+      "referencePcmSha256": "d2c5f11cd779eb3c8f29080655704121bd3ee2421b8b693b3c3445641872ec65",
+      "decodedPcmSha256": "d2c5f11cd779eb3c8f29080655704121bd3ee2421b8b693b3c3445641872ec65",
+      "exactPcm": true,
+      "badSamples": 0,
+      "encoded_oma_sha256": "6b32d75263429fef241a16ff2b547f3a951b3c284bd4afec420abcf9ef67fc34"
+    },
+    {
+      "id": "aalp-320--speech-like",
+      "profile": "aalp-320",
+      "category": "all-profile-signals",
+      "frames": 16384,
+      "referencePcmSha256": "fb8f7ddfcd6d8e0e08c358fe423de40baea8aa7a915808180bf611257359d511",
+      "decodedPcmSha256": "fb8f7ddfcd6d8e0e08c358fe423de40baea8aa7a915808180bf611257359d511",
+      "exactPcm": true,
+      "badSamples": 0,
+      "encoded_oma_sha256": "52d21ddbc42aa278700d7ed5ab1700d7016d4bec10d5b159d4eb74ed81ad6615"
+    },
+    {
+      "id": "aalp-352--boundary-1",
+      "profile": "aalp-352",
+      "category": "aalp352-boundaries",
+      "frames": 1,
+      "referencePcmSha256": "3fe082173119c71b92fc5c05c66309f012f6a3f1c8b3ec90eff83f3529603d32",
+      "decodedPcmSha256": "3fe082173119c71b92fc5c05c66309f012f6a3f1c8b3ec90eff83f3529603d32",
+      "exactPcm": true,
+      "badSamples": 0,
+      "encoded_oma_sha256": "6fc1a39465502ffc136c362a7fd4d8ccebbb9397ae958a1929d5b551a6617cb9"
+    },
+    {
+      "id": "aalp-352--boundary-367",
+      "profile": "aalp-352",
+      "category": "aalp352-boundaries",
+      "frames": 367,
+      "referencePcmSha256": "c4d30c0966b3d52d0ff55e148f1315e41e24a1e9265579aadb41482f950541b1",
+      "decodedPcmSha256": "c4d30c0966b3d52d0ff55e148f1315e41e24a1e9265579aadb41482f950541b1",
+      "exactPcm": true,
+      "badSamples": 0,
+      "encoded_oma_sha256": "85f886f0a35d831f9b66c44cf636379a7fe0554e3aa099d05b9bcb1bcf2df878"
+    },
+    {
+      "id": "aalp-352--boundary-368",
+      "profile": "aalp-352",
+      "category": "aalp352-boundaries",
+      "frames": 368,
+      "referencePcmSha256": "eb33be04e36fe8e3bfab25939099bc47ef2a1c961d79f8af876d43f479861618",
+      "decodedPcmSha256": "eb33be04e36fe8e3bfab25939099bc47ef2a1c961d79f8af876d43f479861618",
+      "exactPcm": true,
+      "badSamples": 0,
+      "encoded_oma_sha256": "6725fd0fb3f034483d36a19186f8c977252cc34867b9e7e68829b851277896c7"
+    },
+    {
+      "id": "aalp-352--boundary-369",
+      "profile": "aalp-352",
+      "category": "aalp352-boundaries",
+      "frames": 369,
+      "referencePcmSha256": "4bcdecbdfd8b00180de213648444a5de815fda48a8757fb5355c0ccf6d842bd7",
+      "decodedPcmSha256": "4bcdecbdfd8b00180de213648444a5de815fda48a8757fb5355c0ccf6d842bd7",
+      "exactPcm": true,
+      "badSamples": 0,
+      "encoded_oma_sha256": "231901975ddfd043bc7a850656eb504f58617ec09e1fb30d5c5bb436342d2392"
+    },
+    {
+      "id": "aalp-352--boundary-1679",
+      "profile": "aalp-352",
+      "category": "aalp352-boundaries",
+      "frames": 1679,
+      "referencePcmSha256": "44a27e23a724e300791b9a95ab9ba5a53341623f44f47e185288087522a52af4",
+      "decodedPcmSha256": "44a27e23a724e300791b9a95ab9ba5a53341623f44f47e185288087522a52af4",
+      "exactPcm": true,
+      "badSamples": 0,
+      "encoded_oma_sha256": "d9fcafa6c85ae243230b8affe4cf0dfa6ad4c623e52e584768da44d73887bc1b"
+    },
+    {
+      "id": "aalp-352--boundary-1680",
+      "profile": "aalp-352",
+      "category": "aalp352-boundaries",
+      "frames": 1680,
+      "referencePcmSha256": "007b1de0efdb6f1e48288e3c4ad3a5393ed075849140d80030721371011a7bd5",
+      "decodedPcmSha256": "007b1de0efdb6f1e48288e3c4ad3a5393ed075849140d80030721371011a7bd5",
+      "exactPcm": true,
+      "badSamples": 0,
+      "encoded_oma_sha256": "fe81e915d35f86250b70c2921640436f60274ab75b26fe94077158a07accdc51"
+    },
+    {
+      "id": "aalp-352--boundary-1681",
+      "profile": "aalp-352",
+      "category": "aalp352-boundaries",
+      "frames": 1681,
+      "referencePcmSha256": "a301a21e45539ed6e0414902592de28a161a929c0f7898e9059daddea4220674",
+      "decodedPcmSha256": "a301a21e45539ed6e0414902592de28a161a929c0f7898e9059daddea4220674",
+      "exactPcm": true,
+      "badSamples": 0,
+      "encoded_oma_sha256": "0e996e9a308f6e0b919f5a09207bfbc060ff1dca1a7a7e67da28927cf869db95"
+    },
+    {
+      "id": "aalp-352--boundary-2047",
+      "profile": "aalp-352",
+      "category": "aalp352-boundaries",
+      "frames": 2047,
+      "referencePcmSha256": "9daa078be0dc7cc82a2a3da709ad9f400ca2a229d5142a0b40728d4487fe0f86",
+      "decodedPcmSha256": "9daa078be0dc7cc82a2a3da709ad9f400ca2a229d5142a0b40728d4487fe0f86",
+      "exactPcm": true,
+      "badSamples": 0,
+      "encoded_oma_sha256": "ba18873eeac05fd48efb6db721f22aa358c2537372d1d6a11d567e2ecca9b5ee"
+    },
+    {
+      "id": "aalp-352--boundary-2048",
+      "profile": "aalp-352",
+      "category": "aalp352-boundaries",
+      "frames": 2048,
+      "referencePcmSha256": "853e979ade861c965578f336af9307bf0852c86c6867aabd5b3dfe571d24db5f",
+      "decodedPcmSha256": "853e979ade861c965578f336af9307bf0852c86c6867aabd5b3dfe571d24db5f",
+      "exactPcm": true,
+      "badSamples": 0,
+      "encoded_oma_sha256": "01b98f21a3d34cccf695903c74a05490753fca18c71d774f84c14e907950d706"
+    },
+    {
+      "id": "aalp-352--boundary-2049",
+      "profile": "aalp-352",
+      "category": "aalp352-boundaries",
+      "frames": 2049,
+      "referencePcmSha256": "45ba0a9024100f49f118567121f9eb0105a8c2fa8074ec2276aae17e1d650cfd",
+      "decodedPcmSha256": "45ba0a9024100f49f118567121f9eb0105a8c2fa8074ec2276aae17e1d650cfd",
+      "exactPcm": true,
+      "badSamples": 0,
+      "encoded_oma_sha256": "04c5b7a1fe6a86d69b7648df61fd882a2cf88b2fdaaaf631613d74a1e551a389"
+    },
+    {
+      "id": "aalp-352--boundary-4095",
+      "profile": "aalp-352",
+      "category": "aalp352-boundaries",
+      "frames": 4095,
+      "referencePcmSha256": "d5e6329d1c41a0d6796df4d02534ddb0e237aec43c46d7788f1f016d1417baba",
+      "decodedPcmSha256": "d5e6329d1c41a0d6796df4d02534ddb0e237aec43c46d7788f1f016d1417baba",
+      "exactPcm": true,
+      "badSamples": 0,
+      "encoded_oma_sha256": "db1527f7c802b01ec6e6c14f3933cacc05ef7db991989d0f2c8a70de3949cf13"
+    },
+    {
+      "id": "aalp-352--boundary-4096",
+      "profile": "aalp-352",
+      "category": "aalp352-boundaries",
+      "frames": 4096,
+      "referencePcmSha256": "11305114cc0e151ff5abd65a13a771ff5b54554f626e65f2e3826927cdc558b9",
+      "decodedPcmSha256": "11305114cc0e151ff5abd65a13a771ff5b54554f626e65f2e3826927cdc558b9",
+      "exactPcm": true,
+      "badSamples": 0,
+      "encoded_oma_sha256": "92632c5b7bf86fe4f65ed1741ae691cb228cfed64257cd758e51a4ac73131997"
+    },
+    {
+      "id": "aalp-352--boundary-44117",
+      "profile": "aalp-352",
+      "category": "aalp352-boundaries",
+      "frames": 44117,
+      "referencePcmSha256": "cc2ee999352978c149941fff7c824745a023b40155702dd350c7a7d7b504afaf",
+      "decodedPcmSha256": "cc2ee999352978c149941fff7c824745a023b40155702dd350c7a7d7b504afaf",
+      "exactPcm": true,
+      "badSamples": 0,
+      "encoded_oma_sha256": "300d7176f91a79694209270c1a29bfde29fc5ac305ac5feeb92a71fe82756b94"
+    },
+    {
+      "id": "aal3-132--boundary-1",
+      "profile": "aal3-132",
+      "category": "aal3-boundary-regression",
+      "frames": 1,
+      "referencePcmSha256": "3fe082173119c71b92fc5c05c66309f012f6a3f1c8b3ec90eff83f3529603d32",
+      "decodedPcmSha256": "3fe082173119c71b92fc5c05c66309f012f6a3f1c8b3ec90eff83f3529603d32",
+      "exactPcm": true,
+      "badSamples": 0,
+      "encoded_oma_sha256": "1da7df06ee8bba1ee2a5fb8ab2a769c0bed5dd99a9b93772d245efdb5e7402e0"
+    },
+    {
+      "id": "aal3-132--boundary-137",
+      "profile": "aal3-132",
+      "category": "aal3-boundary-regression",
+      "frames": 137,
+      "referencePcmSha256": "817d581babde5f2642911c57842ddf271c703897aaecbd6eae245a51a4c3df99",
+      "decodedPcmSha256": "817d581babde5f2642911c57842ddf271c703897aaecbd6eae245a51a4c3df99",
+      "exactPcm": true,
+      "badSamples": 0,
+      "encoded_oma_sha256": "7a10ac2b8ee472f4c2d370c3a3b539dc2a8bc3bd1ff9342318de2604529bd149"
+    },
+    {
+      "id": "aal3-132--boundary-138",
+      "profile": "aal3-132",
+      "category": "aal3-boundary-regression",
+      "frames": 138,
+      "referencePcmSha256": "99985520edc1e65de8c6c85bb695958399f8e5f5d224db04615f0b01d49e21a8",
+      "decodedPcmSha256": "99985520edc1e65de8c6c85bb695958399f8e5f5d224db04615f0b01d49e21a8",
+      "exactPcm": true,
+      "badSamples": 0,
+      "encoded_oma_sha256": "12b6822068970b2237ef25a227f44106b0bc2196f073e41e775ef01b902d9c7d"
+    },
+    {
+      "id": "aal3-132--boundary-139",
+      "profile": "aal3-132",
+      "category": "aal3-boundary-regression",
+      "frames": 139,
+      "referencePcmSha256": "b6d2a5c5ce3e75dc79aff8c1ab24cbb11867030dc325472dcbd7e47a1eb1a583",
+      "decodedPcmSha256": "b6d2a5c5ce3e75dc79aff8c1ab24cbb11867030dc325472dcbd7e47a1eb1a583",
+      "exactPcm": true,
+      "badSamples": 0,
+      "encoded_oma_sha256": "fe6227caa1cda19b7df603421e30f22762c4a5180fa028211c1c285dea857870"
+    },
+    {
+      "id": "aal3-132--boundary-885",
+      "profile": "aal3-132",
+      "category": "aal3-boundary-regression",
+      "frames": 885,
+      "referencePcmSha256": "b71e09261dc275f2063442758b02b4aab2175f01d27bbfd94838a658e9658201",
+      "decodedPcmSha256": "b71e09261dc275f2063442758b02b4aab2175f01d27bbfd94838a658e9658201",
+      "exactPcm": true,
+      "badSamples": 0,
+      "encoded_oma_sha256": "a1c76928660408c438fb87f5d958c2b0b8b50552657e2895cac22bbbec7f77a1"
+    },
+    {
+      "id": "aal3-132--boundary-886",
+      "profile": "aal3-132",
+      "category": "aal3-boundary-regression",
+      "frames": 886,
+      "referencePcmSha256": "4346c9f2b135e445b32bc0ec12037b9c28f33d5a0191b894c0a338dd271b884b",
+      "decodedPcmSha256": "4346c9f2b135e445b32bc0ec12037b9c28f33d5a0191b894c0a338dd271b884b",
+      "exactPcm": true,
+      "badSamples": 0,
+      "encoded_oma_sha256": "9de2f32a5dc3356326b7864bcd1fd2ed43aa328d352a640658e602cd0b805f28"
+    },
+    {
+      "id": "aal3-132--boundary-887",
+      "profile": "aal3-132",
+      "category": "aal3-boundary-regression",
+      "frames": 887,
+      "referencePcmSha256": "8404f012a06bf30cd16e4d06db258e0d92ef81bf042e0f03dfd1b9802a43e57d",
+      "decodedPcmSha256": "8404f012a06bf30cd16e4d06db258e0d92ef81bf042e0f03dfd1b9802a43e57d",
+      "exactPcm": true,
+      "badSamples": 0,
+      "encoded_oma_sha256": "9bec542d9766167d09cb5e5e3985d7b32620c60ccd7f045c2e2aee8067ef3065"
+    },
+    {
+      "id": "aal3-132--boundary-1023",
+      "profile": "aal3-132",
+      "category": "aal3-boundary-regression",
+      "frames": 1023,
+      "referencePcmSha256": "e22433b7982ad0cb2b028fb9eeb1635ba5b4f620a0b63660163686af2826c82b",
+      "decodedPcmSha256": "e22433b7982ad0cb2b028fb9eeb1635ba5b4f620a0b63660163686af2826c82b",
+      "exactPcm": true,
+      "badSamples": 0,
+      "encoded_oma_sha256": "dd4f1a89f9adc3b0a767811a65be2b10c66e83cf4c9224c0d616e54c013579ce"
+    },
+    {
+      "id": "aal3-132--boundary-1024",
+      "profile": "aal3-132",
+      "category": "aal3-boundary-regression",
+      "frames": 1024,
+      "referencePcmSha256": "bc5fefa59ccea05c3783698afdb91db13b1340053aa19da7230f76cd1794c59c",
+      "decodedPcmSha256": "bc5fefa59ccea05c3783698afdb91db13b1340053aa19da7230f76cd1794c59c",
+      "exactPcm": true,
+      "badSamples": 0,
+      "encoded_oma_sha256": "433cf0f759afd56192e3db028e700a4a08866d31d2056ef54eddbe4dbe23840a"
+    },
+    {
+      "id": "aal3-132--boundary-1025",
+      "profile": "aal3-132",
+      "category": "aal3-boundary-regression",
+      "frames": 1025,
+      "referencePcmSha256": "9aa91dac1944dadc87777e3b7e5cf44c06c773a6fc4f295add40ce9a4b8ce793",
+      "decodedPcmSha256": "9aa91dac1944dadc87777e3b7e5cf44c06c773a6fc4f295add40ce9a4b8ce793",
+      "exactPcm": true,
+      "badSamples": 0,
+      "encoded_oma_sha256": "5898b845ee60e34cf5c3fc761a69873793638c04f631edd7c18eea8beab25f61"
+    },
+    {
+      "id": "aal3-132--boundary-2048",
+      "profile": "aal3-132",
+      "category": "aal3-boundary-regression",
+      "frames": 2048,
+      "referencePcmSha256": "853e979ade861c965578f336af9307bf0852c86c6867aabd5b3dfe571d24db5f",
+      "decodedPcmSha256": "853e979ade861c965578f336af9307bf0852c86c6867aabd5b3dfe571d24db5f",
+      "exactPcm": true,
+      "badSamples": 0,
+      "encoded_oma_sha256": "c3626a69fd29ba37d9f9d7f39ca7c774e572d1b4d7d7423de76785330710f92b"
+    },
+    {
+      "id": "aal3-132--boundary-4096",
+      "profile": "aal3-132",
+      "category": "aal3-boundary-regression",
+      "frames": 4096,
+      "referencePcmSha256": "11305114cc0e151ff5abd65a13a771ff5b54554f626e65f2e3826927cdc558b9",
+      "decodedPcmSha256": "11305114cc0e151ff5abd65a13a771ff5b54554f626e65f2e3826927cdc558b9",
+      "exactPcm": true,
+      "badSamples": 0,
+      "encoded_oma_sha256": "1f35c35d6a564770f684b5ff9039853cb7183360e1afa4769d63f4e35c649a35"
+    },
+    {
+      "id": "aal3-132--boundary-44117",
+      "profile": "aal3-132",
+      "category": "aal3-boundary-regression",
+      "frames": 44117,
+      "referencePcmSha256": "cc2ee999352978c149941fff7c824745a023b40155702dd350c7a7d7b504afaf",
+      "decodedPcmSha256": "cc2ee999352978c149941fff7c824745a023b40155702dd350c7a7d7b504afaf",
+      "exactPcm": true,
+      "badSamples": 0,
+      "encoded_oma_sha256": "8b68b6421488b708189cc8b35d89124a6462f83b4816f7a7dbcfee2677024814"
+    },
+    {
+      "id": "aal3-132--boundary-44100",
+      "profile": "aal3-132",
+      "category": "aal3-boundary-regression",
+      "frames": 44100,
+      "referencePcmSha256": "77b79a3d3ea31a7acdbf58670537fb3aa5db8326794e69a5882d0426bd916ec8",
+      "decodedPcmSha256": "77b79a3d3ea31a7acdbf58670537fb3aa5db8326794e69a5882d0426bd916ec8",
+      "exactPcm": true,
+      "badSamples": 0,
+      "encoded_oma_sha256": "82bc1a2002314c322c8cbd68b7d01150dc39eb34dd7222507d3479620839a48e"
+    },
+    {
+      "id": "aal3-132--boundary-48001",
+      "profile": "aal3-132",
+      "category": "aal3-boundary-regression",
+      "frames": 48001,
+      "referencePcmSha256": "c1f63a7bba5a465c6f67a2f3d94ff3f8aeeaa59ba6eadfb926fe7801202efce2",
+      "decodedPcmSha256": "c1f63a7bba5a465c6f67a2f3d94ff3f8aeeaa59ba6eadfb926fe7801202efce2",
+      "exactPcm": true,
+      "badSamples": 0,
+      "encoded_oma_sha256": "f67280b48e363aec97acaa09d9bb6d7366011caacd7acf39a01e9b07bdd4515c"
+    },
+    {
+      "id": "aalp-48--boundary-1",
+      "profile": "aalp-48",
+      "category": "other-aalp-boundaries",
+      "frames": 1,
+      "referencePcmSha256": "3fe082173119c71b92fc5c05c66309f012f6a3f1c8b3ec90eff83f3529603d32",
+      "decodedPcmSha256": "3fe082173119c71b92fc5c05c66309f012f6a3f1c8b3ec90eff83f3529603d32",
+      "exactPcm": true,
+      "badSamples": 0,
+      "encoded_oma_sha256": "d52ba8eac41cd089a63220502d25b2d1d44599ce28722f67053cda10cbba016b"
+    },
+    {
+      "id": "aalp-48--boundary-2048",
+      "profile": "aalp-48",
+      "category": "other-aalp-boundaries",
+      "frames": 2048,
+      "referencePcmSha256": "853e979ade861c965578f336af9307bf0852c86c6867aabd5b3dfe571d24db5f",
+      "decodedPcmSha256": "853e979ade861c965578f336af9307bf0852c86c6867aabd5b3dfe571d24db5f",
+      "exactPcm": true,
+      "badSamples": 0,
+      "encoded_oma_sha256": "6cb0ffe7cbfa249158e833fa9f7e45e31ee67dfe46367dae98a38c5b5f9cd90b"
+    },
+    {
+      "id": "aalp-48--boundary-2049",
+      "profile": "aalp-48",
+      "category": "other-aalp-boundaries",
+      "frames": 2049,
+      "referencePcmSha256": "45ba0a9024100f49f118567121f9eb0105a8c2fa8074ec2276aae17e1d650cfd",
+      "decodedPcmSha256": "45ba0a9024100f49f118567121f9eb0105a8c2fa8074ec2276aae17e1d650cfd",
+      "exactPcm": true,
+      "badSamples": 0,
+      "encoded_oma_sha256": "2d35f08b71623474d684a63cd43df55c1fc7362275ba11d6559928f162378c1c"
+    },
+    {
+      "id": "aalp-48--boundary-44117",
+      "profile": "aalp-48",
+      "category": "other-aalp-boundaries",
+      "frames": 44117,
+      "referencePcmSha256": "cc2ee999352978c149941fff7c824745a023b40155702dd350c7a7d7b504afaf",
+      "decodedPcmSha256": "cc2ee999352978c149941fff7c824745a023b40155702dd350c7a7d7b504afaf",
+      "exactPcm": true,
+      "badSamples": 0,
+      "encoded_oma_sha256": "86ab1d0c3fc506b4a9da175c8fea31ddca83e78358966afa1a35aee4dedccb61"
+    },
+    {
+      "id": "aalp-64--boundary-1",
+      "profile": "aalp-64",
+      "category": "other-aalp-boundaries",
+      "frames": 1,
+      "referencePcmSha256": "3fe082173119c71b92fc5c05c66309f012f6a3f1c8b3ec90eff83f3529603d32",
+      "decodedPcmSha256": "3fe082173119c71b92fc5c05c66309f012f6a3f1c8b3ec90eff83f3529603d32",
+      "exactPcm": true,
+      "badSamples": 0,
+      "encoded_oma_sha256": "041253929fd8b1f2dca579fd850758ba382144400014ef1af833170d23a1ef62"
+    },
+    {
+      "id": "aalp-64--boundary-2048",
+      "profile": "aalp-64",
+      "category": "other-aalp-boundaries",
+      "frames": 2048,
+      "referencePcmSha256": "853e979ade861c965578f336af9307bf0852c86c6867aabd5b3dfe571d24db5f",
+      "decodedPcmSha256": "853e979ade861c965578f336af9307bf0852c86c6867aabd5b3dfe571d24db5f",
+      "exactPcm": true,
+      "badSamples": 0,
+      "encoded_oma_sha256": "4787af2451334c395e76b2c45f1b39e5eac752b21dfab1eee027dfcecb5fac34"
+    },
+    {
+      "id": "aalp-64--boundary-2049",
+      "profile": "aalp-64",
+      "category": "other-aalp-boundaries",
+      "frames": 2049,
+      "referencePcmSha256": "45ba0a9024100f49f118567121f9eb0105a8c2fa8074ec2276aae17e1d650cfd",
+      "decodedPcmSha256": "45ba0a9024100f49f118567121f9eb0105a8c2fa8074ec2276aae17e1d650cfd",
+      "exactPcm": true,
+      "badSamples": 0,
+      "encoded_oma_sha256": "95f8bad1bfd5cad6c319cb1fe76bdcb742f5b995473c4cd80c0a7346bd2e0b86"
+    },
+    {
+      "id": "aalp-64--boundary-44117",
+      "profile": "aalp-64",
+      "category": "other-aalp-boundaries",
+      "frames": 44117,
+      "referencePcmSha256": "cc2ee999352978c149941fff7c824745a023b40155702dd350c7a7d7b504afaf",
+      "decodedPcmSha256": "cc2ee999352978c149941fff7c824745a023b40155702dd350c7a7d7b504afaf",
+      "exactPcm": true,
+      "badSamples": 0,
+      "encoded_oma_sha256": "6d1d6268c1646875b0b7c3f73cadddf3d0f9130352e2437d16ae60b7c28cdfc9"
+    },
+    {
+      "id": "aalp-96--boundary-1",
+      "profile": "aalp-96",
+      "category": "other-aalp-boundaries",
+      "frames": 1,
+      "referencePcmSha256": "3fe082173119c71b92fc5c05c66309f012f6a3f1c8b3ec90eff83f3529603d32",
+      "decodedPcmSha256": "3fe082173119c71b92fc5c05c66309f012f6a3f1c8b3ec90eff83f3529603d32",
+      "exactPcm": true,
+      "badSamples": 0,
+      "encoded_oma_sha256": "a2493dda903fa2b89dc6bbdc66d2e94072e097bcf01cf20d22392a98e7598b26"
+    },
+    {
+      "id": "aalp-96--boundary-2048",
+      "profile": "aalp-96",
+      "category": "other-aalp-boundaries",
+      "frames": 2048,
+      "referencePcmSha256": "853e979ade861c965578f336af9307bf0852c86c6867aabd5b3dfe571d24db5f",
+      "decodedPcmSha256": "853e979ade861c965578f336af9307bf0852c86c6867aabd5b3dfe571d24db5f",
+      "exactPcm": true,
+      "badSamples": 0,
+      "encoded_oma_sha256": "99d8e16071cf374e50f04f086b1b5bd61145428da448b573cad380b74d6169b8"
+    },
+    {
+      "id": "aalp-96--boundary-2049",
+      "profile": "aalp-96",
+      "category": "other-aalp-boundaries",
+      "frames": 2049,
+      "referencePcmSha256": "45ba0a9024100f49f118567121f9eb0105a8c2fa8074ec2276aae17e1d650cfd",
+      "decodedPcmSha256": "45ba0a9024100f49f118567121f9eb0105a8c2fa8074ec2276aae17e1d650cfd",
+      "exactPcm": true,
+      "badSamples": 0,
+      "encoded_oma_sha256": "552858139dd1c1cceb130233889b7497050431c9d90dd8efd1d37402e5821a05"
+    },
+    {
+      "id": "aalp-96--boundary-44117",
+      "profile": "aalp-96",
+      "category": "other-aalp-boundaries",
+      "frames": 44117,
+      "referencePcmSha256": "cc2ee999352978c149941fff7c824745a023b40155702dd350c7a7d7b504afaf",
+      "decodedPcmSha256": "cc2ee999352978c149941fff7c824745a023b40155702dd350c7a7d7b504afaf",
+      "exactPcm": true,
+      "badSamples": 0,
+      "encoded_oma_sha256": "add89b289d6b72ddbb5eda6a10c4a1f5cbb366b8fdac1715a0ac808791a5a326"
+    },
+    {
+      "id": "aalp-128--boundary-1",
+      "profile": "aalp-128",
+      "category": "other-aalp-boundaries",
+      "frames": 1,
+      "referencePcmSha256": "3fe082173119c71b92fc5c05c66309f012f6a3f1c8b3ec90eff83f3529603d32",
+      "decodedPcmSha256": "3fe082173119c71b92fc5c05c66309f012f6a3f1c8b3ec90eff83f3529603d32",
+      "exactPcm": true,
+      "badSamples": 0,
+      "encoded_oma_sha256": "44f07c0f407efefbf6cb787d5fbaa190f382bad94bb7317d8934777a1f99d2aa"
+    },
+    {
+      "id": "aalp-128--boundary-2048",
+      "profile": "aalp-128",
+      "category": "other-aalp-boundaries",
+      "frames": 2048,
+      "referencePcmSha256": "853e979ade861c965578f336af9307bf0852c86c6867aabd5b3dfe571d24db5f",
+      "decodedPcmSha256": "853e979ade861c965578f336af9307bf0852c86c6867aabd5b3dfe571d24db5f",
+      "exactPcm": true,
+      "badSamples": 0,
+      "encoded_oma_sha256": "a42b0a576696089d6c9900c5a6177a2d73fa98f1c4871175631fa5f75b6aed33"
+    },
+    {
+      "id": "aalp-128--boundary-2049",
+      "profile": "aalp-128",
+      "category": "other-aalp-boundaries",
+      "frames": 2049,
+      "referencePcmSha256": "45ba0a9024100f49f118567121f9eb0105a8c2fa8074ec2276aae17e1d650cfd",
+      "decodedPcmSha256": "45ba0a9024100f49f118567121f9eb0105a8c2fa8074ec2276aae17e1d650cfd",
+      "exactPcm": true,
+      "badSamples": 0,
+      "encoded_oma_sha256": "01f4c3e2a1d5effeb0e6240241d04b1d107a9a18fc3c7e3719f4869f3e90d4f9"
+    },
+    {
+      "id": "aalp-128--boundary-44117",
+      "profile": "aalp-128",
+      "category": "other-aalp-boundaries",
+      "frames": 44117,
+      "referencePcmSha256": "cc2ee999352978c149941fff7c824745a023b40155702dd350c7a7d7b504afaf",
+      "decodedPcmSha256": "cc2ee999352978c149941fff7c824745a023b40155702dd350c7a7d7b504afaf",
+      "exactPcm": true,
+      "badSamples": 0,
+      "encoded_oma_sha256": "a2b01289ecd446bd1299b839903e420063be3580c0e09df55fbcf7572f9e1355"
+    },
+    {
+      "id": "aalp-160--boundary-1",
+      "profile": "aalp-160",
+      "category": "other-aalp-boundaries",
+      "frames": 1,
+      "referencePcmSha256": "3fe082173119c71b92fc5c05c66309f012f6a3f1c8b3ec90eff83f3529603d32",
+      "decodedPcmSha256": "3fe082173119c71b92fc5c05c66309f012f6a3f1c8b3ec90eff83f3529603d32",
+      "exactPcm": true,
+      "badSamples": 0,
+      "encoded_oma_sha256": "6bef1c94ef67816d58f26dd9d57df6e2ea95383db9af33bc57c49cdacc5a1dfa"
+    },
+    {
+      "id": "aalp-160--boundary-2048",
+      "profile": "aalp-160",
+      "category": "other-aalp-boundaries",
+      "frames": 2048,
+      "referencePcmSha256": "853e979ade861c965578f336af9307bf0852c86c6867aabd5b3dfe571d24db5f",
+      "decodedPcmSha256": "853e979ade861c965578f336af9307bf0852c86c6867aabd5b3dfe571d24db5f",
+      "exactPcm": true,
+      "badSamples": 0,
+      "encoded_oma_sha256": "a6ccb7cd83c178f212850895f406f0b0471b050961959db88709a7943f660cc9"
+    },
+    {
+      "id": "aalp-160--boundary-2049",
+      "profile": "aalp-160",
+      "category": "other-aalp-boundaries",
+      "frames": 2049,
+      "referencePcmSha256": "45ba0a9024100f49f118567121f9eb0105a8c2fa8074ec2276aae17e1d650cfd",
+      "decodedPcmSha256": "45ba0a9024100f49f118567121f9eb0105a8c2fa8074ec2276aae17e1d650cfd",
+      "exactPcm": true,
+      "badSamples": 0,
+      "encoded_oma_sha256": "2e0931182ff7279ab7b660cfa5611848a42a9cbec9a346d6985e78936c332a78"
+    },
+    {
+      "id": "aalp-160--boundary-44117",
+      "profile": "aalp-160",
+      "category": "other-aalp-boundaries",
+      "frames": 44117,
+      "referencePcmSha256": "cc2ee999352978c149941fff7c824745a023b40155702dd350c7a7d7b504afaf",
+      "decodedPcmSha256": "cc2ee999352978c149941fff7c824745a023b40155702dd350c7a7d7b504afaf",
+      "exactPcm": true,
+      "badSamples": 0,
+      "encoded_oma_sha256": "937487afd19646b2017f15bf336d89e3b03c44a3239b2a54e53dbf36113c6d40"
+    },
+    {
+      "id": "aalp-192--boundary-1",
+      "profile": "aalp-192",
+      "category": "other-aalp-boundaries",
+      "frames": 1,
+      "referencePcmSha256": "3fe082173119c71b92fc5c05c66309f012f6a3f1c8b3ec90eff83f3529603d32",
+      "decodedPcmSha256": "3fe082173119c71b92fc5c05c66309f012f6a3f1c8b3ec90eff83f3529603d32",
+      "exactPcm": true,
+      "badSamples": 0,
+      "encoded_oma_sha256": "fa8ac21e128844355d3d737be03c990055b21369cf248a101653971689513f25"
+    },
+    {
+      "id": "aalp-192--boundary-2048",
+      "profile": "aalp-192",
+      "category": "other-aalp-boundaries",
+      "frames": 2048,
+      "referencePcmSha256": "853e979ade861c965578f336af9307bf0852c86c6867aabd5b3dfe571d24db5f",
+      "decodedPcmSha256": "853e979ade861c965578f336af9307bf0852c86c6867aabd5b3dfe571d24db5f",
+      "exactPcm": true,
+      "badSamples": 0,
+      "encoded_oma_sha256": "1772611142f0267f663b95088d8f7b1357df6ed26756e15303b5346e9a92d1f6"
+    },
+    {
+      "id": "aalp-192--boundary-2049",
+      "profile": "aalp-192",
+      "category": "other-aalp-boundaries",
+      "frames": 2049,
+      "referencePcmSha256": "45ba0a9024100f49f118567121f9eb0105a8c2fa8074ec2276aae17e1d650cfd",
+      "decodedPcmSha256": "45ba0a9024100f49f118567121f9eb0105a8c2fa8074ec2276aae17e1d650cfd",
+      "exactPcm": true,
+      "badSamples": 0,
+      "encoded_oma_sha256": "73aff4f4fc5231d7e2495c9637bb73b42cae48627720d910df0a08a5de71bfc1"
+    },
+    {
+      "id": "aalp-192--boundary-44117",
+      "profile": "aalp-192",
+      "category": "other-aalp-boundaries",
+      "frames": 44117,
+      "referencePcmSha256": "cc2ee999352978c149941fff7c824745a023b40155702dd350c7a7d7b504afaf",
+      "decodedPcmSha256": "cc2ee999352978c149941fff7c824745a023b40155702dd350c7a7d7b504afaf",
+      "exactPcm": true,
+      "badSamples": 0,
+      "encoded_oma_sha256": "01f0c239e71915a6341eb6b384a525f80510b01538c28e1da448ca9f7641adb3"
+    },
+    {
+      "id": "aalp-256--boundary-1",
+      "profile": "aalp-256",
+      "category": "other-aalp-boundaries",
+      "frames": 1,
+      "referencePcmSha256": "3fe082173119c71b92fc5c05c66309f012f6a3f1c8b3ec90eff83f3529603d32",
+      "decodedPcmSha256": "3fe082173119c71b92fc5c05c66309f012f6a3f1c8b3ec90eff83f3529603d32",
+      "exactPcm": true,
+      "badSamples": 0,
+      "encoded_oma_sha256": "ddae224a6d430f18a6c8cd693b07481992d31ff295c2821cd9a1041bf97bc615"
+    },
+    {
+      "id": "aalp-256--boundary-2048",
+      "profile": "aalp-256",
+      "category": "other-aalp-boundaries",
+      "frames": 2048,
+      "referencePcmSha256": "853e979ade861c965578f336af9307bf0852c86c6867aabd5b3dfe571d24db5f",
+      "decodedPcmSha256": "853e979ade861c965578f336af9307bf0852c86c6867aabd5b3dfe571d24db5f",
+      "exactPcm": true,
+      "badSamples": 0,
+      "encoded_oma_sha256": "d02c0cab3fd2a74afd8aaedee19778d010d6302075b2efc4de3366932bfedc94"
+    },
+    {
+      "id": "aalp-256--boundary-2049",
+      "profile": "aalp-256",
+      "category": "other-aalp-boundaries",
+      "frames": 2049,
+      "referencePcmSha256": "45ba0a9024100f49f118567121f9eb0105a8c2fa8074ec2276aae17e1d650cfd",
+      "decodedPcmSha256": "45ba0a9024100f49f118567121f9eb0105a8c2fa8074ec2276aae17e1d650cfd",
+      "exactPcm": true,
+      "badSamples": 0,
+      "encoded_oma_sha256": "f16fa79a16ad2069b5078d7204acfda5c157098caa071fe2e82b2c9475963b2d"
+    },
+    {
+      "id": "aalp-256--boundary-44117",
+      "profile": "aalp-256",
+      "category": "other-aalp-boundaries",
+      "frames": 44117,
+      "referencePcmSha256": "cc2ee999352978c149941fff7c824745a023b40155702dd350c7a7d7b504afaf",
+      "decodedPcmSha256": "cc2ee999352978c149941fff7c824745a023b40155702dd350c7a7d7b504afaf",
+      "exactPcm": true,
+      "badSamples": 0,
+      "encoded_oma_sha256": "90ed8a181947efb32b77ba68f56b8d7143c5526128e9165bfff325844e6a4746"
+    },
+    {
+      "id": "aalp-320--boundary-1",
+      "profile": "aalp-320",
+      "category": "other-aalp-boundaries",
+      "frames": 1,
+      "referencePcmSha256": "3fe082173119c71b92fc5c05c66309f012f6a3f1c8b3ec90eff83f3529603d32",
+      "decodedPcmSha256": "3fe082173119c71b92fc5c05c66309f012f6a3f1c8b3ec90eff83f3529603d32",
+      "exactPcm": true,
+      "badSamples": 0,
+      "encoded_oma_sha256": "4b9b9f508714985c4d3fdb530cd3fc6075b6d178e4c4a654db25a3dcf3613845"
+    },
+    {
+      "id": "aalp-320--boundary-2048",
+      "profile": "aalp-320",
+      "category": "other-aalp-boundaries",
+      "frames": 2048,
+      "referencePcmSha256": "853e979ade861c965578f336af9307bf0852c86c6867aabd5b3dfe571d24db5f",
+      "decodedPcmSha256": "853e979ade861c965578f336af9307bf0852c86c6867aabd5b3dfe571d24db5f",
+      "exactPcm": true,
+      "badSamples": 0,
+      "encoded_oma_sha256": "ca8c4e2476880daf201c3e80b23578c597326adc81e5b4edf5ba9d4224b0057b"
+    },
+    {
+      "id": "aalp-320--boundary-2049",
+      "profile": "aalp-320",
+      "category": "other-aalp-boundaries",
+      "frames": 2049,
+      "referencePcmSha256": "45ba0a9024100f49f118567121f9eb0105a8c2fa8074ec2276aae17e1d650cfd",
+      "decodedPcmSha256": "45ba0a9024100f49f118567121f9eb0105a8c2fa8074ec2276aae17e1d650cfd",
+      "exactPcm": true,
+      "badSamples": 0,
+      "encoded_oma_sha256": "86f2650738c31f6397358dae502a5570cb264d29a3a8b3b3d5a63da846d69321"
+    },
+    {
+      "id": "aalp-320--boundary-44117",
+      "profile": "aalp-320",
+      "category": "other-aalp-boundaries",
+      "frames": 44117,
+      "referencePcmSha256": "cc2ee999352978c149941fff7c824745a023b40155702dd350c7a7d7b504afaf",
+      "decodedPcmSha256": "cc2ee999352978c149941fff7c824745a023b40155702dd350c7a7d7b504afaf",
+      "exactPcm": true,
+      "badSamples": 0,
+      "encoded_oma_sha256": "8f386927082dfa4411ce65094c7342d93ac10011b198416551d66348b451f6b7"
+    }
+  ],
+  "rejections": [
+    {
+      "id": "reject-mono",
+      "argv": [
+        "--profile",
+        "aalp-352",
+        "research/qa/full-encoder/fixtures/rejections/mono.wav",
+        "research/qa/full-encoder/run-002/reject/mono.oma"
+      ],
+      "exitCode": 1,
+      "errorText": "0% 读取 CD PCM WAV\r\nError: This build requires 44100 Hz / 16-bit / stereo integer PCM.\r\n",
+      "passed": true
+    },
+    {
+      "id": "reject-48000Hz",
+      "argv": [
+        "--profile",
+        "aalp-352",
+        "research/qa/full-encoder/fixtures/rejections/48000Hz.wav",
+        "research/qa/full-encoder/run-002/reject/48000Hz.oma"
+      ],
+      "exitCode": 1,
+      "errorText": "0% 读取 CD PCM WAV\r\nError: This build requires 44100 Hz / 16-bit / stereo integer PCM.\r\n",
+      "passed": true
+    },
+    {
+      "id": "reject-24bit",
+      "argv": [
+        "--profile",
+        "aalp-352",
+        "research/qa/full-encoder/fixtures/rejections/24bit.wav",
+        "research/qa/full-encoder/run-002/reject/24bit.oma"
+      ],
+      "exitCode": 1,
+      "errorText": "0% 读取 CD PCM WAV\r\nError: This build requires 44100 Hz / 16-bit / stereo integer PCM.\r\n",
+      "passed": true
+    },
+    {
+      "id": "reject-float32",
+      "argv": [
+        "--profile",
+        "aalp-352",
+        "research/qa/full-encoder/fixtures/rejections/float32.wav",
+        "research/qa/full-encoder/run-002/reject/float32.oma"
+      ],
+      "exitCode": 1,
+      "errorText": "0% 读取 CD PCM WAV\r\nError: This build requires 44100 Hz / 16-bit / stereo integer PCM.\r\n",
+      "passed": true
+    },
+    {
+      "id": "reject-empty",
+      "argv": [
+        "--profile",
+        "aalp-352",
+        "research/qa/full-encoder/fixtures/rejections/empty.wav",
+        "research/qa/full-encoder/run-002/reject/empty.oma"
+      ],
+      "exitCode": 1,
+      "errorText": "0% 读取 CD PCM WAV\r\nError: WAVE has no complete stereo PCM frames.\r\n",
+      "passed": true
+    },
+    {
+      "id": "reject-truncated",
+      "argv": [
+        "--profile",
+        "aalp-352",
+        "research/qa/full-encoder/fixtures/rejections/truncated.wav",
+        "research/qa/full-encoder/run-002/reject/truncated.oma"
+      ],
+      "exitCode": 1,
+      "errorText": "0% 读取 CD PCM WAV\r\nError: Truncated WAVE chunk.\r\n",
+      "passed": true
+    },
+    {
+      "id": "reject-not-wave",
+      "argv": [
+        "--profile",
+        "aalp-352",
+        "research/qa/full-encoder/fixtures/rejections/not-wave.wav",
+        "research/qa/full-encoder/run-002/reject/not-wave.oma"
+      ],
+      "exitCode": 1,
+      "errorText": "0% 读取 CD PCM WAV\r\nError: Input must be RIFF/WAVE PCM.\r\n",
+      "passed": true
+    },
+    {
+      "id": "refuse-existing-output",
+      "argv": [
+        "research/qa/full-encoder/fixtures/boundary-4096.wav",
+        "research/qa/full-encoder/run-002/outputs/aalp-352/default-profile-odd-junk.oma"
+      ],
+      "exitCode": 1,
+      "errorText": "Error: Output or report already exists; choose another name.\r\n",
+      "passed": true
+    },
+    {
+      "id": "refuse-existing-json",
+      "argv": [
+        "research/qa/full-encoder/fixtures/boundary-4096.wav",
+        "research/qa/full-encoder/run-002/reject/existing-report.oma"
+      ],
+      "exitCode": 1,
+      "errorText": "Error: Output or report already exists; choose another name.\r\n",
+      "passed": true
+    },
+    {
+      "id": "refuse-source-as-output",
+      "argv": [
+        "research/qa/full-encoder/fixtures/boundary-4096.wav",
+        "research/qa/full-encoder/fixtures/boundary-4096.wav"
+      ],
+      "exitCode": 1,
+      "errorText": "Error: Output or report already exists; choose another name.\r\n",
+      "passed": true
+    },
+    {
+      "id": "refuse-missing-folder",
+      "argv": [
+        "research/qa/full-encoder/fixtures/boundary-4096.wav",
+        "research/qa/full-encoder/run-002/reject/not-created/output.oma"
+      ],
+      "exitCode": 1,
+      "errorText": "Error: Output directory does not exist.\r\n",
+      "passed": true
+    },
+    {
+      "id": "reject-unknown-profile-aalp-999",
+      "argv": [
+        "--profile",
+        "aalp-999",
+        "research/qa/full-encoder/fixtures/boundary-4096.wav",
+        "research/qa/full-encoder/run-002/reject/aalp-999.oma"
+      ],
+      "exitCode": 1,
+      "errorText": "Error: Unknown AAL profile. Use --list-profiles; unsupported rates are never substituted.\r\n",
+      "passed": true
+    },
+    {
+      "id": "reject-unknown-profile-aal3-66",
+      "argv": [
+        "--profile",
+        "aal3-66",
+        "research/qa/full-encoder/fixtures/boundary-4096.wav",
+        "research/qa/full-encoder/run-002/reject/aal3-66.oma"
+      ],
+      "exitCode": 1,
+      "errorText": "Error: Unknown AAL profile. Use --list-profiles; unsupported rates are never substituted.\r\n",
+      "passed": true
+    }
+  ]
+}

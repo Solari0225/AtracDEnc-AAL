@@ -1,0 +1,79 @@
+name: Build and offline conformance
+
+on:
+  push:
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  windows:
+    runs-on: windows-2022
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@ece7cb06caefa5fff74198d8649806c4678c61a1 # v6
+        with:
+          python-version: '3.12'
+      - name: Install pinned Zig 0.14.1
+        shell: pwsh
+        run: |
+          $archive = Join-Path $env:RUNNER_TEMP 'atracdenc-aal-zig.zip'
+          $destination = Join-Path $env:RUNNER_TEMP 'atracdenc-aal-zig'
+          Invoke-WebRequest 'https://ziglang.org/download/0.14.1/zig-x86_64-windows-0.14.1.zip' -OutFile $archive
+          $expected = '554f5378228923ffd558eac35e21af020c73789d87afeabf4bfd16f2e6feed2c'
+          if ((Get-FileHash -LiteralPath $archive -Algorithm SHA256).Hash.ToLower() -ne $expected) { throw 'Zig archive checksum mismatch' }
+          Expand-Archive -LiteralPath $archive -DestinationPath $destination
+          Join-Path $destination 'zig-x86_64-windows-0.14.1' | Out-File -FilePath $env:GITHUB_PATH -Append -Encoding utf8
+      - name: Build CLI, library, tests and Windows test GUI
+        shell: pwsh
+        run: .\build.ps1 -Gui
+      - name: Run all offline checks
+        run: python tools/run_checks.py --bin-dir bin
+      - name: Verify public repository
+        run: python tools/verify_repository.py
+      - name: Package build artifact
+        run: python tools/package_release.py --platform windows-x64
+      - uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9 # v7
+        with:
+          name: AtracDEnc-AAL-windows-x64
+          path: dist/*
+          if-no-files-found: error
+
+  macos:
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - os: macos-15
+            platform: macos-arm64
+          - os: macos-15-intel
+            platform: macos-x86_64
+    runs-on: ${{ matrix.os }}
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@ece7cb06caefa5fff74198d8649806c4678c61a1 # v6
+        with:
+          python-version: '3.12'
+      - name: Configure native build
+        run: cmake -S . -B build/native -DCMAKE_BUILD_TYPE=Release
+      - name: Build
+        run: cmake --build build/native --parallel 3
+      - name: Run native offline conformance
+        run: python tools/run_checks.py --bin-dir build/native
+      - name: Verify public repository
+        run: python tools/verify_repository.py
+      - name: Package build artifact
+        run: python tools/package_release.py --platform ${{ matrix.platform }} --bin-dir build/native
+      - uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9 # v7
+        with:
+          name: AtracDEnc-AAL-${{ matrix.platform }}
+          path: dist/*
+          if-no-files-found: error

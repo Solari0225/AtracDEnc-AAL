@@ -1,0 +1,2114 @@
+{
+  "project": "AtracDEnc-AAL",
+  "version": "0.2.0",
+  "created_utc": "2026-11-01T14:10:55.029126+00:00",
+  "passed": true,
+  "baseline_source_zip_sha256": "0c745de9a652e107f0de94c02d3c0c912c8baadad8ee57ec052eaf59d5769c25",
+  "encoding_algorithm_changes": false,
+  "source_scope": [
+    {
+      "file": "compression/analysis.cpp",
+      "sha256": "62351de1a9da909e2edd182877c450681cd18b83d340776c65ba58984a59b0e1",
+      "unchanged": true
+    },
+    {
+      "file": "compression/analysis.hpp",
+      "sha256": "7efd9ee7300095694346b2ab2fe52c01e220430b070fdeb4c45f766ab84496dc",
+      "unchanged": true
+    },
+    {
+      "file": "compression/analysis_window.inc",
+      "sha256": "042dbc70a5dc7994b8489ee29a70e4d287e9df46706c9278d9353910c301d61f",
+      "unchanged": true
+    },
+    {
+      "file": "compression/analysis_window_plus.inc",
+      "sha256": "334154413f3f1d9ed239122bd9bcfbe9c82f86a1769624a2bf08b24f37506c8d",
+      "unchanged": true
+    },
+    {
+      "file": "compression/decorrelation.cpp",
+      "sha256": "f327bc88babdb3720673838b3c4611cba55cca49aeb8c6bc3c97f12251bb1f49",
+      "unchanged": true
+    },
+    {
+      "file": "compression/decorrelation.hpp",
+      "sha256": "8cb2cc77fb93e94f3bf5190ca4c8f22e65276368ab741b2f57b9692b7a5965d7",
+      "unchanged": true
+    },
+    {
+      "file": "compression/enhancement.hpp",
+      "sha256": "922c4e8fc357b7fd65b40a933de0f79a56271ab4e0de7f517229125113ef7763",
+      "unchanged": true
+    },
+    {
+      "file": "compression/independent_lpc.cpp",
+      "sha256": "1a717ee331f48217086c014a9d886b468c5b72175f2dc2d8ee558f86694accef",
+      "unchanged": true
+    },
+    {
+      "file": "compression/independent_lpc.h",
+      "sha256": "b064f0caaa08f8cd7cd74fec3c2756f6a2c2158765ad99d6989c4c60a7d2a4c7",
+      "unchanged": true
+    },
+    {
+      "file": "compression/rice.hpp",
+      "sha256": "82376b80a963ecb88f08982a67239a9be5b1f84968861ec9b231d9f99800048f",
+      "unchanged": true
+    },
+    {
+      "file": "core/atracdenc-master/.github/workflows/cmake.yml",
+      "sha256": "8e1b4d778a1a8fd084ee99dcef7221f83be4b2455c456f5c78e0b8e7ffacb12b",
+      "unchanged": true
+    },
+    {
+      "file": "core/atracdenc-master/.github/workflows/codeql-analysis.yml",
+      "sha256": "7ee51bc7cf77d08285cdb22c8c3a5221e8d5988748e005f7874b844b1560d79a",
+      "unchanged": true
+    },
+    {
+      "file": "core/atracdenc-master/.gitmodules",
+      "sha256": "b05811ee2c9062e9c6d4ad7bf9c17d58de5dca73995a2a97f8619fd185dc7bcd",
+      "unchanged": true
+    },
+    {
+      "file": "core/atracdenc-master/CMakeLists.txt",
+      "sha256": "8654c7ca164e18119e3c0c81c413e5c0bf3c9a08a28fd173e7fd89b720fd02b4",
+      "unchanged": true
+    },
+    {
+      "file": "core/atracdenc-master/debian/changelog",
+      "sha256": "2244850cb4afb1eeedb90f4cb6c2f0b4dd51285e0aa7a5ba04d35341fc17215f",
+      "unchanged": true
+    },
+    {
+      "file": "core/atracdenc-master/debian/control",
+      "sha256": "6e7759193430efceda885969d96e6ed3c720f29249413f4a339207387d14f8dd",
+      "unchanged": true
+    },
+    {
+      "file": "core/atracdenc-master/debian/copyright",
+      "sha256": "18095d4b69341567ab2e1ee8a54e72086916dac5635adafb5ac0b9ca7c16c903",
+      "unchanged": true
+    },
+    {
+      "file": "core/atracdenc-master/debian/rules",
+      "sha256": "f2dbde1f36334a8ca4e12bf1c066d449a9b9ec09c9af2ad0dffabf08f07357ce",
+      "unchanged": true
+    },
+    {
+      "file": "core/atracdenc-master/debian/source/format",
+      "sha256": "e8e18df40bcd69d6aa404282679186d9b8256ac63a5b4e80d7f081e8a0095a2e",
+      "unchanged": true
+    },
+    {
+      "file": "core/atracdenc-master/LICENSE",
+      "sha256": "b634ab5640e258563c536e658cad87080553df6f34f62269a21d554844e58bfe",
+      "unchanged": true
+    },
+    {
+      "file": "core/atracdenc-master/man/atracdenc.1",
+      "sha256": "8c071b8cf54fbf1201efe68dcb49e7547ad25c9ed01fe4ccb099b6673891c65b",
+      "unchanged": true
+    },
+    {
+      "file": "core/atracdenc-master/README.md",
+      "sha256": "6e299564b1337d0d9bb39965ab6da4edc6e9e93fb1278ee511648bd823122c06",
+      "unchanged": true
+    },
+    {
+      "file": "core/atracdenc-master/src/aea.cpp",
+      "sha256": "213831d1544776f432070d12d492d5cc28c0852b77b3ce949bc245ca5334f3c1",
+      "unchanged": true
+    },
+    {
+      "file": "core/atracdenc-master/src/aea.h",
+      "sha256": "0b1de94712b6938c536b65fd5f1dec796cc6db35e7aa6e17080a5c4dd21602bf",
+      "unchanged": true
+    },
+    {
+      "file": "core/atracdenc-master/src/at3.cpp",
+      "sha256": "c153698e3648fefed01782915f2acdb6eeabc818ca2c96a8235d7be86b79d10c",
+      "unchanged": true
+    },
+    {
+      "file": "core/atracdenc-master/src/at3.h",
+      "sha256": "dc58420cc8c38810ce5a08f5ca8f08b76f65dd4722b2a660a1a97abf742ea755",
+      "unchanged": true
+    },
+    {
+      "file": "core/atracdenc-master/src/atrac/at1/atrac1.cpp",
+      "sha256": "b2989ed457cc1d91223c65431e21eba26765eab2ec4adf6625764d2ebaaa8ae6",
+      "unchanged": true
+    },
+    {
+      "file": "core/atracdenc-master/src/atrac/at1/atrac1.h",
+      "sha256": "1427411ae22c648ee0e031c53cf9bddc826b7bfe910c1d21297641c9b088c85f",
+      "unchanged": true
+    },
+    {
+      "file": "core/atracdenc-master/src/atrac/at1/atrac1_bitalloc.cpp",
+      "sha256": "639b752ce1346f6c06d157a05524b277f8ae628004e6ef595f1f5c40999de74c",
+      "unchanged": true
+    },
+    {
+      "file": "core/atracdenc-master/src/atrac/at1/atrac1_bitalloc.h",
+      "sha256": "0b61f44d9f11ea05f7e55a6b2a72619b27dfc6fec16718506ac5b9fb0bda464a",
+      "unchanged": true
+    },
+    {
+      "file": "core/atracdenc-master/src/atrac/at1/atrac1_dequantiser.cpp",
+      "sha256": "d2622990131fc070ff46c045b4de4ed58ad4d763ee1df7471edd84ea18357708",
+      "unchanged": true
+    },
+    {
+      "file": "core/atracdenc-master/src/atrac/at1/atrac1_dequantiser.h",
+      "sha256": "b04942fe9e552bfdb2fa25f4a85af0da6ebcc6514dd189648126179ec14c11c9",
+      "unchanged": true
+    },
+    {
+      "file": "core/atracdenc-master/src/atrac/at1/atrac1_qmf.h",
+      "sha256": "d3bb4dc51f6300ee320b4a464ba56bdd4b7921505476574c92c6a2de58fef9cd",
+      "unchanged": true
+    },
+    {
+      "file": "core/atracdenc-master/src/atrac/at3/atrac3.cpp",
+      "sha256": "496b4b6ae9070f2f401bde3edbfd8c58e9b07ff9408544be46e9a1621783d94e",
+      "unchanged": true
+    },
+    {
+      "file": "core/atracdenc-master/src/atrac/at3/atrac3.h",
+      "sha256": "cddc4e0264b27a3a8fefe149b2f1c0a036a5552d327f023ddce32aa1f3fad305",
+      "unchanged": true
+    },
+    {
+      "file": "core/atracdenc-master/src/atrac/at3/atrac3_bitstream.cpp",
+      "sha256": "cc2a78c2f39d36d7e172b3e3b1600f97a5dfda7aced8390587f61e2d701c045e",
+      "unchanged": true
+    },
+    {
+      "file": "core/atracdenc-master/src/atrac/at3/atrac3_bitstream.h",
+      "sha256": "e1598a540f315154534de90b98e1f668b68844800a1c633ff3ec5c47880b1dfe",
+      "unchanged": true
+    },
+    {
+      "file": "core/atracdenc-master/src/atrac/at3/atrac3_qmf.h",
+      "sha256": "62c0ab9bf841342155828360dda97812d443763f8c983aec492ef31f8672d2c7",
+      "unchanged": true
+    },
+    {
+      "file": "core/atracdenc-master/src/atrac/at3p/at3p.cpp",
+      "sha256": "4e0c43b70d9b45bf0ea3705328fa07e5b5157b2e1584eb00bd87ba66773c7b99",
+      "unchanged": true
+    },
+    {
+      "file": "core/atracdenc-master/src/atrac/at3p/at3p_bitstream.cpp",
+      "sha256": "041bdcf82b3316c11b2636db3c4fa9f1a76a6abcba11805abff6897ef7701a26",
+      "only_branding_or_comment_change": true
+    },
+    {
+      "file": "core/atracdenc-master/src/atrac/at3p/at3p_bitstream.h",
+      "sha256": "38e6dea19cce0a7ae1126a8ca41aa4fc97f6ac0a781ef784cadd67774c5115ec",
+      "only_branding_or_comment_change": true
+    },
+    {
+      "file": "core/atracdenc-master/src/atrac/at3p/at3p_bitstream_impl.h",
+      "sha256": "e5d08135fb448f5a2c55af08c4ba860e36c6f9c36564439583dfecd8e31f9226",
+      "unchanged": true
+    },
+    {
+      "file": "core/atracdenc-master/src/atrac/at3p/at3p_bitstream_ut.cpp",
+      "sha256": "2642fc743f7c9dcb3e3526fa7c9106cdc018970ce2afa1f67911c5ea0d56e523",
+      "unchanged": true
+    },
+    {
+      "file": "core/atracdenc-master/src/atrac/at3p/at3p_gha.cpp",
+      "sha256": "5e820336bbc70345babd1e7bd696f10e5813cffac05c344e5ad9f8fb74d07e9d",
+      "unchanged": true
+    },
+    {
+      "file": "core/atracdenc-master/src/atrac/at3p/at3p_gha.h",
+      "sha256": "a6086be148699322a0bb7db5efa8e9be3bb2a6c46df548b807ae56bb95dc34ba",
+      "unchanged": true
+    },
+    {
+      "file": "core/atracdenc-master/src/atrac/at3p/at3p_gha_ut.cpp",
+      "sha256": "5fbca32ac45966239046a41957c31b748187672b963e432f0b1169bdea859d09",
+      "unchanged": true
+    },
+    {
+      "file": "core/atracdenc-master/src/atrac/at3p/at3p_mdct.cpp",
+      "sha256": "78f43fb72e1855cb26da9053138397b95ef854303a859922a3930dfbd90bbd72",
+      "unchanged": true
+    },
+    {
+      "file": "core/atracdenc-master/src/atrac/at3p/at3p_mdct.h",
+      "sha256": "d157e7f5495d13be9be26cff4c2b1733b6105187789fd116f861427c8980fcd1",
+      "unchanged": true
+    },
+    {
+      "file": "core/atracdenc-master/src/atrac/at3p/at3p_mdct_ut.cpp",
+      "sha256": "29cd152e8e6689f3b89d10af3c36f367146d9a4dd6cb19e746c9342355758e97",
+      "unchanged": true
+    },
+    {
+      "file": "core/atracdenc-master/src/atrac/at3p/at3p_pqf_wideband_table.h",
+      "sha256": "78407047402223c253fe3a5f1acf1fd9ec7712951a0385d39be1c64a43646e98",
+      "unchanged": true
+    },
+    {
+      "file": "core/atracdenc-master/src/atrac/at3p/at3p_tables.cpp",
+      "sha256": "d9f8471f741f9f9f74ee2f4ee6e57aea168f3c911d255ae4b3d6cbe870c768b1",
+      "unchanged": true
+    },
+    {
+      "file": "core/atracdenc-master/src/atrac/at3p/at3p_tables.h",
+      "sha256": "4df87df253a6dc8fe6f8f4c95441c07e5d7682ccb188d5d3781ddcc49e055c68",
+      "unchanged": true
+    },
+    {
+      "file": "core/atracdenc-master/src/atrac/at3p/ff/atrac3plus.h",
+      "sha256": "8c36e6c6ec5dd345d512883b2cca679cf95ed1f4ad9eb08f73e4af3d6e540954",
+      "unchanged": true
+    },
+    {
+      "file": "core/atracdenc-master/src/atrac/at3p/ff/atrac3plus_data.h",
+      "sha256": "66a92ce8425fd9962c1591753bf8f812729bec970546b801a73b3d8fa6a5a54f",
+      "unchanged": true
+    },
+    {
+      "file": "core/atracdenc-master/src/atrac/at3p/ff/atrac3plusdsp.c",
+      "sha256": "805a797281870f17ffbf8f4fe2a953e67f0581f50f5e73acb086846a9cdc83d3",
+      "unchanged": true
+    },
+    {
+      "file": "core/atracdenc-master/src/atrac/at3p/tools/pqf_wideband_calibrate.cpp",
+      "sha256": "61d5277ea08b873db38f67da115a7d4330bdaffd0781950f8554dcff8bbe8137",
+      "unchanged": true
+    },
+    {
+      "file": "core/atracdenc-master/src/atrac/atrac3plus_pqf/atrac3plus_pqf.c",
+      "sha256": "91a88ea6e2e9faca2688a2d0d08aac0db0466adf84c6fdb347f5091afda4d022",
+      "unchanged": true
+    },
+    {
+      "file": "core/atracdenc-master/src/atrac/atrac3plus_pqf/atrac3plus_pqf.h",
+      "sha256": "937044a5a3ae5eaeba742e3642b325adc85e75e3918ad0a4001ff4ae5cb6f9d2",
+      "unchanged": true
+    },
+    {
+      "file": "core/atracdenc-master/src/atrac/atrac3plus_pqf/atrac3plus_pqf_data.h",
+      "sha256": "823430bcc3f6b5762125adabc1d6282693c34d459760146c8824c62bd52bfa6c",
+      "unchanged": true
+    },
+    {
+      "file": "core/atracdenc-master/src/atrac/atrac3plus_pqf/ut/atrac3plusdsp.c",
+      "sha256": "6fc51e672562c44f41722f7232985d49a8d22840efee8446480672abc5442c11",
+      "unchanged": true
+    },
+    {
+      "file": "core/atracdenc-master/src/atrac/atrac3plus_pqf/ut/atrac3plusdsp.h",
+      "sha256": "57f1d031328b0558163038d45f535d809fe07a6bbb4bd491ef6cdb5c908cdae5",
+      "unchanged": true
+    },
+    {
+      "file": "core/atracdenc-master/src/atrac/atrac3plus_pqf/ut/ipqf_ut.cpp",
+      "sha256": "6bdf9a52bfb34b190bdd68d16e69faae1d10089d6b8903d4b876c24adbf5d3bb",
+      "unchanged": true
+    },
+    {
+      "file": "core/atracdenc-master/src/atrac/atrac3plus_pqf/ut/test_data/ipqftest_pcm_mr.dat",
+      "sha256": "91355c9a7475bdf7c08710f8d8b56ea4e0b56d989ed3203062386d0d6def61a2",
+      "unchanged": true
+    },
+    {
+      "file": "core/atracdenc-master/src/atrac/atrac3plus_pqf/ut/test_data/ipqftest_pcm_out.dat",
+      "sha256": "a0fac9a820cdb21912ec01a17d05567688bfac85cf280b15e7f5773936c672c9",
+      "unchanged": true
+    },
+    {
+      "file": "core/atracdenc-master/src/atrac/atrac_enc_cache.cpp",
+      "sha256": "c16630faf4a858512d113983ced51dd649efa13399109845fc230e599a6d1b58",
+      "unchanged": true
+    },
+    {
+      "file": "core/atracdenc-master/src/atrac/atrac_enc_cache.h",
+      "sha256": "c16349ab98d7624cb03ce9e917c4166dd8239e3f5a50e41319aa204ba6057797",
+      "unchanged": true
+    },
+    {
+      "file": "core/atracdenc-master/src/atrac/atrac_psy_common.cpp",
+      "sha256": "591b78d5b596e235e62a0e890cdb9c3c0597ea53d1c5b82bdba5e36705c279e3",
+      "unchanged": true
+    },
+    {
+      "file": "core/atracdenc-master/src/atrac/atrac_psy_common.h",
+      "sha256": "b40e7c41cee8d2b574cd20fd40b3afb31eb1b6867e789eb4b76f3a8a1a2a5baf",
+      "unchanged": true
+    },
+    {
+      "file": "core/atracdenc-master/src/atrac/atrac_psy_common_ut.cpp",
+      "sha256": "bba965448f48268684e7f842400e85c7f0e5767a8f0b9fff781332c1adb55685",
+      "unchanged": true
+    },
+    {
+      "file": "core/atracdenc-master/src/atrac/atrac_scale.cpp",
+      "sha256": "0a7d8ed10a31537fc33640cdb12e75c99b34d30a4c2fae734dbb6e96e503241a",
+      "unchanged": true
+    },
+    {
+      "file": "core/atracdenc-master/src/atrac/atrac_scale.h",
+      "sha256": "9ddbf94b1f77dd14355b6ae5a06b425ed2b394f88ecd9db46cc1b956e90cccbd",
+      "unchanged": true
+    },
+    {
+      "file": "core/atracdenc-master/src/atrac/atrac_scale_ut.cpp",
+      "sha256": "2dbdf67b7cc7d198cf56205ff914040dce167f03bb3e8ec4129f9f7c8b776d33",
+      "unchanged": true
+    },
+    {
+      "file": "core/atracdenc-master/src/atrac1denc.cpp",
+      "sha256": "fd718166bf935939bd7933292ba30bde2149ea66b2d3552de698fb782cbc4e96",
+      "unchanged": true
+    },
+    {
+      "file": "core/atracdenc-master/src/atrac1denc.h",
+      "sha256": "4a9839b3515a71374db5809428c9441a185fdd491c7c545e6b3f9a36a5e92376",
+      "unchanged": true
+    },
+    {
+      "file": "core/atracdenc-master/src/atrac3denc.cpp",
+      "sha256": "95822a2e634acf2f3315b848078696387af72e4968775032b8899d89725d017b",
+      "unchanged": true
+    },
+    {
+      "file": "core/atracdenc-master/src/atrac3denc.h",
+      "sha256": "03ff998895ea4d47d6d232dbfd2cf15a4b4d36e5f75fbe61cea838d5cd8e1b14",
+      "unchanged": true
+    },
+    {
+      "file": "core/atracdenc-master/src/atrac3denc_ut.cpp",
+      "sha256": "7c0fd3a3a111b71e39d483f7583e7d86a63c0e0dfd522eb2c4cf9103ca76493f",
+      "unchanged": true
+    },
+    {
+      "file": "core/atracdenc-master/src/atrac3p.h",
+      "sha256": "ea0c1c062ce2c3ca04df9a12037925a9f83bbba4f889aaa13394bd1a75b0e7cc",
+      "unchanged": true
+    },
+    {
+      "file": "core/atracdenc-master/src/atracdenc_ut.cpp",
+      "sha256": "b74348bd200d1ebe959af8c2f3b85aa491e5c2313fd8fab9c1c42ea25a635679",
+      "unchanged": true
+    },
+    {
+      "file": "core/atracdenc-master/src/cmake/modules/FindLibSndFile.cmake",
+      "sha256": "2c52fa166e97572e412579ba3913593668cd1630f0c33ca7bbf162d7ed88c83a",
+      "unchanged": true
+    },
+    {
+      "file": "core/atracdenc-master/src/CMakeLists.txt",
+      "sha256": "13932939a6590178e94ff6694026b16dceffd59f2d4bdcaeb4cc8617b8b28c26",
+      "unchanged": true
+    },
+    {
+      "file": "core/atracdenc-master/src/compressed_io.h",
+      "sha256": "7d02783971cea016addeef4ab2efd6e0cf05e7076e240b08cda8f1bcd5153e6d",
+      "unchanged": true
+    },
+    {
+      "file": "core/atracdenc-master/src/config.h",
+      "sha256": "518b8b16f8af07b26aeed992f8a6f57b7cf910263342d16cc319c0dd9dbc88be",
+      "unchanged": true
+    },
+    {
+      "file": "core/atracdenc-master/src/delay_buffer.h",
+      "sha256": "1916a3f83a9fad5f8da628d1bab05a6f564ceea832cf9ef3a4388f125a426f23",
+      "unchanged": true
+    },
+    {
+      "file": "core/atracdenc-master/src/env.cpp",
+      "sha256": "4ae88cd7af5508bda0158840bc25959b3be3dda40f1b4d570ed6e526b9b2b909",
+      "unchanged": true
+    },
+    {
+      "file": "core/atracdenc-master/src/env.h",
+      "sha256": "897745e4b9edf428b6edc1b2361e1dd05679fa4f36d1df0d41654c15984a7994",
+      "unchanged": true
+    },
+    {
+      "file": "core/atracdenc-master/src/file.h",
+      "sha256": "3d7e4c103791a16c5b5aa992ec81a6596f414a37aab5b7aaef65421ab3792052",
+      "unchanged": true
+    },
+    {
+      "file": "core/atracdenc-master/src/gain_processor.h",
+      "sha256": "8bbdce08c7b0f2bbed2223a5eff98db506812b9b929efa74f2f56c62eff963f9",
+      "unchanged": true
+    },
+    {
+      "file": "core/atracdenc-master/src/gain_processor_ut.cpp",
+      "sha256": "41525e8a5ed099eb58b2530e004d99602803eb2d796e601268cd83e939722244",
+      "unchanged": true
+    },
+    {
+      "file": "core/atracdenc-master/src/help.cpp",
+      "sha256": "b0000c353dacdb349813ac91fa4ce26c9cec4783461335f11f28a22b65b2dfba",
+      "unchanged": true
+    },
+    {
+      "file": "core/atracdenc-master/src/help.h",
+      "sha256": "414ed204dbe1adaefe48dae6cbbcb13da6d4886fa2dedaace74bf5ef308ee103",
+      "unchanged": true
+    },
+    {
+      "file": "core/atracdenc-master/src/lib/bitstream/bitstream.cpp",
+      "sha256": "4182dc42950cf04660a9a23fb60ff9737cf8714766ab8644b64ecf50bebdc9bd",
+      "unchanged": true
+    },
+    {
+      "file": "core/atracdenc-master/src/lib/bitstream/bitstream.h",
+      "sha256": "d68461d11fca762bcf9614f2f44b24ef980017947199f2bd0afe102d8d3857f1",
+      "unchanged": true
+    },
+    {
+      "file": "core/atracdenc-master/src/lib/bitstream/bitstream_ut.cpp",
+      "sha256": "e2c42a992c28da1d577dbe1fcbb8afeeffec843fa8a5e8d362042e193677f30c",
+      "unchanged": true
+    },
+    {
+      "file": "core/atracdenc-master/src/lib/bs_encode/encode.cpp",
+      "sha256": "edae94be49d4015c5aa4f5f8c59aa774c2445be0256be5693367a38c349eb282",
+      "unchanged": true
+    },
+    {
+      "file": "core/atracdenc-master/src/lib/bs_encode/encode.h",
+      "sha256": "7e53ab586f86283965d6511eb7372d4afa986c065f14ddbdf43a83489b5d3a24",
+      "unchanged": true
+    },
+    {
+      "file": "core/atracdenc-master/src/lib/bs_encode/encode_ut.cpp",
+      "sha256": "2378afc4e7cc396b3e62ad69d921ba47298e46b19da4015db041bc6f7fcc4051",
+      "unchanged": true
+    },
+    {
+      "file": "core/atracdenc-master/src/lib/endian_tools.h",
+      "sha256": "c5deae63e02450f5ac175eebcb70cb15d96b4fd4ebbaf7bcdba78b509c05e61a",
+      "unchanged": true
+    },
+    {
+      "file": "core/atracdenc-master/src/lib/fft/kissfft_impl/_kiss_fft_guts.h",
+      "sha256": "6cb852500622172409927f3c1f7e83166aa94a842953a50c5be5af793913fd6c",
+      "unchanged": true
+    },
+    {
+      "file": "core/atracdenc-master/src/lib/fft/kissfft_impl/kiss_fft.c",
+      "sha256": "f5d910af5294857807174e4eec2b30da3ac37bea8cab4cf0f15dfd4ba933ff31",
+      "unchanged": true
+    },
+    {
+      "file": "core/atracdenc-master/src/lib/fft/kissfft_impl/kiss_fft.h",
+      "sha256": "9cb0822143fb16b421ebcfba6f2e967d2363fc20c4dd1287b81cb8b517eea607",
+      "unchanged": true
+    },
+    {
+      "file": "core/atracdenc-master/src/lib/fft/kissfft_impl/tools/kiss_fftr.c",
+      "sha256": "e4ae2426be543510ae4e9f4f2f45f2a0ccb4c587540f8d3363a1dd96fc4dea51",
+      "unchanged": true
+    },
+    {
+      "file": "core/atracdenc-master/src/lib/fft/kissfft_impl/tools/kiss_fftr.h",
+      "sha256": "323b6d16df36eb79f27bf5910d408af6afb463600d97c14fad754466c31da7de",
+      "unchanged": true
+    },
+    {
+      "file": "core/atracdenc-master/src/lib/liboma/include/oma.h",
+      "sha256": "bd23eafda2d80d23ac35df9053786fa6508a461e4628a93a88381992126ad962",
+      "unchanged": true
+    },
+    {
+      "file": "core/atracdenc-master/src/lib/liboma/src/liboma.c",
+      "sha256": "0d299f82c586cf2255f28a9abce12bb18e867f866ba0d4afed04a56efdd40f3c",
+      "unchanged": true
+    },
+    {
+      "file": "core/atracdenc-master/src/lib/liboma/src/tools/omacp.c",
+      "sha256": "26c54a4dad0927a5f79cbc327cda36ee82006fb555509c73915afc22d633066a",
+      "unchanged": true
+    },
+    {
+      "file": "core/atracdenc-master/src/lib/liboma/src/tools/omainfo.c",
+      "sha256": "b89dbde0a55e31e5301278fe52da62f9ef78ed6179b1593c3d846f2db10c667b",
+      "unchanged": true
+    },
+    {
+      "file": "core/atracdenc-master/src/lib/mdct/common.h",
+      "sha256": "3756739a126f5f1f795cde24252b54a1067e181018ee39dbe1d0879c0166dcc7",
+      "unchanged": true
+    },
+    {
+      "file": "core/atracdenc-master/src/lib/mdct/dct.h",
+      "sha256": "860b60440f86dca89459d7d215b3d048a12f8cfd7b9eb25a6f51dabd10a3ce47",
+      "unchanged": true
+    },
+    {
+      "file": "core/atracdenc-master/src/lib/mdct/mdct.cpp",
+      "sha256": "3e204f34ac14e7ce75f025c47fe2633f7c0c2fca927f93c16ababdd8f2b6b728",
+      "unchanged": true
+    },
+    {
+      "file": "core/atracdenc-master/src/lib/mdct/mdct.h",
+      "sha256": "dac80fc7c0252b79f1d48dcf265b50243e507ead596d75a3d446a0e17c338953",
+      "unchanged": true
+    },
+    {
+      "file": "core/atracdenc-master/src/lib/mdct/mdct_ut.cpp",
+      "sha256": "5cac859718b3fe89f7108374d687cef6532598c32d6fb31b193fcb55bee88abf",
+      "unchanged": true
+    },
+    {
+      "file": "core/atracdenc-master/src/lib/mdct/mdct_ut_common.h",
+      "sha256": "3291da40aec2beddedcb8c4cb1b34554910562c1df2e97e928a5a8ecc9a4a2c6",
+      "unchanged": true
+    },
+    {
+      "file": "core/atracdenc-master/src/main.cpp",
+      "sha256": "b93d972ac737f4ede1c7b35b1b0862ea88aef981394437a0eb521cf660f80f17",
+      "unchanged": true
+    },
+    {
+      "file": "core/atracdenc-master/src/oma.cpp",
+      "sha256": "c2943e717622815371cb26a6fdf90d75c228b2aa7e8362c40417eb9077900f46",
+      "unchanged": true
+    },
+    {
+      "file": "core/atracdenc-master/src/oma.h",
+      "sha256": "2fe0f46ceb7b3704b4279e86326ab5f3d06e89b3055cbae5842461fa0f69fa01",
+      "unchanged": true
+    },
+    {
+      "file": "core/atracdenc-master/src/pcm_io_sndfile.cpp",
+      "sha256": "64ea5bbfdf3b2213a830aa1bcd60e3e4bcbb3adc94798434ccc340e5465e401d",
+      "unchanged": true
+    },
+    {
+      "file": "core/atracdenc-master/src/pcmengin.h",
+      "sha256": "d58b3e91fe3e2dee001b8f5c2b712a507062a54802e789a00fe171c349ee2e2d",
+      "unchanged": true
+    },
+    {
+      "file": "core/atracdenc-master/src/platform/win/getopt/getopt.h",
+      "sha256": "36a96cab3c824e2a5fe0cc627013ce7a03310d1059585b31e16ca334b926381c",
+      "unchanged": true
+    },
+    {
+      "file": "core/atracdenc-master/src/platform/win/pcm_io/mf/pcm_io_mf.cpp",
+      "sha256": "525fcfff4299c6ed939de0ed4a9d1c03ee57797cf43ac0501381c247b32f4017",
+      "unchanged": true
+    },
+    {
+      "file": "core/atracdenc-master/src/platform/win/pcm_io/mf/pcm_io_mf.h",
+      "sha256": "df981f96ea4349fc18271859afaed8d09174eb644a484cf499545f296a5acc6c",
+      "unchanged": true
+    },
+    {
+      "file": "core/atracdenc-master/src/platform/win/pcm_io/pcm_io.cpp",
+      "sha256": "56251380ae743c20aac4ad3f3354fae59cce2011e8640aad8755d418bac43dd8",
+      "unchanged": true
+    },
+    {
+      "file": "core/atracdenc-master/src/platform/win/pcm_io/pcm_io_impl.h",
+      "sha256": "56c29572518c23149fd024b9f626c27a6942992afd5f10eee8ab01acd3ddbe30",
+      "unchanged": true
+    },
+    {
+      "file": "core/atracdenc-master/src/platform/win/pcm_io/win32/pcm_io_win32.cpp",
+      "sha256": "afc403a8789a69c877876adf63f73f6e58aae82bfaacdd1fb0111b88835f3437",
+      "unchanged": true
+    },
+    {
+      "file": "core/atracdenc-master/src/platform/win/pcm_io/win32/pcm_io_win32.h",
+      "sha256": "bbe77d9daee575b7278396388620f946d80e361445b20a0f153572d20bec8e2e",
+      "unchanged": true
+    },
+    {
+      "file": "core/atracdenc-master/src/qmf/qmf.cpp",
+      "sha256": "eec9973719e36405f77b8fdf709e28bf830e69bd7fbf29771d158630972a78a4",
+      "unchanged": true
+    },
+    {
+      "file": "core/atracdenc-master/src/qmf/qmf.h",
+      "sha256": "432f268327b07c49509f877d6ca2e99545819ac9ff5395638b44253135886e3e",
+      "unchanged": true
+    },
+    {
+      "file": "core/atracdenc-master/src/raw.cpp",
+      "sha256": "6ed16cb9abf154e0dd8d1cc79b789cca9f7ff58529f726b5d13f3dda783f66d4",
+      "unchanged": true
+    },
+    {
+      "file": "core/atracdenc-master/src/raw.h",
+      "sha256": "c2ad9af67de7952dee0579456410dcdb9928b9a4b9994c97023dcbbbca4f47f2",
+      "unchanged": true
+    },
+    {
+      "file": "core/atracdenc-master/src/rm.cpp",
+      "sha256": "699ef1587bf4fa3c9e69d3111b58c41fb4574d64095c65d7b59056e434382e76",
+      "unchanged": true
+    },
+    {
+      "file": "core/atracdenc-master/src/rm.h",
+      "sha256": "2c2d0e44f4c3eedf82fa8a99a13045e893295d6d815368dc7304345e75595f08",
+      "unchanged": true
+    },
+    {
+      "file": "core/atracdenc-master/src/transient_detector.cpp",
+      "sha256": "43835e070685a0553e5660aebc1f568160d58414d54c1c70f7f11160dd7ec363",
+      "unchanged": true
+    },
+    {
+      "file": "core/atracdenc-master/src/transient_detector.h",
+      "sha256": "587523894bc234703e9cb84b02a11501b40b22e28748b72f85fb019ad62dff3b",
+      "unchanged": true
+    },
+    {
+      "file": "core/atracdenc-master/src/transient_detector_ut.cpp",
+      "sha256": "5a5de14a8327164c1fae794527ef546c959cc6131db33f5bb3a00553b1f2ef27",
+      "unchanged": true
+    },
+    {
+      "file": "core/atracdenc-master/src/transient_spectral_upsampler.cpp",
+      "sha256": "dfaaa48f191a8e1c84795381384e89a28ec9e441979c232ab5104cfb5f2ee740",
+      "unchanged": true
+    },
+    {
+      "file": "core/atracdenc-master/src/transient_spectral_upsampler.h",
+      "sha256": "6d24c1a04243600bc2bc3866f845e3b4c9cff76257c88fef38916c27bf02e6a7",
+      "unchanged": true
+    },
+    {
+      "file": "core/atracdenc-master/src/transient_spectral_upsampler_ut.cpp",
+      "sha256": "db8e8ad4727cc316cbaef7d4af07031f9da2366717cc55ccb1ce436a36c4a3fd",
+      "unchanged": true
+    },
+    {
+      "file": "core/atracdenc-master/src/utf8_file.h",
+      "sha256": "ea0444b26538260733a437dbfa116e3f2a93e250dbd12df8860929208de23ecf",
+      "unchanged": true
+    },
+    {
+      "file": "core/atracdenc-master/src/util.h",
+      "sha256": "c5b261b40148eace22e57a137b95d0859d3984ed56ff962dcc6b157badad5156",
+      "unchanged": true
+    },
+    {
+      "file": "core/atracdenc-master/src/util_ut.cpp",
+      "sha256": "3ba4026c7c9df0fcc910a50ceeb5e2705f0bb3d43a44f551dca1a041319d8f46",
+      "unchanged": true
+    },
+    {
+      "file": "core/atracdenc-master/src/wav.cpp",
+      "sha256": "538e5baca98c4be6e89c64edf1069009a2a4a9c9e86401b1f3a81b68210567a2",
+      "unchanged": true
+    },
+    {
+      "file": "core/atracdenc-master/src/wav.h",
+      "sha256": "ef2b5f0be2b1babe97937af5c2983eebaa98ba9a455bda156235370fe544e028",
+      "unchanged": true
+    },
+    {
+      "file": "core/atracdenc-master/src/yaml_log.h",
+      "sha256": "731fc64ba678888c53a98ef35205f978c9f12ce583abb3881452099e385cae94",
+      "unchanged": true
+    },
+    {
+      "file": "core/atracdenc-master/test/CMakeLists.txt",
+      "sha256": "07f9913e98c7a51744c2d3459e83f370e967f3953f0bddec9ad06ccdc4b8647d",
+      "unchanged": true
+    },
+    {
+      "file": "core/atracdenc-master/test/integration/input_file_tests.py",
+      "sha256": "c744b9fde4cca0a7c066344bef25402bc3f75c7c0a39d272d85e27acf901e765",
+      "unchanged": true
+    },
+    {
+      "file": "core/atracdenc-master/test/quality/.gitignore",
+      "sha256": "32dae3052f331ee34d628ef535709b301259a45df7c7522c4d35dcf49873f00b",
+      "unchanged": true
+    },
+    {
+      "file": "core/atracdenc-master/test/quality/atrac_quality.py",
+      "sha256": "d3102c7154a7d59111b418ba6d65671a99c8048c05e5667f03077ad3bff82310",
+      "unchanged": true
+    },
+    {
+      "file": "core/atracdenc-master/tools/package-msys2-runtime.sh",
+      "sha256": "3ed3f851298d0aa3f4c945a5d6df2e99b66cef372bfa3c1214eaaecc82e23ae8",
+      "unchanged": true
+    },
+    {
+      "file": "core/core_adapter.cpp",
+      "sha256": "b94b5b1fbeb80a27476602ead690827e43fb923a81a33512bc9ef88d77efda0d",
+      "unchanged": true
+    },
+    {
+      "file": "core/independent_fixed_qmf.cpp",
+      "sha256": "77c867346b2511ddee41951078660baeb23d997f3c1c69080e52f0fda221419d",
+      "unchanged": true
+    },
+    {
+      "file": "core/independent_fixed_qmf.h",
+      "sha256": "60a6b8e709ce5b441e1a2aa31b8ddc40040e420e347815a2ea9cc44e8ed5f2f3",
+      "unchanged": true
+    },
+    {
+      "file": "core/independent_fixed_transform.cpp",
+      "sha256": "fe0a06e5a8484ae204e068f9ad94747d64dd271f3312c3024349d73ad7ea7e18",
+      "unchanged": true
+    },
+    {
+      "file": "core/independent_fixed_transform.h",
+      "sha256": "117cb73ee91492f6ec80df3a3c36cd562074c420aabefbd575f0151989e3ead2",
+      "unchanged": true
+    },
+    {
+      "file": "core/independent_fixed_transform_tables.inc",
+      "sha256": "7df9dfb50613615499c7e15c9e1cf56c75eb561aabf3a7d968bda4fa263f6341",
+      "unchanged": true
+    },
+    {
+      "file": "core/plus/dequant/independent_plus_dequant.cpp",
+      "sha256": "b344ff9dc5f3893e4c5ee140d4b1d268387c03c5fb255cd0dcd22f3e2ddac2bc",
+      "unchanged": true
+    },
+    {
+      "file": "core/plus/dequant/independent_plus_dequant.h",
+      "sha256": "bd5a1b8f5d377a36faf050b9150856efdc3271cdc9af98de0afb07b4dd9302f6",
+      "unchanged": true
+    },
+    {
+      "file": "core/plus/dequant/independent_plus_dequant_tables.inc",
+      "sha256": "f921c7a80fdac078d58516841c31aba289e48ead3cbadb57a9b3d7080140823b",
+      "unchanged": true
+    },
+    {
+      "file": "core/plus/fixed_plus_predictor.cpp",
+      "sha256": "7b3296f0a62f13cbabe6f3ffacfde1f5f8016465362c91aec0cfd25d7cd6dad4",
+      "unchanged": true
+    },
+    {
+      "file": "core/plus/fixed_plus_predictor.hpp",
+      "sha256": "8e235e61bb85cc1acefbb05551e76695ce2d1141513e84c8e5a3489f92f2a3db",
+      "unchanged": true
+    },
+    {
+      "file": "core/plus/imdct/independent_plus_transform.cpp",
+      "sha256": "7bcd408a1bf29e971a01a6759b0b28150ea216e81cc6ed039624476e582f9c03",
+      "unchanged": true
+    },
+    {
+      "file": "core/plus/imdct/independent_plus_transform.h",
+      "sha256": "ca0bc73ab985bc5b2345f6c1233a82adac326f26f66696c277adfb7738b4c325",
+      "unchanged": true
+    },
+    {
+      "file": "core/plus/imdct/plus_transform_tables.inc",
+      "sha256": "fe64469c3d35d27f8239446d00bfa90d3d50fe6efdeaa8c51bfa11efd366eb9c",
+      "unchanged": true
+    },
+    {
+      "file": "core/plus/ipqf/independent_plus_ipqf.cpp",
+      "sha256": "6dc4166634eaa396c745378f64142446320d973e2fb9af7a4412703d2d43f1c5",
+      "unchanged": true
+    },
+    {
+      "file": "core/plus/ipqf/independent_plus_ipqf.h",
+      "sha256": "be3c7850fb5e16ffbe9dab39cc6331cf57283b298e15d2860ba71215fad3505f",
+      "unchanged": true
+    },
+    {
+      "file": "core/plus/ipqf/independent_plus_ipqf_tables.inc",
+      "sha256": "e3d25a03b56d5027b77b8c10df77f61f4d209c12aadf59f7124df3fa18175abf",
+      "unchanged": true
+    },
+    {
+      "file": "core/plus/parser/plus_core_parser.cpp",
+      "sha256": "7473cd9ad4d19ed1795be88ff63763b11168ee2c2795dc97dbd78500c118a07f",
+      "unchanged": true
+    },
+    {
+      "file": "core/plus/parser/plus_core_parser.h",
+      "sha256": "e5e2b707297105172278c4cba143c891ec7c8f0434d572677cda1fe8ef3853b0",
+      "unchanged": true
+    },
+    {
+      "file": "core/plus/plus_core_adapter.cpp",
+      "sha256": "30cfa0eee7f7ba6de985ef629a0c73972f87a99a9ec72867ac04fa6721c62e99",
+      "unchanged": true
+    },
+    {
+      "file": "core/plus/plus_core_adapter.h",
+      "sha256": "b7e3148878a0488d421719ed5cdc0abdb8019a2d224407660862440ceeed4478",
+      "unchanged": true
+    },
+    {
+      "file": "include/independent_aal.h",
+      "sha256": "3ede578316a6244a84dda06cd95ccae04b36ba920078646a23bc4fa0c6a06cfa",
+      "unchanged": true
+    },
+    {
+      "file": "src/aal_format.hpp",
+      "sha256": "076352166a60777a71ca3b967b61ad9a7746be227dad1fa76c49ffccac4a5d85",
+      "unchanged": true
+    },
+    {
+      "file": "src/c_api.cpp",
+      "sha256": "fc19636316aeb7fd142a068564339cb6f4f23a28ea6d5a86df019e5005f5cf96",
+      "unchanged": true
+    },
+    {
+      "file": "src/cli.cpp",
+      "sha256": "2fada1146d7bc44fc3453eb0ce3106fe69a69ef7d0031a9a395ee2cfd4f22a5f",
+      "only_branding_or_comment_change": true
+    },
+    {
+      "file": "src/codec_profiles.hpp",
+      "sha256": "97e7ac079741101dc7b484ef7a4ddcae10d117bee149f1de552c5fa9aa80091d",
+      "unchanged": true
+    },
+    {
+      "file": "src/core_spectrum.hpp",
+      "sha256": "3a97397cbb51a4d6c1bcc65a00a8b8e9c477ba376fbd89a22309cc941af42e10",
+      "unchanged": true
+    },
+    {
+      "file": "src/dequant_tables.inc",
+      "sha256": "6c48065e04aeb4a694da3f6bcbc00fabcd202c995a72cf48c6e8c48fd0fffe53",
+      "unchanged": true
+    },
+    {
+      "file": "src/encoder.cpp",
+      "sha256": "3c803295beb91787db17c3d62a102589ef81e3967f032a8e69b8226eaaf51e81",
+      "only_branding_or_comment_change": true
+    },
+    {
+      "file": "src/encoder_api.hpp",
+      "sha256": "937302a6c2006d46f870a9f41a1f635a4578ca0bc8283257d127d217a50f0aa4",
+      "unchanged": true
+    },
+    {
+      "file": "src/native_gui.cpp",
+      "sha256": "784d414e1d639805b61ebd37adf28fe52b64222eb443e06b6734df03cb4c5b22",
+      "gui_only_localization_and_test_label_change": true
+    },
+    {
+      "file": "src/platform_io.hpp",
+      "sha256": "ede864d8b43abc7068e88ed629b5fd46af548e09b35c1c58d37d197464effe47",
+      "unchanged": true
+    },
+    {
+      "file": "src/predictor.hpp",
+      "sha256": "eba32bcdb7b4269d65dc38f8114df7beb98f9d7d6384ea568336ecfd4c2674be",
+      "unchanged": true
+    },
+    {
+      "file": "src/sha256.hpp",
+      "sha256": "33a18b48b69e7693a2927796871786751cdb065ee5217dec1a49f6264ce003cc",
+      "unchanged": true
+    },
+    {
+      "file": "src/gui_i18n.hpp",
+      "sha256": "b8d67a2130dc732518f0bf046ac33e208fdc6dfa24656a30d5ed07ef1e776316",
+      "new_gui_only_language_helper": true
+    }
+  ],
+  "offline_checks": [
+    {
+      "program": "atracdenc-aal.exe",
+      "passed": true,
+      "stdout": "PASS aal3-132 pcm_sha256=8b317fc60a72bbb6fc7ec8b50345a63e3cdbc0aa8a5453bab53341c53ce5a31a\nPASS aalp-48 pcm_sha256=8b317fc60a72bbb6fc7ec8b50345a63e3cdbc0aa8a5453bab53341c53ce5a31a\nPASS aalp-64 pcm_sha256=8b317fc60a72bbb6fc7ec8b50345a63e3cdbc0aa8a5453bab53341c53ce5a31a\nPASS aalp-96 pcm_sha256=8b317fc60a72bbb6fc7ec8b50345a63e3cdbc0aa8a5453bab53341c53ce5a31a\nPASS aalp-128 pcm_sha256=8b317fc60a72bbb6fc7ec8b50345a63e3cdbc0aa8a5453bab53341c53ce5a31a\nPASS aalp-160 pcm_sha256=8b317fc60a72bbb6fc7ec8b50345a63e3cdbc0aa8a5453bab53341c53ce5a31a\nPASS aalp-192 pcm_sha256=8b317fc60a72bbb6fc7ec8b50345a63e3cdbc0aa8a5453bab53341c53ce5a31a\nPASS aalp-256 pcm_sha256=8b317fc60a72bbb6fc7ec8b50345a63e3cdbc0aa8a5453bab53341c53ce5a31a\nPASS aalp-320 pcm_sha256=8b317fc60a72bbb6fc7ec8b50345a63e3cdbc0aa8a5453bab53341c53ce5a31a\nPASS aalp-352 pcm_sha256=8b317fc60a72bbb6fc7ec8b50345a63e3cdbc0aa8a5453bab53341c53ce5a31a\n"
+    },
+    {
+      "program": "aal-conformance.exe",
+      "passed": true,
+      "stdout": "PASS: 3017 official enhancement packets, 5855736 payload bytes and all padding fields are exact.\n"
+    },
+    {
+      "program": "aal-conformance.exe",
+      "passed": true,
+      "stdout": "PASS: 1566 official enhancement packets, 4071400 payload bytes and all padding fields are exact.\n"
+    },
+    {
+      "program": "aal-c-api-test.exe",
+      "passed": true,
+      "stdout": "PASS: C ABI, 10 profiles, default AALP352, headers, PCM hashes, cancellation and invalid input\n"
+    }
+  ],
+  "baseline_cases_reencoded": 122,
+  "profiles": [
+    "aal3-132",
+    "aalp-128",
+    "aalp-160",
+    "aalp-192",
+    "aalp-256",
+    "aalp-320",
+    "aalp-352",
+    "aalp-48",
+    "aalp-64",
+    "aalp-96"
+  ],
+  "all_reencoded_oma_bytes_identical_to_validated_predecessor": true,
+  "sony_invoked_during_branding_checks": false,
+  "interpretation": "Current OMA hashes match the same 122 baseline outputs already decoded sample-exactly by Sony. This is output-equivalence evidence, not a second Sony decoder run.",
+  "binaries": [
+    {
+      "file": "atracdenc-aal.exe",
+      "bytes": 1009664,
+      "sha256": "2148a4bc1379b033ad042e4fd997df184d23c4b46904d2b2137e0d260694750c",
+      "compiled": true,
+      "executed": true
+    },
+    {
+      "file": "AtracDEnc-AAL-GUI.exe",
+      "bytes": 1075712,
+      "sha256": "efce83f0693981dce527db238a49e83314591fa900943d51c3deba36d0458f6c",
+      "compiled": true,
+      "executed": false
+    },
+    {
+      "file": "atracdenc-aal-aarch64-macos",
+      "bytes": 986936,
+      "sha256": "2cf7c4557a2b3eca6c94e507a1aa3fa16189bc2faf2b312756b68baf5598baf1",
+      "compiled": true,
+      "executed": false
+    },
+    {
+      "file": "atracdenc-aal-x86_64-macos",
+      "bytes": 918029,
+      "sha256": "1a7231be22cad45efa86adcce9befbcfc225df8c4606a5b47778fa7a633619ae",
+      "compiled": true,
+      "executed": false
+    }
+  ],
+  "cases": [
+    {
+      "case": "default-profile-odd-junk",
+      "profile": "aalp-352",
+      "frames": 4097,
+      "oma_sha256": "8efc841932f672f33a3f6811ab96375069f62f582e524f6517f0b0fb05caa609",
+      "same_oma_bytes_as_sony_decoded_baseline": true,
+      "current_metadata_brand_correct": true,
+      "internal_pcm_exact": true
+    },
+    {
+      "case": "aalp-192--native-cap-regression",
+      "profile": "aalp-192",
+      "frames": 8192,
+      "oma_sha256": "5cb171e4682fffa5cf27d1bacd1734e1ec71ee71a3681744c98dd0d57e5fe32c",
+      "same_oma_bytes_as_sony_decoded_baseline": true,
+      "current_metadata_brand_correct": true,
+      "internal_pcm_exact": true
+    },
+    {
+      "case": "aalp-352--silence",
+      "profile": "aalp-352",
+      "frames": 4097,
+      "oma_sha256": "8571e49cd2134d445149b5cbd0f2c447ef52278839afd3bb194194a84144f148",
+      "same_oma_bytes_as_sony_decoded_baseline": true,
+      "current_metadata_brand_correct": true,
+      "internal_pcm_exact": true
+    },
+    {
+      "case": "aalp-352--noise",
+      "profile": "aalp-352",
+      "frames": 4097,
+      "oma_sha256": "c81e35c348ffb9eca3da2ff1152d006fe93e7d69e6525025c89733cd66bee5a5",
+      "same_oma_bytes_as_sony_decoded_baseline": true,
+      "current_metadata_brand_correct": true,
+      "internal_pcm_exact": true
+    },
+    {
+      "case": "aalp-352--fullscale-impulses-alternating",
+      "profile": "aalp-352",
+      "frames": 4097,
+      "oma_sha256": "68f2c2e23339927194e6c64fa38f35f872afd3bc7df42bd6e583fae8b85e7441",
+      "same_oma_bytes_as_sony_decoded_baseline": true,
+      "current_metadata_brand_correct": true,
+      "internal_pcm_exact": true
+    },
+    {
+      "case": "aalp-352--low-level",
+      "profile": "aalp-352",
+      "frames": 4097,
+      "oma_sha256": "e626c540e2b8ff761d75393634c1b125441fc181274f1b8df0dfc22e435ebdf7",
+      "same_oma_bytes_as_sony_decoded_baseline": true,
+      "current_metadata_brand_correct": true,
+      "internal_pcm_exact": true
+    },
+    {
+      "case": "aalp-352--multitone-chirp",
+      "profile": "aalp-352",
+      "frames": 16384,
+      "oma_sha256": "af899f993e6f4b2091dbedc283139a1f7041dd6e22b37c551971f1d5fee84d74",
+      "same_oma_bytes_as_sony_decoded_baseline": true,
+      "current_metadata_brand_correct": true,
+      "internal_pcm_exact": true
+    },
+    {
+      "case": "aalp-352--speech-like",
+      "profile": "aalp-352",
+      "frames": 16384,
+      "oma_sha256": "1ed684c48065aa369a066a9c86bd12fb0e72d6030dda6c057b85c2c130b53342",
+      "same_oma_bytes_as_sony_decoded_baseline": true,
+      "current_metadata_brand_correct": true,
+      "internal_pcm_exact": true
+    },
+    {
+      "case": "aal3-132--silence",
+      "profile": "aal3-132",
+      "frames": 4097,
+      "oma_sha256": "c2d1df0a4399edcace5469f89f0b1d3d58ea31158b1b8e41f8ba3ad7bb16b820",
+      "same_oma_bytes_as_sony_decoded_baseline": true,
+      "current_metadata_brand_correct": true,
+      "internal_pcm_exact": true
+    },
+    {
+      "case": "aal3-132--noise",
+      "profile": "aal3-132",
+      "frames": 4097,
+      "oma_sha256": "8a31ac34d78734f8f515fc13d8da66196311fef3a39ad1030cd224ef85b5caa6",
+      "same_oma_bytes_as_sony_decoded_baseline": true,
+      "current_metadata_brand_correct": true,
+      "internal_pcm_exact": true
+    },
+    {
+      "case": "aal3-132--fullscale-impulses-alternating",
+      "profile": "aal3-132",
+      "frames": 4097,
+      "oma_sha256": "8466b55f0848e1833c5a6568813a5b943e7bb75941eeb20ce88bc385858b60fa",
+      "same_oma_bytes_as_sony_decoded_baseline": true,
+      "current_metadata_brand_correct": true,
+      "internal_pcm_exact": true
+    },
+    {
+      "case": "aal3-132--low-level",
+      "profile": "aal3-132",
+      "frames": 4097,
+      "oma_sha256": "99a08f99ca9ebf0ef5e3b55a87023fcce4a36c14c4f2c77611dd466c4b4b7524",
+      "same_oma_bytes_as_sony_decoded_baseline": true,
+      "current_metadata_brand_correct": true,
+      "internal_pcm_exact": true
+    },
+    {
+      "case": "aal3-132--multitone-chirp",
+      "profile": "aal3-132",
+      "frames": 16384,
+      "oma_sha256": "decf67f967c8cfa81d2a868577fa1151a8b1c0be7b02e8a9b3fad0d7181024e5",
+      "same_oma_bytes_as_sony_decoded_baseline": true,
+      "current_metadata_brand_correct": true,
+      "internal_pcm_exact": true
+    },
+    {
+      "case": "aal3-132--speech-like",
+      "profile": "aal3-132",
+      "frames": 16384,
+      "oma_sha256": "fecb1bbf03bc2a991b8c8473a814b39b7639b10a196a36ec7c75ad049bcc7656",
+      "same_oma_bytes_as_sony_decoded_baseline": true,
+      "current_metadata_brand_correct": true,
+      "internal_pcm_exact": true
+    },
+    {
+      "case": "aalp-48--silence",
+      "profile": "aalp-48",
+      "frames": 4097,
+      "oma_sha256": "21fd1f3164e58790ecdfe4df4f8d17003cd9d8f73b1cc262fc5ce8b133705c30",
+      "same_oma_bytes_as_sony_decoded_baseline": true,
+      "current_metadata_brand_correct": true,
+      "internal_pcm_exact": true
+    },
+    {
+      "case": "aalp-48--noise",
+      "profile": "aalp-48",
+      "frames": 4097,
+      "oma_sha256": "d3b41aaa5c6d95900c17c7116035897668aeb994630e9b10e43d9f778e771802",
+      "same_oma_bytes_as_sony_decoded_baseline": true,
+      "current_metadata_brand_correct": true,
+      "internal_pcm_exact": true
+    },
+    {
+      "case": "aalp-48--fullscale-impulses-alternating",
+      "profile": "aalp-48",
+      "frames": 4097,
+      "oma_sha256": "bc6b298516fc67c3e83b8ee6f37d8196ff691391a15de1d3793f4abd49f58a2c",
+      "same_oma_bytes_as_sony_decoded_baseline": true,
+      "current_metadata_brand_correct": true,
+      "internal_pcm_exact": true
+    },
+    {
+      "case": "aalp-48--low-level",
+      "profile": "aalp-48",
+      "frames": 4097,
+      "oma_sha256": "092d437decb3c51395e029e697f87093cc753ec7097ff404be85a30325aac67f",
+      "same_oma_bytes_as_sony_decoded_baseline": true,
+      "current_metadata_brand_correct": true,
+      "internal_pcm_exact": true
+    },
+    {
+      "case": "aalp-48--multitone-chirp",
+      "profile": "aalp-48",
+      "frames": 16384,
+      "oma_sha256": "9ebd3b5b16d789c11b8ead11c3ddce0124bc49663cc577f0a1af42908e8e9a0b",
+      "same_oma_bytes_as_sony_decoded_baseline": true,
+      "current_metadata_brand_correct": true,
+      "internal_pcm_exact": true
+    },
+    {
+      "case": "aalp-48--speech-like",
+      "profile": "aalp-48",
+      "frames": 16384,
+      "oma_sha256": "8597feda9b05785fea16dcaa6d5eb6a7dd4354d75761e0a75a93067348da4c11",
+      "same_oma_bytes_as_sony_decoded_baseline": true,
+      "current_metadata_brand_correct": true,
+      "internal_pcm_exact": true
+    },
+    {
+      "case": "aalp-64--silence",
+      "profile": "aalp-64",
+      "frames": 4097,
+      "oma_sha256": "158536b0a9f133290fe2e053516f30e240cc3596e5a0690c77cebbc6d8764a7f",
+      "same_oma_bytes_as_sony_decoded_baseline": true,
+      "current_metadata_brand_correct": true,
+      "internal_pcm_exact": true
+    },
+    {
+      "case": "aalp-64--noise",
+      "profile": "aalp-64",
+      "frames": 4097,
+      "oma_sha256": "6ce3b648addd62597c096ca2bb91ddc16f62d497602bcb234ac0b0209a210b92",
+      "same_oma_bytes_as_sony_decoded_baseline": true,
+      "current_metadata_brand_correct": true,
+      "internal_pcm_exact": true
+    },
+    {
+      "case": "aalp-64--fullscale-impulses-alternating",
+      "profile": "aalp-64",
+      "frames": 4097,
+      "oma_sha256": "9e96dea3ccb6719cad4111b0b54f4c94c877554087500ba7ba7f2ac89d858e92",
+      "same_oma_bytes_as_sony_decoded_baseline": true,
+      "current_metadata_brand_correct": true,
+      "internal_pcm_exact": true
+    },
+    {
+      "case": "aalp-64--low-level",
+      "profile": "aalp-64",
+      "frames": 4097,
+      "oma_sha256": "f9da77b13545cea6a1ae55ada5d074e928668247b102e6e4548a20c093eb4287",
+      "same_oma_bytes_as_sony_decoded_baseline": true,
+      "current_metadata_brand_correct": true,
+      "internal_pcm_exact": true
+    },
+    {
+      "case": "aalp-64--multitone-chirp",
+      "profile": "aalp-64",
+      "frames": 16384,
+      "oma_sha256": "93aea4e349ab4a23fe77b8ac1121e58cab17a6876b29d9b0603a86e2895c57e5",
+      "same_oma_bytes_as_sony_decoded_baseline": true,
+      "current_metadata_brand_correct": true,
+      "internal_pcm_exact": true
+    },
+    {
+      "case": "aalp-64--speech-like",
+      "profile": "aalp-64",
+      "frames": 16384,
+      "oma_sha256": "b2a8021f4f80a3c49d9c6c8f997da19d6ed6e252522ec13b8eaa2c9be7a87cf9",
+      "same_oma_bytes_as_sony_decoded_baseline": true,
+      "current_metadata_brand_correct": true,
+      "internal_pcm_exact": true
+    },
+    {
+      "case": "aalp-96--silence",
+      "profile": "aalp-96",
+      "frames": 4097,
+      "oma_sha256": "bb1b5bed1b44cac6d0d21916c8d237a01957ccdc71443d7030731fbaaed5b936",
+      "same_oma_bytes_as_sony_decoded_baseline": true,
+      "current_metadata_brand_correct": true,
+      "internal_pcm_exact": true
+    },
+    {
+      "case": "aalp-96--noise",
+      "profile": "aalp-96",
+      "frames": 4097,
+      "oma_sha256": "04a80c62c19630aafec11f29875c5ba8d011a0d019e5a23038b7b4d549565878",
+      "same_oma_bytes_as_sony_decoded_baseline": true,
+      "current_metadata_brand_correct": true,
+      "internal_pcm_exact": true
+    },
+    {
+      "case": "aalp-96--fullscale-impulses-alternating",
+      "profile": "aalp-96",
+      "frames": 4097,
+      "oma_sha256": "cce994e26cb812ae65b7574d932686124b8ea558695320ba80f4d6b5954606b8",
+      "same_oma_bytes_as_sony_decoded_baseline": true,
+      "current_metadata_brand_correct": true,
+      "internal_pcm_exact": true
+    },
+    {
+      "case": "aalp-96--low-level",
+      "profile": "aalp-96",
+      "frames": 4097,
+      "oma_sha256": "75ab323eeeb274890d4de4e2263bf52f68704885cd638a87b948097c23e49b21",
+      "same_oma_bytes_as_sony_decoded_baseline": true,
+      "current_metadata_brand_correct": true,
+      "internal_pcm_exact": true
+    },
+    {
+      "case": "aalp-96--multitone-chirp",
+      "profile": "aalp-96",
+      "frames": 16384,
+      "oma_sha256": "4069fc5f527cde555a5e41996a0f5451cf25ed2a6c07c353ef384523b9af30fd",
+      "same_oma_bytes_as_sony_decoded_baseline": true,
+      "current_metadata_brand_correct": true,
+      "internal_pcm_exact": true
+    },
+    {
+      "case": "aalp-96--speech-like",
+      "profile": "aalp-96",
+      "frames": 16384,
+      "oma_sha256": "628c1ca63ff4f0ada1bf43b9a171663cb0379f6f519590ab567d8a0eb99f1f0a",
+      "same_oma_bytes_as_sony_decoded_baseline": true,
+      "current_metadata_brand_correct": true,
+      "internal_pcm_exact": true
+    },
+    {
+      "case": "aalp-128--silence",
+      "profile": "aalp-128",
+      "frames": 4097,
+      "oma_sha256": "9b0ed42c10c58d293d97d44e00376a810509f2a74a2bc04263cacb74ebc3a33c",
+      "same_oma_bytes_as_sony_decoded_baseline": true,
+      "current_metadata_brand_correct": true,
+      "internal_pcm_exact": true
+    },
+    {
+      "case": "aalp-128--noise",
+      "profile": "aalp-128",
+      "frames": 4097,
+      "oma_sha256": "73fbb97ae4ffb3ab07f4f30d295f246b6b0cd012e64c9e252cd31e9ebc9ece42",
+      "same_oma_bytes_as_sony_decoded_baseline": true,
+      "current_metadata_brand_correct": true,
+      "internal_pcm_exact": true
+    },
+    {
+      "case": "aalp-128--fullscale-impulses-alternating",
+      "profile": "aalp-128",
+      "frames": 4097,
+      "oma_sha256": "77ea35ff08090ea214b9ae5c4144e5aed4a4f462c5f3b1e4ed586465d6e27309",
+      "same_oma_bytes_as_sony_decoded_baseline": true,
+      "current_metadata_brand_correct": true,
+      "internal_pcm_exact": true
+    },
+    {
+      "case": "aalp-128--low-level",
+      "profile": "aalp-128",
+      "frames": 4097,
+      "oma_sha256": "83bcc347ad31fdab469e78c6e2b668d9dcd7e03674ebb7db02457e8f9f13d4da",
+      "same_oma_bytes_as_sony_decoded_baseline": true,
+      "current_metadata_brand_correct": true,
+      "internal_pcm_exact": true
+    },
+    {
+      "case": "aalp-128--multitone-chirp",
+      "profile": "aalp-128",
+      "frames": 16384,
+      "oma_sha256": "3488a6818cce6e7e8d0fb507c7f2ea7d2bb0840ad298b81f733c367e1e69d01f",
+      "same_oma_bytes_as_sony_decoded_baseline": true,
+      "current_metadata_brand_correct": true,
+      "internal_pcm_exact": true
+    },
+    {
+      "case": "aalp-128--speech-like",
+      "profile": "aalp-128",
+      "frames": 16384,
+      "oma_sha256": "ad972cdbda31453fe6f481178ed1ca01993f3a75d6e5b8c99ce67a84e23ed79d",
+      "same_oma_bytes_as_sony_decoded_baseline": true,
+      "current_metadata_brand_correct": true,
+      "internal_pcm_exact": true
+    },
+    {
+      "case": "aalp-160--silence",
+      "profile": "aalp-160",
+      "frames": 4097,
+      "oma_sha256": "2ba1f53c5b1817fe6cee3e5b8905d24bc3589dd65bc58a820bb7dc5ad7dbaa6a",
+      "same_oma_bytes_as_sony_decoded_baseline": true,
+      "current_metadata_brand_correct": true,
+      "internal_pcm_exact": true
+    },
+    {
+      "case": "aalp-160--noise",
+      "profile": "aalp-160",
+      "frames": 4097,
+      "oma_sha256": "a9ddf80e056c60432b4155819ab240fd66a02d63a7f328134f22fb03e58fd6f8",
+      "same_oma_bytes_as_sony_decoded_baseline": true,
+      "current_metadata_brand_correct": true,
+      "internal_pcm_exact": true
+    },
+    {
+      "case": "aalp-160--fullscale-impulses-alternating",
+      "profile": "aalp-160",
+      "frames": 4097,
+      "oma_sha256": "782fa3da1c6845b29494fe8f8250fbc38805235f6fc57b154d50d4cbd05045d8",
+      "same_oma_bytes_as_sony_decoded_baseline": true,
+      "current_metadata_brand_correct": true,
+      "internal_pcm_exact": true
+    },
+    {
+      "case": "aalp-160--low-level",
+      "profile": "aalp-160",
+      "frames": 4097,
+      "oma_sha256": "1db2086b61de67597470def1537fe6ce58af64e1f440fe2a03b675c9f7cd4f5c",
+      "same_oma_bytes_as_sony_decoded_baseline": true,
+      "current_metadata_brand_correct": true,
+      "internal_pcm_exact": true
+    },
+    {
+      "case": "aalp-160--multitone-chirp",
+      "profile": "aalp-160",
+      "frames": 16384,
+      "oma_sha256": "ef1bc477d44e0d5ab455683d9f900b1f5943dd8432845b4258c8d44b3d361691",
+      "same_oma_bytes_as_sony_decoded_baseline": true,
+      "current_metadata_brand_correct": true,
+      "internal_pcm_exact": true
+    },
+    {
+      "case": "aalp-160--speech-like",
+      "profile": "aalp-160",
+      "frames": 16384,
+      "oma_sha256": "ccfd8b820a9e1d149d9729c44c4f5be21c1c01528e7021a73aa5fc95d2cc8f9e",
+      "same_oma_bytes_as_sony_decoded_baseline": true,
+      "current_metadata_brand_correct": true,
+      "internal_pcm_exact": true
+    },
+    {
+      "case": "aalp-192--silence",
+      "profile": "aalp-192",
+      "frames": 4097,
+      "oma_sha256": "397ef6890b90e24ac37f6d0c10638461b9d8ca812e5a4b19fe56262a9c6e9104",
+      "same_oma_bytes_as_sony_decoded_baseline": true,
+      "current_metadata_brand_correct": true,
+      "internal_pcm_exact": true
+    },
+    {
+      "case": "aalp-192--noise",
+      "profile": "aalp-192",
+      "frames": 4097,
+      "oma_sha256": "2e69abbf0f623f5bfc0bef8ff4bd3a42deb786e8406904c6cb1ed303905ab94c",
+      "same_oma_bytes_as_sony_decoded_baseline": true,
+      "current_metadata_brand_correct": true,
+      "internal_pcm_exact": true
+    },
+    {
+      "case": "aalp-192--fullscale-impulses-alternating",
+      "profile": "aalp-192",
+      "frames": 4097,
+      "oma_sha256": "fe684e7a427e0f1fbca1541d04d54f42e42ca00227496365cdab39d04ca96b53",
+      "same_oma_bytes_as_sony_decoded_baseline": true,
+      "current_metadata_brand_correct": true,
+      "internal_pcm_exact": true
+    },
+    {
+      "case": "aalp-192--low-level",
+      "profile": "aalp-192",
+      "frames": 4097,
+      "oma_sha256": "0b40bf7804ffd3a4d1f1dc5b7820b6cf2add5a8664f45c61832d292cf1ccaefc",
+      "same_oma_bytes_as_sony_decoded_baseline": true,
+      "current_metadata_brand_correct": true,
+      "internal_pcm_exact": true
+    },
+    {
+      "case": "aalp-192--multitone-chirp",
+      "profile": "aalp-192",
+      "frames": 16384,
+      "oma_sha256": "89fabcd6396929002da5548d06ca84fb34262d31085e89ea7acfa8ce8525b20f",
+      "same_oma_bytes_as_sony_decoded_baseline": true,
+      "current_metadata_brand_correct": true,
+      "internal_pcm_exact": true
+    },
+    {
+      "case": "aalp-192--speech-like",
+      "profile": "aalp-192",
+      "frames": 16384,
+      "oma_sha256": "27394db4e9db02afb4bbfb7dd035f6cafd234cc4fc7bfb6513d7b435d34eda44",
+      "same_oma_bytes_as_sony_decoded_baseline": true,
+      "current_metadata_brand_correct": true,
+      "internal_pcm_exact": true
+    },
+    {
+      "case": "aalp-256--silence",
+      "profile": "aalp-256",
+      "frames": 4097,
+      "oma_sha256": "cc5b1b48067bad0d8eb2aba12a3f4a18b9678b1ee8e2a4ebc0c0c19818a6c034",
+      "same_oma_bytes_as_sony_decoded_baseline": true,
+      "current_metadata_brand_correct": true,
+      "internal_pcm_exact": true
+    },
+    {
+      "case": "aalp-256--noise",
+      "profile": "aalp-256",
+      "frames": 4097,
+      "oma_sha256": "01483beb2d52d46a7e0c694ada1faec20d2c330443a5f4f2f3e0a30f50e9af4b",
+      "same_oma_bytes_as_sony_decoded_baseline": true,
+      "current_metadata_brand_correct": true,
+      "internal_pcm_exact": true
+    },
+    {
+      "case": "aalp-256--fullscale-impulses-alternating",
+      "profile": "aalp-256",
+      "frames": 4097,
+      "oma_sha256": "f67276c9acd0cb2008d549d74b05f403b00cbfd1f3abe31ea45b2f55599391db",
+      "same_oma_bytes_as_sony_decoded_baseline": true,
+      "current_metadata_brand_correct": true,
+      "internal_pcm_exact": true
+    },
+    {
+      "case": "aalp-256--low-level",
+      "profile": "aalp-256",
+      "frames": 4097,
+      "oma_sha256": "8f189071f3e9c5ac68af2f14a414a2436c2360f26559a4a9d018fec0db5b91f2",
+      "same_oma_bytes_as_sony_decoded_baseline": true,
+      "current_metadata_brand_correct": true,
+      "internal_pcm_exact": true
+    },
+    {
+      "case": "aalp-256--multitone-chirp",
+      "profile": "aalp-256",
+      "frames": 16384,
+      "oma_sha256": "651b8bc650487746e82da7cd6ff4981c1c81d254b9b1bbfd696c007f4c892ac8",
+      "same_oma_bytes_as_sony_decoded_baseline": true,
+      "current_metadata_brand_correct": true,
+      "internal_pcm_exact": true
+    },
+    {
+      "case": "aalp-256--speech-like",
+      "profile": "aalp-256",
+      "frames": 16384,
+      "oma_sha256": "e384fac6e8d5fcd59268f24a52002e3e3679a637ca3c5155d17fa26648a7583b",
+      "same_oma_bytes_as_sony_decoded_baseline": true,
+      "current_metadata_brand_correct": true,
+      "internal_pcm_exact": true
+    },
+    {
+      "case": "aalp-320--silence",
+      "profile": "aalp-320",
+      "frames": 4097,
+      "oma_sha256": "fe28b103391ad36b391c8fd27a37bd45b6ba6d03c7f6c163dbb71ddc5508f523",
+      "same_oma_bytes_as_sony_decoded_baseline": true,
+      "current_metadata_brand_correct": true,
+      "internal_pcm_exact": true
+    },
+    {
+      "case": "aalp-320--noise",
+      "profile": "aalp-320",
+      "frames": 4097,
+      "oma_sha256": "f6f145e1e5c8762c5c7b885d50a17668fa630365a38c193f61de008bf4ec232f",
+      "same_oma_bytes_as_sony_decoded_baseline": true,
+      "current_metadata_brand_correct": true,
+      "internal_pcm_exact": true
+    },
+    {
+      "case": "aalp-320--fullscale-impulses-alternating",
+      "profile": "aalp-320",
+      "frames": 4097,
+      "oma_sha256": "affaba6af818c0fbb9b52378af817b213fdebfc0a77d73ae1ae255129a43af14",
+      "same_oma_bytes_as_sony_decoded_baseline": true,
+      "current_metadata_brand_correct": true,
+      "internal_pcm_exact": true
+    },
+    {
+      "case": "aalp-320--low-level",
+      "profile": "aalp-320",
+      "frames": 4097,
+      "oma_sha256": "b7dc6abebffe676d52a2b8b0ec082a182c34e3041d33f61496abcf137a5364c3",
+      "same_oma_bytes_as_sony_decoded_baseline": true,
+      "current_metadata_brand_correct": true,
+      "internal_pcm_exact": true
+    },
+    {
+      "case": "aalp-320--multitone-chirp",
+      "profile": "aalp-320",
+      "frames": 16384,
+      "oma_sha256": "6b32d75263429fef241a16ff2b547f3a951b3c284bd4afec420abcf9ef67fc34",
+      "same_oma_bytes_as_sony_decoded_baseline": true,
+      "current_metadata_brand_correct": true,
+      "internal_pcm_exact": true
+    },
+    {
+      "case": "aalp-320--speech-like",
+      "profile": "aalp-320",
+      "frames": 16384,
+      "oma_sha256": "52d21ddbc42aa278700d7ed5ab1700d7016d4bec10d5b159d4eb74ed81ad6615",
+      "same_oma_bytes_as_sony_decoded_baseline": true,
+      "current_metadata_brand_correct": true,
+      "internal_pcm_exact": true
+    },
+    {
+      "case": "aalp-352--boundary-1",
+      "profile": "aalp-352",
+      "frames": 1,
+      "oma_sha256": "6fc1a39465502ffc136c362a7fd4d8ccebbb9397ae958a1929d5b551a6617cb9",
+      "same_oma_bytes_as_sony_decoded_baseline": true,
+      "current_metadata_brand_correct": true,
+      "internal_pcm_exact": true
+    },
+    {
+      "case": "aalp-352--boundary-367",
+      "profile": "aalp-352",
+      "frames": 367,
+      "oma_sha256": "85f886f0a35d831f9b66c44cf636379a7fe0554e3aa099d05b9bcb1bcf2df878",
+      "same_oma_bytes_as_sony_decoded_baseline": true,
+      "current_metadata_brand_correct": true,
+      "internal_pcm_exact": true
+    },
+    {
+      "case": "aalp-352--boundary-368",
+      "profile": "aalp-352",
+      "frames": 368,
+      "oma_sha256": "6725fd0fb3f034483d36a19186f8c977252cc34867b9e7e68829b851277896c7",
+      "same_oma_bytes_as_sony_decoded_baseline": true,
+      "current_metadata_brand_correct": true,
+      "internal_pcm_exact": true
+    },
+    {
+      "case": "aalp-352--boundary-369",
+      "profile": "aalp-352",
+      "frames": 369,
+      "oma_sha256": "231901975ddfd043bc7a850656eb504f58617ec09e1fb30d5c5bb436342d2392",
+      "same_oma_bytes_as_sony_decoded_baseline": true,
+      "current_metadata_brand_correct": true,
+      "internal_pcm_exact": true
+    },
+    {
+      "case": "aalp-352--boundary-1679",
+      "profile": "aalp-352",
+      "frames": 1679,
+      "oma_sha256": "d9fcafa6c85ae243230b8affe4cf0dfa6ad4c623e52e584768da44d73887bc1b",
+      "same_oma_bytes_as_sony_decoded_baseline": true,
+      "current_metadata_brand_correct": true,
+      "internal_pcm_exact": true
+    },
+    {
+      "case": "aalp-352--boundary-1680",
+      "profile": "aalp-352",
+      "frames": 1680,
+      "oma_sha256": "fe81e915d35f86250b70c2921640436f60274ab75b26fe94077158a07accdc51",
+      "same_oma_bytes_as_sony_decoded_baseline": true,
+      "current_metadata_brand_correct": true,
+      "internal_pcm_exact": true
+    },
+    {
+      "case": "aalp-352--boundary-1681",
+      "profile": "aalp-352",
+      "frames": 1681,
+      "oma_sha256": "0e996e9a308f6e0b919f5a09207bfbc060ff1dca1a7a7e67da28927cf869db95",
+      "same_oma_bytes_as_sony_decoded_baseline": true,
+      "current_metadata_brand_correct": true,
+      "internal_pcm_exact": true
+    },
+    {
+      "case": "aalp-352--boundary-2047",
+      "profile": "aalp-352",
+      "frames": 2047,
+      "oma_sha256": "ba18873eeac05fd48efb6db721f22aa358c2537372d1d6a11d567e2ecca9b5ee",
+      "same_oma_bytes_as_sony_decoded_baseline": true,
+      "current_metadata_brand_correct": true,
+      "internal_pcm_exact": true
+    },
+    {
+      "case": "aalp-352--boundary-2048",
+      "profile": "aalp-352",
+      "frames": 2048,
+      "oma_sha256": "01b98f21a3d34cccf695903c74a05490753fca18c71d774f84c14e907950d706",
+      "same_oma_bytes_as_sony_decoded_baseline": true,
+      "current_metadata_brand_correct": true,
+      "internal_pcm_exact": true
+    },
+    {
+      "case": "aalp-352--boundary-2049",
+      "profile": "aalp-352",
+      "frames": 2049,
+      "oma_sha256": "04c5b7a1fe6a86d69b7648df61fd882a2cf88b2fdaaaf631613d74a1e551a389",
+      "same_oma_bytes_as_sony_decoded_baseline": true,
+      "current_metadata_brand_correct": true,
+      "internal_pcm_exact": true
+    },
+    {
+      "case": "aalp-352--boundary-4095",
+      "profile": "aalp-352",
+      "frames": 4095,
+      "oma_sha256": "db1527f7c802b01ec6e6c14f3933cacc05ef7db991989d0f2c8a70de3949cf13",
+      "same_oma_bytes_as_sony_decoded_baseline": true,
+      "current_metadata_brand_correct": true,
+      "internal_pcm_exact": true
+    },
+    {
+      "case": "aalp-352--boundary-4096",
+      "profile": "aalp-352",
+      "frames": 4096,
+      "oma_sha256": "92632c5b7bf86fe4f65ed1741ae691cb228cfed64257cd758e51a4ac73131997",
+      "same_oma_bytes_as_sony_decoded_baseline": true,
+      "current_metadata_brand_correct": true,
+      "internal_pcm_exact": true
+    },
+    {
+      "case": "aalp-352--boundary-44117",
+      "profile": "aalp-352",
+      "frames": 44117,
+      "oma_sha256": "300d7176f91a79694209270c1a29bfde29fc5ac305ac5feeb92a71fe82756b94",
+      "same_oma_bytes_as_sony_decoded_baseline": true,
+      "current_metadata_brand_correct": true,
+      "internal_pcm_exact": true
+    },
+    {
+      "case": "aal3-132--boundary-1",
+      "profile": "aal3-132",
+      "frames": 1,
+      "oma_sha256": "1da7df06ee8bba1ee2a5fb8ab2a769c0bed5dd99a9b93772d245efdb5e7402e0",
+      "same_oma_bytes_as_sony_decoded_baseline": true,
+      "current_metadata_brand_correct": true,
+      "internal_pcm_exact": true
+    },
+    {
+      "case": "aal3-132--boundary-137",
+      "profile": "aal3-132",
+      "frames": 137,
+      "oma_sha256": "7a10ac2b8ee472f4c2d370c3a3b539dc2a8bc3bd1ff9342318de2604529bd149",
+      "same_oma_bytes_as_sony_decoded_baseline": true,
+      "current_metadata_brand_correct": true,
+      "internal_pcm_exact": true
+    },
+    {
+      "case": "aal3-132--boundary-138",
+      "profile": "aal3-132",
+      "frames": 138,
+      "oma_sha256": "12b6822068970b2237ef25a227f44106b0bc2196f073e41e775ef01b902d9c7d",
+      "same_oma_bytes_as_sony_decoded_baseline": true,
+      "current_metadata_brand_correct": true,
+      "internal_pcm_exact": true
+    },
+    {
+      "case": "aal3-132--boundary-139",
+      "profile": "aal3-132",
+      "frames": 139,
+      "oma_sha256": "fe6227caa1cda19b7df603421e30f22762c4a5180fa028211c1c285dea857870",
+      "same_oma_bytes_as_sony_decoded_baseline": true,
+      "current_metadata_brand_correct": true,
+      "internal_pcm_exact": true
+    },
+    {
+      "case": "aal3-132--boundary-885",
+      "profile": "aal3-132",
+      "frames": 885,
+      "oma_sha256": "a1c76928660408c438fb87f5d958c2b0b8b50552657e2895cac22bbbec7f77a1",
+      "same_oma_bytes_as_sony_decoded_baseline": true,
+      "current_metadata_brand_correct": true,
+      "internal_pcm_exact": true
+    },
+    {
+      "case": "aal3-132--boundary-886",
+      "profile": "aal3-132",
+      "frames": 886,
+      "oma_sha256": "9de2f32a5dc3356326b7864bcd1fd2ed43aa328d352a640658e602cd0b805f28",
+      "same_oma_bytes_as_sony_decoded_baseline": true,
+      "current_metadata_brand_correct": true,
+      "internal_pcm_exact": true
+    },
+    {
+      "case": "aal3-132--boundary-887",
+      "profile": "aal3-132",
+      "frames": 887,
+      "oma_sha256": "9bec542d9766167d09cb5e5e3985d7b32620c60ccd7f045c2e2aee8067ef3065",
+      "same_oma_bytes_as_sony_decoded_baseline": true,
+      "current_metadata_brand_correct": true,
+      "internal_pcm_exact": true
+    },
+    {
+      "case": "aal3-132--boundary-1023",
+      "profile": "aal3-132",
+      "frames": 1023,
+      "oma_sha256": "dd4f1a89f9adc3b0a767811a65be2b10c66e83cf4c9224c0d616e54c013579ce",
+      "same_oma_bytes_as_sony_decoded_baseline": true,
+      "current_metadata_brand_correct": true,
+      "internal_pcm_exact": true
+    },
+    {
+      "case": "aal3-132--boundary-1024",
+      "profile": "aal3-132",
+      "frames": 1024,
+      "oma_sha256": "433cf0f759afd56192e3db028e700a4a08866d31d2056ef54eddbe4dbe23840a",
+      "same_oma_bytes_as_sony_decoded_baseline": true,
+      "current_metadata_brand_correct": true,
+      "internal_pcm_exact": true
+    },
+    {
+      "case": "aal3-132--boundary-1025",
+      "profile": "aal3-132",
+      "frames": 1025,
+      "oma_sha256": "5898b845ee60e34cf5c3fc761a69873793638c04f631edd7c18eea8beab25f61",
+      "same_oma_bytes_as_sony_decoded_baseline": true,
+      "current_metadata_brand_correct": true,
+      "internal_pcm_exact": true
+    },
+    {
+      "case": "aal3-132--boundary-2048",
+      "profile": "aal3-132",
+      "frames": 2048,
+      "oma_sha256": "c3626a69fd29ba37d9f9d7f39ca7c774e572d1b4d7d7423de76785330710f92b",
+      "same_oma_bytes_as_sony_decoded_baseline": true,
+      "current_metadata_brand_correct": true,
+      "internal_pcm_exact": true
+    },
+    {
+      "case": "aal3-132--boundary-4096",
+      "profile": "aal3-132",
+      "frames": 4096,
+      "oma_sha256": "1f35c35d6a564770f684b5ff9039853cb7183360e1afa4769d63f4e35c649a35",
+      "same_oma_bytes_as_sony_decoded_baseline": true,
+      "current_metadata_brand_correct": true,
+      "internal_pcm_exact": true
+    },
+    {
+      "case": "aal3-132--boundary-44117",
+      "profile": "aal3-132",
+      "frames": 44117,
+      "oma_sha256": "8b68b6421488b708189cc8b35d89124a6462f83b4816f7a7dbcfee2677024814",
+      "same_oma_bytes_as_sony_decoded_baseline": true,
+      "current_metadata_brand_correct": true,
+      "internal_pcm_exact": true
+    },
+    {
+      "case": "aal3-132--boundary-44100",
+      "profile": "aal3-132",
+      "frames": 44100,
+      "oma_sha256": "82bc1a2002314c322c8cbd68b7d01150dc39eb34dd7222507d3479620839a48e",
+      "same_oma_bytes_as_sony_decoded_baseline": true,
+      "current_metadata_brand_correct": true,
+      "internal_pcm_exact": true
+    },
+    {
+      "case": "aal3-132--boundary-48001",
+      "profile": "aal3-132",
+      "frames": 48001,
+      "oma_sha256": "f67280b48e363aec97acaa09d9bb6d7366011caacd7acf39a01e9b07bdd4515c",
+      "same_oma_bytes_as_sony_decoded_baseline": true,
+      "current_metadata_brand_correct": true,
+      "internal_pcm_exact": true
+    },
+    {
+      "case": "aalp-48--boundary-1",
+      "profile": "aalp-48",
+      "frames": 1,
+      "oma_sha256": "d52ba8eac41cd089a63220502d25b2d1d44599ce28722f67053cda10cbba016b",
+      "same_oma_bytes_as_sony_decoded_baseline": true,
+      "current_metadata_brand_correct": true,
+      "internal_pcm_exact": true
+    },
+    {
+      "case": "aalp-48--boundary-2048",
+      "profile": "aalp-48",
+      "frames": 2048,
+      "oma_sha256": "6cb0ffe7cbfa249158e833fa9f7e45e31ee67dfe46367dae98a38c5b5f9cd90b",
+      "same_oma_bytes_as_sony_decoded_baseline": true,
+      "current_metadata_brand_correct": true,
+      "internal_pcm_exact": true
+    },
+    {
+      "case": "aalp-48--boundary-2049",
+      "profile": "aalp-48",
+      "frames": 2049,
+      "oma_sha256": "2d35f08b71623474d684a63cd43df55c1fc7362275ba11d6559928f162378c1c",
+      "same_oma_bytes_as_sony_decoded_baseline": true,
+      "current_metadata_brand_correct": true,
+      "internal_pcm_exact": true
+    },
+    {
+      "case": "aalp-48--boundary-44117",
+      "profile": "aalp-48",
+      "frames": 44117,
+      "oma_sha256": "86ab1d0c3fc506b4a9da175c8fea31ddca83e78358966afa1a35aee4dedccb61",
+      "same_oma_bytes_as_sony_decoded_baseline": true,
+      "current_metadata_brand_correct": true,
+      "internal_pcm_exact": true
+    },
+    {
+      "case": "aalp-64--boundary-1",
+      "profile": "aalp-64",
+      "frames": 1,
+      "oma_sha256": "041253929fd8b1f2dca579fd850758ba382144400014ef1af833170d23a1ef62",
+      "same_oma_bytes_as_sony_decoded_baseline": true,
+      "current_metadata_brand_correct": true,
+      "internal_pcm_exact": true
+    },
+    {
+      "case": "aalp-64--boundary-2048",
+      "profile": "aalp-64",
+      "frames": 2048,
+      "oma_sha256": "4787af2451334c395e76b2c45f1b39e5eac752b21dfab1eee027dfcecb5fac34",
+      "same_oma_bytes_as_sony_decoded_baseline": true,
+      "current_metadata_brand_correct": true,
+      "internal_pcm_exact": true
+    },
+    {
+      "case": "aalp-64--boundary-2049",
+      "profile": "aalp-64",
+      "frames": 2049,
+      "oma_sha256": "95f8bad1bfd5cad6c319cb1fe76bdcb742f5b995473c4cd80c0a7346bd2e0b86",
+      "same_oma_bytes_as_sony_decoded_baseline": true,
+      "current_metadata_brand_correct": true,
+      "internal_pcm_exact": true
+    },
+    {
+      "case": "aalp-64--boundary-44117",
+      "profile": "aalp-64",
+      "frames": 44117,
+      "oma_sha256": "6d1d6268c1646875b0b7c3f73cadddf3d0f9130352e2437d16ae60b7c28cdfc9",
+      "same_oma_bytes_as_sony_decoded_baseline": true,
+      "current_metadata_brand_correct": true,
+      "internal_pcm_exact": true
+    },
+    {
+      "case": "aalp-96--boundary-1",
+      "profile": "aalp-96",
+      "frames": 1,
+      "oma_sha256": "a2493dda903fa2b89dc6bbdc66d2e94072e097bcf01cf20d22392a98e7598b26",
+      "same_oma_bytes_as_sony_decoded_baseline": true,
+      "current_metadata_brand_correct": true,
+      "internal_pcm_exact": true
+    },
+    {
+      "case": "aalp-96--boundary-2048",
+      "profile": "aalp-96",
+      "frames": 2048,
+      "oma_sha256": "99d8e16071cf374e50f04f086b1b5bd61145428da448b573cad380b74d6169b8",
+      "same_oma_bytes_as_sony_decoded_baseline": true,
+      "current_metadata_brand_correct": true,
+      "internal_pcm_exact": true
+    },
+    {
+      "case": "aalp-96--boundary-2049",
+      "profile": "aalp-96",
+      "frames": 2049,
+      "oma_sha256": "552858139dd1c1cceb130233889b7497050431c9d90dd8efd1d37402e5821a05",
+      "same_oma_bytes_as_sony_decoded_baseline": true,
+      "current_metadata_brand_correct": true,
+      "internal_pcm_exact": true
+    },
+    {
+      "case": "aalp-96--boundary-44117",
+      "profile": "aalp-96",
+      "frames": 44117,
+      "oma_sha256": "add89b289d6b72ddbb5eda6a10c4a1f5cbb366b8fdac1715a0ac808791a5a326",
+      "same_oma_bytes_as_sony_decoded_baseline": true,
+      "current_metadata_brand_correct": true,
+      "internal_pcm_exact": true
+    },
+    {
+      "case": "aalp-128--boundary-1",
+      "profile": "aalp-128",
+      "frames": 1,
+      "oma_sha256": "44f07c0f407efefbf6cb787d5fbaa190f382bad94bb7317d8934777a1f99d2aa",
+      "same_oma_bytes_as_sony_decoded_baseline": true,
+      "current_metadata_brand_correct": true,
+      "internal_pcm_exact": true
+    },
+    {
+      "case": "aalp-128--boundary-2048",
+      "profile": "aalp-128",
+      "frames": 2048,
+      "oma_sha256": "a42b0a576696089d6c9900c5a6177a2d73fa98f1c4871175631fa5f75b6aed33",
+      "same_oma_bytes_as_sony_decoded_baseline": true,
+      "current_metadata_brand_correct": true,
+      "internal_pcm_exact": true
+    },
+    {
+      "case": "aalp-128--boundary-2049",
+      "profile": "aalp-128",
+      "frames": 2049,
+      "oma_sha256": "01f4c3e2a1d5effeb0e6240241d04b1d107a9a18fc3c7e3719f4869f3e90d4f9",
+      "same_oma_bytes_as_sony_decoded_baseline": true,
+      "current_metadata_brand_correct": true,
+      "internal_pcm_exact": true
+    },
+    {
+      "case": "aalp-128--boundary-44117",
+      "profile": "aalp-128",
+      "frames": 44117,
+      "oma_sha256": "a2b01289ecd446bd1299b839903e420063be3580c0e09df55fbcf7572f9e1355",
+      "same_oma_bytes_as_sony_decoded_baseline": true,
+      "current_metadata_brand_correct": true,
+      "internal_pcm_exact": true
+    },
+    {
+      "case": "aalp-160--boundary-1",
+      "profile": "aalp-160",
+      "frames": 1,
+      "oma_sha256": "6bef1c94ef67816d58f26dd9d57df6e2ea95383db9af33bc57c49cdacc5a1dfa",
+      "same_oma_bytes_as_sony_decoded_baseline": true,
+      "current_metadata_brand_correct": true,
+      "internal_pcm_exact": true
+    },
+    {
+      "case": "aalp-160--boundary-2048",
+      "profile": "aalp-160",
+      "frames": 2048,
+      "oma_sha256": "a6ccb7cd83c178f212850895f406f0b0471b050961959db88709a7943f660cc9",
+      "same_oma_bytes_as_sony_decoded_baseline": true,
+      "current_metadata_brand_correct": true,
+      "internal_pcm_exact": true
+    },
+    {
+      "case": "aalp-160--boundary-2049",
+      "profile": "aalp-160",
+      "frames": 2049,
+      "oma_sha256": "2e0931182ff7279ab7b660cfa5611848a42a9cbec9a346d6985e78936c332a78",
+      "same_oma_bytes_as_sony_decoded_baseline": true,
+      "current_metadata_brand_correct": true,
+      "internal_pcm_exact": true
+    },
+    {
+      "case": "aalp-160--boundary-44117",
+      "profile": "aalp-160",
+      "frames": 44117,
+      "oma_sha256": "937487afd19646b2017f15bf336d89e3b03c44a3239b2a54e53dbf36113c6d40",
+      "same_oma_bytes_as_sony_decoded_baseline": true,
+      "current_metadata_brand_correct": true,
+      "internal_pcm_exact": true
+    },
+    {
+      "case": "aalp-192--boundary-1",
+      "profile": "aalp-192",
+      "frames": 1,
+      "oma_sha256": "fa8ac21e128844355d3d737be03c990055b21369cf248a101653971689513f25",
+      "same_oma_bytes_as_sony_decoded_baseline": true,
+      "current_metadata_brand_correct": true,
+      "internal_pcm_exact": true
+    },
+    {
+      "case": "aalp-192--boundary-2048",
+      "profile": "aalp-192",
+      "frames": 2048,
+      "oma_sha256": "1772611142f0267f663b95088d8f7b1357df6ed26756e15303b5346e9a92d1f6",
+      "same_oma_bytes_as_sony_decoded_baseline": true,
+      "current_metadata_brand_correct": true,
+      "internal_pcm_exact": true
+    },
+    {
+      "case": "aalp-192--boundary-2049",
+      "profile": "aalp-192",
+      "frames": 2049,
+      "oma_sha256": "73aff4f4fc5231d7e2495c9637bb73b42cae48627720d910df0a08a5de71bfc1",
+      "same_oma_bytes_as_sony_decoded_baseline": true,
+      "current_metadata_brand_correct": true,
+      "internal_pcm_exact": true
+    },
+    {
+      "case": "aalp-192--boundary-44117",
+      "profile": "aalp-192",
+      "frames": 44117,
+      "oma_sha256": "01f0c239e71915a6341eb6b384a525f80510b01538c28e1da448ca9f7641adb3",
+      "same_oma_bytes_as_sony_decoded_baseline": true,
+      "current_metadata_brand_correct": true,
+      "internal_pcm_exact": true
+    },
+    {
+      "case": "aalp-256--boundary-1",
+      "profile": "aalp-256",
+      "frames": 1,
+      "oma_sha256": "ddae224a6d430f18a6c8cd693b07481992d31ff295c2821cd9a1041bf97bc615",
+      "same_oma_bytes_as_sony_decoded_baseline": true,
+      "current_metadata_brand_correct": true,
+      "internal_pcm_exact": true
+    },
+    {
+      "case": "aalp-256--boundary-2048",
+      "profile": "aalp-256",
+      "frames": 2048,
+      "oma_sha256": "d02c0cab3fd2a74afd8aaedee19778d010d6302075b2efc4de3366932bfedc94",
+      "same_oma_bytes_as_sony_decoded_baseline": true,
+      "current_metadata_brand_correct": true,
+      "internal_pcm_exact": true
+    },
+    {
+      "case": "aalp-256--boundary-2049",
+      "profile": "aalp-256",
+      "frames": 2049,
+      "oma_sha256": "f16fa79a16ad2069b5078d7204acfda5c157098caa071fe2e82b2c9475963b2d",
+      "same_oma_bytes_as_sony_decoded_baseline": true,
+      "current_metadata_brand_correct": true,
+      "internal_pcm_exact": true
+    },
+    {
+      "case": "aalp-256--boundary-44117",
+      "profile": "aalp-256",
+      "frames": 44117,
+      "oma_sha256": "90ed8a181947efb32b77ba68f56b8d7143c5526128e9165bfff325844e6a4746",
+      "same_oma_bytes_as_sony_decoded_baseline": true,
+      "current_metadata_brand_correct": true,
+      "internal_pcm_exact": true
+    },
+    {
+      "case": "aalp-320--boundary-1",
+      "profile": "aalp-320",
+      "frames": 1,
+      "oma_sha256": "4b9b9f508714985c4d3fdb530cd3fc6075b6d178e4c4a654db25a3dcf3613845",
+      "same_oma_bytes_as_sony_decoded_baseline": true,
+      "current_metadata_brand_correct": true,
+      "internal_pcm_exact": true
+    },
+    {
+      "case": "aalp-320--boundary-2048",
+      "profile": "aalp-320",
+      "frames": 2048,
+      "oma_sha256": "ca8c4e2476880daf201c3e80b23578c597326adc81e5b4edf5ba9d4224b0057b",
+      "same_oma_bytes_as_sony_decoded_baseline": true,
+      "current_metadata_brand_correct": true,
+      "internal_pcm_exact": true
+    },
+    {
+      "case": "aalp-320--boundary-2049",
+      "profile": "aalp-320",
+      "frames": 2049,
+      "oma_sha256": "86f2650738c31f6397358dae502a5570cb264d29a3a8b3b3d5a63da846d69321",
+      "same_oma_bytes_as_sony_decoded_baseline": true,
+      "current_metadata_brand_correct": true,
+      "internal_pcm_exact": true
+    },
+    {
+      "case": "aalp-320--boundary-44117",
+      "profile": "aalp-320",
+      "frames": 44117,
+      "oma_sha256": "8f386927082dfa4411ce65094c7342d93ac10011b198416551d66348b451f6b7",
+      "same_oma_bytes_as_sony_decoded_baseline": true,
+      "current_metadata_brand_correct": true,
+      "internal_pcm_exact": true
+    }
+  ],
+  "gui_launched": false,
+  "native_macos_execution_tested": false,
+  "walkman_hardware_tested": false,
+  "full_file_sony_byte_identity_claimed": false,
+  "github_ci_executed": false,
+  "gui_language_checks": {
+    "passed": true,
+    "catalog_entries": 86,
+    "automatic": "Windows preferred UI languages, first supported zh/en; otherwise English",
+    "overrides": [
+      "--lang auto",
+      "--lang zh",
+      "--lang en"
+    ],
+    "headless": true,
+    "stdout": "PASS: GUI language selection, overrides, 86 bilingual catalog entries, engine progress and Unicode paths; no window launched",
+    "gui_window_launched": false,
+    "interactive_visual_tested": false
+  },
+  "ci_yaml_parsed": true,
+  "ci_remote_execution_tested": false
+}

@@ -1,0 +1,60 @@
+AAL3 / AALP framing and deterministic prediction
+===============================================
+
+The product encodes 44100 Hz signed16 stereo. Rates below are nominal core
+rates; physical rates are coreBytes*8*44100/frameSamples. Enhanced output is
+lossless at all rates. The independent lossy core is not Sony byte-identical.
+
+profile  frameBytes  frameSamples  trim  EA3 codec  coreParamBE24@49  band cap
+AAL3 132      384       1024       138     0x22          0x002030       n/a
+AALP 48       280       2048       368     0x21          0x002822         8
+AALP 64       376       2048       368     0x21          0x00282e         8
+AALP 96       560       2048       368     0x21          0x002845         8
+AALP 128      744       2048       368     0x21          0x00285c         8
+AALP 160      936       2048       368     0x21          0x002874        12
+AALP 192     1120       2048       368     0x21          0x00288b        12
+AALP 256     1488       2048       368     0x21          0x0028b9        12
+AALP 320     1864       2048       368     0x21          0x0028e8        16
+AALP 352     2048       2048       368     0x21          0x0028ff        16
+
+The EA3 header is 96 bytes. Marker at 6 is BE16 0xff80 (unencrypted).
+AAL3 header[33]=0x52 and header[48]=0; AALP [33]=0x91 and [48]=1.
+Each physical BLK has a 24-byte header; block0 is core-only priming.
+Physical block count is ceil((sourceFrames+trim)/frameSamples)+1.
+Tail field is sourceFrames%frameSamples, with zero represented as frameSamples.
+The observed original header duration is floor(((blocks-2)*frameSamples+tail)
+*1000/44100). This includes the original flush convention and is not a reliable
+way to derive the original PCM count at every source-length boundary.
+
+The predictor reconstructs each actual emitted core. The AALP restricted parser
+independently decodes the quantized spectrum, word lengths, scale factors and
+window flags from physical bytes. It is checked against the encoder's final
+snapshot but does not use that snapshot for reconstruction. It rejects gain,
+tone, noise and other syntax the independent core does not emit. It is not a
+general decoder for arbitrary Sony music cores.
+
+Dequantization, block-floating integer IMDCT, windows, overlap and inverse PQF
+are portable source implementations. AALP inverse synthesis uses the smaller
+of the actual declared subbands and the rate-specific cap above. The cap is a
+decoder profile property; it cannot be inferred solely from a packet spectrum.
+The predictor preserves state across physical core packets. Source frame n
+aligns to concatenated core prediction at frameSamples+trim+n. Enhancement
+packet1 starts after core-only packet0 and has trim leading alignment samples.
+
+Residual arithmetic is modulo signed16: source minus prediction, followed by
+prediction plus decoded residual. Past the real source end the source is zero,
+so flush residuals are the negative core prediction, rather than zero padding.
+Omitting these true head/tail values changes the original enhancement analysis.
+
+Enhancement coding uses the same original method for 1024 and 2048 samples:
+energy-based channel decorrelation; fixed prediction or LPC analysis; quantized
+reflection coefficients and integer LPC residual; split Rice coding; and raw
+fallback when the original threshold is exceeded. The two Rice partitions per
+channel contain 512 samples for AAL3, 1024 for AALP. Hamming analysis windows
+are stored as exact numerical constants. Data-only official synthetic residual
+fixtures include alignment and flush values and support offline byte comparison.
+
+Before publishing any output, the engine reparses its complete OMA, recomputes
+core prediction from actual bytes, decodes all enhancement packets, then checks
+the source length and every sample. This internal check needs no Sony software.
+Independent external Sony decode tests are recorded separately in validation/.

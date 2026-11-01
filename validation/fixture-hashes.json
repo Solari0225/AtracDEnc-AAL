@@ -1,0 +1,10 @@
+{
+  "enhancement-vectors.bin": {
+    "bytes": 18237516,
+    "sha256": "831287f577f3ae487adac5685f094966355fb153edb9954fc5a83ec7cc470106"
+  },
+  "plus-enhancement-vectors.bin": {
+    "bytes": 16918876,
+    "sha256": "8617e72a72e7b2cebdf3896b8b4360a759d01a24d7dfd3db94f2653303d6c55a"
+  }
+}

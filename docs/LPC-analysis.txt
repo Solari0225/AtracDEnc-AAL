@@ -1,0 +1,95 @@
+AtracDEnc-AAL: AAL3 temporal prediction and LPC analysis
+====================================================
+
+Production source files written for this component:
+  independent_lpc.h / independent_lpc.cpp
+  analysis.hpp / analysis.cpp
+  analysis_window.inc
+
+No Sony instruction bytes, DLL calls, processes, Unicorn or file-based
+coefficient loading are used by these implementations. Other probe programs,
+binary fixtures and Python / Node scripts in this directory are research and
+verification tools. The entropy serializer and decorrelation implementation
+are separate collaborating components in this same directory.
+
+C++ API, namespace independent_aal::compression:
+  ChannelAnalysis analyze_channel(input, count=1024, width=16)
+    returns mode, eight parameter codes, integer coefficients, per-candidate
+    costs and the 1024 signed temporal prediction residuals.
+  inverse_channel(residual, count, width, mode, parameter_codes)
+    reconstructs the channel samples using the same zero initial history.
+
+Parameter codes are present on the wire only for mode 8: the first two use
+11 bits each; the remaining six use 6 bits each. Fixed mode coefficients do
+not appear on the wire. All source channel samples are signed16 in this
+AAL3 analysis implementation. The analysis searches modes 0, 1, 2, 3, 8;
+equal scores retain the earlier mode. Its score is mean absolute temporal
+residual, not Rice bit count. Rice separately chooses its parameters later.
+
+Recovered integer prediction
+----------------------------
+Fixed modes 1..7 use two previous samples. Q4 first coefficients are
+{32,28,16,0,-16,-28,-32}; the second coefficient is always -16.
+Prediction = signed_arithmetic_shift(wrap32(8 + c0*x[-1] - 16*x[-2]),4).
+
+LPC uses eight Q10 integer coefficients. Its prediction is low32 of the
+64-bit wrapping sum (512 + sum(c[j]*x[-j-1])) shifted right by 10. Forward
+prediction subtracts this from the current sample and wraps to the PCM
+width. Inverse prediction adds it to the temporal residual and wraps.
+The native forward path multiplies signed low16 sample / coefficient words;
+the inverse path multiplies int32 values. Both details are reproduced.
+
+For the active high-quality single-channel chooser, initial eight-sample
+history is zero on each call. The original fourth argument is unused;
+the fifth eight-word work/history buffer is explicitly cleared before any
+fixed or LPC prediction. Do not assume the caller's history update is read
+by this active analysis branch.
+
+LPC coefficient analysis
+------------------------
+1024 samples are multiplied by the exact binary64 Hamming window. Its formula
+is 0.54 - 0.46*cos(2*pi*i/1023), but recomputing through the host math library
+differs by one ULP in 150 table entries. The retained hexadecimal floating
+constants preserve the exact observed values on every target.
+
+Autocorrelations 0..8 use two lane partial sums on even lags and a sequential
+sum on odd lags. Levinson / Durbin recursion computes the reflection values
+with the recovered operation order, early-termination checks and binary64
+storage points. Relevant thresholds are energy < 1, relative error 1e-7,
+minimum error 0.1, reflection magnitude < 1 and later reflection magnitude
+< 0.98. The actual Sony math threads were observed with x87 control word
+0x027f: 53-bit precision and round to nearest. Each portable multiply, add,
+subtract and divide therefore forces binary64 rounding, preventing FMA.
+
+The first two reflection codes are floor(reflection*1024)+1024. The remaining
+six are floor(asin(reflection)*(64/pi))+32. The sine reconstruction table,
+integer step-up recursion and coefficient range rejection are separately
+reconstructed. The original CRT math call identities floor / asin / _ftol
+were verified by the bounded call-slot / PE math-import chain.
+
+Verification
+------------
+lpc-verification.json: 312 boundary / random cases, 130568 output samples,
+  exact equality with offline emulation of the recovered Q10 math function.
+fixed-verification.json: 216 cases, 86728 samples, exact equality for all
+  seven fixed predictors, both forward and inverse.
+analysis-verification.json: 55 complete channel-analysis cases, 56320 output
+  samples plus mode / all eight parameter codes; zero differing words
+  against the bounded original math chooser with x87 CW 0x027f. The offline
+  oracle uses narrow host floor / asin shims for the proven named CRT calls;
+  it does not execute a Sony application.
+official-analysis-verification.json: all 5172 coded channel packets from six
+  official 10-second Sony samples, 5296128 sample residuals. Independent
+  inverse prediction followed by re-analysis produces exactly the official
+  mode, parameter codes and every temporal residual. Mode coverage:
+  0=1714, 1=234, 2=87, 3=29, 8=3108. All mismatch counts are zero.
+
+Reproduce the official check with:
+  node export_official_analysis.cjs
+  node verify_official_analysis.cjs
+
+Official full-scale white noise uses raw enhancement mode, so it is excluded
+from temporal-analysis comparisons. Full enhancement packing / padding / raw
+selection and complete-file Sony decode are validated by the entropy layer.
+Portable source compilation alone does not establish a macOS runtime result;
+the same retained vectors are suitable for running that check on a Mac.

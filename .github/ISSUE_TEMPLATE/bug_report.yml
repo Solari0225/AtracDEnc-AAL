@@ -1,0 +1,28 @@
+name: Bug report / 问题反馈
+description: Report an encoding, build or compatibility problem / 编码、构建或兼容性问题
+body:
+  - type: input
+    id: environment
+    attributes:
+      label: System and version / 系统和版本
+      description: OS, CPU architecture, AtracDEnc-AAL version / 系统、架构、程序版本
+    validations:
+      required: true
+  - type: textarea
+    id: reproduction
+    attributes:
+      label: Reproduction / 复现步骤
+      description: Command/profile, input WAV format and a small synthetic reproducer / 命令或配置、输入格式、小型合成复现样本
+    validations:
+      required: true
+  - type: textarea
+    id: behavior
+    attributes:
+      label: Expected and actual result / 预期与实际结果
+    validations:
+      required: true
+  - type: textarea
+    id: evidence
+    attributes:
+      label: Logs and comparison method / 日志和比较方法
+      description: Relevant JSON, error text, PCM hashes, software/device used for comparison / JSON、错误文本、PCM 哈希、对照软件或设备

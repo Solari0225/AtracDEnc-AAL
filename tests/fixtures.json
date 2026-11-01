@@ -1,0 +1,58 @@
+{
+  "purpose": "Package synthetic audio residuals and original encoded data, never code.",
+  "format": "AALV; uint32LE version=1, count=3017; each: uint32LE payloadBytes,paddingBytes; planar signed16LE L1024/R1024; original payload bytes.",
+  "reference": "Sony SMLE 7.1.00.11181 with TraConv 111029, AAL3 132000. Synthetic samples generated for this project.",
+  "total_bytes": 18237516,
+  "sha256": "831287f577f3ae487adac5685f094966355fb153edb9954fc5a83ec7cc470106",
+  "cases": [
+    {
+      "name": "white-noise",
+      "first_case": 1,
+      "cases": 431,
+      "residual_sha256": "2db5ee0af36786d59f76bc6418514e9c24692c1f0a46ce740a22330de6431f41",
+      "expected_payload_sha256": "e25e5b45c05e82ab7f75c6f3f9a4dbba8a95e94cfc84731ae3e62b807a8e02b7"
+    },
+    {
+      "name": "multitone",
+      "first_case": 432,
+      "cases": 431,
+      "residual_sha256": "29e565d6790859c8240ea0e54e206d7926b3f4f0b6d636377bddd350aa89ccfe",
+      "expected_payload_sha256": "3cdaaf5d9845041641b64cbc2957d0c36b5fb189c71b7c5e0427fa250720a7f1"
+    },
+    {
+      "name": "speech-like",
+      "first_case": 863,
+      "cases": 431,
+      "residual_sha256": "17faa3c47e74d72df7deb144446ba09b4136ebee6b47ce155b6931228fd40807",
+      "expected_payload_sha256": "07952602d0fb1d338a2ffa7099c9c984b0b2d2d4ccd67556c159619cd06f5643"
+    },
+    {
+      "name": "quiet",
+      "first_case": 1294,
+      "cases": 431,
+      "residual_sha256": "85b5d991c0fda28acacaf3fd82232a32ff4bf608aeb9faca4f7e619f30520adf",
+      "expected_payload_sha256": "dbedaf9a5cbc078131a4948535a326246eb3153b78d241f88abb01a0ac307977"
+    },
+    {
+      "name": "fullband",
+      "first_case": 1725,
+      "cases": 431,
+      "residual_sha256": "5ae7e34d3b95f7f68ceae900c084088e1aefcb705fa15f31cb6472ae7ea2390c",
+      "expected_payload_sha256": "897a4f2fd630478359d2f068577679f4191ad796762da61555200c28bba611e0"
+    },
+    {
+      "name": "music-synthetic",
+      "first_case": 2156,
+      "cases": 431,
+      "residual_sha256": "0eb39d9bb28e85fc293badde1dd148a8904dbd5a73ffa65fc6f274ef7db98a6b",
+      "expected_payload_sha256": "0d633b260bc924fa70a8d5d5aac69826d96d282896fae2c6ded8a95018d41a09"
+    },
+    {
+      "name": "silence",
+      "first_case": 2587,
+      "cases": 431,
+      "residual_sha256": "b9b43911c57047648eaa65555e507ca13c6b832c67fc3a96a92b9dfe7cb4dd7f",
+      "expected_payload_sha256": "24a9bfb5a845630f8f81c1aec19af61977b5341f9ce8e20f6ac5d369c956233a"
+    }
+  ]
+}
