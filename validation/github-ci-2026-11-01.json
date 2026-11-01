@@ -1,0 +1,49 @@
+{
+  "project": "AtracDEnc-AAL",
+  "version": "0.2.0",
+  "repository": "Solari0225/AtracDEnc-AAL",
+  "head_sha": "c0c7b57a35f2f438608ef5a0318612077bf7460d",
+  "workflow_run": "https://github.com/Solari0225/AtracDEnc-AAL/actions/runs/41318128062",
+  "workflow_run_id": 41318128062,
+  "status": "completed",
+  "conclusion": "success",
+  "jobs": [
+    {
+      "name": "macos (macos-15, macos-arm64)",
+      "id": 124882426380,
+      "status": "completed",
+      "conclusion": "success",
+      "url": "https://github.com/Solari0225/AtracDEnc-AAL/actions/runs/41318128062/job/124882426380"
+    },
+    {
+      "name": "macos (macos-15-intel, macos-x86_64)",
+      "id": 124882426526,
+      "status": "completed",
+      "conclusion": "success",
+      "url": "https://github.com/Solari0225/AtracDEnc-AAL/actions/runs/41318128062/job/124882426526"
+    },
+    {
+      "name": "windows",
+      "id": 124882426568,
+      "status": "completed",
+      "conclusion": "success",
+      "url": "https://github.com/Solari0225/AtracDEnc-AAL/actions/runs/41318128062/job/124882426568"
+    }
+  ],
+  "checks": [
+    "ten-profile PCM round trips",
+    "4583 official enhancement packets and padding",
+    "C ABI",
+    "headless Chinese/English GUI language selection",
+    "public repository links and fixture hashes"
+  ],
+  "native_source_builds_tested": [
+    "Windows x64",
+    "macOS arm64",
+    "macOS Intel"
+  ],
+  "specific_cross_compiled_universal_release_file_executed": false,
+  "sony_runtime_used": false,
+  "gui_window_launched_by_agent": false,
+  "physical_walkman_tested": false
+}

@@ -1,8 +1,8 @@
 # GitHub 发布资料 / GitHub publishing materials
 
-本套资料已经准备好仓库内容和发行附件；没有替用户创建远程仓库或上传文件。
+本文档保留发布资料的组织方式和维护者发布步骤。首个公开版本现已发布：[仓库](https://github.com/Solari0225/AtracDEnc-AAL) · [v0.2.0](https://github.com/Solari0225/AtracDEnc-AAL/releases/tag/v0.2.0)。
 
-This kit prepares repository contents and release assets. It has not created a remote repository or uploaded files on the user's behalf.
+This document records the kit layout and maintainer publishing steps. The first public version is now available: [repository](https://github.com/Solari0225/AtracDEnc-AAL) · [v0.2.0](https://github.com/Solari0225/AtracDEnc-AAL/releases/tag/v0.2.0).
 
 ## 仓库信息 / Repository settings
 

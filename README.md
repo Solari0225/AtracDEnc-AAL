@@ -95,9 +95,9 @@ Baseline validation covers all ten profiles: 122 positive cases decoded by Sony 
 
 **The lossy core uses AtracDEnc's compatible implementations, whose encoding decisions differ from Sony's. Complete files are not Sony byte-identical, and compression sizes can differ.** Full-file acceptance is exact PCM reconstruction; enhancement byte equality refers to the recorded identical residual inputs.
 
-Windows x64 已执行本地验证。macOS arm64 / x86_64 通用二进制已交叉编译，最低 macOS 11；真实 Mac 执行尚待验证。NW-X1050 / X1060 是目标设备，实机播放、跳转和传输数据库尚未验证。随附 CI 会在 Windows 和两种 Mac 架构上构建并运行离线测试，其实际结果以首次 GitHub Actions 运行为准。
+Windows x64 已执行本地验证。[首次 GitHub CI](https://github.com/Solari0225/AtracDEnc-AAL/actions/runs/41318128062) 也已通过 Windows x64、macOS arm64 和 macOS Intel 的原生构建与完整离线测试。发行附件中的 macOS universal 二进制仍是交叉编译版本，最低 macOS 11；该预构建文件本身尚未在 Mac 上直接执行。NW-X1050 / X1060 的实机播放、跳转和传输数据库尚未验证。详细范围见 [CI 记录](validation/github-ci-2026-11-01.json)。
 
-Windows x64 has been tested locally. macOS arm64 / x86_64 universal binaries are cross-compiled for macOS 11 or later; native Mac execution remains unverified. NW-X1050 / X1060 are target devices; physical playback, seeking and transfer databases remain untested. The supplied CI builds and runs offline tests on Windows and both Mac architectures; its results depend on the first actual GitHub Actions run.
+The [first GitHub CI run](https://github.com/Solari0225/AtracDEnc-AAL/actions/runs/41318128062) passed native builds and all offline tests on Windows x64, macOS arm64 and macOS Intel, in addition to local Windows checks. The macOS universal release asset remains a cross-compiled binary targeting macOS 11 or later; that specific prebuilt file has not been directly executed on a Mac. Physical NW-X1050 / X1060 playback, seeking and transfer remain untested. See the [CI record](validation/github-ci-2026-11-01.json) for the exact scope.
 
 ## 编译与集成 / Build and integration
 

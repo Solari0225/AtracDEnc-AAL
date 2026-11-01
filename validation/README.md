@@ -35,6 +35,6 @@ Local paths were removed or normalized in public records. Fixture bytes are unch
 
 The fixtures contain **4,583 packets / 9,927,136 payload bytes**: 3,017 AAL3 and 1,566 AALP packets, requiring full payload and padding equality. Internal per-file checks reparse actual core and enhancement bitstreams before comparing PCM sample-for-sample.
 
-有损核心决策不同于 Sony；因此完整文件字节和压缩体积可能不同。当前公开资料不宣称 Mac 原生执行或 NW-X1050 / X1060 实机播放、跳转和传输已通过。GitHub CI 尚须在仓库发布后实际运行。
+有损核心决策不同于 Sony；因此完整文件字节和压缩体积可能不同。发布后的 [GitHub CI](github-ci-2026-11-01.json) 已通过 Windows x64、macOS arm64 和 macOS Intel 的原生构建与全部离线检查。该结果验证 CI 现场构建的程序；不表示交叉编译的 universal 发行文件已经在 Mac 上直接执行，也不表示 NW-X1050 / X1060 实机播放、跳转或传输已验证。
 
-Lossy-core decisions differ from Sony's; full-file bytes and compression sizes can differ. These records do not establish native Mac execution or NW-X1050 / X1060 playback, seeking and transfer. GitHub CI still needs an actual run after publication.
+Lossy-core decisions differ from Sony's; full-file bytes and compression sizes can differ. The post-publication [GitHub CI](github-ci-2026-11-01.json) passed native builds and all offline checks on Windows x64, macOS arm64 and macOS Intel. This validates the programs built in CI; it does not establish direct Mac execution of the cross-compiled universal release file or physical NW-X1050 / X1060 playback, seeking or transfer.
