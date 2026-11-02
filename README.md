@@ -101,6 +101,8 @@ Baseline validation covers all ten profiles: 122 positive cases decoded by Sony 
 
 0.3.0 解码验收记录见 [decoder-validation.json](validation/decoder-validation.json)；包含官方文件、自制文件和特殊核心语法的逐样本对照。Decoder acceptance includes official files, independent files and varied core syntax; see the linked record.
 
+0.3.0 的 [GitHub CI](https://github.com/Solari0225/AtracDEnc-AAL/actions/runs/41380633560) 已通过 Windows x64、macOS arm64 和 macOS Intel 的原生构建及全部六项离线检查。Native builds and all six offline checks passed on all three platforms. See [CI record](validation/github-ci-v0.3.0.json).
+
 以下为 0.2.0 的历史验证记录：Windows x64 已执行本地验证。[首次 GitHub CI](https://github.com/Solari0225/AtracDEnc-AAL/actions/runs/41318128062) 也已通过 Windows x64、macOS arm64 和 macOS Intel 的原生构建与完整离线测试。发行附件中的 macOS universal 二进制仍是交叉编译版本，最低 macOS 11；该预构建文件本身尚未在 Mac 上直接执行。NW-X1050 / X1060 的实机播放、跳转和传输数据库尚未验证。详细范围见 [CI 记录](validation/github-ci-2026-11-01.json)。
 
 For the historical 0.2.0 release, the [first GitHub CI run](https://github.com/Solari0225/AtracDEnc-AAL/actions/runs/41318128062) passed native builds and all offline tests on Windows x64, macOS arm64 and macOS Intel, in addition to local Windows checks. The macOS universal release asset remains a cross-compiled binary targeting macOS 11 or later; that specific prebuilt file has not been directly executed on a Mac. Physical NW-X1050 / X1060 playback, seeking and transfer remain untested. See the [CI record](validation/github-ci-2026-11-01.json) for the exact scope.

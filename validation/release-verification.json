@@ -126,9 +126,11 @@
     "reference_executables_distributed": false,
     "reference_called_by_product_or_ci": false
   },
-  "macos": "Cross-compiled arm64 and x86_64, universal assembled. Native0.3.0 CI recorded separately when available.",
+  "macos": "Cross-built universal asset assembled. Native arm64 and Intel builds and all6 offline checks passed in GitHub run41380633560; the specific cross-built release binary was not directly executed on Mac.",
   "gui_automated": false,
   "physical_walkman_tested": false,
   "encoder_algorithm_changed": false,
-  "historical_encoder_branding_record": "release-verification-v0.2.0.json"
+  "historical_encoder_branding_record": "release-verification-v0.2.0.json",
+  "github_ci": "github-ci-v0.3.0.json",
+  "encoder_output_regression": "encoder-regression-v0.3.0.json"
 }

@@ -6,6 +6,10 @@ This directory distinguishes predecessor encoding conformance from checks on the
 
 ## 0.3.0 解码器 / Decoder
 
+[0.3.0 GitHub CI](github-ci-v0.3.0.json)：Windows x64、macOS arm64 和 macOS Intel 原生构建及全部六项离线检查通过。All three native builds and all six offline checks passed.
+
+[编码回归](encoder-regression-v0.3.0.json)：最终程序重新编码 122 例，AAL 字节与旧版相同；另验证 Unicode 路径、已有输出保护及错误处理。All 122 re-encoded AAL files match the prior version byte-for-byte; CLI path and failure behavior checks also passed.
+
 [decoder-validation.json](decoder-validation.json)：469 例完整文件、18,633,240 个 int16 样本和长度全部精确一致。包括 338 个官方文件、9 个特殊核心语法文件和 122 个本项目 0.2 编码文件；每例均重新运行 Sony 解码器。最终构建又对全部输入重放，并在复用 Sony PCM 前核对输入和参考输出哈希。
 
 All 469 complete-file cases and 18,633,240 signed16 samples matched exactly, including length: 338 official files, 9 varied-core-syntax files and 122 independently encoded files. Sony decoding was freshly executed for every case. The final build replayed every input, checking input and reference-output hashes before reusing Sony PCM.
