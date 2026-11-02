@@ -12,7 +12,7 @@ stage.mkdir(parents=True,exist_ok=False)
 reports={}
 packages={}
 for platform in ('windows-x64','macos-arm64','macos-x86_64'):
-    matches=list(args.artifacts.rglob(f'AtracDEnc-AAL-v{version}-{platform}.zip'))
+    matches=list((args.artifacts/f'AtracDEnc-AAL-{platform}').glob(f'AtracDEnc-AAL-v{version}-{platform}.zip'))
     if len(matches)!=1: raise SystemExit('Expected one native package: '+platform)
     packages[platform]=matches[0]
     destination=stage/platform;destination.mkdir()
@@ -41,13 +41,15 @@ intel=stage/'macos-x86_64'/f'AtracDEnc-AAL-v{version}-macos-x86_64'
 shutil.copytree(arm/'AtracDEnc-AAL-GUI.app',bin_dir/'AtracDEnc-AAL-GUI.app')
 gui=pathlib.Path('AtracDEnc-AAL-GUI.app/Contents/MacOS/AtracDEnc-AAL-GUI')
 def run(*command):
-    result=subprocess.run([str(x) for x in command],check=True,capture_output=True,text=True,timeout=300)
+    result=subprocess.run([str(x) for x in command],capture_output=True,text=True,timeout=300)
+    if result.returncode:
+        raise SystemExit(f"Command failed ({result.returncode}): {' '.join(str(x) for x in command)}\n{result.stdout}{result.stderr}")
     return {'command':[str(command[0]),*[pathlib.Path(str(x)).name if '/' in str(x) else str(x) for x in command[1:]]],
             'passed':True,'stdout':result.stdout,'stderr':result.stderr}
 run('/usr/bin/lipo','-create',arm/'atracdenc-aal',intel/'atracdenc-aal','-output',bin_dir/'atracdenc-aal-macos-universal')
 run('/usr/bin/lipo','-create',arm/gui,intel/gui,'-output',bin_dir/gui)
 for name in ('atracdenc-aal-macos-universal',str(gui)):
-    run('/usr/bin/lipo','-verify_arch','arm64','x86_64',bin_dir/name)
+    run('/usr/bin/lipo',bin_dir/name,'-verify_arch','arm64','x86_64')
 run('/usr/bin/codesign','--force','--sign','-',bin_dir/'atracdenc-aal-macos-universal')
 run('/usr/bin/codesign','--force','--sign','-',bin_dir/'AtracDEnc-AAL-GUI.app')
 run('/usr/bin/codesign','--verify','--strict',bin_dir/'AtracDEnc-AAL-GUI.app')
