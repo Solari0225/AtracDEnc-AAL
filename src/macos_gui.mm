@@ -19,7 +19,7 @@ static NSString* ns(const std::wstring& text) {
     return [[NSString alloc] initWithBytes:value.data() length:value.size() encoding:NSUTF8StringEncoding] ?: @"";
 }
 static NSString* text(const wchar_t* value) { return ns(ui::tr(value)); }
-static std::wstring wide(NSString* value) {
+static std::wstring aal_wide(NSString* value) {
     static_assert(sizeof(wchar_t)==4, "macOS wchar_t must be UTF-32");
     NSData* data=[value dataUsingEncoding:NSUTF32LittleEndianStringEncoding];
     std::wstring out(data.length/4,L'\0');
@@ -407,12 +407,12 @@ static NSStackView* horizontal(NSArray<NSView*>* views) {
 int main(int argc,const char* argv[]) {
     @autoreleasepool {
         std::vector<std::wstring> tags,args;
-        for(NSString* tag in NSLocale.preferredLanguages)tags.push_back(wide(tag));
+        for(NSString* tag in NSLocale.preferredLanguages)tags.push_back(aal_wide(tag));
         bool headless=false;
         for(int i=1;i<argc;++i) {
             if(!std::strcmp(argv[i],"--self-test")){headless=true;continue;}
             if(!std::strncmp(argv[i],"-psn_",5))continue;
-            args.push_back(wide([NSString stringWithUTF8String:argv[i]]?:@""));
+            args.push_back(aal_wide([NSString stringWithUTF8String:argv[i]]?:@""));
         }
         ui::Startup startup;
         if(!ui::parse_arguments(args,ui::preferred_language(tags),startup)) {
