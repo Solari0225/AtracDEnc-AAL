@@ -26,6 +26,9 @@ record=json.loads(assets['RELEASE-VALIDATION.json'])
 if record['source_commit']!=commit or not all(x['checks']['passed'] for x in record['native_checks'].values()):
     raise SystemExit('Release validation does not match the checked source')
 notes=(root/f'docs/releases/{tag}.md').read_text(encoding='utf-8')
+# Release pages do not resolve links relative to docs/releases/.
+notes_base='https://github.com/'+repository+'/blob/'+commit+'/docs/releases/'
+notes=re.sub(r'\]\((\.\.?/[^()\s]+)\)',lambda match:']('+urllib.parse.urljoin(notes_base,match.group(1))+')',notes)
 notes+=f"\n\nSource commit: `{commit}`\n\nNative build and headless checks: {record['ci_url']}\n"
 try:ref=request('GET',base+'/git/ref/tags/'+tag)
 except urllib.error.HTTPError as e:
