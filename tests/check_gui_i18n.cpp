@@ -4,6 +4,7 @@
 #include <windows.h>
 #endif
 #include "../src/gui_i18n.hpp"
+#include "../src/gui_jobs.hpp"
 #include <iostream>
 #include <stdexcept>
 
@@ -39,10 +40,18 @@ int main(){
         ui::language=ui::Language::English;
         require(ui::progress_text(L"计算精确整数预测与无损残差")==L"Computing exact integer prediction and lossless residuals","Engine stage translation");
         require(ui::progress_text(L"self-test-中文.wav")==L"self-test-中文.wav","Arbitrary names untouched");
-        const wchar_t* filter=ui::tr(L"PCM WAV 音频 (*.wav)\0*.wav\0所有文件 (*.*)\0*.*\0\0");
-        require(std::wstring(filter)==L"PCM WAV audio (*.wav)","File filter title");
+        require(ui::is_decode_input(std::filesystem::u8path(u8"中文.OMA")),"Uppercase OMA routing");
+        require(ui::is_decode_input("test.Aa3")&&!ui::is_decode_input("test.wav"),"AA3 / WAV routing");
+        require(std::wstring(ui::output_extension("test.oma"))==L".wav","Decode output extension");
+        require(std::wstring(ui::output_extension("test.WAV"))==L".oma","Encode output extension");
+        require(ui::progress_text(L"Read AAL container")==L"Read AAL container","English decoder progress");
+        ui::language=ui::Language::Chinese;
+        require(ui::progress_text(L"Read AAL container")==L"读取 AAL 文件","Chinese decoder progress");
+        ui::language=ui::Language::English;
+        const wchar_t* filter=ui::tr(L"WAV / AAL 音频\0*.wav;*.oma;*.aa3\0所有文件 (*.*)\0*.*\0\0");
+        require(std::wstring(filter)==L"WAV / AAL audio","File filter title");
         filter+=std::wcslen(filter)+1;
-        require(std::wstring(filter)==L"*.wav","File filter pattern");
+        require(std::wstring(filter)==L"*.wav;*.oma;*.aa3","File filter pattern");
         filter+=std::wcslen(filter)+1;
         require(std::wstring(filter)==L"All files (*.*)","Second file filter preserved");
 #ifdef _WIN32

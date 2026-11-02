@@ -1,4 +1,5 @@
 #include "encoder_api.hpp"
+#include "decoder_api.hpp"
 #include "platform_io.hpp"
 #include "codec_profiles.hpp"
 #include <csignal>
@@ -15,11 +16,13 @@ BOOL WINAPI stop(DWORD type) {
 void stop(int){cancelled.store(true);}
 #endif
 void help() {
-    std::cout<<"AtracDEnc-AAL 0.2.0\n"
+    std::cout<<"AtracDEnc-AAL 0.3.0\n"
         <<"Usage:\n  atracdenc-aal input.wav output.oma\n  atracdenc-aal --profile aalp-352 -i input.wav -o output.oma\n"
         <<"  atracdenc-aal --codec aal3 --bitrate 132 input.wav output.oma\n"
+        <<"  atracdenc-aal --decode input.oma output.wav\n"
         <<"  atracdenc-aal --list-profiles\n  atracdenc-aal --self-test [--profile aalp-352]\n  atracdenc-aal --self-test-all\n\n"
         <<"Input: 44100 Hz, 16-bit, stereo integer PCM RIFF/WAV; at most 1 GiB.\n"
+        <<"Decode: unencrypted 44100 Hz / 16-bit / stereo AAL3 or AALP; automatic profile detection.\n"
         <<"Default: AALP / ATRAC3plus 352 kbps core with lossless enhancement.\n"
         <<"AAL3: 132 kbps. AALP: 48/64/96/128/160/192/256/320/352 kbps.\n"
         <<"--bitrate accepts nominal kbps or bps, e.g. 352 or 352000.\n"
@@ -47,16 +50,17 @@ int run(const std::vector<std::string>& args) {
     const int argc=int(args.size());
     try {
         if(argc==1){help();return 0;}
-        std::filesystem::path input,output;bool test=false,all_tests=false,list=false,explicit_profile=false;
+        std::filesystem::path input,output;bool test=false,all_tests=false,list=false,explicit_profile=false,decode=false;
         independent_aal::EncodeOptions options;std::string codec;uint32_t requested_rate=0;
         std::vector<std::string> positional;
         for(int i=1;i<argc;++i) {
             const std::string arg=args[i];
             if(arg=="--help"||arg=="-h"){help();return 0;}
+            if(arg=="--decode"||arg=="-d"){if(decode)throw std::runtime_error("Repeated --decode.");decode=true;continue;}
             if(arg=="--self-test"){test=true;continue;}
             if(arg=="--self-test-all"){test=true;all_tests=true;continue;}
             if(arg=="--list-profiles"){list=true;continue;}
-            if(arg=="--version"){std::cout<<"AtracDEnc-AAL 0.2.0\n";return 0;}
+            if(arg=="--version"){std::cout<<"AtracDEnc-AAL 0.3.0\n";return 0;}
             if(arg=="--profile"||arg=="--codec"||arg=="--bitrate") {
                 if(++i>=argc)throw std::runtime_error("Missing profile option value.");
                 if(arg=="--profile") {if(explicit_profile)throw std::runtime_error("Repeated --profile.");options.profile_id=args[i];explicit_profile=true;}
@@ -71,6 +75,7 @@ int run(const std::vector<std::string>& args) {
             } else if(!arg.empty()&&arg[0]=='-')throw std::runtime_error("Unknown option. Use --help.");
             else positional.push_back(arg);
         }
+        if(decode&&(test||list||explicit_profile||!codec.empty()||requested_rate))throw std::runtime_error("--decode cannot select encoding profiles or self-tests.");
         if(list){list_profiles();return 0;}
         if(explicit_profile&&(!codec.empty()||requested_rate))throw std::runtime_error("Choose --profile or --codec/--bitrate, not both.");
         if(!explicit_profile&&(!codec.empty()||requested_rate)) {
@@ -95,6 +100,12 @@ int run(const std::vector<std::string>& args) {
             return 0;
         }
         if(input.empty()||output.empty())throw std::runtime_error("Input and output are required. Use --help.");
+        if(decode) {
+            const auto result=independent_aal::decode_file(input,output,progress,&cancelled);
+            std::cout<<"OK "<<result.output_path.u8string()<<"\n"
+                     <<"profile="<<result.profile_id<<" sample_frames="<<result.sample_frames<<" bytes="<<result.output_bytes<<" pcm_sha256="<<result.pcm_sha256<<"\n";
+            return 0;
+        }
         const auto result=independent_aal::encode_file(input,output,progress,&cancelled,options);
         std::cout<<"OK "<<result.output_path.u8string()<<"\n"
                  <<"profile="<<result.profile_id<<" sample_frames="<<result.sample_frames<<" bytes="<<result.output_bytes<<" pcm_sha256="<<result.pcm_sha256<<"\n"

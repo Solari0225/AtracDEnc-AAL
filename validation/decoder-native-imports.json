@@ -1,0 +1,38 @@
+{
+  "operation": "inspect_pe_imports",
+  "evidence_id": "ev_cbb7bc1d0d4d6e559bf612950eba522e6414efdfa1e2fd24374216028c4d781f",
+  "authority": "shipped-artifact",
+  "confidence": "observed",
+  "artifact": {
+    "name": "atracdenc-aal.exe",
+    "bytes": 1167872,
+    "sha256": "12678a0d31ad1781d14c059f8eddb0af5c707c6c4d572b493f14ccab6a733d2b"
+  },
+  "coverage": {
+    "status": "complete",
+    "reason": null,
+    "examined_dlls": 12,
+    "imports": 185,
+    "delay_imports": 0
+  },
+  "imported_dlls": [
+    "api-ms-win-crt-heap-l1-1-0.dll",
+    "api-ms-win-crt-math-l1-1-0.dll",
+    "api-ms-win-crt-private-l1-1-0.dll",
+    "api-ms-win-crt-runtime-l1-1-0.dll",
+    "api-ms-win-crt-stdio-l1-1-0.dll",
+    "api-ms-win-crt-string-l1-1-0.dll",
+    "KERNEL32.dll",
+    "api-ms-win-crt-environment-l1-1-0.dll",
+    "api-ms-win-crt-locale-l1-1-0.dll",
+    "api-ms-win-crt-time-l1-1-0.dll",
+    "api-ms-win-crt-multibyte-l1-1-0.dll",
+    "api-ms-win-crt-convert-l1-1-0.dll"
+  ],
+  "delay_imported_dlls": [],
+  "limitations": [
+    "Rows reproduce the PE import and delay-load directories; they do not establish that an import is bound, forwarded or reachable at runtime.",
+    "Bound import snapshots, the import address table as loaded, and export-forward resolution in another DLL remain unobserved."
+  ],
+  "scope": "Static PE import table inspection. No Sony/SMLE/TraConv/FFmpeg imports; source and controlled execution are separate evidence."
+}

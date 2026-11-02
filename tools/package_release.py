@@ -28,6 +28,7 @@ else:
             if file.is_file(): add(file)
     add(root/'include/independent_aal.h')
     add(root/'examples/encode_buffer.c')
+    add(root/'examples/decode_buffer.c')
     if args.platform == 'windows-x64':
         add(args.bin_dir/'atracdenc-aal.exe', 'atracdenc-aal.exe')
         add(args.bin_dir/'AtracDEnc-AAL-GUI.exe', 'AtracDEnc-AAL-GUI.exe')

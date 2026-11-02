@@ -29,7 +29,8 @@ sources=(
     core/plus/plus_core_adapter.cpp core/plus/parser/plus_core_parser.cpp
     core/plus/fixed_plus_predictor.cpp core/plus/dequant/independent_plus_dequant.cpp
     core/plus/imdct/independent_plus_transform.cpp core/plus/ipqf/independent_plus_ipqf.cpp
-    src/encoder.cpp src/c_api.cpp)
+    src/encoder.cpp src/c_api.cpp
+    core/decode/aal3/aal3_integer_gain.cpp core/decode/aalp/core_reader.cpp core/decode/aalp/fixed_predictor.cpp core/decode/aalp/aalp_integer_gain.cpp src/decoder.cpp src/decoder_c_api.cpp)
 for source in "${sources[@]}"; do
     object="build/native/obj/$(basename "$source").o"
     "$cxx" "${common[@]}" -std=c++17 "${include[@]}" "$@" -c "$source" -o "$object"
@@ -41,4 +42,6 @@ ar rcs bin/libatracdenc_aal.a "${objects[@]}"
 "$cc" "${common[@]}" "${include[@]}" "$@" -c tests/check_c_api.c -o build/native/obj/aal-c-api-test.o
 "$cxx" "${common[@]}" "$@" build/native/obj/aal-c-api-test.o "${objects[@]}" -o bin/aal-c-api-test
 "$cxx" "${common[@]}" -std=c++17 "$@" tests/check_gui_i18n.cpp -o bin/aal-gui-i18n-test
+"$cc" "${common[@]}" "$@" -c tests/check_decode_c_api.c -o build/native/obj/check_decode_c_api.o
+"$cxx" "${common[@]}" -std=c++17 "${include[@]}" "$@" tests/check_decoder.cpp build/native/obj/check_decode_c_api.o "${objects[@]}" -o bin/aal-decoder-test
 echo "Built the CLI, static library, conformance, C API and GUI language tests in bin/"

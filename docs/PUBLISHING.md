@@ -1,69 +1,37 @@
-# GitHub 发布资料 / GitHub publishing materials
+# 发布与维护 / Publishing and maintenance
 
-本文档保留发布资料的组织方式和维护者发布步骤。首个公开版本现已发布：[仓库](https://github.com/Solari0225/AtracDEnc-AAL) · [v0.2.0](https://github.com/Solari0225/AtracDEnc-AAL/releases/tag/v0.2.0)。
+项目仓库 / Repository: [Solari0225/AtracDEnc-AAL](https://github.com/Solari0225/AtracDEnc-AAL).
 
-This document records the kit layout and maintainer publishing steps. The first public version is now available: [repository](https://github.com/Solari0225/AtracDEnc-AAL) · [v0.2.0](https://github.com/Solari0225/AtracDEnc-AAL/releases/tag/v0.2.0).
+AtracDEnc-AAL 是基于 AtracDEnc 开发的 AAL3 / AALP 编解码器，提供 Windows/macOS 命令行、C API 与中英文简易 Windows 测试界面。An AAL3 / AALP encoder/decoder based on AtracDEnc, with a Windows/macOS CLI, C API and simple bilingual Windows test GUI.
 
-## 仓库信息 / Repository settings
+## 发布检查 / Release checks
 
-仓库名 / Repository name：**AtracDEnc-AAL**
+从项目根目录构建并运行 `python tools/run_checks.py --bin-dir bin` 与 `python tools/verify_repository.py`。GitHub CI 在 Windows x64、macOS arm64 和 macOS Intel 上独立构建、执行离线检查并打包 Actions 产物；工作流不自动发布 Release。
 
-英文 About 描述 / English About description：
+Build from the project root, run the combined offline checks and repository verifier. GitHub CI independently builds, tests and packages artifacts on Windows x64, macOS arm64 and macOS Intel. It does not publish a Release automatically.
 
-```text
-An ATRAC Advanced Lossless (AAL3/AALP) encoder based on AtracDEnc, with a standalone CLI, C API and Windows test GUI for Windows/macOS.
-```
+涉及解码行为的改动还需要对照官方文件、原始 PCM 和外部 Sony 解码参考，记录实际样本值与长度。Sony 参考软件只用于私有开发验收，不能加入公开源码、运行路径或离线测试依赖。更新 `validation/` 中的真实结果；保留历史记录与已发布版本。
 
-中文介绍 / Chinese description：
+Decoder changes also require comparison against official files, original PCM and an external Sony decode reference, including exact samples and lengths. Reference software is used only by a separate private acceptance harness; do not add it to public source, runtime paths or offline dependencies. Record observed results and retain release history.
 
-```text
-基于 AtracDEnc 开发的 ATRAC Advanced Lossless（AAL3/AALP）编码器，提供 Windows/macOS 命令行、C 接口及 Windows 测试界面。
-```
-
-Topics：`atrac`、`atracdenc`、`aal`、`aalp`、`lossless-audio`、`audio-codec`、`sony-walkman`、`cpp17`、`command-line`。
-
-## 目录对应关系 / Kit layout
-
-- `repository/`：将此目录的**内容**作为 GitHub 仓库根目录，包含 `.github/` 隐藏目录。Use its **contents** as the repository root, including the hidden `.github/` directory.
-- `release-assets/`：作为 GitHub Release 的附件上传。Upload these files as Release assets.
-- `RELEASE_NOTES.md`：复制到 Release 描述；仓库内相同文档位于 `docs/releases/v0.2.0.md`。Use as the Release body; the same text is in the repository.
-- `PREPARATION_REPORT.json`：本地准备与包校验记录，不需要放到仓库源码中。Local preparation/package audit; it does not need to be committed.
-
-源码和二进制已经分开组织；不要把构建目录、研究目录或旧工作区整体推送。完整源码包保留全部生产源和数据夹具。
-
-Source and binaries are organized separately. Push the prepared repository rather than an entire old build/research workspace. The source archive retains all production code and fixtures.
-
-## 上传仓库 / Push the repository
-
-以下是由仓库拥有者执行的命令。需要本机 Git，以及已经登录自己账号的 GitHub CLI；本资料准备过程未执行这些远程操作。
-
-The repository owner can run the commands below using Git and an authenticated GitHub CLI. These remote operations were not executed while preparing this kit.
-
-在 `repository/` 中执行 / From `repository/`：
+## 打包 / Packaging
 
 ```bash
-git init -b main
-git add .
-git commit -m "Prepare AtracDEnc-AAL 0.2.0"
-gh repo create AtracDEnc-AAL --public --source . --remote origin --push
-git tag v0.2.0
-git push origin v0.2.0
+python tools/package_release.py --platform windows-x64
+python tools/package_release.py --platform macos-universal
+python tools/package_release.py --platform source
 ```
 
-也可以先在 GitHub 网页创建空仓库，再按网页显示的真实远程地址添加 `origin` 并推送。请使用自己的账号和仓库地址。
+脚本读取 `VERSION`，输出三个 ZIP 和 `SHA256SUMS.txt`。macOS universal 打包前先构建两个架构并运行 `python tools/make_universal_macos.py`。Windows 包包含 CLI、简易测试 GUI 和静态库；macOS 包包含通用 CLI 及两个架构的静态库；源码包包含完整生产源、许可证、文档与离线夹具。
 
-Alternatively, create an empty repository in GitHub's UI and use the actual remote URL it provides. Use your own account and repository URL.
+The packager reads `VERSION` and writes ZIPs plus checksums. Assemble the macOS universal executable from both built slices first. Binary packages include the CLI and static libraries, plus the Windows test GUI. Source includes all production code, licenses, documentation and offline fixtures.
 
-## Release
+## GitHub Release
 
-在 GitHub 选择标签 **v0.2.0** 创建 Release，标题使用 **AtracDEnc-AAL v0.2.0**，正文复制 `RELEASE_NOTES.md`，附件上传 `release-assets/` 下的三个 ZIP 和 `SHA256SUMS.txt`。
+通过构建与验收后，为相应提交创建 `v<VERSION>` 标签和 Release。正文使用 `docs/releases/v<VERSION>.md`，上传三个 ZIP 和 `SHA256SUMS.txt`。当前项目保留实验版标识；实际测试结果决定说明中的兼容范围。
 
-Create a Release for tag **v0.2.0**, titled **AtracDEnc-AAL v0.2.0**, paste `RELEASE_NOTES.md` as the body, and attach the three ZIP archives and `SHA256SUMS.txt` from `release-assets/`.
+After build and acceptance checks pass, tag the selected commit and create a Release using its versioned notes. Upload all three ZIPs and the checksum file. Retain experimental status and describe the observed compatibility scope.
 
-当前说明保留实验状态和已知测试边界；不要把“PCM 还原一致”改写成“官方完整文件逐字节相同”，也不要把交叉编译改写成 Mac 实机验证。运行 Actions 后，可根据实际结果补充验证记录。
+编码器的 PCM 一致性不能改写为与 Sony 完整编码字节或压缩体积一致。交叉编译、原生 CI 执行、特定预构建附件执行和 Walkman 实机测试各自记录。
 
-The notes retain experimental status and tested limits. PCM equality should not be described as complete Sony byte identity, and cross-compilation should not be described as native Mac execution. Update validation records after actual Actions runs.
-
-GitHub CI 只构建、测试并保存 Actions 产物，不自动发布 Release。现有二进制及本地校验结果不依赖尚未执行的远程 CI。
-
-CI only builds, tests and uploads Actions artifacts; it does not publish Releases automatically. Supplied binaries and local verification do not depend on unexecuted remote CI.
+Exact PCM reconstruction is separate from complete Sony encoding-byte or compression-size equality. Record cross-compilation, native CI execution, execution of a specific prebuilt asset and physical Walkman testing separately.

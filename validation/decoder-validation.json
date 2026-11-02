@@ -1,0 +1,4248 @@
+{
+  "all_exact": true,
+  "cases": 469,
+  "planned_cases": 469,
+  "categories": {
+    "official": 338,
+    "synthetic-syntax": 9,
+    "independent-0.2": 122
+  },
+  "signed16_samples": 18633240,
+  "sony_oracle_sha256": "88622173b1a7c91fc38ceedc846a59c8f7593515183550d897811f53c293d993",
+  "sony_executed_fresh_for_each_case": true,
+  "seconds": 675.9840000000258,
+  "version": "0.3.0",
+  "scope": "Complete AAL decoding: source PCM, independent decoder and freshly executed Sony SMLE 7.1 output, including exact sample lengths.",
+  "final_cli_sha256": "12678a0d31ad1781d14c059f8eddb0af5c707c6c4d572b493f14ccab6a733d2b",
+  "final_build_replay": "All469 inputs re-decoded by final build; exact-input SHA-256 and Sony reference PCM SHA-256 checked before reuse.",
+  "sony_version": "SMLE 7.1.00.11181 / TraConv111029",
+  "installed_sony_reference_artifacts": {
+    "salwrap.dll": "d49a3a6c57b0ac411f6ace5415ee38a2a20fe7a9d1fc095085cea51a31b7b986",
+    "omgconv2.dll": "76b95f83f121760868a2a3a9e0baa125dfb992ef29bced05dd03ea836bcd3ff8"
+  },
+  "reference_executables_distributed": false,
+  "reference_called_by_product_or_ci": false,
+  "rows": [
+    {
+      "id": "aalp-352--anti-phase",
+      "family": "official",
+      "source_frames": 8192,
+      "input_sha256": "15a20406b51f15c7fa4debf2490df72f30ac64ae3d91be5ac0fc5ac251fee94e",
+      "pcm_sha256": "201ac7f88277939127ee8393c770918c2a466344e31e866911a3af06fce1ddc7",
+      "sony_pcm_sha256": "201ac7f88277939127ee8393c770918c2a466344e31e866911a3af06fce1ddc7",
+      "exact": true
+    },
+    {
+      "id": "aalp-352--boundary-1",
+      "family": "official",
+      "source_frames": 1,
+      "input_sha256": "155e1df181b100152c9baee716b7d79228ba710077d41f181ccc2ba6c81ff260",
+      "pcm_sha256": "3fe082173119c71b92fc5c05c66309f012f6a3f1c8b3ec90eff83f3529603d32",
+      "sony_pcm_sha256": "3fe082173119c71b92fc5c05c66309f012f6a3f1c8b3ec90eff83f3529603d32",
+      "exact": true
+    },
+    {
+      "id": "aalp-352--boundary-1023",
+      "family": "official",
+      "source_frames": 1023,
+      "input_sha256": "490dcf096c5d08db077f9ff56a4e703c0a89c37023e979d1b1294154b202dcf0",
+      "pcm_sha256": "1f443687024085dc7b87fa2715826c0a9509819e2d35c5984f685be58a077e07",
+      "sony_pcm_sha256": "1f443687024085dc7b87fa2715826c0a9509819e2d35c5984f685be58a077e07",
+      "exact": true
+    },
+    {
+      "id": "aalp-352--boundary-1024",
+      "family": "official",
+      "source_frames": 1024,
+      "input_sha256": "209993a00b7a4aea8f3e13b1f0d5dad70a409e6246fad8c4d609055ccaead6c8",
+      "pcm_sha256": "0642e76782b46ae476499c6c17dfc2b946c40479be6636eb2b44919663338957",
+      "sony_pcm_sha256": "0642e76782b46ae476499c6c17dfc2b946c40479be6636eb2b44919663338957",
+      "exact": true
+    },
+    {
+      "id": "aalp-352--boundary-1025",
+      "family": "official",
+      "source_frames": 1025,
+      "input_sha256": "ec3712adc39f2a8f395c0c4c11374ad8443fbe3edcf7331a54af6039429ef894",
+      "pcm_sha256": "79d3052c715d9d0c1101d22ca2253301aa3ef9e70d3e7a2047e7f094ff3c84ed",
+      "sony_pcm_sha256": "79d3052c715d9d0c1101d22ca2253301aa3ef9e70d3e7a2047e7f094ff3c84ed",
+      "exact": true
+    },
+    {
+      "id": "aalp-352--boundary-1679",
+      "family": "official",
+      "source_frames": 1679,
+      "input_sha256": "74ea03bac8479520792144d58251b174bfc332d9d7458197648beb06a08bb000",
+      "pcm_sha256": "327009fd769698167bd6ad6914f29bf6d5df477868e175ee27c6574f1795b182",
+      "sony_pcm_sha256": "327009fd769698167bd6ad6914f29bf6d5df477868e175ee27c6574f1795b182",
+      "exact": true
+    },
+    {
+      "id": "aalp-352--boundary-1680",
+      "family": "official",
+      "source_frames": 1680,
+      "input_sha256": "5ac6b1f73288c5579d164f3fa94600b208c2f18ee9554743f18acec84f48e207",
+      "pcm_sha256": "2efa3b0fe30c79487052c5c1418a7a3d4efebb2c9722a86d37d8d3c7438adcd9",
+      "sony_pcm_sha256": "2efa3b0fe30c79487052c5c1418a7a3d4efebb2c9722a86d37d8d3c7438adcd9",
+      "exact": true
+    },
+    {
+      "id": "aalp-352--boundary-1681",
+      "family": "official",
+      "source_frames": 1681,
+      "input_sha256": "ff6c9b79a57debe8ca89c13810eb505d13b9098b25593ec7d8c37c080c2f837c",
+      "pcm_sha256": "2ff31fb6ad920b8dbc1499cc6925451f8629adb40b0653b224b184b745cf51c9",
+      "sony_pcm_sha256": "2ff31fb6ad920b8dbc1499cc6925451f8629adb40b0653b224b184b745cf51c9",
+      "exact": true
+    },
+    {
+      "id": "aalp-352--boundary-2047",
+      "family": "official",
+      "source_frames": 2047,
+      "input_sha256": "1b98b8ccc0d74428572e1dc6c2cdec941069b35f4d62339272730c5333279dc3",
+      "pcm_sha256": "2e96359f36d2b9e413dabde4456fb755116a541a84e13a5351012a1a580e563e",
+      "sony_pcm_sha256": "2e96359f36d2b9e413dabde4456fb755116a541a84e13a5351012a1a580e563e",
+      "exact": true
+    },
+    {
+      "id": "aalp-352--boundary-2048",
+      "family": "official",
+      "source_frames": 2048,
+      "input_sha256": "05b008427bb750ac7ede6ef91c73518a293a4be9aea7cbc84df388e99dd083a5",
+      "pcm_sha256": "d42ec8901648a500fdd747ffd0fdf8b4ec39519393aed880c1478517da3a2bae",
+      "sony_pcm_sha256": "d42ec8901648a500fdd747ffd0fdf8b4ec39519393aed880c1478517da3a2bae",
+      "exact": true
+    },
+    {
+      "id": "aalp-352--boundary-2049",
+      "family": "official",
+      "source_frames": 2049,
+      "input_sha256": "d541252ed8c0f197b9d1bfbc71a08f5b6ada73c8aff7ba4b8c33b15a16d6c3ef",
+      "pcm_sha256": "7e04271422fd6a4c81542f04671ac6118a2d920b69c18cfb24e08055b2f81139",
+      "sony_pcm_sha256": "7e04271422fd6a4c81542f04671ac6118a2d920b69c18cfb24e08055b2f81139",
+      "exact": true
+    },
+    {
+      "id": "aalp-352--boundary-4095",
+      "family": "official",
+      "source_frames": 4095,
+      "input_sha256": "af5ede4d00ff314a8235e52a7c3d182aad977a6e12985bcdff3cb38d9d7ffe67",
+      "pcm_sha256": "66107357a5f59d0117ce2d26243a39cc224acd0f4920fb4dbb84cf3c97c6d401",
+      "sony_pcm_sha256": "66107357a5f59d0117ce2d26243a39cc224acd0f4920fb4dbb84cf3c97c6d401",
+      "exact": true
+    },
+    {
+      "id": "aalp-352--boundary-4096",
+      "family": "official",
+      "source_frames": 4096,
+      "input_sha256": "1712512618c6bc7cf1ff37c9c4df79f9ff9688f006fac9b2411688ef00e45c6d",
+      "pcm_sha256": "b5c98652a6a47d0ef0da2cf422270e82cab454373538a376e524b07f1c27aa75",
+      "sony_pcm_sha256": "b5c98652a6a47d0ef0da2cf422270e82cab454373538a376e524b07f1c27aa75",
+      "exact": true
+    },
+    {
+      "id": "aalp-352--boundary-4097",
+      "family": "official",
+      "source_frames": 4097,
+      "input_sha256": "8782907676714271d304fa2f1872e9f8ab8ff464d754407108e741f2269f8897",
+      "pcm_sha256": "d3b095ddf66b609e63ac4bcce6ae49491c9127a2c8fc7b6d3a7568e8421db34e",
+      "sony_pcm_sha256": "d3b095ddf66b609e63ac4bcce6ae49491c9127a2c8fc7b6d3a7568e8421db34e",
+      "exact": true
+    },
+    {
+      "id": "aalp-352--boundary-44117",
+      "family": "official",
+      "source_frames": 44117,
+      "input_sha256": "57729500f4dc608c60aae247db7edcf0691c1a8a2e9b79bd23ee69c7e9c1a334",
+      "pcm_sha256": "919eb0dbadce82b63bb03f80b8327bbe2a331b970b42537a51c92c07eaafec58",
+      "sony_pcm_sha256": "919eb0dbadce82b63bb03f80b8327bbe2a331b970b42537a51c92c07eaafec58",
+      "exact": true
+    },
+    {
+      "id": "aalp-352--boundary-8191",
+      "family": "official",
+      "source_frames": 8191,
+      "input_sha256": "bcd6ec5c76fba954daf580ae4a592d47c5869eed95c2226914dde48495e62342",
+      "pcm_sha256": "c2c1d8625978d6f3a65d14f307e72c286e15723e7e59bfb8e6e60c3af4f4b5ae",
+      "sony_pcm_sha256": "c2c1d8625978d6f3a65d14f307e72c286e15723e7e59bfb8e6e60c3af4f4b5ae",
+      "exact": true
+    },
+    {
+      "id": "aalp-352--boundary-8192",
+      "family": "official",
+      "source_frames": 8192,
+      "input_sha256": "7f2a3fb8ca697f60ebe57da013d9db356c3aeba2a5b0aed1b906309353ddcadd",
+      "pcm_sha256": "321295c249b908646ce229c50a29b5967577723bfd30e46e14bbc0217878cfb6",
+      "sony_pcm_sha256": "321295c249b908646ce229c50a29b5967577723bfd30e46e14bbc0217878cfb6",
+      "exact": true
+    },
+    {
+      "id": "aalp-352--boundary-8193",
+      "family": "official",
+      "source_frames": 8193,
+      "input_sha256": "dfc01e3ad6b0555a6ac431edeada85ab92d64dd3b8c83b4eaf952e9f363f69e9",
+      "pcm_sha256": "989c8d85b6bcc2546ae56e90bc8cf524c9589c1aa72de8ec92432e69ec6efd11",
+      "sony_pcm_sha256": "989c8d85b6bcc2546ae56e90bc8cf524c9589c1aa72de8ec92432e69ec6efd11",
+      "exact": true
+    },
+    {
+      "id": "aalp-352--fullscale-alternating",
+      "family": "official",
+      "source_frames": 8192,
+      "input_sha256": "4a6da46655777056ed123c09aa1034964dc175598d2026a7056f325278762f36",
+      "pcm_sha256": "e46f948a8bb1a37109c5f73e7d09f78580cfd72a3269dfee8dea0c5c74e27fb7",
+      "sony_pcm_sha256": "e46f948a8bb1a37109c5f73e7d09f78580cfd72a3269dfee8dea0c5c74e27fb7",
+      "exact": true
+    },
+    {
+      "id": "aalp-352--fullscale-negative",
+      "family": "official",
+      "source_frames": 4096,
+      "input_sha256": "6cdd4f0760855d486a3ea6e2b1d1dfd772d72e505dc90e4e3bdad58fc6cbfa24",
+      "pcm_sha256": "d15bf5ad303b3a1cbb2976d2109116d88ce77ebd3c6dbfff814530f06b9f906f",
+      "sony_pcm_sha256": "d15bf5ad303b3a1cbb2976d2109116d88ce77ebd3c6dbfff814530f06b9f906f",
+      "exact": true
+    },
+    {
+      "id": "aalp-352--fullscale-positive",
+      "family": "official",
+      "source_frames": 4096,
+      "input_sha256": "e9b43a7cc6d4e4bf597cea83acab3bb0dcff65518f2250eb117e0618f21085b0",
+      "pcm_sha256": "4920e1f3d7b1ea9929bdf186a352e3e1cf0ddfc443d96173de33f28fe6e151c3",
+      "sony_pcm_sha256": "4920e1f3d7b1ea9929bdf186a352e3e1cf0ddfc443d96173de33f28fe6e151c3",
+      "exact": true
+    },
+    {
+      "id": "aalp-352--impulse-left",
+      "family": "official",
+      "source_frames": 8192,
+      "input_sha256": "185bbfa9678965ae5f41d5f075f627d92ecf09b09ca7ea794ec6961fbf293aef",
+      "pcm_sha256": "ddd81090b7715764ed96a5f545ed92f0ba0bafdef9a114d928597d447e2e12a2",
+      "sony_pcm_sha256": "ddd81090b7715764ed96a5f545ed92f0ba0bafdef9a114d928597d447e2e12a2",
+      "exact": true
+    },
+    {
+      "id": "aalp-352--impulse-right",
+      "family": "official",
+      "source_frames": 8192,
+      "input_sha256": "3c520129943dd71169ae39a9b539450cf894fbb36bde08ecb87632901ba2cd15",
+      "pcm_sha256": "d44c604378bebfac019b2c6fc174bdff01630f7cec2928f101f9aeceb222ab73",
+      "sony_pcm_sha256": "d44c604378bebfac019b2c6fc174bdff01630f7cec2928f101f9aeceb222ab73",
+      "exact": true
+    },
+    {
+      "id": "aalp-352--lowlevel",
+      "family": "official",
+      "source_frames": 8192,
+      "input_sha256": "4c8bc95ec6ae70cccb09bbe415c3d5a1e1b60c78994066129935aaf10082d841",
+      "pcm_sha256": "25e2ebd88874ed4b76733e9fac390d71cfedc973f3fc9c81c4faeebfdd7cc482",
+      "sony_pcm_sha256": "25e2ebd88874ed4b76733e9fac390d71cfedc973f3fc9c81c4faeebfdd7cc482",
+      "exact": true
+    },
+    {
+      "id": "aalp-352--mix-8193",
+      "family": "official",
+      "source_frames": 8193,
+      "input_sha256": "8f01150d2e54bfa8de5b88aeabb9f7849c00ce2932577f96c5a8ca37c2b86ca0",
+      "pcm_sha256": "5ef8d8782b9bbe0bf4cc11c1ea84ab4c0da9452cb770c411a44d47987948d3dc",
+      "sony_pcm_sha256": "5ef8d8782b9bbe0bf4cc11c1ea84ab4c0da9452cb770c411a44d47987948d3dc",
+      "exact": true
+    },
+    {
+      "id": "aalp-352--mix-long",
+      "family": "official",
+      "source_frames": 441000,
+      "input_sha256": "d230a239ac0083dfd75ce9a31f331a07efa611fdb35e0707ef13288139fd57f7",
+      "pcm_sha256": "e89b6f151968ff1f2c96bcf56dbb5d27283baf10936f16eeadf5485f70f82e70",
+      "sony_pcm_sha256": "e89b6f151968ff1f2c96bcf56dbb5d27283baf10936f16eeadf5485f70f82e70",
+      "exact": true
+    },
+    {
+      "id": "aalp-352--multitone",
+      "family": "official",
+      "source_frames": 16384,
+      "input_sha256": "7e5f4302877c6efa38e4f499279333e3ea8a6750eb83ee1d32a02ba2d5d0d8e1",
+      "pcm_sha256": "847dd7c3409f781db4f627b52113b247ed13d620b09deed933e4281872c4e32b",
+      "sony_pcm_sha256": "847dd7c3409f781db4f627b52113b247ed13d620b09deed933e4281872c4e32b",
+      "exact": true
+    },
+    {
+      "id": "aalp-352--noise",
+      "family": "official",
+      "source_frames": 8192,
+      "input_sha256": "0b751ceab2878ec62d15ba99c063b47ff5d333b396811b3e050c68daf4a12ce9",
+      "pcm_sha256": "5bb7d801fb12728eba40036851fa40f115741ff468ab6d85b9d21a24279f4f0c",
+      "sony_pcm_sha256": "5bb7d801fb12728eba40036851fa40f115741ff468ab6d85b9d21a24279f4f0c",
+      "exact": true
+    },
+    {
+      "id": "aalp-352--same-phase",
+      "family": "official",
+      "source_frames": 8192,
+      "input_sha256": "a496a7a4a212f63c7f832d6464462d378b6bd7db54a3380eb8ecf8d49b398456",
+      "pcm_sha256": "ba9f11281445f21606df65513ca85d69664b087e607ff03cb9e3529741ed4b7f",
+      "sony_pcm_sha256": "ba9f11281445f21606df65513ca85d69664b087e607ff03cb9e3529741ed4b7f",
+      "exact": true
+    },
+    {
+      "id": "aalp-352--silence",
+      "family": "official",
+      "source_frames": 8192,
+      "input_sha256": "d657ea9db3c1a0be821941643f3e42160f087117f1011de47abd080f43652c8f",
+      "pcm_sha256": "c35020473aed1b4642cd726cad727b63fff2824ad68cedd7ffb73c7cbd890479",
+      "sony_pcm_sha256": "c35020473aed1b4642cd726cad727b63fff2824ad68cedd7ffb73c7cbd890479",
+      "exact": true
+    },
+    {
+      "id": "aalp-352--sine",
+      "family": "official",
+      "source_frames": 8192,
+      "input_sha256": "ae8ca35089faab97ac0ad6455a2be1bea1869b3b38c014d1829317bcdb71cc6e",
+      "pcm_sha256": "46f43655639a1c8db1cd33abc6a7a3c1630d482d4eae182c39d2bcbcc8f387ed",
+      "sony_pcm_sha256": "46f43655639a1c8db1cd33abc6a7a3c1630d482d4eae182c39d2bcbcc8f387ed",
+      "exact": true
+    },
+    {
+      "id": "aalp-128--anti-phase",
+      "family": "official",
+      "source_frames": 8192,
+      "input_sha256": "76ea5c9af2294d81f08cae433ad5cbf4b0ef4240771e20bb8dc51d29017ae5cd",
+      "pcm_sha256": "201ac7f88277939127ee8393c770918c2a466344e31e866911a3af06fce1ddc7",
+      "sony_pcm_sha256": "201ac7f88277939127ee8393c770918c2a466344e31e866911a3af06fce1ddc7",
+      "exact": true
+    },
+    {
+      "id": "aalp-128--boundary-1",
+      "family": "official",
+      "source_frames": 1,
+      "input_sha256": "4a6cb88248ad1b1932dfad50e1b6cb61f16d55277d81d929558b90d56199a9a5",
+      "pcm_sha256": "3fe082173119c71b92fc5c05c66309f012f6a3f1c8b3ec90eff83f3529603d32",
+      "sony_pcm_sha256": "3fe082173119c71b92fc5c05c66309f012f6a3f1c8b3ec90eff83f3529603d32",
+      "exact": true
+    },
+    {
+      "id": "aalp-128--boundary-1023",
+      "family": "official",
+      "source_frames": 1023,
+      "input_sha256": "15cae4de071e26023cce5118b6fb1357a42fe4ed8498fe789d6a8d4baeafeced",
+      "pcm_sha256": "1f443687024085dc7b87fa2715826c0a9509819e2d35c5984f685be58a077e07",
+      "sony_pcm_sha256": "1f443687024085dc7b87fa2715826c0a9509819e2d35c5984f685be58a077e07",
+      "exact": true
+    },
+    {
+      "id": "aalp-128--boundary-1024",
+      "family": "official",
+      "source_frames": 1024,
+      "input_sha256": "02489352454dce8c2e617872035d680d496155ce61b905d6edf22a9e1a1e348b",
+      "pcm_sha256": "0642e76782b46ae476499c6c17dfc2b946c40479be6636eb2b44919663338957",
+      "sony_pcm_sha256": "0642e76782b46ae476499c6c17dfc2b946c40479be6636eb2b44919663338957",
+      "exact": true
+    },
+    {
+      "id": "aalp-128--boundary-1025",
+      "family": "official",
+      "source_frames": 1025,
+      "input_sha256": "719e6a2ed7481178d9f7885f050155a7925dc90b6b7833ddcb8558660f4cf50a",
+      "pcm_sha256": "79d3052c715d9d0c1101d22ca2253301aa3ef9e70d3e7a2047e7f094ff3c84ed",
+      "sony_pcm_sha256": "79d3052c715d9d0c1101d22ca2253301aa3ef9e70d3e7a2047e7f094ff3c84ed",
+      "exact": true
+    },
+    {
+      "id": "aalp-128--boundary-1679",
+      "family": "official",
+      "source_frames": 1679,
+      "input_sha256": "036a6ca259d0d8d20d48e4c9493a1fd149cafbd179f13f5b867b0572a3750bf9",
+      "pcm_sha256": "327009fd769698167bd6ad6914f29bf6d5df477868e175ee27c6574f1795b182",
+      "sony_pcm_sha256": "327009fd769698167bd6ad6914f29bf6d5df477868e175ee27c6574f1795b182",
+      "exact": true
+    },
+    {
+      "id": "aalp-128--boundary-1680",
+      "family": "official",
+      "source_frames": 1680,
+      "input_sha256": "1ee41e836274cb46d64acc0e63873f89f19910146ac8dcf0d4b28e4d90acd67a",
+      "pcm_sha256": "2efa3b0fe30c79487052c5c1418a7a3d4efebb2c9722a86d37d8d3c7438adcd9",
+      "sony_pcm_sha256": "2efa3b0fe30c79487052c5c1418a7a3d4efebb2c9722a86d37d8d3c7438adcd9",
+      "exact": true
+    },
+    {
+      "id": "aalp-128--boundary-1681",
+      "family": "official",
+      "source_frames": 1681,
+      "input_sha256": "e155ca7b2b744ed48106d88e042809d6912235e683fc4bc7a86349218a5c8fee",
+      "pcm_sha256": "2ff31fb6ad920b8dbc1499cc6925451f8629adb40b0653b224b184b745cf51c9",
+      "sony_pcm_sha256": "2ff31fb6ad920b8dbc1499cc6925451f8629adb40b0653b224b184b745cf51c9",
+      "exact": true
+    },
+    {
+      "id": "aalp-128--boundary-2047",
+      "family": "official",
+      "source_frames": 2047,
+      "input_sha256": "8a139d58560f25d8936449891931b7a45a2a29e32db4f1eeef2df060f98d9046",
+      "pcm_sha256": "2e96359f36d2b9e413dabde4456fb755116a541a84e13a5351012a1a580e563e",
+      "sony_pcm_sha256": "2e96359f36d2b9e413dabde4456fb755116a541a84e13a5351012a1a580e563e",
+      "exact": true
+    },
+    {
+      "id": "aalp-128--boundary-2048",
+      "family": "official",
+      "source_frames": 2048,
+      "input_sha256": "56bf4a49c6e46534a2577c9b324d45816a4ecd3dbf39515189e23996daea5fc0",
+      "pcm_sha256": "d42ec8901648a500fdd747ffd0fdf8b4ec39519393aed880c1478517da3a2bae",
+      "sony_pcm_sha256": "d42ec8901648a500fdd747ffd0fdf8b4ec39519393aed880c1478517da3a2bae",
+      "exact": true
+    },
+    {
+      "id": "aalp-128--boundary-2049",
+      "family": "official",
+      "source_frames": 2049,
+      "input_sha256": "c8fe9cb7866d15476e789985a5a636f0e8b3cc9ac4b2aa0c0f0b756fdc8050c8",
+      "pcm_sha256": "7e04271422fd6a4c81542f04671ac6118a2d920b69c18cfb24e08055b2f81139",
+      "sony_pcm_sha256": "7e04271422fd6a4c81542f04671ac6118a2d920b69c18cfb24e08055b2f81139",
+      "exact": true
+    },
+    {
+      "id": "aalp-128--boundary-4095",
+      "family": "official",
+      "source_frames": 4095,
+      "input_sha256": "594da024219ff2be6bd8f76e47ad42866c786d20da75193f2d885a59f9aa6df9",
+      "pcm_sha256": "66107357a5f59d0117ce2d26243a39cc224acd0f4920fb4dbb84cf3c97c6d401",
+      "sony_pcm_sha256": "66107357a5f59d0117ce2d26243a39cc224acd0f4920fb4dbb84cf3c97c6d401",
+      "exact": true
+    },
+    {
+      "id": "aalp-128--boundary-4096",
+      "family": "official",
+      "source_frames": 4096,
+      "input_sha256": "6b721e9b236657f40f543a4e8a90037e81d47f55819676d23a953715ae29d982",
+      "pcm_sha256": "b5c98652a6a47d0ef0da2cf422270e82cab454373538a376e524b07f1c27aa75",
+      "sony_pcm_sha256": "b5c98652a6a47d0ef0da2cf422270e82cab454373538a376e524b07f1c27aa75",
+      "exact": true
+    },
+    {
+      "id": "aalp-128--boundary-4097",
+      "family": "official",
+      "source_frames": 4097,
+      "input_sha256": "717a0221145351f73fabc2b6584c64d5fc556edfb367342c9beeca7cb89670f2",
+      "pcm_sha256": "d3b095ddf66b609e63ac4bcce6ae49491c9127a2c8fc7b6d3a7568e8421db34e",
+      "sony_pcm_sha256": "d3b095ddf66b609e63ac4bcce6ae49491c9127a2c8fc7b6d3a7568e8421db34e",
+      "exact": true
+    },
+    {
+      "id": "aalp-128--boundary-44117",
+      "family": "official",
+      "source_frames": 44117,
+      "input_sha256": "0c46fe0f50430dba8c9a5f3509f34d6308e1849bc30decb58595c2a6f3080fea",
+      "pcm_sha256": "919eb0dbadce82b63bb03f80b8327bbe2a331b970b42537a51c92c07eaafec58",
+      "sony_pcm_sha256": "919eb0dbadce82b63bb03f80b8327bbe2a331b970b42537a51c92c07eaafec58",
+      "exact": true
+    },
+    {
+      "id": "aalp-128--boundary-8191",
+      "family": "official",
+      "source_frames": 8191,
+      "input_sha256": "ddd1f2bad65221d08374bd40807047b8687cab5e1654887e3d57e4fc9fa9b731",
+      "pcm_sha256": "c2c1d8625978d6f3a65d14f307e72c286e15723e7e59bfb8e6e60c3af4f4b5ae",
+      "sony_pcm_sha256": "c2c1d8625978d6f3a65d14f307e72c286e15723e7e59bfb8e6e60c3af4f4b5ae",
+      "exact": true
+    },
+    {
+      "id": "aalp-128--boundary-8192",
+      "family": "official",
+      "source_frames": 8192,
+      "input_sha256": "175403636caf5cd64ff4c5c9c9dd61d7c4c9839bc0b994e99022d337a780ff1e",
+      "pcm_sha256": "321295c249b908646ce229c50a29b5967577723bfd30e46e14bbc0217878cfb6",
+      "sony_pcm_sha256": "321295c249b908646ce229c50a29b5967577723bfd30e46e14bbc0217878cfb6",
+      "exact": true
+    },
+    {
+      "id": "aalp-128--boundary-8193",
+      "family": "official",
+      "source_frames": 8193,
+      "input_sha256": "4d1c295e16e993f50328334d98decc3ab68eed2f9844569d41c64e07a39717f2",
+      "pcm_sha256": "989c8d85b6bcc2546ae56e90bc8cf524c9589c1aa72de8ec92432e69ec6efd11",
+      "sony_pcm_sha256": "989c8d85b6bcc2546ae56e90bc8cf524c9589c1aa72de8ec92432e69ec6efd11",
+      "exact": true
+    },
+    {
+      "id": "aalp-128--fullscale-alternating",
+      "family": "official",
+      "source_frames": 8192,
+      "input_sha256": "2fb74c7a73c3a63fb6a7874462c92972014cfc506481ecf44f36a7ce4a917732",
+      "pcm_sha256": "e46f948a8bb1a37109c5f73e7d09f78580cfd72a3269dfee8dea0c5c74e27fb7",
+      "sony_pcm_sha256": "e46f948a8bb1a37109c5f73e7d09f78580cfd72a3269dfee8dea0c5c74e27fb7",
+      "exact": true
+    },
+    {
+      "id": "aalp-128--fullscale-negative",
+      "family": "official",
+      "source_frames": 4096,
+      "input_sha256": "3132b7a9dd675c2a614fc015fc06106e87a8e8b0a8abef2c4383d03c0e2dac80",
+      "pcm_sha256": "d15bf5ad303b3a1cbb2976d2109116d88ce77ebd3c6dbfff814530f06b9f906f",
+      "sony_pcm_sha256": "d15bf5ad303b3a1cbb2976d2109116d88ce77ebd3c6dbfff814530f06b9f906f",
+      "exact": true
+    },
+    {
+      "id": "aalp-128--fullscale-positive",
+      "family": "official",
+      "source_frames": 4096,
+      "input_sha256": "e2d3267921d6d4578767f0cb2acd9aa07ea1b06b6ef7415eda29d0776c87a36a",
+      "pcm_sha256": "4920e1f3d7b1ea9929bdf186a352e3e1cf0ddfc443d96173de33f28fe6e151c3",
+      "sony_pcm_sha256": "4920e1f3d7b1ea9929bdf186a352e3e1cf0ddfc443d96173de33f28fe6e151c3",
+      "exact": true
+    },
+    {
+      "id": "aalp-128--impulse-left",
+      "family": "official",
+      "source_frames": 8192,
+      "input_sha256": "0953f708b136da1499df8b61539b83532574eca12e5fa7458bd2c9f08fcdfdf8",
+      "pcm_sha256": "ddd81090b7715764ed96a5f545ed92f0ba0bafdef9a114d928597d447e2e12a2",
+      "sony_pcm_sha256": "ddd81090b7715764ed96a5f545ed92f0ba0bafdef9a114d928597d447e2e12a2",
+      "exact": true
+    },
+    {
+      "id": "aalp-128--impulse-right",
+      "family": "official",
+      "source_frames": 8192,
+      "input_sha256": "24cea2880bae53a64ca4c43c2b2917a3bf3479e75a16782e6a24cfc829be73ac",
+      "pcm_sha256": "d44c604378bebfac019b2c6fc174bdff01630f7cec2928f101f9aeceb222ab73",
+      "sony_pcm_sha256": "d44c604378bebfac019b2c6fc174bdff01630f7cec2928f101f9aeceb222ab73",
+      "exact": true
+    },
+    {
+      "id": "aalp-128--lowlevel",
+      "family": "official",
+      "source_frames": 8192,
+      "input_sha256": "508da1cfe747fd71898ace0a7bd424164a04087c224065151c56e3ee06285bc7",
+      "pcm_sha256": "25e2ebd88874ed4b76733e9fac390d71cfedc973f3fc9c81c4faeebfdd7cc482",
+      "sony_pcm_sha256": "25e2ebd88874ed4b76733e9fac390d71cfedc973f3fc9c81c4faeebfdd7cc482",
+      "exact": true
+    },
+    {
+      "id": "aalp-128--mix-8193",
+      "family": "official",
+      "source_frames": 8193,
+      "input_sha256": "75f6a9ae1e3bc89c6836e0e2c790360d143a10b27bc70ab4cb4cd6cf6a3d4f24",
+      "pcm_sha256": "5ef8d8782b9bbe0bf4cc11c1ea84ab4c0da9452cb770c411a44d47987948d3dc",
+      "sony_pcm_sha256": "5ef8d8782b9bbe0bf4cc11c1ea84ab4c0da9452cb770c411a44d47987948d3dc",
+      "exact": true
+    },
+    {
+      "id": "aalp-128--mix-long",
+      "family": "official",
+      "source_frames": 441000,
+      "input_sha256": "e9897373322233879818060172d12b645cecc31c78a0e23d1ef1b9ccc8c7eb4c",
+      "pcm_sha256": "e89b6f151968ff1f2c96bcf56dbb5d27283baf10936f16eeadf5485f70f82e70",
+      "sony_pcm_sha256": "e89b6f151968ff1f2c96bcf56dbb5d27283baf10936f16eeadf5485f70f82e70",
+      "exact": true
+    },
+    {
+      "id": "aalp-128--multitone",
+      "family": "official",
+      "source_frames": 16384,
+      "input_sha256": "7e1bb42c0de5b882e69516ae05b2a6875a70cd07e52c0b2474283f77d6ea0b38",
+      "pcm_sha256": "847dd7c3409f781db4f627b52113b247ed13d620b09deed933e4281872c4e32b",
+      "sony_pcm_sha256": "847dd7c3409f781db4f627b52113b247ed13d620b09deed933e4281872c4e32b",
+      "exact": true
+    },
+    {
+      "id": "aalp-128--noise",
+      "family": "official",
+      "source_frames": 8192,
+      "input_sha256": "59da25bb75bc9504a22887aa75fe0d84287feca6a8dec2b70d20a670874598da",
+      "pcm_sha256": "5bb7d801fb12728eba40036851fa40f115741ff468ab6d85b9d21a24279f4f0c",
+      "sony_pcm_sha256": "5bb7d801fb12728eba40036851fa40f115741ff468ab6d85b9d21a24279f4f0c",
+      "exact": true
+    },
+    {
+      "id": "aalp-128--same-phase",
+      "family": "official",
+      "source_frames": 8192,
+      "input_sha256": "7723404a78d6f997550e4717f3e1dd9299f40513b5dc32c5c868e1df5ef3ea09",
+      "pcm_sha256": "ba9f11281445f21606df65513ca85d69664b087e607ff03cb9e3529741ed4b7f",
+      "sony_pcm_sha256": "ba9f11281445f21606df65513ca85d69664b087e607ff03cb9e3529741ed4b7f",
+      "exact": true
+    },
+    {
+      "id": "aalp-128--silence",
+      "family": "official",
+      "source_frames": 8192,
+      "input_sha256": "e7d6ad7dc7b7f5cbcc4bac2a43b6bd1f0e4e93ecfc7838409c28391362cce99a",
+      "pcm_sha256": "c35020473aed1b4642cd726cad727b63fff2824ad68cedd7ffb73c7cbd890479",
+      "sony_pcm_sha256": "c35020473aed1b4642cd726cad727b63fff2824ad68cedd7ffb73c7cbd890479",
+      "exact": true
+    },
+    {
+      "id": "aalp-128--sine",
+      "family": "official",
+      "source_frames": 8192,
+      "input_sha256": "8a2eec7cfe642f4acbc48b7da539545fed6c019330ee44b74bd521c9aee19722",
+      "pcm_sha256": "46f43655639a1c8db1cd33abc6a7a3c1630d482d4eae182c39d2bcbcc8f387ed",
+      "sony_pcm_sha256": "46f43655639a1c8db1cd33abc6a7a3c1630d482d4eae182c39d2bcbcc8f387ed",
+      "exact": true
+    },
+    {
+      "id": "aalp-48--anti-phase",
+      "family": "official",
+      "source_frames": 8192,
+      "input_sha256": "fa34737e7b77a5ce28760c374450090b6fbbedf1d0aa69fa3683c239cabca176",
+      "pcm_sha256": "201ac7f88277939127ee8393c770918c2a466344e31e866911a3af06fce1ddc7",
+      "sony_pcm_sha256": "201ac7f88277939127ee8393c770918c2a466344e31e866911a3af06fce1ddc7",
+      "exact": true
+    },
+    {
+      "id": "aalp-48--boundary-1",
+      "family": "official",
+      "source_frames": 1,
+      "input_sha256": "13fc3abd1de6126dde6245f59197b9ed6e117111666af68bc2f1d74e7a97c95e",
+      "pcm_sha256": "3fe082173119c71b92fc5c05c66309f012f6a3f1c8b3ec90eff83f3529603d32",
+      "sony_pcm_sha256": "3fe082173119c71b92fc5c05c66309f012f6a3f1c8b3ec90eff83f3529603d32",
+      "exact": true
+    },
+    {
+      "id": "aalp-48--boundary-1023",
+      "family": "official",
+      "source_frames": 1023,
+      "input_sha256": "bf1709bdd92e6bfd317f3720d05a6aaa30994402cc2c461de6cfbe24d9e6b8ae",
+      "pcm_sha256": "1f443687024085dc7b87fa2715826c0a9509819e2d35c5984f685be58a077e07",
+      "sony_pcm_sha256": "1f443687024085dc7b87fa2715826c0a9509819e2d35c5984f685be58a077e07",
+      "exact": true
+    },
+    {
+      "id": "aalp-48--boundary-1024",
+      "family": "official",
+      "source_frames": 1024,
+      "input_sha256": "c528b1b48dd037a4f84b823f174423ee74154376a3f937bd12195b5843d9e486",
+      "pcm_sha256": "0642e76782b46ae476499c6c17dfc2b946c40479be6636eb2b44919663338957",
+      "sony_pcm_sha256": "0642e76782b46ae476499c6c17dfc2b946c40479be6636eb2b44919663338957",
+      "exact": true
+    },
+    {
+      "id": "aalp-48--boundary-1025",
+      "family": "official",
+      "source_frames": 1025,
+      "input_sha256": "99dc03f681c44916762255d96db1bf31f6226e74d8a06e7989d3bf50fd29183f",
+      "pcm_sha256": "79d3052c715d9d0c1101d22ca2253301aa3ef9e70d3e7a2047e7f094ff3c84ed",
+      "sony_pcm_sha256": "79d3052c715d9d0c1101d22ca2253301aa3ef9e70d3e7a2047e7f094ff3c84ed",
+      "exact": true
+    },
+    {
+      "id": "aalp-48--boundary-1679",
+      "family": "official",
+      "source_frames": 1679,
+      "input_sha256": "c73f3cc09b68f683cfb50d57aed55d48cc290291cc3c80a64dc7a097cf51b023",
+      "pcm_sha256": "327009fd769698167bd6ad6914f29bf6d5df477868e175ee27c6574f1795b182",
+      "sony_pcm_sha256": "327009fd769698167bd6ad6914f29bf6d5df477868e175ee27c6574f1795b182",
+      "exact": true
+    },
+    {
+      "id": "aalp-48--boundary-1680",
+      "family": "official",
+      "source_frames": 1680,
+      "input_sha256": "75fe88baf8e516b0fe330b3222fc427a7a4f40efec54bf2a9e879c64cf03d0a4",
+      "pcm_sha256": "2efa3b0fe30c79487052c5c1418a7a3d4efebb2c9722a86d37d8d3c7438adcd9",
+      "sony_pcm_sha256": "2efa3b0fe30c79487052c5c1418a7a3d4efebb2c9722a86d37d8d3c7438adcd9",
+      "exact": true
+    },
+    {
+      "id": "aalp-48--boundary-1681",
+      "family": "official",
+      "source_frames": 1681,
+      "input_sha256": "b103faf777b7511bdcfb15c13a265712c396011da4f8f970a13490e6f642ad0c",
+      "pcm_sha256": "2ff31fb6ad920b8dbc1499cc6925451f8629adb40b0653b224b184b745cf51c9",
+      "sony_pcm_sha256": "2ff31fb6ad920b8dbc1499cc6925451f8629adb40b0653b224b184b745cf51c9",
+      "exact": true
+    },
+    {
+      "id": "aalp-48--boundary-2047",
+      "family": "official",
+      "source_frames": 2047,
+      "input_sha256": "30c1a361cca5685be46c5d03e38bb9fd0a3afb2a67f7bd3abe1d623879ae22d8",
+      "pcm_sha256": "2e96359f36d2b9e413dabde4456fb755116a541a84e13a5351012a1a580e563e",
+      "sony_pcm_sha256": "2e96359f36d2b9e413dabde4456fb755116a541a84e13a5351012a1a580e563e",
+      "exact": true
+    },
+    {
+      "id": "aalp-48--boundary-2048",
+      "family": "official",
+      "source_frames": 2048,
+      "input_sha256": "f141a051e52965903d6f752be1b60fa3210718f57d8ba143dbf1e729296a0d95",
+      "pcm_sha256": "d42ec8901648a500fdd747ffd0fdf8b4ec39519393aed880c1478517da3a2bae",
+      "sony_pcm_sha256": "d42ec8901648a500fdd747ffd0fdf8b4ec39519393aed880c1478517da3a2bae",
+      "exact": true
+    },
+    {
+      "id": "aalp-48--boundary-2049",
+      "family": "official",
+      "source_frames": 2049,
+      "input_sha256": "3021d4e0b7453e0983942d9fba66aae914deee40bfd7ffaa7c28e5c7b0f62af5",
+      "pcm_sha256": "7e04271422fd6a4c81542f04671ac6118a2d920b69c18cfb24e08055b2f81139",
+      "sony_pcm_sha256": "7e04271422fd6a4c81542f04671ac6118a2d920b69c18cfb24e08055b2f81139",
+      "exact": true
+    },
+    {
+      "id": "aalp-48--boundary-4095",
+      "family": "official",
+      "source_frames": 4095,
+      "input_sha256": "eb84fa32611c27fed8c8ff2beff8a817eb241f9cedd6b63a709d9b36e69c2ce5",
+      "pcm_sha256": "66107357a5f59d0117ce2d26243a39cc224acd0f4920fb4dbb84cf3c97c6d401",
+      "sony_pcm_sha256": "66107357a5f59d0117ce2d26243a39cc224acd0f4920fb4dbb84cf3c97c6d401",
+      "exact": true
+    },
+    {
+      "id": "aalp-48--boundary-4096",
+      "family": "official",
+      "source_frames": 4096,
+      "input_sha256": "326160c7b982d76be9321f71dfaa8cf9862b212d6f7c9b03bb33282eaaeea2dd",
+      "pcm_sha256": "b5c98652a6a47d0ef0da2cf422270e82cab454373538a376e524b07f1c27aa75",
+      "sony_pcm_sha256": "b5c98652a6a47d0ef0da2cf422270e82cab454373538a376e524b07f1c27aa75",
+      "exact": true
+    },
+    {
+      "id": "aalp-48--boundary-4097",
+      "family": "official",
+      "source_frames": 4097,
+      "input_sha256": "827bfde891ac45de9cf16b4e58c0db0d9fc844f59a4be453af6cd8b89de73652",
+      "pcm_sha256": "d3b095ddf66b609e63ac4bcce6ae49491c9127a2c8fc7b6d3a7568e8421db34e",
+      "sony_pcm_sha256": "d3b095ddf66b609e63ac4bcce6ae49491c9127a2c8fc7b6d3a7568e8421db34e",
+      "exact": true
+    },
+    {
+      "id": "aalp-48--boundary-44117",
+      "family": "official",
+      "source_frames": 44117,
+      "input_sha256": "ef4b8ef6c58bf2f8ab5090684d892937d6f79e405bd4b5e99252721b121ae4a0",
+      "pcm_sha256": "919eb0dbadce82b63bb03f80b8327bbe2a331b970b42537a51c92c07eaafec58",
+      "sony_pcm_sha256": "919eb0dbadce82b63bb03f80b8327bbe2a331b970b42537a51c92c07eaafec58",
+      "exact": true
+    },
+    {
+      "id": "aalp-48--boundary-8191",
+      "family": "official",
+      "source_frames": 8191,
+      "input_sha256": "9673e495c309280d29f43989dbfeede32a44092ca8d27fdd68c9adb8e174357f",
+      "pcm_sha256": "c2c1d8625978d6f3a65d14f307e72c286e15723e7e59bfb8e6e60c3af4f4b5ae",
+      "sony_pcm_sha256": "c2c1d8625978d6f3a65d14f307e72c286e15723e7e59bfb8e6e60c3af4f4b5ae",
+      "exact": true
+    },
+    {
+      "id": "aalp-48--boundary-8192",
+      "family": "official",
+      "source_frames": 8192,
+      "input_sha256": "43f601e5dfddc50ac3984c2e4eedcd3b9e6668f2d6a76430d490c3788281a377",
+      "pcm_sha256": "321295c249b908646ce229c50a29b5967577723bfd30e46e14bbc0217878cfb6",
+      "sony_pcm_sha256": "321295c249b908646ce229c50a29b5967577723bfd30e46e14bbc0217878cfb6",
+      "exact": true
+    },
+    {
+      "id": "aalp-48--boundary-8193",
+      "family": "official",
+      "source_frames": 8193,
+      "input_sha256": "c1a3ecd8874f31a33b3f93c8adf31ab70f024886597e8d192035d952c7c7a6f4",
+      "pcm_sha256": "989c8d85b6bcc2546ae56e90bc8cf524c9589c1aa72de8ec92432e69ec6efd11",
+      "sony_pcm_sha256": "989c8d85b6bcc2546ae56e90bc8cf524c9589c1aa72de8ec92432e69ec6efd11",
+      "exact": true
+    },
+    {
+      "id": "aalp-48--fullscale-alternating",
+      "family": "official",
+      "source_frames": 8192,
+      "input_sha256": "e2c31d4cc378971a529d57d4276e285525613cddeafe0a8291a85c02d78ce4a6",
+      "pcm_sha256": "e46f948a8bb1a37109c5f73e7d09f78580cfd72a3269dfee8dea0c5c74e27fb7",
+      "sony_pcm_sha256": "e46f948a8bb1a37109c5f73e7d09f78580cfd72a3269dfee8dea0c5c74e27fb7",
+      "exact": true
+    },
+    {
+      "id": "aalp-48--fullscale-negative",
+      "family": "official",
+      "source_frames": 4096,
+      "input_sha256": "41f3c6296cae411dc498c9baedcd334b7748b32aa7735c252f19cd9ab5aaccbe",
+      "pcm_sha256": "d15bf5ad303b3a1cbb2976d2109116d88ce77ebd3c6dbfff814530f06b9f906f",
+      "sony_pcm_sha256": "d15bf5ad303b3a1cbb2976d2109116d88ce77ebd3c6dbfff814530f06b9f906f",
+      "exact": true
+    },
+    {
+      "id": "aalp-48--fullscale-positive",
+      "family": "official",
+      "source_frames": 4096,
+      "input_sha256": "dc5658660fb523d67f6e676f3f4cd75e5ca45b07a2e14c02d452bbaf882df2e8",
+      "pcm_sha256": "4920e1f3d7b1ea9929bdf186a352e3e1cf0ddfc443d96173de33f28fe6e151c3",
+      "sony_pcm_sha256": "4920e1f3d7b1ea9929bdf186a352e3e1cf0ddfc443d96173de33f28fe6e151c3",
+      "exact": true
+    },
+    {
+      "id": "aalp-48--impulse-left",
+      "family": "official",
+      "source_frames": 8192,
+      "input_sha256": "c7ec639c53359e5be9372010fed4091590105509a04d38e98c0eba4d5e9abf8d",
+      "pcm_sha256": "ddd81090b7715764ed96a5f545ed92f0ba0bafdef9a114d928597d447e2e12a2",
+      "sony_pcm_sha256": "ddd81090b7715764ed96a5f545ed92f0ba0bafdef9a114d928597d447e2e12a2",
+      "exact": true
+    },
+    {
+      "id": "aalp-48--impulse-right",
+      "family": "official",
+      "source_frames": 8192,
+      "input_sha256": "37684a79e342ec13a9e68c853fa08f6dbf38fb0894906ffbdd2a5141ff6de4d9",
+      "pcm_sha256": "d44c604378bebfac019b2c6fc174bdff01630f7cec2928f101f9aeceb222ab73",
+      "sony_pcm_sha256": "d44c604378bebfac019b2c6fc174bdff01630f7cec2928f101f9aeceb222ab73",
+      "exact": true
+    },
+    {
+      "id": "aalp-48--lowlevel",
+      "family": "official",
+      "source_frames": 8192,
+      "input_sha256": "1deb120b540f88afeba7cd78169664b657770bdb74ab34636d73677adfac5262",
+      "pcm_sha256": "25e2ebd88874ed4b76733e9fac390d71cfedc973f3fc9c81c4faeebfdd7cc482",
+      "sony_pcm_sha256": "25e2ebd88874ed4b76733e9fac390d71cfedc973f3fc9c81c4faeebfdd7cc482",
+      "exact": true
+    },
+    {
+      "id": "aalp-48--mix-8193",
+      "family": "official",
+      "source_frames": 8193,
+      "input_sha256": "7c22ca294af280223c08da632e28788ceda93add883bb8500fb59b8eb3d4bfb3",
+      "pcm_sha256": "5ef8d8782b9bbe0bf4cc11c1ea84ab4c0da9452cb770c411a44d47987948d3dc",
+      "sony_pcm_sha256": "5ef8d8782b9bbe0bf4cc11c1ea84ab4c0da9452cb770c411a44d47987948d3dc",
+      "exact": true
+    },
+    {
+      "id": "aalp-48--mix-long",
+      "family": "official",
+      "source_frames": 441000,
+      "input_sha256": "54d632041a18316bd7b94f51c42a7263d7b82bef977916abccd21ccc9e88600d",
+      "pcm_sha256": "e89b6f151968ff1f2c96bcf56dbb5d27283baf10936f16eeadf5485f70f82e70",
+      "sony_pcm_sha256": "e89b6f151968ff1f2c96bcf56dbb5d27283baf10936f16eeadf5485f70f82e70",
+      "exact": true
+    },
+    {
+      "id": "aalp-48--multitone",
+      "family": "official",
+      "source_frames": 16384,
+      "input_sha256": "e108d27963924a7dca676fd2e7a1c7a5a55e7386a1cc1a51593d9861d23d602c",
+      "pcm_sha256": "847dd7c3409f781db4f627b52113b247ed13d620b09deed933e4281872c4e32b",
+      "sony_pcm_sha256": "847dd7c3409f781db4f627b52113b247ed13d620b09deed933e4281872c4e32b",
+      "exact": true
+    },
+    {
+      "id": "aalp-48--noise",
+      "family": "official",
+      "source_frames": 8192,
+      "input_sha256": "29804900bf00cb2f58f40f4b56a27fff3fd22dc67fa924c60aee49faae0be0e6",
+      "pcm_sha256": "5bb7d801fb12728eba40036851fa40f115741ff468ab6d85b9d21a24279f4f0c",
+      "sony_pcm_sha256": "5bb7d801fb12728eba40036851fa40f115741ff468ab6d85b9d21a24279f4f0c",
+      "exact": true
+    },
+    {
+      "id": "aalp-48--same-phase",
+      "family": "official",
+      "source_frames": 8192,
+      "input_sha256": "32b57b3727af5f11e2da5bcad014f02539b78b7cef87a222004f85d83a8f910e",
+      "pcm_sha256": "ba9f11281445f21606df65513ca85d69664b087e607ff03cb9e3529741ed4b7f",
+      "sony_pcm_sha256": "ba9f11281445f21606df65513ca85d69664b087e607ff03cb9e3529741ed4b7f",
+      "exact": true
+    },
+    {
+      "id": "aalp-48--silence",
+      "family": "official",
+      "source_frames": 8192,
+      "input_sha256": "18413faa8e2d4bb57ba7d944cc43ff4e501a15842f22e5f162a1aa3416cc9621",
+      "pcm_sha256": "c35020473aed1b4642cd726cad727b63fff2824ad68cedd7ffb73c7cbd890479",
+      "sony_pcm_sha256": "c35020473aed1b4642cd726cad727b63fff2824ad68cedd7ffb73c7cbd890479",
+      "exact": true
+    },
+    {
+      "id": "aalp-48--sine",
+      "family": "official",
+      "source_frames": 8192,
+      "input_sha256": "f42e0f27121f190a5b096c69fa0a8aedb71468bd296cd6e36dfa881fb0c2b361",
+      "pcm_sha256": "46f43655639a1c8db1cd33abc6a7a3c1630d482d4eae182c39d2bcbcc8f387ed",
+      "sony_pcm_sha256": "46f43655639a1c8db1cd33abc6a7a3c1630d482d4eae182c39d2bcbcc8f387ed",
+      "exact": true
+    },
+    {
+      "id": "aalp-64--anti-phase",
+      "family": "official",
+      "source_frames": 8192,
+      "input_sha256": "b5dc5a785d45d3efcc500e943e79b1c6662ea3eb383074ae6f9d89703817d4b0",
+      "pcm_sha256": "201ac7f88277939127ee8393c770918c2a466344e31e866911a3af06fce1ddc7",
+      "sony_pcm_sha256": "201ac7f88277939127ee8393c770918c2a466344e31e866911a3af06fce1ddc7",
+      "exact": true
+    },
+    {
+      "id": "aalp-64--boundary-1",
+      "family": "official",
+      "source_frames": 1,
+      "input_sha256": "69b8a119cb42e4fb4c7edd06524ba3af9bebfe74c3666ccd932763da7c76431d",
+      "pcm_sha256": "3fe082173119c71b92fc5c05c66309f012f6a3f1c8b3ec90eff83f3529603d32",
+      "sony_pcm_sha256": "3fe082173119c71b92fc5c05c66309f012f6a3f1c8b3ec90eff83f3529603d32",
+      "exact": true
+    },
+    {
+      "id": "aalp-64--boundary-1023",
+      "family": "official",
+      "source_frames": 1023,
+      "input_sha256": "dd63bcbdfdde79b73108b51e82c75e670722506fb6e9e65e53357c53504de67e",
+      "pcm_sha256": "1f443687024085dc7b87fa2715826c0a9509819e2d35c5984f685be58a077e07",
+      "sony_pcm_sha256": "1f443687024085dc7b87fa2715826c0a9509819e2d35c5984f685be58a077e07",
+      "exact": true
+    },
+    {
+      "id": "aalp-64--boundary-1024",
+      "family": "official",
+      "source_frames": 1024,
+      "input_sha256": "fafcb26cd06cda2ee0c683cfbef78697401cf625f12ab5805d51af9447deacff",
+      "pcm_sha256": "0642e76782b46ae476499c6c17dfc2b946c40479be6636eb2b44919663338957",
+      "sony_pcm_sha256": "0642e76782b46ae476499c6c17dfc2b946c40479be6636eb2b44919663338957",
+      "exact": true
+    },
+    {
+      "id": "aalp-64--boundary-1025",
+      "family": "official",
+      "source_frames": 1025,
+      "input_sha256": "03888d0022e319f5a9cdcf9edc2dc78043a4e406c24097d63ef837225bf8fe4d",
+      "pcm_sha256": "79d3052c715d9d0c1101d22ca2253301aa3ef9e70d3e7a2047e7f094ff3c84ed",
+      "sony_pcm_sha256": "79d3052c715d9d0c1101d22ca2253301aa3ef9e70d3e7a2047e7f094ff3c84ed",
+      "exact": true
+    },
+    {
+      "id": "aalp-64--boundary-1679",
+      "family": "official",
+      "source_frames": 1679,
+      "input_sha256": "c767838d9d990847e9b276745ffdd382e33a4580b3d0bff0d189186026c146f5",
+      "pcm_sha256": "327009fd769698167bd6ad6914f29bf6d5df477868e175ee27c6574f1795b182",
+      "sony_pcm_sha256": "327009fd769698167bd6ad6914f29bf6d5df477868e175ee27c6574f1795b182",
+      "exact": true
+    },
+    {
+      "id": "aalp-64--boundary-1680",
+      "family": "official",
+      "source_frames": 1680,
+      "input_sha256": "50aa7fc0f0a9afada94c220005e5d43f23cc6410a765ed9124ae495764470973",
+      "pcm_sha256": "2efa3b0fe30c79487052c5c1418a7a3d4efebb2c9722a86d37d8d3c7438adcd9",
+      "sony_pcm_sha256": "2efa3b0fe30c79487052c5c1418a7a3d4efebb2c9722a86d37d8d3c7438adcd9",
+      "exact": true
+    },
+    {
+      "id": "aalp-64--boundary-1681",
+      "family": "official",
+      "source_frames": 1681,
+      "input_sha256": "d9b2d39c0033241f434148fa2881077af64738bbdcb4ccff4e33c41fba1595a8",
+      "pcm_sha256": "2ff31fb6ad920b8dbc1499cc6925451f8629adb40b0653b224b184b745cf51c9",
+      "sony_pcm_sha256": "2ff31fb6ad920b8dbc1499cc6925451f8629adb40b0653b224b184b745cf51c9",
+      "exact": true
+    },
+    {
+      "id": "aalp-64--boundary-2047",
+      "family": "official",
+      "source_frames": 2047,
+      "input_sha256": "ee645c2dff907f1e4defd8f13af9610df9291e531d001d9fedab9300742fe142",
+      "pcm_sha256": "2e96359f36d2b9e413dabde4456fb755116a541a84e13a5351012a1a580e563e",
+      "sony_pcm_sha256": "2e96359f36d2b9e413dabde4456fb755116a541a84e13a5351012a1a580e563e",
+      "exact": true
+    },
+    {
+      "id": "aalp-64--boundary-2048",
+      "family": "official",
+      "source_frames": 2048,
+      "input_sha256": "5fef7d6bd4cd3779657c0e7428ab4e4a514c25c45bb36515c005cccdbaed62f9",
+      "pcm_sha256": "d42ec8901648a500fdd747ffd0fdf8b4ec39519393aed880c1478517da3a2bae",
+      "sony_pcm_sha256": "d42ec8901648a500fdd747ffd0fdf8b4ec39519393aed880c1478517da3a2bae",
+      "exact": true
+    },
+    {
+      "id": "aalp-64--boundary-2049",
+      "family": "official",
+      "source_frames": 2049,
+      "input_sha256": "0e88d0b2f8439cc86db4163a0ae14994eaa1cf2ec34f888c5ebaef43891bf0a6",
+      "pcm_sha256": "7e04271422fd6a4c81542f04671ac6118a2d920b69c18cfb24e08055b2f81139",
+      "sony_pcm_sha256": "7e04271422fd6a4c81542f04671ac6118a2d920b69c18cfb24e08055b2f81139",
+      "exact": true
+    },
+    {
+      "id": "aalp-64--boundary-4095",
+      "family": "official",
+      "source_frames": 4095,
+      "input_sha256": "7869f62a09e7fc9507339dd9a640f7a2cca44ebb8eacc06aa73e26fd36463416",
+      "pcm_sha256": "66107357a5f59d0117ce2d26243a39cc224acd0f4920fb4dbb84cf3c97c6d401",
+      "sony_pcm_sha256": "66107357a5f59d0117ce2d26243a39cc224acd0f4920fb4dbb84cf3c97c6d401",
+      "exact": true
+    },
+    {
+      "id": "aalp-64--boundary-4096",
+      "family": "official",
+      "source_frames": 4096,
+      "input_sha256": "f124e12a67a7be6c2f950cfa9d230c17ff999d0ed7f8af77640b48821a0effcc",
+      "pcm_sha256": "b5c98652a6a47d0ef0da2cf422270e82cab454373538a376e524b07f1c27aa75",
+      "sony_pcm_sha256": "b5c98652a6a47d0ef0da2cf422270e82cab454373538a376e524b07f1c27aa75",
+      "exact": true
+    },
+    {
+      "id": "aalp-64--boundary-4097",
+      "family": "official",
+      "source_frames": 4097,
+      "input_sha256": "740da6c0fe71508d1322cf93ddd9926f014480e6bd0b0bb13a5dbbca1afad0a4",
+      "pcm_sha256": "d3b095ddf66b609e63ac4bcce6ae49491c9127a2c8fc7b6d3a7568e8421db34e",
+      "sony_pcm_sha256": "d3b095ddf66b609e63ac4bcce6ae49491c9127a2c8fc7b6d3a7568e8421db34e",
+      "exact": true
+    },
+    {
+      "id": "aalp-64--boundary-44117",
+      "family": "official",
+      "source_frames": 44117,
+      "input_sha256": "e2e6648dbbb5b798867b1e4dda863a254c172f09669c3c774b3ec66d1965daf0",
+      "pcm_sha256": "919eb0dbadce82b63bb03f80b8327bbe2a331b970b42537a51c92c07eaafec58",
+      "sony_pcm_sha256": "919eb0dbadce82b63bb03f80b8327bbe2a331b970b42537a51c92c07eaafec58",
+      "exact": true
+    },
+    {
+      "id": "aalp-64--boundary-8191",
+      "family": "official",
+      "source_frames": 8191,
+      "input_sha256": "f634d52d34bebbbbc890fb30985f5bd4ac9bbed0ce667dcf1a9f7a44467fdd8d",
+      "pcm_sha256": "c2c1d8625978d6f3a65d14f307e72c286e15723e7e59bfb8e6e60c3af4f4b5ae",
+      "sony_pcm_sha256": "c2c1d8625978d6f3a65d14f307e72c286e15723e7e59bfb8e6e60c3af4f4b5ae",
+      "exact": true
+    },
+    {
+      "id": "aalp-64--boundary-8192",
+      "family": "official",
+      "source_frames": 8192,
+      "input_sha256": "3ef86e898c64db23bf59ff44bbd1f32b22bdde1874e4eb624cff741ad5fe41ec",
+      "pcm_sha256": "321295c249b908646ce229c50a29b5967577723bfd30e46e14bbc0217878cfb6",
+      "sony_pcm_sha256": "321295c249b908646ce229c50a29b5967577723bfd30e46e14bbc0217878cfb6",
+      "exact": true
+    },
+    {
+      "id": "aalp-64--boundary-8193",
+      "family": "official",
+      "source_frames": 8193,
+      "input_sha256": "72b0714e86d603c4c5c3b1c02236526d871d6a302b8991f0b141ac92649a3b31",
+      "pcm_sha256": "989c8d85b6bcc2546ae56e90bc8cf524c9589c1aa72de8ec92432e69ec6efd11",
+      "sony_pcm_sha256": "989c8d85b6bcc2546ae56e90bc8cf524c9589c1aa72de8ec92432e69ec6efd11",
+      "exact": true
+    },
+    {
+      "id": "aalp-64--fullscale-alternating",
+      "family": "official",
+      "source_frames": 8192,
+      "input_sha256": "2719ac329686a84c95cc6b3ffefc59bb97313d0e9890db29c07e8ab11ea884bc",
+      "pcm_sha256": "e46f948a8bb1a37109c5f73e7d09f78580cfd72a3269dfee8dea0c5c74e27fb7",
+      "sony_pcm_sha256": "e46f948a8bb1a37109c5f73e7d09f78580cfd72a3269dfee8dea0c5c74e27fb7",
+      "exact": true
+    },
+    {
+      "id": "aalp-64--fullscale-negative",
+      "family": "official",
+      "source_frames": 4096,
+      "input_sha256": "1c8095557b39e734db9d2736b06acf992e43396c96badad33747388b4537a15d",
+      "pcm_sha256": "d15bf5ad303b3a1cbb2976d2109116d88ce77ebd3c6dbfff814530f06b9f906f",
+      "sony_pcm_sha256": "d15bf5ad303b3a1cbb2976d2109116d88ce77ebd3c6dbfff814530f06b9f906f",
+      "exact": true
+    },
+    {
+      "id": "aalp-64--fullscale-positive",
+      "family": "official",
+      "source_frames": 4096,
+      "input_sha256": "8f4766ac7c06558a53db141ad1b89634eb93ddd9ae9470e2d7156ed5bba4e0c3",
+      "pcm_sha256": "4920e1f3d7b1ea9929bdf186a352e3e1cf0ddfc443d96173de33f28fe6e151c3",
+      "sony_pcm_sha256": "4920e1f3d7b1ea9929bdf186a352e3e1cf0ddfc443d96173de33f28fe6e151c3",
+      "exact": true
+    },
+    {
+      "id": "aalp-64--impulse-left",
+      "family": "official",
+      "source_frames": 8192,
+      "input_sha256": "17e672adb191d4d1ea38e0fc0017a7197d04971c7f32117e989632aa86b1a66b",
+      "pcm_sha256": "ddd81090b7715764ed96a5f545ed92f0ba0bafdef9a114d928597d447e2e12a2",
+      "sony_pcm_sha256": "ddd81090b7715764ed96a5f545ed92f0ba0bafdef9a114d928597d447e2e12a2",
+      "exact": true
+    },
+    {
+      "id": "aalp-64--impulse-right",
+      "family": "official",
+      "source_frames": 8192,
+      "input_sha256": "2cc35aca2603c208b6f4a9bbec4cdff1d0e0e4a81f934eeefa2b32dedf67d1fe",
+      "pcm_sha256": "d44c604378bebfac019b2c6fc174bdff01630f7cec2928f101f9aeceb222ab73",
+      "sony_pcm_sha256": "d44c604378bebfac019b2c6fc174bdff01630f7cec2928f101f9aeceb222ab73",
+      "exact": true
+    },
+    {
+      "id": "aalp-64--lowlevel",
+      "family": "official",
+      "source_frames": 8192,
+      "input_sha256": "602679c6f17add8c2cee87f4d325b9b1e97acb2ab6a70f56b5d307e836c3469e",
+      "pcm_sha256": "25e2ebd88874ed4b76733e9fac390d71cfedc973f3fc9c81c4faeebfdd7cc482",
+      "sony_pcm_sha256": "25e2ebd88874ed4b76733e9fac390d71cfedc973f3fc9c81c4faeebfdd7cc482",
+      "exact": true
+    },
+    {
+      "id": "aalp-64--mix-8193",
+      "family": "official",
+      "source_frames": 8193,
+      "input_sha256": "c78a0ca9845a543394113dca61914931d2ec464a65a4f9208d1367262ebb39a5",
+      "pcm_sha256": "5ef8d8782b9bbe0bf4cc11c1ea84ab4c0da9452cb770c411a44d47987948d3dc",
+      "sony_pcm_sha256": "5ef8d8782b9bbe0bf4cc11c1ea84ab4c0da9452cb770c411a44d47987948d3dc",
+      "exact": true
+    },
+    {
+      "id": "aalp-64--mix-long",
+      "family": "official",
+      "source_frames": 441000,
+      "input_sha256": "02f88368df0d1273490056d4e9b9cd99dc5fd9c149bb89ac29b0846966efaa70",
+      "pcm_sha256": "e89b6f151968ff1f2c96bcf56dbb5d27283baf10936f16eeadf5485f70f82e70",
+      "sony_pcm_sha256": "e89b6f151968ff1f2c96bcf56dbb5d27283baf10936f16eeadf5485f70f82e70",
+      "exact": true
+    },
+    {
+      "id": "aalp-64--multitone",
+      "family": "official",
+      "source_frames": 16384,
+      "input_sha256": "39103d68b2ef19a8d01bdd928d30aeb49b7e8f580d82588d4fccf49e5b55ff75",
+      "pcm_sha256": "847dd7c3409f781db4f627b52113b247ed13d620b09deed933e4281872c4e32b",
+      "sony_pcm_sha256": "847dd7c3409f781db4f627b52113b247ed13d620b09deed933e4281872c4e32b",
+      "exact": true
+    },
+    {
+      "id": "aalp-64--noise",
+      "family": "official",
+      "source_frames": 8192,
+      "input_sha256": "0b257607d0f648765c7f0c3b41a300829f0dac2e95cfc8104e2fe2269b4b7690",
+      "pcm_sha256": "5bb7d801fb12728eba40036851fa40f115741ff468ab6d85b9d21a24279f4f0c",
+      "sony_pcm_sha256": "5bb7d801fb12728eba40036851fa40f115741ff468ab6d85b9d21a24279f4f0c",
+      "exact": true
+    },
+    {
+      "id": "aalp-64--same-phase",
+      "family": "official",
+      "source_frames": 8192,
+      "input_sha256": "211c388216445c796a49beb23e78877553e1f0129f38716b99b1edfc032bb8d8",
+      "pcm_sha256": "ba9f11281445f21606df65513ca85d69664b087e607ff03cb9e3529741ed4b7f",
+      "sony_pcm_sha256": "ba9f11281445f21606df65513ca85d69664b087e607ff03cb9e3529741ed4b7f",
+      "exact": true
+    },
+    {
+      "id": "aalp-64--silence",
+      "family": "official",
+      "source_frames": 8192,
+      "input_sha256": "4999cc043a5f3b2d0fbee5e9e3bde7912d161588000fdf6d0261435744b0f13b",
+      "pcm_sha256": "c35020473aed1b4642cd726cad727b63fff2824ad68cedd7ffb73c7cbd890479",
+      "sony_pcm_sha256": "c35020473aed1b4642cd726cad727b63fff2824ad68cedd7ffb73c7cbd890479",
+      "exact": true
+    },
+    {
+      "id": "aalp-64--sine",
+      "family": "official",
+      "source_frames": 8192,
+      "input_sha256": "1f5b5627a9daecce3b75e1beadb6885c5d65b84614a04d0e0cfb27aa9350f015",
+      "pcm_sha256": "46f43655639a1c8db1cd33abc6a7a3c1630d482d4eae182c39d2bcbcc8f387ed",
+      "sony_pcm_sha256": "46f43655639a1c8db1cd33abc6a7a3c1630d482d4eae182c39d2bcbcc8f387ed",
+      "exact": true
+    },
+    {
+      "id": "aalp-96--anti-phase",
+      "family": "official",
+      "source_frames": 8192,
+      "input_sha256": "7411725bf678ae6e7d525ec7e0dafe76ddcd616fe3259aeef11d2bec080ce070",
+      "pcm_sha256": "201ac7f88277939127ee8393c770918c2a466344e31e866911a3af06fce1ddc7",
+      "sony_pcm_sha256": "201ac7f88277939127ee8393c770918c2a466344e31e866911a3af06fce1ddc7",
+      "exact": true
+    },
+    {
+      "id": "aalp-96--boundary-1",
+      "family": "official",
+      "source_frames": 1,
+      "input_sha256": "9eca2aa3c5377ed92fb4ad44fb6a2d9629935456cb34d3887ca9eb05ea3b3953",
+      "pcm_sha256": "3fe082173119c71b92fc5c05c66309f012f6a3f1c8b3ec90eff83f3529603d32",
+      "sony_pcm_sha256": "3fe082173119c71b92fc5c05c66309f012f6a3f1c8b3ec90eff83f3529603d32",
+      "exact": true
+    },
+    {
+      "id": "aalp-96--boundary-1023",
+      "family": "official",
+      "source_frames": 1023,
+      "input_sha256": "1590bd736e47bd6aa8dac163b26b46b31da47eb69be307520ffad7a3219643d4",
+      "pcm_sha256": "1f443687024085dc7b87fa2715826c0a9509819e2d35c5984f685be58a077e07",
+      "sony_pcm_sha256": "1f443687024085dc7b87fa2715826c0a9509819e2d35c5984f685be58a077e07",
+      "exact": true
+    },
+    {
+      "id": "aalp-96--boundary-1024",
+      "family": "official",
+      "source_frames": 1024,
+      "input_sha256": "d696c2329966d68a68260c2f056e44d66c304b89fec722acd759100f27710306",
+      "pcm_sha256": "0642e76782b46ae476499c6c17dfc2b946c40479be6636eb2b44919663338957",
+      "sony_pcm_sha256": "0642e76782b46ae476499c6c17dfc2b946c40479be6636eb2b44919663338957",
+      "exact": true
+    },
+    {
+      "id": "aalp-96--boundary-1025",
+      "family": "official",
+      "source_frames": 1025,
+      "input_sha256": "2413a146041bfd9fce856eda607c4d2eff2ba2d2261e0cab6da3c21dfa968e2d",
+      "pcm_sha256": "79d3052c715d9d0c1101d22ca2253301aa3ef9e70d3e7a2047e7f094ff3c84ed",
+      "sony_pcm_sha256": "79d3052c715d9d0c1101d22ca2253301aa3ef9e70d3e7a2047e7f094ff3c84ed",
+      "exact": true
+    },
+    {
+      "id": "aalp-96--boundary-1679",
+      "family": "official",
+      "source_frames": 1679,
+      "input_sha256": "77b858dd042ea981475ea0a595441d15a8e393b5f87c5c9f2be3cac546bf0b58",
+      "pcm_sha256": "327009fd769698167bd6ad6914f29bf6d5df477868e175ee27c6574f1795b182",
+      "sony_pcm_sha256": "327009fd769698167bd6ad6914f29bf6d5df477868e175ee27c6574f1795b182",
+      "exact": true
+    },
+    {
+      "id": "aalp-96--boundary-1680",
+      "family": "official",
+      "source_frames": 1680,
+      "input_sha256": "055330d50db48f7a9c84deb361143218f90934a0a329e39cd0c0c2fe9ca5ed4c",
+      "pcm_sha256": "2efa3b0fe30c79487052c5c1418a7a3d4efebb2c9722a86d37d8d3c7438adcd9",
+      "sony_pcm_sha256": "2efa3b0fe30c79487052c5c1418a7a3d4efebb2c9722a86d37d8d3c7438adcd9",
+      "exact": true
+    },
+    {
+      "id": "aalp-96--boundary-1681",
+      "family": "official",
+      "source_frames": 1681,
+      "input_sha256": "af86b70566d9ee795e2f92d1623d87b1a9b1a92e4a082f93f7d0978536ed706b",
+      "pcm_sha256": "2ff31fb6ad920b8dbc1499cc6925451f8629adb40b0653b224b184b745cf51c9",
+      "sony_pcm_sha256": "2ff31fb6ad920b8dbc1499cc6925451f8629adb40b0653b224b184b745cf51c9",
+      "exact": true
+    },
+    {
+      "id": "aalp-96--boundary-2047",
+      "family": "official",
+      "source_frames": 2047,
+      "input_sha256": "5ed348ec0b5efb7849919f59fab6d6e2808b8e0179b7648f7ce647b99c310d9a",
+      "pcm_sha256": "2e96359f36d2b9e413dabde4456fb755116a541a84e13a5351012a1a580e563e",
+      "sony_pcm_sha256": "2e96359f36d2b9e413dabde4456fb755116a541a84e13a5351012a1a580e563e",
+      "exact": true
+    },
+    {
+      "id": "aalp-96--boundary-2048",
+      "family": "official",
+      "source_frames": 2048,
+      "input_sha256": "7c32a6a5410da5a2f484562c20ec3f4b59c007ff973e6cee7f5e9e352799e99b",
+      "pcm_sha256": "d42ec8901648a500fdd747ffd0fdf8b4ec39519393aed880c1478517da3a2bae",
+      "sony_pcm_sha256": "d42ec8901648a500fdd747ffd0fdf8b4ec39519393aed880c1478517da3a2bae",
+      "exact": true
+    },
+    {
+      "id": "aalp-96--boundary-2049",
+      "family": "official",
+      "source_frames": 2049,
+      "input_sha256": "fb748ad3e902f34b2cb06d59782b14e062998a6ab7a286b4a068b042ba106348",
+      "pcm_sha256": "7e04271422fd6a4c81542f04671ac6118a2d920b69c18cfb24e08055b2f81139",
+      "sony_pcm_sha256": "7e04271422fd6a4c81542f04671ac6118a2d920b69c18cfb24e08055b2f81139",
+      "exact": true
+    },
+    {
+      "id": "aalp-96--boundary-4095",
+      "family": "official",
+      "source_frames": 4095,
+      "input_sha256": "99122a17d6a53e889659fe1d59f01d092ca43cc94d35776772787c63d936eb3e",
+      "pcm_sha256": "66107357a5f59d0117ce2d26243a39cc224acd0f4920fb4dbb84cf3c97c6d401",
+      "sony_pcm_sha256": "66107357a5f59d0117ce2d26243a39cc224acd0f4920fb4dbb84cf3c97c6d401",
+      "exact": true
+    },
+    {
+      "id": "aalp-96--boundary-4096",
+      "family": "official",
+      "source_frames": 4096,
+      "input_sha256": "fed0cec1e67b4311c8a51424848b6e400bd853a802b9a3590225a4ab5eebfb14",
+      "pcm_sha256": "b5c98652a6a47d0ef0da2cf422270e82cab454373538a376e524b07f1c27aa75",
+      "sony_pcm_sha256": "b5c98652a6a47d0ef0da2cf422270e82cab454373538a376e524b07f1c27aa75",
+      "exact": true
+    },
+    {
+      "id": "aalp-96--boundary-4097",
+      "family": "official",
+      "source_frames": 4097,
+      "input_sha256": "ba79f29da4bc83d2d324d579333d04a7e89ba0c671e13812f38ab5819dd28149",
+      "pcm_sha256": "d3b095ddf66b609e63ac4bcce6ae49491c9127a2c8fc7b6d3a7568e8421db34e",
+      "sony_pcm_sha256": "d3b095ddf66b609e63ac4bcce6ae49491c9127a2c8fc7b6d3a7568e8421db34e",
+      "exact": true
+    },
+    {
+      "id": "aalp-96--boundary-44117",
+      "family": "official",
+      "source_frames": 44117,
+      "input_sha256": "cfe024ec018d76e29b3f73dd5fe1d65b6a3f39c18fc0397bc462be65b6f72477",
+      "pcm_sha256": "919eb0dbadce82b63bb03f80b8327bbe2a331b970b42537a51c92c07eaafec58",
+      "sony_pcm_sha256": "919eb0dbadce82b63bb03f80b8327bbe2a331b970b42537a51c92c07eaafec58",
+      "exact": true
+    },
+    {
+      "id": "aalp-96--boundary-8191",
+      "family": "official",
+      "source_frames": 8191,
+      "input_sha256": "e4a0443d1e3bb4e6904e52b665b3a4a407d9285f3961b44f1153a79c49ac3c7e",
+      "pcm_sha256": "c2c1d8625978d6f3a65d14f307e72c286e15723e7e59bfb8e6e60c3af4f4b5ae",
+      "sony_pcm_sha256": "c2c1d8625978d6f3a65d14f307e72c286e15723e7e59bfb8e6e60c3af4f4b5ae",
+      "exact": true
+    },
+    {
+      "id": "aalp-96--boundary-8192",
+      "family": "official",
+      "source_frames": 8192,
+      "input_sha256": "69f8a1391a76373829b8077b5386840adf6e6ca1013615c07bc643c8c81dac5f",
+      "pcm_sha256": "321295c249b908646ce229c50a29b5967577723bfd30e46e14bbc0217878cfb6",
+      "sony_pcm_sha256": "321295c249b908646ce229c50a29b5967577723bfd30e46e14bbc0217878cfb6",
+      "exact": true
+    },
+    {
+      "id": "aalp-96--boundary-8193",
+      "family": "official",
+      "source_frames": 8193,
+      "input_sha256": "2d562d6cf9b40d1486df97641f2d5c39302835f3c6a5de62183a0fc4de8267cb",
+      "pcm_sha256": "989c8d85b6bcc2546ae56e90bc8cf524c9589c1aa72de8ec92432e69ec6efd11",
+      "sony_pcm_sha256": "989c8d85b6bcc2546ae56e90bc8cf524c9589c1aa72de8ec92432e69ec6efd11",
+      "exact": true
+    },
+    {
+      "id": "aalp-96--fullscale-alternating",
+      "family": "official",
+      "source_frames": 8192,
+      "input_sha256": "2d4a2db20a1d9c881d6ebd3ee0699e98c68fc022da7f75b9468beff4bc18c07f",
+      "pcm_sha256": "e46f948a8bb1a37109c5f73e7d09f78580cfd72a3269dfee8dea0c5c74e27fb7",
+      "sony_pcm_sha256": "e46f948a8bb1a37109c5f73e7d09f78580cfd72a3269dfee8dea0c5c74e27fb7",
+      "exact": true
+    },
+    {
+      "id": "aalp-96--fullscale-negative",
+      "family": "official",
+      "source_frames": 4096,
+      "input_sha256": "563e33d827df13098661467ada4242c11c0669ca4e328a0a4797328b08b42ccc",
+      "pcm_sha256": "d15bf5ad303b3a1cbb2976d2109116d88ce77ebd3c6dbfff814530f06b9f906f",
+      "sony_pcm_sha256": "d15bf5ad303b3a1cbb2976d2109116d88ce77ebd3c6dbfff814530f06b9f906f",
+      "exact": true
+    },
+    {
+      "id": "aalp-96--fullscale-positive",
+      "family": "official",
+      "source_frames": 4096,
+      "input_sha256": "38b5fee7c53e50d703151c6c0c66ac8a4ad3994eec5baf92d87f79f2d16e96d9",
+      "pcm_sha256": "4920e1f3d7b1ea9929bdf186a352e3e1cf0ddfc443d96173de33f28fe6e151c3",
+      "sony_pcm_sha256": "4920e1f3d7b1ea9929bdf186a352e3e1cf0ddfc443d96173de33f28fe6e151c3",
+      "exact": true
+    },
+    {
+      "id": "aalp-96--impulse-left",
+      "family": "official",
+      "source_frames": 8192,
+      "input_sha256": "01cd25b3fe27959f38545d47bd8d779b1d5bd1d8e57d463b7a3e228421812446",
+      "pcm_sha256": "ddd81090b7715764ed96a5f545ed92f0ba0bafdef9a114d928597d447e2e12a2",
+      "sony_pcm_sha256": "ddd81090b7715764ed96a5f545ed92f0ba0bafdef9a114d928597d447e2e12a2",
+      "exact": true
+    },
+    {
+      "id": "aalp-96--impulse-right",
+      "family": "official",
+      "source_frames": 8192,
+      "input_sha256": "dfae987ce9df20bc2ec27f93762d980d9bc7bd64ae5ba12ef11a911e72ed03b4",
+      "pcm_sha256": "d44c604378bebfac019b2c6fc174bdff01630f7cec2928f101f9aeceb222ab73",
+      "sony_pcm_sha256": "d44c604378bebfac019b2c6fc174bdff01630f7cec2928f101f9aeceb222ab73",
+      "exact": true
+    },
+    {
+      "id": "aalp-96--lowlevel",
+      "family": "official",
+      "source_frames": 8192,
+      "input_sha256": "1df5b9ea50cff44d068a5360f662cfb50a107c13b48147b609dff4be78c5cb0b",
+      "pcm_sha256": "25e2ebd88874ed4b76733e9fac390d71cfedc973f3fc9c81c4faeebfdd7cc482",
+      "sony_pcm_sha256": "25e2ebd88874ed4b76733e9fac390d71cfedc973f3fc9c81c4faeebfdd7cc482",
+      "exact": true
+    },
+    {
+      "id": "aalp-96--mix-8193",
+      "family": "official",
+      "source_frames": 8193,
+      "input_sha256": "f7d68046bc0ed18e7c7b4bda3755d8ec6dcfc2dcc53460aa5c4dc61c894c21d1",
+      "pcm_sha256": "5ef8d8782b9bbe0bf4cc11c1ea84ab4c0da9452cb770c411a44d47987948d3dc",
+      "sony_pcm_sha256": "5ef8d8782b9bbe0bf4cc11c1ea84ab4c0da9452cb770c411a44d47987948d3dc",
+      "exact": true
+    },
+    {
+      "id": "aalp-96--mix-long",
+      "family": "official",
+      "source_frames": 441000,
+      "input_sha256": "51eec1d7f95f976ec9f8b63f0b980f97d7edbb8e475d0a50e0528c174117099c",
+      "pcm_sha256": "e89b6f151968ff1f2c96bcf56dbb5d27283baf10936f16eeadf5485f70f82e70",
+      "sony_pcm_sha256": "e89b6f151968ff1f2c96bcf56dbb5d27283baf10936f16eeadf5485f70f82e70",
+      "exact": true
+    },
+    {
+      "id": "aalp-96--multitone",
+      "family": "official",
+      "source_frames": 16384,
+      "input_sha256": "ca3a452eba5a9a94d6d7b7d58a6ac59ddcc53cf2b2582acb05ceaf4798c3e28f",
+      "pcm_sha256": "847dd7c3409f781db4f627b52113b247ed13d620b09deed933e4281872c4e32b",
+      "sony_pcm_sha256": "847dd7c3409f781db4f627b52113b247ed13d620b09deed933e4281872c4e32b",
+      "exact": true
+    },
+    {
+      "id": "aalp-96--noise",
+      "family": "official",
+      "source_frames": 8192,
+      "input_sha256": "5e0d9535fead17aeb777006e6fb3d0daac6a1c3955925113e9bce0a262c10cfe",
+      "pcm_sha256": "5bb7d801fb12728eba40036851fa40f115741ff468ab6d85b9d21a24279f4f0c",
+      "sony_pcm_sha256": "5bb7d801fb12728eba40036851fa40f115741ff468ab6d85b9d21a24279f4f0c",
+      "exact": true
+    },
+    {
+      "id": "aalp-96--same-phase",
+      "family": "official",
+      "source_frames": 8192,
+      "input_sha256": "d50d76282855424c6b31d40576c751f804bcfc48b5e16028bf9c21e40181d9dc",
+      "pcm_sha256": "ba9f11281445f21606df65513ca85d69664b087e607ff03cb9e3529741ed4b7f",
+      "sony_pcm_sha256": "ba9f11281445f21606df65513ca85d69664b087e607ff03cb9e3529741ed4b7f",
+      "exact": true
+    },
+    {
+      "id": "aalp-96--silence",
+      "family": "official",
+      "source_frames": 8192,
+      "input_sha256": "371341edc6bf3864d7d17d816c77db8cb36ccf8068d3fd7112196334fefd728a",
+      "pcm_sha256": "c35020473aed1b4642cd726cad727b63fff2824ad68cedd7ffb73c7cbd890479",
+      "sony_pcm_sha256": "c35020473aed1b4642cd726cad727b63fff2824ad68cedd7ffb73c7cbd890479",
+      "exact": true
+    },
+    {
+      "id": "aalp-96--sine",
+      "family": "official",
+      "source_frames": 8192,
+      "input_sha256": "cf80496dc16954b453f779cf3bebb88aabb217064962f0fa0492943b7a730b55",
+      "pcm_sha256": "46f43655639a1c8db1cd33abc6a7a3c1630d482d4eae182c39d2bcbcc8f387ed",
+      "sony_pcm_sha256": "46f43655639a1c8db1cd33abc6a7a3c1630d482d4eae182c39d2bcbcc8f387ed",
+      "exact": true
+    },
+    {
+      "id": "aalp-160--anti-phase",
+      "family": "official",
+      "source_frames": 8192,
+      "input_sha256": "67bb7a1e357f09de13b639c30c49c048484fbaa15bfbd589627e5095d8232bcc",
+      "pcm_sha256": "201ac7f88277939127ee8393c770918c2a466344e31e866911a3af06fce1ddc7",
+      "sony_pcm_sha256": "201ac7f88277939127ee8393c770918c2a466344e31e866911a3af06fce1ddc7",
+      "exact": true
+    },
+    {
+      "id": "aalp-160--boundary-1",
+      "family": "official",
+      "source_frames": 1,
+      "input_sha256": "5883bc4e7ddad1090f22c8779ff4d5948150980236f71c8dfcafa6a0c3a7df1f",
+      "pcm_sha256": "3fe082173119c71b92fc5c05c66309f012f6a3f1c8b3ec90eff83f3529603d32",
+      "sony_pcm_sha256": "3fe082173119c71b92fc5c05c66309f012f6a3f1c8b3ec90eff83f3529603d32",
+      "exact": true
+    },
+    {
+      "id": "aalp-160--boundary-1023",
+      "family": "official",
+      "source_frames": 1023,
+      "input_sha256": "c2bc809bc14661cbe9782c52b5465c73c28dd5de2133ed42e97fb43400055041",
+      "pcm_sha256": "1f443687024085dc7b87fa2715826c0a9509819e2d35c5984f685be58a077e07",
+      "sony_pcm_sha256": "1f443687024085dc7b87fa2715826c0a9509819e2d35c5984f685be58a077e07",
+      "exact": true
+    },
+    {
+      "id": "aalp-160--boundary-1024",
+      "family": "official",
+      "source_frames": 1024,
+      "input_sha256": "482fbffbd7fa8afcaef656f76b7a19cd36882975753958d700d3cb7b1bc10c08",
+      "pcm_sha256": "0642e76782b46ae476499c6c17dfc2b946c40479be6636eb2b44919663338957",
+      "sony_pcm_sha256": "0642e76782b46ae476499c6c17dfc2b946c40479be6636eb2b44919663338957",
+      "exact": true
+    },
+    {
+      "id": "aalp-160--boundary-1025",
+      "family": "official",
+      "source_frames": 1025,
+      "input_sha256": "574cb664caf0248a86880c186adbbcc6ca553433ff5a6618cfd9b04a8cd3c157",
+      "pcm_sha256": "79d3052c715d9d0c1101d22ca2253301aa3ef9e70d3e7a2047e7f094ff3c84ed",
+      "sony_pcm_sha256": "79d3052c715d9d0c1101d22ca2253301aa3ef9e70d3e7a2047e7f094ff3c84ed",
+      "exact": true
+    },
+    {
+      "id": "aalp-160--boundary-1679",
+      "family": "official",
+      "source_frames": 1679,
+      "input_sha256": "5a9282db4592588f98024b349fedf0651098c15f7a43e9702f94e71da34d2772",
+      "pcm_sha256": "327009fd769698167bd6ad6914f29bf6d5df477868e175ee27c6574f1795b182",
+      "sony_pcm_sha256": "327009fd769698167bd6ad6914f29bf6d5df477868e175ee27c6574f1795b182",
+      "exact": true
+    },
+    {
+      "id": "aalp-160--boundary-1680",
+      "family": "official",
+      "source_frames": 1680,
+      "input_sha256": "df6032903a172332762d0ed5a1cd873db29420b1a21a11ff1aafb812107e833d",
+      "pcm_sha256": "2efa3b0fe30c79487052c5c1418a7a3d4efebb2c9722a86d37d8d3c7438adcd9",
+      "sony_pcm_sha256": "2efa3b0fe30c79487052c5c1418a7a3d4efebb2c9722a86d37d8d3c7438adcd9",
+      "exact": true
+    },
+    {
+      "id": "aalp-160--boundary-1681",
+      "family": "official",
+      "source_frames": 1681,
+      "input_sha256": "da6b0963bff9512ac81227f211e996a372e256c27c758fb1f0e941a612bd88b7",
+      "pcm_sha256": "2ff31fb6ad920b8dbc1499cc6925451f8629adb40b0653b224b184b745cf51c9",
+      "sony_pcm_sha256": "2ff31fb6ad920b8dbc1499cc6925451f8629adb40b0653b224b184b745cf51c9",
+      "exact": true
+    },
+    {
+      "id": "aalp-160--boundary-2047",
+      "family": "official",
+      "source_frames": 2047,
+      "input_sha256": "079ebc12034384cf2b741a8212547b3fedb0c8dba13194c292e240f4a34d660b",
+      "pcm_sha256": "2e96359f36d2b9e413dabde4456fb755116a541a84e13a5351012a1a580e563e",
+      "sony_pcm_sha256": "2e96359f36d2b9e413dabde4456fb755116a541a84e13a5351012a1a580e563e",
+      "exact": true
+    },
+    {
+      "id": "aalp-160--boundary-2048",
+      "family": "official",
+      "source_frames": 2048,
+      "input_sha256": "7e6ddc0be02d0500964e854ce41706c27a009851042a11947f846ed95f283db1",
+      "pcm_sha256": "d42ec8901648a500fdd747ffd0fdf8b4ec39519393aed880c1478517da3a2bae",
+      "sony_pcm_sha256": "d42ec8901648a500fdd747ffd0fdf8b4ec39519393aed880c1478517da3a2bae",
+      "exact": true
+    },
+    {
+      "id": "aalp-160--boundary-2049",
+      "family": "official",
+      "source_frames": 2049,
+      "input_sha256": "49a51e3023fd865b4e39d50f138144592b79a38d0bc34327da662210d8e9e3a2",
+      "pcm_sha256": "7e04271422fd6a4c81542f04671ac6118a2d920b69c18cfb24e08055b2f81139",
+      "sony_pcm_sha256": "7e04271422fd6a4c81542f04671ac6118a2d920b69c18cfb24e08055b2f81139",
+      "exact": true
+    },
+    {
+      "id": "aalp-160--boundary-4095",
+      "family": "official",
+      "source_frames": 4095,
+      "input_sha256": "92410664bbda4f81ea8932b91e6406a9d8107ffed0780f2708d696047981c46a",
+      "pcm_sha256": "66107357a5f59d0117ce2d26243a39cc224acd0f4920fb4dbb84cf3c97c6d401",
+      "sony_pcm_sha256": "66107357a5f59d0117ce2d26243a39cc224acd0f4920fb4dbb84cf3c97c6d401",
+      "exact": true
+    },
+    {
+      "id": "aalp-160--boundary-4096",
+      "family": "official",
+      "source_frames": 4096,
+      "input_sha256": "bb552133f3f44e15150ff287e4c00fb194413ff930499943a7188fc614ba6da0",
+      "pcm_sha256": "b5c98652a6a47d0ef0da2cf422270e82cab454373538a376e524b07f1c27aa75",
+      "sony_pcm_sha256": "b5c98652a6a47d0ef0da2cf422270e82cab454373538a376e524b07f1c27aa75",
+      "exact": true
+    },
+    {
+      "id": "aalp-160--boundary-4097",
+      "family": "official",
+      "source_frames": 4097,
+      "input_sha256": "39f6029e9585b9787394a145fa33be336655dae8c9144ec4da8cc92168560011",
+      "pcm_sha256": "d3b095ddf66b609e63ac4bcce6ae49491c9127a2c8fc7b6d3a7568e8421db34e",
+      "sony_pcm_sha256": "d3b095ddf66b609e63ac4bcce6ae49491c9127a2c8fc7b6d3a7568e8421db34e",
+      "exact": true
+    },
+    {
+      "id": "aalp-160--boundary-44117",
+      "family": "official",
+      "source_frames": 44117,
+      "input_sha256": "ffb3a17286996dc31b3ae141d3fcd0affba9fb01c3e9b668aadd2ef84c1f1b3e",
+      "pcm_sha256": "919eb0dbadce82b63bb03f80b8327bbe2a331b970b42537a51c92c07eaafec58",
+      "sony_pcm_sha256": "919eb0dbadce82b63bb03f80b8327bbe2a331b970b42537a51c92c07eaafec58",
+      "exact": true
+    },
+    {
+      "id": "aalp-160--boundary-8191",
+      "family": "official",
+      "source_frames": 8191,
+      "input_sha256": "95006d06387241b5566a94724f0ba8fda1c74c8b12a84b139f8d631123c4c285",
+      "pcm_sha256": "c2c1d8625978d6f3a65d14f307e72c286e15723e7e59bfb8e6e60c3af4f4b5ae",
+      "sony_pcm_sha256": "c2c1d8625978d6f3a65d14f307e72c286e15723e7e59bfb8e6e60c3af4f4b5ae",
+      "exact": true
+    },
+    {
+      "id": "aalp-160--boundary-8192",
+      "family": "official",
+      "source_frames": 8192,
+      "input_sha256": "d469cf030d6909b35efe93e7af842c186512348f105013e4f2e5327eae2a0753",
+      "pcm_sha256": "321295c249b908646ce229c50a29b5967577723bfd30e46e14bbc0217878cfb6",
+      "sony_pcm_sha256": "321295c249b908646ce229c50a29b5967577723bfd30e46e14bbc0217878cfb6",
+      "exact": true
+    },
+    {
+      "id": "aalp-160--boundary-8193",
+      "family": "official",
+      "source_frames": 8193,
+      "input_sha256": "069ecbe9921db439df277b50c83368a7aa1f3e8f0f09069aefa209c0b04421b8",
+      "pcm_sha256": "989c8d85b6bcc2546ae56e90bc8cf524c9589c1aa72de8ec92432e69ec6efd11",
+      "sony_pcm_sha256": "989c8d85b6bcc2546ae56e90bc8cf524c9589c1aa72de8ec92432e69ec6efd11",
+      "exact": true
+    },
+    {
+      "id": "aalp-160--fullscale-alternating",
+      "family": "official",
+      "source_frames": 8192,
+      "input_sha256": "fc59cc2811b03276031b2b3ec3cee5d12d524f11d81126b3cbaddb969de06453",
+      "pcm_sha256": "e46f948a8bb1a37109c5f73e7d09f78580cfd72a3269dfee8dea0c5c74e27fb7",
+      "sony_pcm_sha256": "e46f948a8bb1a37109c5f73e7d09f78580cfd72a3269dfee8dea0c5c74e27fb7",
+      "exact": true
+    },
+    {
+      "id": "aalp-160--fullscale-negative",
+      "family": "official",
+      "source_frames": 4096,
+      "input_sha256": "f161de1d9f8edb294610b72f60a0afbbb6edac4ea9de4163a50ee5b296bd1201",
+      "pcm_sha256": "d15bf5ad303b3a1cbb2976d2109116d88ce77ebd3c6dbfff814530f06b9f906f",
+      "sony_pcm_sha256": "d15bf5ad303b3a1cbb2976d2109116d88ce77ebd3c6dbfff814530f06b9f906f",
+      "exact": true
+    },
+    {
+      "id": "aalp-160--fullscale-positive",
+      "family": "official",
+      "source_frames": 4096,
+      "input_sha256": "98195033cdebeb56e26515ce6ead0ab7639c075b2fd22b3f15d622a042490880",
+      "pcm_sha256": "4920e1f3d7b1ea9929bdf186a352e3e1cf0ddfc443d96173de33f28fe6e151c3",
+      "sony_pcm_sha256": "4920e1f3d7b1ea9929bdf186a352e3e1cf0ddfc443d96173de33f28fe6e151c3",
+      "exact": true
+    },
+    {
+      "id": "aalp-160--impulse-left",
+      "family": "official",
+      "source_frames": 8192,
+      "input_sha256": "f41d00b6aaffc00bab9578df84ba0ebfb6984a81a0d25306f464582755d0da41",
+      "pcm_sha256": "ddd81090b7715764ed96a5f545ed92f0ba0bafdef9a114d928597d447e2e12a2",
+      "sony_pcm_sha256": "ddd81090b7715764ed96a5f545ed92f0ba0bafdef9a114d928597d447e2e12a2",
+      "exact": true
+    },
+    {
+      "id": "aalp-160--impulse-right",
+      "family": "official",
+      "source_frames": 8192,
+      "input_sha256": "6585fad5bc762c21aedbe3a9ff635850ed389ecd4fcb8df45b9c4bd6dc080542",
+      "pcm_sha256": "d44c604378bebfac019b2c6fc174bdff01630f7cec2928f101f9aeceb222ab73",
+      "sony_pcm_sha256": "d44c604378bebfac019b2c6fc174bdff01630f7cec2928f101f9aeceb222ab73",
+      "exact": true
+    },
+    {
+      "id": "aalp-160--lowlevel",
+      "family": "official",
+      "source_frames": 8192,
+      "input_sha256": "8d0ac26e62d79d18b40f1fdb68a7c94eb14312ea0c02886d3ac4b8a461840fc9",
+      "pcm_sha256": "25e2ebd88874ed4b76733e9fac390d71cfedc973f3fc9c81c4faeebfdd7cc482",
+      "sony_pcm_sha256": "25e2ebd88874ed4b76733e9fac390d71cfedc973f3fc9c81c4faeebfdd7cc482",
+      "exact": true
+    },
+    {
+      "id": "aalp-160--mix-8193",
+      "family": "official",
+      "source_frames": 8193,
+      "input_sha256": "e4c11a4704a5def8594fc0b2427f3761ad907fba193ff2e2f96e94c735c6c0da",
+      "pcm_sha256": "5ef8d8782b9bbe0bf4cc11c1ea84ab4c0da9452cb770c411a44d47987948d3dc",
+      "sony_pcm_sha256": "5ef8d8782b9bbe0bf4cc11c1ea84ab4c0da9452cb770c411a44d47987948d3dc",
+      "exact": true
+    },
+    {
+      "id": "aalp-160--mix-long",
+      "family": "official",
+      "source_frames": 441000,
+      "input_sha256": "643891b5d9cb677b41b1d2c9bbf902aa7c8abbe23a11db4ae0b5980b20916a2c",
+      "pcm_sha256": "e89b6f151968ff1f2c96bcf56dbb5d27283baf10936f16eeadf5485f70f82e70",
+      "sony_pcm_sha256": "e89b6f151968ff1f2c96bcf56dbb5d27283baf10936f16eeadf5485f70f82e70",
+      "exact": true
+    },
+    {
+      "id": "aalp-160--multitone",
+      "family": "official",
+      "source_frames": 16384,
+      "input_sha256": "d75fe3d65fb1872d6b02a98d131595afd3b06517b83736e153f7c60c63412485",
+      "pcm_sha256": "847dd7c3409f781db4f627b52113b247ed13d620b09deed933e4281872c4e32b",
+      "sony_pcm_sha256": "847dd7c3409f781db4f627b52113b247ed13d620b09deed933e4281872c4e32b",
+      "exact": true
+    },
+    {
+      "id": "aalp-160--noise",
+      "family": "official",
+      "source_frames": 8192,
+      "input_sha256": "6e6f1b54623a3a5941bf6747c6967e3ab30df4068bae9a5f2dbbcc49cbe2ec42",
+      "pcm_sha256": "5bb7d801fb12728eba40036851fa40f115741ff468ab6d85b9d21a24279f4f0c",
+      "sony_pcm_sha256": "5bb7d801fb12728eba40036851fa40f115741ff468ab6d85b9d21a24279f4f0c",
+      "exact": true
+    },
+    {
+      "id": "aalp-160--same-phase",
+      "family": "official",
+      "source_frames": 8192,
+      "input_sha256": "2d384e0d7d619232d319ce7161ba6a1d76ead6da900cffce19676affddfcf76d",
+      "pcm_sha256": "ba9f11281445f21606df65513ca85d69664b087e607ff03cb9e3529741ed4b7f",
+      "sony_pcm_sha256": "ba9f11281445f21606df65513ca85d69664b087e607ff03cb9e3529741ed4b7f",
+      "exact": true
+    },
+    {
+      "id": "aalp-160--silence",
+      "family": "official",
+      "source_frames": 8192,
+      "input_sha256": "d633320bd60f43ea8b75970d105645cf7bb12b5638c78ab8198313a94d1c5624",
+      "pcm_sha256": "c35020473aed1b4642cd726cad727b63fff2824ad68cedd7ffb73c7cbd890479",
+      "sony_pcm_sha256": "c35020473aed1b4642cd726cad727b63fff2824ad68cedd7ffb73c7cbd890479",
+      "exact": true
+    },
+    {
+      "id": "aalp-160--sine",
+      "family": "official",
+      "source_frames": 8192,
+      "input_sha256": "5b1dbe7c5fbfe2e1d5b1d2b72a6586065a6444b1ce94c0a4f3e82c11c0a4f08f",
+      "pcm_sha256": "46f43655639a1c8db1cd33abc6a7a3c1630d482d4eae182c39d2bcbcc8f387ed",
+      "sony_pcm_sha256": "46f43655639a1c8db1cd33abc6a7a3c1630d482d4eae182c39d2bcbcc8f387ed",
+      "exact": true
+    },
+    {
+      "id": "aalp-192--anti-phase",
+      "family": "official",
+      "source_frames": 8192,
+      "input_sha256": "eaadf4077326a07ee400913a6330a022d14e1bc0479eeafea2d1bc748a244397",
+      "pcm_sha256": "201ac7f88277939127ee8393c770918c2a466344e31e866911a3af06fce1ddc7",
+      "sony_pcm_sha256": "201ac7f88277939127ee8393c770918c2a466344e31e866911a3af06fce1ddc7",
+      "exact": true
+    },
+    {
+      "id": "aalp-192--boundary-1",
+      "family": "official",
+      "source_frames": 1,
+      "input_sha256": "54034f098a26271cd66fc231829f3dcd1b9ce75ed7951b26af006221ed69234a",
+      "pcm_sha256": "3fe082173119c71b92fc5c05c66309f012f6a3f1c8b3ec90eff83f3529603d32",
+      "sony_pcm_sha256": "3fe082173119c71b92fc5c05c66309f012f6a3f1c8b3ec90eff83f3529603d32",
+      "exact": true
+    },
+    {
+      "id": "aalp-192--boundary-1023",
+      "family": "official",
+      "source_frames": 1023,
+      "input_sha256": "c1be93cac6d322371bc5f161cc72793a2f65d2aec5344e8e64523184a3541d39",
+      "pcm_sha256": "1f443687024085dc7b87fa2715826c0a9509819e2d35c5984f685be58a077e07",
+      "sony_pcm_sha256": "1f443687024085dc7b87fa2715826c0a9509819e2d35c5984f685be58a077e07",
+      "exact": true
+    },
+    {
+      "id": "aalp-192--boundary-1024",
+      "family": "official",
+      "source_frames": 1024,
+      "input_sha256": "ee99154c22d0786589a80f4e136e099793d35fb6c26ffe826f084207742fe013",
+      "pcm_sha256": "0642e76782b46ae476499c6c17dfc2b946c40479be6636eb2b44919663338957",
+      "sony_pcm_sha256": "0642e76782b46ae476499c6c17dfc2b946c40479be6636eb2b44919663338957",
+      "exact": true
+    },
+    {
+      "id": "aalp-192--boundary-1025",
+      "family": "official",
+      "source_frames": 1025,
+      "input_sha256": "d8c49a659ba4049503959c2d029a95ace268ce46735ef9c28692dbe98fdfbb35",
+      "pcm_sha256": "79d3052c715d9d0c1101d22ca2253301aa3ef9e70d3e7a2047e7f094ff3c84ed",
+      "sony_pcm_sha256": "79d3052c715d9d0c1101d22ca2253301aa3ef9e70d3e7a2047e7f094ff3c84ed",
+      "exact": true
+    },
+    {
+      "id": "aalp-192--boundary-1679",
+      "family": "official",
+      "source_frames": 1679,
+      "input_sha256": "e9508f8c7ce6d93e330b0de4abd255b0c8d8725c4c424a11f9508b4848d2c1e3",
+      "pcm_sha256": "327009fd769698167bd6ad6914f29bf6d5df477868e175ee27c6574f1795b182",
+      "sony_pcm_sha256": "327009fd769698167bd6ad6914f29bf6d5df477868e175ee27c6574f1795b182",
+      "exact": true
+    },
+    {
+      "id": "aalp-192--boundary-1680",
+      "family": "official",
+      "source_frames": 1680,
+      "input_sha256": "179bba993ce9506ee56c74eb5f8c6e2c4114e17ab49fe182f4eeba2bb7e1deb8",
+      "pcm_sha256": "2efa3b0fe30c79487052c5c1418a7a3d4efebb2c9722a86d37d8d3c7438adcd9",
+      "sony_pcm_sha256": "2efa3b0fe30c79487052c5c1418a7a3d4efebb2c9722a86d37d8d3c7438adcd9",
+      "exact": true
+    },
+    {
+      "id": "aalp-192--boundary-1681",
+      "family": "official",
+      "source_frames": 1681,
+      "input_sha256": "824b94b35283122204b08a87b300b6153991b53b9efbd1428125ccbb03c92905",
+      "pcm_sha256": "2ff31fb6ad920b8dbc1499cc6925451f8629adb40b0653b224b184b745cf51c9",
+      "sony_pcm_sha256": "2ff31fb6ad920b8dbc1499cc6925451f8629adb40b0653b224b184b745cf51c9",
+      "exact": true
+    },
+    {
+      "id": "aalp-192--boundary-2047",
+      "family": "official",
+      "source_frames": 2047,
+      "input_sha256": "5742fc3bc31729b30b145ca406f12a2bdb919c8516d32ad8371e5e09281e750b",
+      "pcm_sha256": "2e96359f36d2b9e413dabde4456fb755116a541a84e13a5351012a1a580e563e",
+      "sony_pcm_sha256": "2e96359f36d2b9e413dabde4456fb755116a541a84e13a5351012a1a580e563e",
+      "exact": true
+    },
+    {
+      "id": "aalp-192--boundary-2048",
+      "family": "official",
+      "source_frames": 2048,
+      "input_sha256": "f0f8f06f6c4e41845f6e478186b5f3317ead14b9d22b369849377650aac94860",
+      "pcm_sha256": "d42ec8901648a500fdd747ffd0fdf8b4ec39519393aed880c1478517da3a2bae",
+      "sony_pcm_sha256": "d42ec8901648a500fdd747ffd0fdf8b4ec39519393aed880c1478517da3a2bae",
+      "exact": true
+    },
+    {
+      "id": "aalp-192--boundary-2049",
+      "family": "official",
+      "source_frames": 2049,
+      "input_sha256": "313b4919909cd7074bf23f229ea2e36562f1cdf9acc12ed7f465db23d04f1d82",
+      "pcm_sha256": "7e04271422fd6a4c81542f04671ac6118a2d920b69c18cfb24e08055b2f81139",
+      "sony_pcm_sha256": "7e04271422fd6a4c81542f04671ac6118a2d920b69c18cfb24e08055b2f81139",
+      "exact": true
+    },
+    {
+      "id": "aalp-192--boundary-4095",
+      "family": "official",
+      "source_frames": 4095,
+      "input_sha256": "824390856ac796487ef6a106d58597cc239d1cd76ab85d258e8b469621237c21",
+      "pcm_sha256": "66107357a5f59d0117ce2d26243a39cc224acd0f4920fb4dbb84cf3c97c6d401",
+      "sony_pcm_sha256": "66107357a5f59d0117ce2d26243a39cc224acd0f4920fb4dbb84cf3c97c6d401",
+      "exact": true
+    },
+    {
+      "id": "aalp-192--boundary-4096",
+      "family": "official",
+      "source_frames": 4096,
+      "input_sha256": "8151c7a17cff2f9d0f5f4a67c0ca7504f0b0a43f233b7cc64ae1720324b2dbbd",
+      "pcm_sha256": "b5c98652a6a47d0ef0da2cf422270e82cab454373538a376e524b07f1c27aa75",
+      "sony_pcm_sha256": "b5c98652a6a47d0ef0da2cf422270e82cab454373538a376e524b07f1c27aa75",
+      "exact": true
+    },
+    {
+      "id": "aalp-192--boundary-4097",
+      "family": "official",
+      "source_frames": 4097,
+      "input_sha256": "628c8ca5224ce6c0e2b14457ce8d971148dd3bb691ae1c24d7c67f100f4012d2",
+      "pcm_sha256": "d3b095ddf66b609e63ac4bcce6ae49491c9127a2c8fc7b6d3a7568e8421db34e",
+      "sony_pcm_sha256": "d3b095ddf66b609e63ac4bcce6ae49491c9127a2c8fc7b6d3a7568e8421db34e",
+      "exact": true
+    },
+    {
+      "id": "aalp-192--boundary-44117",
+      "family": "official",
+      "source_frames": 44117,
+      "input_sha256": "7f39d7c56a6f21bcc3f0063530bd540ea94046d06dfc6449dbe4d244b7b3b541",
+      "pcm_sha256": "919eb0dbadce82b63bb03f80b8327bbe2a331b970b42537a51c92c07eaafec58",
+      "sony_pcm_sha256": "919eb0dbadce82b63bb03f80b8327bbe2a331b970b42537a51c92c07eaafec58",
+      "exact": true
+    },
+    {
+      "id": "aalp-192--boundary-8191",
+      "family": "official",
+      "source_frames": 8191,
+      "input_sha256": "80f048dc0420434a6f0a5b6963faf2e21a09967ecafb4658066105e12623b0f7",
+      "pcm_sha256": "c2c1d8625978d6f3a65d14f307e72c286e15723e7e59bfb8e6e60c3af4f4b5ae",
+      "sony_pcm_sha256": "c2c1d8625978d6f3a65d14f307e72c286e15723e7e59bfb8e6e60c3af4f4b5ae",
+      "exact": true
+    },
+    {
+      "id": "aalp-192--boundary-8192",
+      "family": "official",
+      "source_frames": 8192,
+      "input_sha256": "b29e079d64e05480093825e8bb1aa53a4fbcc7087c8025e83c269687abc84bfc",
+      "pcm_sha256": "321295c249b908646ce229c50a29b5967577723bfd30e46e14bbc0217878cfb6",
+      "sony_pcm_sha256": "321295c249b908646ce229c50a29b5967577723bfd30e46e14bbc0217878cfb6",
+      "exact": true
+    },
+    {
+      "id": "aalp-192--boundary-8193",
+      "family": "official",
+      "source_frames": 8193,
+      "input_sha256": "9d143247514730eca55aca1f5c6a14f621de103d960a761c7adaf33b4df465d1",
+      "pcm_sha256": "989c8d85b6bcc2546ae56e90bc8cf524c9589c1aa72de8ec92432e69ec6efd11",
+      "sony_pcm_sha256": "989c8d85b6bcc2546ae56e90bc8cf524c9589c1aa72de8ec92432e69ec6efd11",
+      "exact": true
+    },
+    {
+      "id": "aalp-192--fullscale-alternating",
+      "family": "official",
+      "source_frames": 8192,
+      "input_sha256": "8dd5c7f98c6ff83ddf50cac501f895789a110b76b194b8f4cceaa006a695741b",
+      "pcm_sha256": "e46f948a8bb1a37109c5f73e7d09f78580cfd72a3269dfee8dea0c5c74e27fb7",
+      "sony_pcm_sha256": "e46f948a8bb1a37109c5f73e7d09f78580cfd72a3269dfee8dea0c5c74e27fb7",
+      "exact": true
+    },
+    {
+      "id": "aalp-192--fullscale-negative",
+      "family": "official",
+      "source_frames": 4096,
+      "input_sha256": "a914f83318d9300cbb244acb087d0b4961ec1b8d95073d286cba713a33829440",
+      "pcm_sha256": "d15bf5ad303b3a1cbb2976d2109116d88ce77ebd3c6dbfff814530f06b9f906f",
+      "sony_pcm_sha256": "d15bf5ad303b3a1cbb2976d2109116d88ce77ebd3c6dbfff814530f06b9f906f",
+      "exact": true
+    },
+    {
+      "id": "aalp-192--fullscale-positive",
+      "family": "official",
+      "source_frames": 4096,
+      "input_sha256": "1e5ef37180ea2c742acd56cde2dbbfecc27193cdbe1d2568c2a070b567222f54",
+      "pcm_sha256": "4920e1f3d7b1ea9929bdf186a352e3e1cf0ddfc443d96173de33f28fe6e151c3",
+      "sony_pcm_sha256": "4920e1f3d7b1ea9929bdf186a352e3e1cf0ddfc443d96173de33f28fe6e151c3",
+      "exact": true
+    },
+    {
+      "id": "aalp-192--impulse-left",
+      "family": "official",
+      "source_frames": 8192,
+      "input_sha256": "18d0acdba920d936da20ffdc563f515aca5540748d08ad81ea37b72fe32663ae",
+      "pcm_sha256": "ddd81090b7715764ed96a5f545ed92f0ba0bafdef9a114d928597d447e2e12a2",
+      "sony_pcm_sha256": "ddd81090b7715764ed96a5f545ed92f0ba0bafdef9a114d928597d447e2e12a2",
+      "exact": true
+    },
+    {
+      "id": "aalp-192--impulse-right",
+      "family": "official",
+      "source_frames": 8192,
+      "input_sha256": "5869f5ac902af9efd0d4d5ba0a5a0f770f1ac58948b86a6782b91c9774490992",
+      "pcm_sha256": "d44c604378bebfac019b2c6fc174bdff01630f7cec2928f101f9aeceb222ab73",
+      "sony_pcm_sha256": "d44c604378bebfac019b2c6fc174bdff01630f7cec2928f101f9aeceb222ab73",
+      "exact": true
+    },
+    {
+      "id": "aalp-192--lowlevel",
+      "family": "official",
+      "source_frames": 8192,
+      "input_sha256": "fa480e4ebe472c6f3cf3409d800c1433d417006af92422eb5094c3ab82e8eec2",
+      "pcm_sha256": "25e2ebd88874ed4b76733e9fac390d71cfedc973f3fc9c81c4faeebfdd7cc482",
+      "sony_pcm_sha256": "25e2ebd88874ed4b76733e9fac390d71cfedc973f3fc9c81c4faeebfdd7cc482",
+      "exact": true
+    },
+    {
+      "id": "aalp-192--mix-8193",
+      "family": "official",
+      "source_frames": 8193,
+      "input_sha256": "9e7a6dfffef87fbb6769ab0b1575bba1b3b0eeb5369c64c5a4d9556c79bd397e",
+      "pcm_sha256": "5ef8d8782b9bbe0bf4cc11c1ea84ab4c0da9452cb770c411a44d47987948d3dc",
+      "sony_pcm_sha256": "5ef8d8782b9bbe0bf4cc11c1ea84ab4c0da9452cb770c411a44d47987948d3dc",
+      "exact": true
+    },
+    {
+      "id": "aalp-192--mix-long",
+      "family": "official",
+      "source_frames": 441000,
+      "input_sha256": "09d6a1043807f47d8036dc8e0f92f7dcf1e47e7c7263f9c7ab0ef8f5c31ad5a2",
+      "pcm_sha256": "e89b6f151968ff1f2c96bcf56dbb5d27283baf10936f16eeadf5485f70f82e70",
+      "sony_pcm_sha256": "e89b6f151968ff1f2c96bcf56dbb5d27283baf10936f16eeadf5485f70f82e70",
+      "exact": true
+    },
+    {
+      "id": "aalp-192--multitone",
+      "family": "official",
+      "source_frames": 16384,
+      "input_sha256": "2fea8f63bf248fd35a24af2d3418ae8074f45200e55224541effcd3628888b7c",
+      "pcm_sha256": "847dd7c3409f781db4f627b52113b247ed13d620b09deed933e4281872c4e32b",
+      "sony_pcm_sha256": "847dd7c3409f781db4f627b52113b247ed13d620b09deed933e4281872c4e32b",
+      "exact": true
+    },
+    {
+      "id": "aalp-192--noise",
+      "family": "official",
+      "source_frames": 8192,
+      "input_sha256": "ffcfb38a2accbf1af2a5f2c55b89528cc44ddb7525007b5f2a464f755f8a588a",
+      "pcm_sha256": "5bb7d801fb12728eba40036851fa40f115741ff468ab6d85b9d21a24279f4f0c",
+      "sony_pcm_sha256": "5bb7d801fb12728eba40036851fa40f115741ff468ab6d85b9d21a24279f4f0c",
+      "exact": true
+    },
+    {
+      "id": "aalp-192--same-phase",
+      "family": "official",
+      "source_frames": 8192,
+      "input_sha256": "44cace53cc3f8e3ad4cc01044cda99575a8ada98b418b6665106e3e6ad814e9f",
+      "pcm_sha256": "ba9f11281445f21606df65513ca85d69664b087e607ff03cb9e3529741ed4b7f",
+      "sony_pcm_sha256": "ba9f11281445f21606df65513ca85d69664b087e607ff03cb9e3529741ed4b7f",
+      "exact": true
+    },
+    {
+      "id": "aalp-192--silence",
+      "family": "official",
+      "source_frames": 8192,
+      "input_sha256": "8fd83dcad620af7784c19c0d03fa8b40f9c8e5af16c81d40747450725a9cef66",
+      "pcm_sha256": "c35020473aed1b4642cd726cad727b63fff2824ad68cedd7ffb73c7cbd890479",
+      "sony_pcm_sha256": "c35020473aed1b4642cd726cad727b63fff2824ad68cedd7ffb73c7cbd890479",
+      "exact": true
+    },
+    {
+      "id": "aalp-192--sine",
+      "family": "official",
+      "source_frames": 8192,
+      "input_sha256": "8cd01b318d59344f32f4b964ac8b11c86d665e86a2a51c7abe5c8ad67f06d8c6",
+      "pcm_sha256": "46f43655639a1c8db1cd33abc6a7a3c1630d482d4eae182c39d2bcbcc8f387ed",
+      "sony_pcm_sha256": "46f43655639a1c8db1cd33abc6a7a3c1630d482d4eae182c39d2bcbcc8f387ed",
+      "exact": true
+    },
+    {
+      "id": "aalp-256--anti-phase",
+      "family": "official",
+      "source_frames": 8192,
+      "input_sha256": "7d58bf0cc43d11ea6ff439d02bce3ec707a69f0de993890bc9a31813e6743654",
+      "pcm_sha256": "201ac7f88277939127ee8393c770918c2a466344e31e866911a3af06fce1ddc7",
+      "sony_pcm_sha256": "201ac7f88277939127ee8393c770918c2a466344e31e866911a3af06fce1ddc7",
+      "exact": true
+    },
+    {
+      "id": "aalp-256--boundary-1",
+      "family": "official",
+      "source_frames": 1,
+      "input_sha256": "72425a198fe74d7a41dba03cfe04a2b1b1404406df8c0702b9786913d7db2f76",
+      "pcm_sha256": "3fe082173119c71b92fc5c05c66309f012f6a3f1c8b3ec90eff83f3529603d32",
+      "sony_pcm_sha256": "3fe082173119c71b92fc5c05c66309f012f6a3f1c8b3ec90eff83f3529603d32",
+      "exact": true
+    },
+    {
+      "id": "aalp-256--boundary-1023",
+      "family": "official",
+      "source_frames": 1023,
+      "input_sha256": "88aaeede02b121b503ec0737c5fe35d92ef9aac6144379aa1f2013bbbd01993d",
+      "pcm_sha256": "1f443687024085dc7b87fa2715826c0a9509819e2d35c5984f685be58a077e07",
+      "sony_pcm_sha256": "1f443687024085dc7b87fa2715826c0a9509819e2d35c5984f685be58a077e07",
+      "exact": true
+    },
+    {
+      "id": "aalp-256--boundary-1024",
+      "family": "official",
+      "source_frames": 1024,
+      "input_sha256": "3f1f6e0edf48a07b8f137196e50af7032780a0256eb1256115ffa2e72f54b1df",
+      "pcm_sha256": "0642e76782b46ae476499c6c17dfc2b946c40479be6636eb2b44919663338957",
+      "sony_pcm_sha256": "0642e76782b46ae476499c6c17dfc2b946c40479be6636eb2b44919663338957",
+      "exact": true
+    },
+    {
+      "id": "aalp-256--boundary-1025",
+      "family": "official",
+      "source_frames": 1025,
+      "input_sha256": "1932e65fe9965dc6acb250a6eefba7e766df52f229534571e6605b71158dfe4c",
+      "pcm_sha256": "79d3052c715d9d0c1101d22ca2253301aa3ef9e70d3e7a2047e7f094ff3c84ed",
+      "sony_pcm_sha256": "79d3052c715d9d0c1101d22ca2253301aa3ef9e70d3e7a2047e7f094ff3c84ed",
+      "exact": true
+    },
+    {
+      "id": "aalp-256--boundary-1679",
+      "family": "official",
+      "source_frames": 1679,
+      "input_sha256": "8a0e38510dde13d432fa818cad9f234c04c64bbe7b95eace961b3db6d02552d5",
+      "pcm_sha256": "327009fd769698167bd6ad6914f29bf6d5df477868e175ee27c6574f1795b182",
+      "sony_pcm_sha256": "327009fd769698167bd6ad6914f29bf6d5df477868e175ee27c6574f1795b182",
+      "exact": true
+    },
+    {
+      "id": "aalp-256--boundary-1680",
+      "family": "official",
+      "source_frames": 1680,
+      "input_sha256": "3f4ac687a80bce913ab64882bd9f27f0af6ef433d2289aaa83a2b5b3fb116aaf",
+      "pcm_sha256": "2efa3b0fe30c79487052c5c1418a7a3d4efebb2c9722a86d37d8d3c7438adcd9",
+      "sony_pcm_sha256": "2efa3b0fe30c79487052c5c1418a7a3d4efebb2c9722a86d37d8d3c7438adcd9",
+      "exact": true
+    },
+    {
+      "id": "aalp-256--boundary-1681",
+      "family": "official",
+      "source_frames": 1681,
+      "input_sha256": "927641560b4af186f30a58e4f0c8ab15afde96a098733670ba0339303a92ecf2",
+      "pcm_sha256": "2ff31fb6ad920b8dbc1499cc6925451f8629adb40b0653b224b184b745cf51c9",
+      "sony_pcm_sha256": "2ff31fb6ad920b8dbc1499cc6925451f8629adb40b0653b224b184b745cf51c9",
+      "exact": true
+    },
+    {
+      "id": "aalp-256--boundary-2047",
+      "family": "official",
+      "source_frames": 2047,
+      "input_sha256": "94bb943818a88627a9f6cbe5d0683c34c7559e1eee7b30db04616b87352dd9cf",
+      "pcm_sha256": "2e96359f36d2b9e413dabde4456fb755116a541a84e13a5351012a1a580e563e",
+      "sony_pcm_sha256": "2e96359f36d2b9e413dabde4456fb755116a541a84e13a5351012a1a580e563e",
+      "exact": true
+    },
+    {
+      "id": "aalp-256--boundary-2048",
+      "family": "official",
+      "source_frames": 2048,
+      "input_sha256": "b68b025bbdcb17b6ad0cf98af30492afdbd165f028cac6ef6f6f3c529fd4f6af",
+      "pcm_sha256": "d42ec8901648a500fdd747ffd0fdf8b4ec39519393aed880c1478517da3a2bae",
+      "sony_pcm_sha256": "d42ec8901648a500fdd747ffd0fdf8b4ec39519393aed880c1478517da3a2bae",
+      "exact": true
+    },
+    {
+      "id": "aalp-256--boundary-2049",
+      "family": "official",
+      "source_frames": 2049,
+      "input_sha256": "de23d723b33053a85e95368a62ed5a73b3a13c067da331c53c51752124e73ba1",
+      "pcm_sha256": "7e04271422fd6a4c81542f04671ac6118a2d920b69c18cfb24e08055b2f81139",
+      "sony_pcm_sha256": "7e04271422fd6a4c81542f04671ac6118a2d920b69c18cfb24e08055b2f81139",
+      "exact": true
+    },
+    {
+      "id": "aalp-256--boundary-4095",
+      "family": "official",
+      "source_frames": 4095,
+      "input_sha256": "9930f6fd19f38a579e4be1dc092ba8e8a9210afc9be3738cce2a1d7369a225c4",
+      "pcm_sha256": "66107357a5f59d0117ce2d26243a39cc224acd0f4920fb4dbb84cf3c97c6d401",
+      "sony_pcm_sha256": "66107357a5f59d0117ce2d26243a39cc224acd0f4920fb4dbb84cf3c97c6d401",
+      "exact": true
+    },
+    {
+      "id": "aalp-256--boundary-4096",
+      "family": "official",
+      "source_frames": 4096,
+      "input_sha256": "3250778b9af13cb740b5eee15b91770516ba11f5048f73df1d0a61fe1a900638",
+      "pcm_sha256": "b5c98652a6a47d0ef0da2cf422270e82cab454373538a376e524b07f1c27aa75",
+      "sony_pcm_sha256": "b5c98652a6a47d0ef0da2cf422270e82cab454373538a376e524b07f1c27aa75",
+      "exact": true
+    },
+    {
+      "id": "aalp-256--boundary-4097",
+      "family": "official",
+      "source_frames": 4097,
+      "input_sha256": "06bd6969c28ec522400a20753f429af4792c8e577b98e0dd8bdf2e65402a3143",
+      "pcm_sha256": "d3b095ddf66b609e63ac4bcce6ae49491c9127a2c8fc7b6d3a7568e8421db34e",
+      "sony_pcm_sha256": "d3b095ddf66b609e63ac4bcce6ae49491c9127a2c8fc7b6d3a7568e8421db34e",
+      "exact": true
+    },
+    {
+      "id": "aalp-256--boundary-44117",
+      "family": "official",
+      "source_frames": 44117,
+      "input_sha256": "c70b102beaea6ad5f829a930ffd72914603e1c74784e920fbef2bd6b1a3c711a",
+      "pcm_sha256": "919eb0dbadce82b63bb03f80b8327bbe2a331b970b42537a51c92c07eaafec58",
+      "sony_pcm_sha256": "919eb0dbadce82b63bb03f80b8327bbe2a331b970b42537a51c92c07eaafec58",
+      "exact": true
+    },
+    {
+      "id": "aalp-256--boundary-8191",
+      "family": "official",
+      "source_frames": 8191,
+      "input_sha256": "20e4d7310b5e1b679ebd81d16cb05e8dffee8eb610ece214321ccd8c125d480e",
+      "pcm_sha256": "c2c1d8625978d6f3a65d14f307e72c286e15723e7e59bfb8e6e60c3af4f4b5ae",
+      "sony_pcm_sha256": "c2c1d8625978d6f3a65d14f307e72c286e15723e7e59bfb8e6e60c3af4f4b5ae",
+      "exact": true
+    },
+    {
+      "id": "aalp-256--boundary-8192",
+      "family": "official",
+      "source_frames": 8192,
+      "input_sha256": "c810d727ca649f65f781ae3023629ab60ce61b85ac1b244d4ec6e43d707b1fec",
+      "pcm_sha256": "321295c249b908646ce229c50a29b5967577723bfd30e46e14bbc0217878cfb6",
+      "sony_pcm_sha256": "321295c249b908646ce229c50a29b5967577723bfd30e46e14bbc0217878cfb6",
+      "exact": true
+    },
+    {
+      "id": "aalp-256--boundary-8193",
+      "family": "official",
+      "source_frames": 8193,
+      "input_sha256": "9269bbd896f52fb87e14d17cd140f122fca6353b9ca26b2209082dd2a9025c48",
+      "pcm_sha256": "989c8d85b6bcc2546ae56e90bc8cf524c9589c1aa72de8ec92432e69ec6efd11",
+      "sony_pcm_sha256": "989c8d85b6bcc2546ae56e90bc8cf524c9589c1aa72de8ec92432e69ec6efd11",
+      "exact": true
+    },
+    {
+      "id": "aalp-256--fullscale-alternating",
+      "family": "official",
+      "source_frames": 8192,
+      "input_sha256": "31b5cb906652428e17586b39b5461cd42cc01cef6f9e030a8d6da6f579f0ed81",
+      "pcm_sha256": "e46f948a8bb1a37109c5f73e7d09f78580cfd72a3269dfee8dea0c5c74e27fb7",
+      "sony_pcm_sha256": "e46f948a8bb1a37109c5f73e7d09f78580cfd72a3269dfee8dea0c5c74e27fb7",
+      "exact": true
+    },
+    {
+      "id": "aalp-256--fullscale-negative",
+      "family": "official",
+      "source_frames": 4096,
+      "input_sha256": "a2e975d803e6ba10b08f6ae4f45870d95380cca361997740145e55ecd450608e",
+      "pcm_sha256": "d15bf5ad303b3a1cbb2976d2109116d88ce77ebd3c6dbfff814530f06b9f906f",
+      "sony_pcm_sha256": "d15bf5ad303b3a1cbb2976d2109116d88ce77ebd3c6dbfff814530f06b9f906f",
+      "exact": true
+    },
+    {
+      "id": "aalp-256--fullscale-positive",
+      "family": "official",
+      "source_frames": 4096,
+      "input_sha256": "c57d49ce79ed420ab59cad73eb000a597b085a1b2b47b6a5ff51eee451026669",
+      "pcm_sha256": "4920e1f3d7b1ea9929bdf186a352e3e1cf0ddfc443d96173de33f28fe6e151c3",
+      "sony_pcm_sha256": "4920e1f3d7b1ea9929bdf186a352e3e1cf0ddfc443d96173de33f28fe6e151c3",
+      "exact": true
+    },
+    {
+      "id": "aalp-256--impulse-left",
+      "family": "official",
+      "source_frames": 8192,
+      "input_sha256": "0efe6b023e932f2e8e80712f2942b48588755b7e943f20968b20675dec031efa",
+      "pcm_sha256": "ddd81090b7715764ed96a5f545ed92f0ba0bafdef9a114d928597d447e2e12a2",
+      "sony_pcm_sha256": "ddd81090b7715764ed96a5f545ed92f0ba0bafdef9a114d928597d447e2e12a2",
+      "exact": true
+    },
+    {
+      "id": "aalp-256--impulse-right",
+      "family": "official",
+      "source_frames": 8192,
+      "input_sha256": "e4547cd3b807c3fd42b2662c8420eb667cbf2644641add3da68645511209a3f0",
+      "pcm_sha256": "d44c604378bebfac019b2c6fc174bdff01630f7cec2928f101f9aeceb222ab73",
+      "sony_pcm_sha256": "d44c604378bebfac019b2c6fc174bdff01630f7cec2928f101f9aeceb222ab73",
+      "exact": true
+    },
+    {
+      "id": "aalp-256--lowlevel",
+      "family": "official",
+      "source_frames": 8192,
+      "input_sha256": "761e746d5dcc28d0af19a5a9bb32bb75c90d3acbda8ffe49914ee32ddff27980",
+      "pcm_sha256": "25e2ebd88874ed4b76733e9fac390d71cfedc973f3fc9c81c4faeebfdd7cc482",
+      "sony_pcm_sha256": "25e2ebd88874ed4b76733e9fac390d71cfedc973f3fc9c81c4faeebfdd7cc482",
+      "exact": true
+    },
+    {
+      "id": "aalp-256--mix-8193",
+      "family": "official",
+      "source_frames": 8193,
+      "input_sha256": "1a72391a645b26abab7654811374da721373fc32a9ebc363e0b349400db4733c",
+      "pcm_sha256": "5ef8d8782b9bbe0bf4cc11c1ea84ab4c0da9452cb770c411a44d47987948d3dc",
+      "sony_pcm_sha256": "5ef8d8782b9bbe0bf4cc11c1ea84ab4c0da9452cb770c411a44d47987948d3dc",
+      "exact": true
+    },
+    {
+      "id": "aalp-256--mix-long",
+      "family": "official",
+      "source_frames": 441000,
+      "input_sha256": "a8b220e09696318729048838723360500b8ce8516b30a8816aafcbff429069c3",
+      "pcm_sha256": "e89b6f151968ff1f2c96bcf56dbb5d27283baf10936f16eeadf5485f70f82e70",
+      "sony_pcm_sha256": "e89b6f151968ff1f2c96bcf56dbb5d27283baf10936f16eeadf5485f70f82e70",
+      "exact": true
+    },
+    {
+      "id": "aalp-256--multitone",
+      "family": "official",
+      "source_frames": 16384,
+      "input_sha256": "5af81e835a61266261e482e0a03c181a80060de527b30fceadd0f795f3bb02c0",
+      "pcm_sha256": "847dd7c3409f781db4f627b52113b247ed13d620b09deed933e4281872c4e32b",
+      "sony_pcm_sha256": "847dd7c3409f781db4f627b52113b247ed13d620b09deed933e4281872c4e32b",
+      "exact": true
+    },
+    {
+      "id": "aalp-256--noise",
+      "family": "official",
+      "source_frames": 8192,
+      "input_sha256": "da6bd99d7116f20c8a35593fed1fb5006723bebb1fc43e21d9dc8741c6079063",
+      "pcm_sha256": "5bb7d801fb12728eba40036851fa40f115741ff468ab6d85b9d21a24279f4f0c",
+      "sony_pcm_sha256": "5bb7d801fb12728eba40036851fa40f115741ff468ab6d85b9d21a24279f4f0c",
+      "exact": true
+    },
+    {
+      "id": "aalp-256--same-phase",
+      "family": "official",
+      "source_frames": 8192,
+      "input_sha256": "b457e1f1c4ab13bacf0fe402d1e91b4293c633ac6868a4abf3d4f9dd9c1aa5e3",
+      "pcm_sha256": "ba9f11281445f21606df65513ca85d69664b087e607ff03cb9e3529741ed4b7f",
+      "sony_pcm_sha256": "ba9f11281445f21606df65513ca85d69664b087e607ff03cb9e3529741ed4b7f",
+      "exact": true
+    },
+    {
+      "id": "aalp-256--silence",
+      "family": "official",
+      "source_frames": 8192,
+      "input_sha256": "2017d37115bfb932fc223441aafe33cfcd7f6878fdbed884e43c654e65e43185",
+      "pcm_sha256": "c35020473aed1b4642cd726cad727b63fff2824ad68cedd7ffb73c7cbd890479",
+      "sony_pcm_sha256": "c35020473aed1b4642cd726cad727b63fff2824ad68cedd7ffb73c7cbd890479",
+      "exact": true
+    },
+    {
+      "id": "aalp-256--sine",
+      "family": "official",
+      "source_frames": 8192,
+      "input_sha256": "01a4db767cbbf22674fdf083c9621019181059ffb3117b5531bc61db71625f9f",
+      "pcm_sha256": "46f43655639a1c8db1cd33abc6a7a3c1630d482d4eae182c39d2bcbcc8f387ed",
+      "sony_pcm_sha256": "46f43655639a1c8db1cd33abc6a7a3c1630d482d4eae182c39d2bcbcc8f387ed",
+      "exact": true
+    },
+    {
+      "id": "aalp-320--anti-phase",
+      "family": "official",
+      "source_frames": 8192,
+      "input_sha256": "0fb61559902282dd83cea4153a9e833f5b07692e4b5b3c4a4a7bfa22bf495b86",
+      "pcm_sha256": "201ac7f88277939127ee8393c770918c2a466344e31e866911a3af06fce1ddc7",
+      "sony_pcm_sha256": "201ac7f88277939127ee8393c770918c2a466344e31e866911a3af06fce1ddc7",
+      "exact": true
+    },
+    {
+      "id": "aalp-320--boundary-1",
+      "family": "official",
+      "source_frames": 1,
+      "input_sha256": "28dd5e5eecb16ce627b7dae4d143a6db819a29345cf794cc209543969ed02bcc",
+      "pcm_sha256": "3fe082173119c71b92fc5c05c66309f012f6a3f1c8b3ec90eff83f3529603d32",
+      "sony_pcm_sha256": "3fe082173119c71b92fc5c05c66309f012f6a3f1c8b3ec90eff83f3529603d32",
+      "exact": true
+    },
+    {
+      "id": "aalp-320--boundary-1023",
+      "family": "official",
+      "source_frames": 1023,
+      "input_sha256": "cacf2a1599906cef1f43b7cf28fbe03c15faa4de5c48333999139f851153e305",
+      "pcm_sha256": "1f443687024085dc7b87fa2715826c0a9509819e2d35c5984f685be58a077e07",
+      "sony_pcm_sha256": "1f443687024085dc7b87fa2715826c0a9509819e2d35c5984f685be58a077e07",
+      "exact": true
+    },
+    {
+      "id": "aalp-320--boundary-1024",
+      "family": "official",
+      "source_frames": 1024,
+      "input_sha256": "ed85e21befe3a57ba220467ea60ab2972e9b4c42312967b78bbf4e348ed78b49",
+      "pcm_sha256": "0642e76782b46ae476499c6c17dfc2b946c40479be6636eb2b44919663338957",
+      "sony_pcm_sha256": "0642e76782b46ae476499c6c17dfc2b946c40479be6636eb2b44919663338957",
+      "exact": true
+    },
+    {
+      "id": "aalp-320--boundary-1025",
+      "family": "official",
+      "source_frames": 1025,
+      "input_sha256": "b3f43ac553993f1d5e1b2e97a5752184d6ae8a9fe459442b2ac8155bfbfceba6",
+      "pcm_sha256": "79d3052c715d9d0c1101d22ca2253301aa3ef9e70d3e7a2047e7f094ff3c84ed",
+      "sony_pcm_sha256": "79d3052c715d9d0c1101d22ca2253301aa3ef9e70d3e7a2047e7f094ff3c84ed",
+      "exact": true
+    },
+    {
+      "id": "aalp-320--boundary-1679",
+      "family": "official",
+      "source_frames": 1679,
+      "input_sha256": "a1f66b06cdd0d419565ea3f644d20945364caaa37c5ec058dcf6f7c838f597e1",
+      "pcm_sha256": "327009fd769698167bd6ad6914f29bf6d5df477868e175ee27c6574f1795b182",
+      "sony_pcm_sha256": "327009fd769698167bd6ad6914f29bf6d5df477868e175ee27c6574f1795b182",
+      "exact": true
+    },
+    {
+      "id": "aalp-320--boundary-1680",
+      "family": "official",
+      "source_frames": 1680,
+      "input_sha256": "4c5d4cc1890b5921c0128b9b6d2e76ec8f61b59493c10f877476446db62d27bf",
+      "pcm_sha256": "2efa3b0fe30c79487052c5c1418a7a3d4efebb2c9722a86d37d8d3c7438adcd9",
+      "sony_pcm_sha256": "2efa3b0fe30c79487052c5c1418a7a3d4efebb2c9722a86d37d8d3c7438adcd9",
+      "exact": true
+    },
+    {
+      "id": "aalp-320--boundary-1681",
+      "family": "official",
+      "source_frames": 1681,
+      "input_sha256": "a1cb086f7d212e70fc7308d0be6630e15e8483f5a9679aa80c5a73406f35bfc1",
+      "pcm_sha256": "2ff31fb6ad920b8dbc1499cc6925451f8629adb40b0653b224b184b745cf51c9",
+      "sony_pcm_sha256": "2ff31fb6ad920b8dbc1499cc6925451f8629adb40b0653b224b184b745cf51c9",
+      "exact": true
+    },
+    {
+      "id": "aalp-320--boundary-2047",
+      "family": "official",
+      "source_frames": 2047,
+      "input_sha256": "ee2306bd5f65eef14a10cf425d84ebd64b69d796fcdd1e8b0bf5b24454ee5e59",
+      "pcm_sha256": "2e96359f36d2b9e413dabde4456fb755116a541a84e13a5351012a1a580e563e",
+      "sony_pcm_sha256": "2e96359f36d2b9e413dabde4456fb755116a541a84e13a5351012a1a580e563e",
+      "exact": true
+    },
+    {
+      "id": "aalp-320--boundary-2048",
+      "family": "official",
+      "source_frames": 2048,
+      "input_sha256": "1e9d466c36c64bb498704c557bfc5a351deeebe973d07e72f449f2bf6b44b8c8",
+      "pcm_sha256": "d42ec8901648a500fdd747ffd0fdf8b4ec39519393aed880c1478517da3a2bae",
+      "sony_pcm_sha256": "d42ec8901648a500fdd747ffd0fdf8b4ec39519393aed880c1478517da3a2bae",
+      "exact": true
+    },
+    {
+      "id": "aalp-320--boundary-2049",
+      "family": "official",
+      "source_frames": 2049,
+      "input_sha256": "79fb3c6bbeb54be79cecc3a1f43bbae15151600d8c02512ebbf212474c7522ca",
+      "pcm_sha256": "7e04271422fd6a4c81542f04671ac6118a2d920b69c18cfb24e08055b2f81139",
+      "sony_pcm_sha256": "7e04271422fd6a4c81542f04671ac6118a2d920b69c18cfb24e08055b2f81139",
+      "exact": true
+    },
+    {
+      "id": "aalp-320--boundary-4095",
+      "family": "official",
+      "source_frames": 4095,
+      "input_sha256": "3cdd0a9bf9d4d2c8adac3017c3a3e2a6e217ad6dc1a3629dcc274d2b16cd3018",
+      "pcm_sha256": "66107357a5f59d0117ce2d26243a39cc224acd0f4920fb4dbb84cf3c97c6d401",
+      "sony_pcm_sha256": "66107357a5f59d0117ce2d26243a39cc224acd0f4920fb4dbb84cf3c97c6d401",
+      "exact": true
+    },
+    {
+      "id": "aalp-320--boundary-4096",
+      "family": "official",
+      "source_frames": 4096,
+      "input_sha256": "bcf753526f246f45e494787fbb6caa27284f9b39ae480e7969679f45c2d5f723",
+      "pcm_sha256": "b5c98652a6a47d0ef0da2cf422270e82cab454373538a376e524b07f1c27aa75",
+      "sony_pcm_sha256": "b5c98652a6a47d0ef0da2cf422270e82cab454373538a376e524b07f1c27aa75",
+      "exact": true
+    },
+    {
+      "id": "aalp-320--boundary-4097",
+      "family": "official",
+      "source_frames": 4097,
+      "input_sha256": "a93da13b405faea560f9c64e7361e6bdb2bb54fa3bdfb881a29b7a97223c89f7",
+      "pcm_sha256": "d3b095ddf66b609e63ac4bcce6ae49491c9127a2c8fc7b6d3a7568e8421db34e",
+      "sony_pcm_sha256": "d3b095ddf66b609e63ac4bcce6ae49491c9127a2c8fc7b6d3a7568e8421db34e",
+      "exact": true
+    },
+    {
+      "id": "aalp-320--boundary-44117",
+      "family": "official",
+      "source_frames": 44117,
+      "input_sha256": "218d9ec63db4f207c60d90cf8b4a937abf3fffd5ebc36dae3f20cc2a18823598",
+      "pcm_sha256": "919eb0dbadce82b63bb03f80b8327bbe2a331b970b42537a51c92c07eaafec58",
+      "sony_pcm_sha256": "919eb0dbadce82b63bb03f80b8327bbe2a331b970b42537a51c92c07eaafec58",
+      "exact": true
+    },
+    {
+      "id": "aalp-320--boundary-8191",
+      "family": "official",
+      "source_frames": 8191,
+      "input_sha256": "d99e9fc8dd61f5eda1af84b05a2af606577ce022f95e8d287a5a9bc7ed464c08",
+      "pcm_sha256": "c2c1d8625978d6f3a65d14f307e72c286e15723e7e59bfb8e6e60c3af4f4b5ae",
+      "sony_pcm_sha256": "c2c1d8625978d6f3a65d14f307e72c286e15723e7e59bfb8e6e60c3af4f4b5ae",
+      "exact": true
+    },
+    {
+      "id": "aalp-320--boundary-8192",
+      "family": "official",
+      "source_frames": 8192,
+      "input_sha256": "3186606563f56de8c08824de2088f725ba9b0d07e6ea8b4a776bdb6a101c1b53",
+      "pcm_sha256": "321295c249b908646ce229c50a29b5967577723bfd30e46e14bbc0217878cfb6",
+      "sony_pcm_sha256": "321295c249b908646ce229c50a29b5967577723bfd30e46e14bbc0217878cfb6",
+      "exact": true
+    },
+    {
+      "id": "aalp-320--boundary-8193",
+      "family": "official",
+      "source_frames": 8193,
+      "input_sha256": "3583fcc644c0a235c43e174bf96ae355e8f5b34f0f2dd8b47e0b2f277bef0bb3",
+      "pcm_sha256": "989c8d85b6bcc2546ae56e90bc8cf524c9589c1aa72de8ec92432e69ec6efd11",
+      "sony_pcm_sha256": "989c8d85b6bcc2546ae56e90bc8cf524c9589c1aa72de8ec92432e69ec6efd11",
+      "exact": true
+    },
+    {
+      "id": "aalp-320--fullscale-alternating",
+      "family": "official",
+      "source_frames": 8192,
+      "input_sha256": "58131652d14a5710c700c9d3dff4e5c291454e6b97499c292dc4407f7e7a3ba1",
+      "pcm_sha256": "e46f948a8bb1a37109c5f73e7d09f78580cfd72a3269dfee8dea0c5c74e27fb7",
+      "sony_pcm_sha256": "e46f948a8bb1a37109c5f73e7d09f78580cfd72a3269dfee8dea0c5c74e27fb7",
+      "exact": true
+    },
+    {
+      "id": "aalp-320--fullscale-negative",
+      "family": "official",
+      "source_frames": 4096,
+      "input_sha256": "19df38db173de231825eae7a3f078a0f15672b13b7d5d74fcc9fb1b43a63bbba",
+      "pcm_sha256": "d15bf5ad303b3a1cbb2976d2109116d88ce77ebd3c6dbfff814530f06b9f906f",
+      "sony_pcm_sha256": "d15bf5ad303b3a1cbb2976d2109116d88ce77ebd3c6dbfff814530f06b9f906f",
+      "exact": true
+    },
+    {
+      "id": "aalp-320--fullscale-positive",
+      "family": "official",
+      "source_frames": 4096,
+      "input_sha256": "0a9ebf5d1e04b00c9a412cb38652378f3cff4529a8022cc40ddc1c2e8222007f",
+      "pcm_sha256": "4920e1f3d7b1ea9929bdf186a352e3e1cf0ddfc443d96173de33f28fe6e151c3",
+      "sony_pcm_sha256": "4920e1f3d7b1ea9929bdf186a352e3e1cf0ddfc443d96173de33f28fe6e151c3",
+      "exact": true
+    },
+    {
+      "id": "aalp-320--impulse-left",
+      "family": "official",
+      "source_frames": 8192,
+      "input_sha256": "d948106850473099fe99f66c1a97b79558852e8a65e959eb4900ed28473e77a1",
+      "pcm_sha256": "ddd81090b7715764ed96a5f545ed92f0ba0bafdef9a114d928597d447e2e12a2",
+      "sony_pcm_sha256": "ddd81090b7715764ed96a5f545ed92f0ba0bafdef9a114d928597d447e2e12a2",
+      "exact": true
+    },
+    {
+      "id": "aalp-320--impulse-right",
+      "family": "official",
+      "source_frames": 8192,
+      "input_sha256": "95a54b01f723c97c69c53e7d9af671914abd091795ac541ab7138ee1f8c87508",
+      "pcm_sha256": "d44c604378bebfac019b2c6fc174bdff01630f7cec2928f101f9aeceb222ab73",
+      "sony_pcm_sha256": "d44c604378bebfac019b2c6fc174bdff01630f7cec2928f101f9aeceb222ab73",
+      "exact": true
+    },
+    {
+      "id": "aalp-320--lowlevel",
+      "family": "official",
+      "source_frames": 8192,
+      "input_sha256": "a0f3672c4654c87b6d1a97108ee2f79e6d487103fed3fc85dfd1fcca3bee55e5",
+      "pcm_sha256": "25e2ebd88874ed4b76733e9fac390d71cfedc973f3fc9c81c4faeebfdd7cc482",
+      "sony_pcm_sha256": "25e2ebd88874ed4b76733e9fac390d71cfedc973f3fc9c81c4faeebfdd7cc482",
+      "exact": true
+    },
+    {
+      "id": "aalp-320--mix-8193",
+      "family": "official",
+      "source_frames": 8193,
+      "input_sha256": "f45792e14dea34dacb6670b9dfc07daaa41cea0eab197a45b95347273281da45",
+      "pcm_sha256": "5ef8d8782b9bbe0bf4cc11c1ea84ab4c0da9452cb770c411a44d47987948d3dc",
+      "sony_pcm_sha256": "5ef8d8782b9bbe0bf4cc11c1ea84ab4c0da9452cb770c411a44d47987948d3dc",
+      "exact": true
+    },
+    {
+      "id": "aalp-320--mix-long",
+      "family": "official",
+      "source_frames": 441000,
+      "input_sha256": "7429070d62b6f282d97e7576d83f4a9a3b4d1d69221d132f86b4685accecb7ba",
+      "pcm_sha256": "e89b6f151968ff1f2c96bcf56dbb5d27283baf10936f16eeadf5485f70f82e70",
+      "sony_pcm_sha256": "e89b6f151968ff1f2c96bcf56dbb5d27283baf10936f16eeadf5485f70f82e70",
+      "exact": true
+    },
+    {
+      "id": "aalp-320--multitone",
+      "family": "official",
+      "source_frames": 16384,
+      "input_sha256": "fac74144bec1dea971ec73fd11ebf3bdd4dfe49ab6b97cafddd90fff74b12d2c",
+      "pcm_sha256": "847dd7c3409f781db4f627b52113b247ed13d620b09deed933e4281872c4e32b",
+      "sony_pcm_sha256": "847dd7c3409f781db4f627b52113b247ed13d620b09deed933e4281872c4e32b",
+      "exact": true
+    },
+    {
+      "id": "aalp-320--noise",
+      "family": "official",
+      "source_frames": 8192,
+      "input_sha256": "f680a57aa3da05c27514f9fe18fd67e0fffab67bc44ae9b022499d89c2405e31",
+      "pcm_sha256": "5bb7d801fb12728eba40036851fa40f115741ff468ab6d85b9d21a24279f4f0c",
+      "sony_pcm_sha256": "5bb7d801fb12728eba40036851fa40f115741ff468ab6d85b9d21a24279f4f0c",
+      "exact": true
+    },
+    {
+      "id": "aalp-320--same-phase",
+      "family": "official",
+      "source_frames": 8192,
+      "input_sha256": "0dacd4bba9cc3505d001ceb23da4e7caa6ee0e44def9ee4eb5614e39702c19d1",
+      "pcm_sha256": "ba9f11281445f21606df65513ca85d69664b087e607ff03cb9e3529741ed4b7f",
+      "sony_pcm_sha256": "ba9f11281445f21606df65513ca85d69664b087e607ff03cb9e3529741ed4b7f",
+      "exact": true
+    },
+    {
+      "id": "aalp-320--silence",
+      "family": "official",
+      "source_frames": 8192,
+      "input_sha256": "ef3b67ff9991b5e9c7644f9e01cf0f551bc20f2a29da1c0b124f363878160e15",
+      "pcm_sha256": "c35020473aed1b4642cd726cad727b63fff2824ad68cedd7ffb73c7cbd890479",
+      "sony_pcm_sha256": "c35020473aed1b4642cd726cad727b63fff2824ad68cedd7ffb73c7cbd890479",
+      "exact": true
+    },
+    {
+      "id": "aalp-320--sine",
+      "family": "official",
+      "source_frames": 8192,
+      "input_sha256": "8984a76b4aac88955f5528b2981a5c60038a3519fc6d08574dae4a341bb06345",
+      "pcm_sha256": "46f43655639a1c8db1cd33abc6a7a3c1630d482d4eae182c39d2bcbcc8f387ed",
+      "sony_pcm_sha256": "46f43655639a1c8db1cd33abc6a7a3c1630d482d4eae182c39d2bcbcc8f387ed",
+      "exact": true
+    },
+    {
+      "id": "aal3-132--anti-phase",
+      "family": "official",
+      "source_frames": 8192,
+      "input_sha256": "3120334f3e435ef750b70d43855822f025247381813303bf45ff0d9d5a4ef7de",
+      "pcm_sha256": "201ac7f88277939127ee8393c770918c2a466344e31e866911a3af06fce1ddc7",
+      "sony_pcm_sha256": "201ac7f88277939127ee8393c770918c2a466344e31e866911a3af06fce1ddc7",
+      "exact": true
+    },
+    {
+      "id": "aal3-132--boundary-1",
+      "family": "official",
+      "source_frames": 1,
+      "input_sha256": "87a6ed3047aba8d87ac46f85f48ea7e710d087fc77cf690c2b4e46bf0a0793f9",
+      "pcm_sha256": "3fe082173119c71b92fc5c05c66309f012f6a3f1c8b3ec90eff83f3529603d32",
+      "sony_pcm_sha256": "3fe082173119c71b92fc5c05c66309f012f6a3f1c8b3ec90eff83f3529603d32",
+      "exact": true
+    },
+    {
+      "id": "aal3-132--boundary-1023",
+      "family": "official",
+      "source_frames": 1023,
+      "input_sha256": "68301d59ad1de539c4b8106dc48811d3f6500e3de2c6c2e2f9bbb79a85f594bc",
+      "pcm_sha256": "1f443687024085dc7b87fa2715826c0a9509819e2d35c5984f685be58a077e07",
+      "sony_pcm_sha256": "1f443687024085dc7b87fa2715826c0a9509819e2d35c5984f685be58a077e07",
+      "exact": true
+    },
+    {
+      "id": "aal3-132--boundary-1024",
+      "family": "official",
+      "source_frames": 1024,
+      "input_sha256": "15fc7bb67ebc807c324d594b17f28ade2ea64a6e381616600d0bdd3188e8a627",
+      "pcm_sha256": "0642e76782b46ae476499c6c17dfc2b946c40479be6636eb2b44919663338957",
+      "sony_pcm_sha256": "0642e76782b46ae476499c6c17dfc2b946c40479be6636eb2b44919663338957",
+      "exact": true
+    },
+    {
+      "id": "aal3-132--boundary-1025",
+      "family": "official",
+      "source_frames": 1025,
+      "input_sha256": "f29be04c4dc703dd68a14c8aac1d4709f400a87631c3fa607fabb1f94da3b82e",
+      "pcm_sha256": "79d3052c715d9d0c1101d22ca2253301aa3ef9e70d3e7a2047e7f094ff3c84ed",
+      "sony_pcm_sha256": "79d3052c715d9d0c1101d22ca2253301aa3ef9e70d3e7a2047e7f094ff3c84ed",
+      "exact": true
+    },
+    {
+      "id": "aal3-132--boundary-1679",
+      "family": "official",
+      "source_frames": 1679,
+      "input_sha256": "408ceca21586f925f4abacd03a37b0c9faebc8f487a30308db99890e432b5f6a",
+      "pcm_sha256": "327009fd769698167bd6ad6914f29bf6d5df477868e175ee27c6574f1795b182",
+      "sony_pcm_sha256": "327009fd769698167bd6ad6914f29bf6d5df477868e175ee27c6574f1795b182",
+      "exact": true
+    },
+    {
+      "id": "aal3-132--boundary-1680",
+      "family": "official",
+      "source_frames": 1680,
+      "input_sha256": "240aa3563e2ed1899158db8be1607133e635d17e6d489fb90672a2e954b71d8a",
+      "pcm_sha256": "2efa3b0fe30c79487052c5c1418a7a3d4efebb2c9722a86d37d8d3c7438adcd9",
+      "sony_pcm_sha256": "2efa3b0fe30c79487052c5c1418a7a3d4efebb2c9722a86d37d8d3c7438adcd9",
+      "exact": true
+    },
+    {
+      "id": "aal3-132--boundary-1681",
+      "family": "official",
+      "source_frames": 1681,
+      "input_sha256": "f27f74107e83c098708e7d9614fb061db7dd164de63a03b9973e50ff1cccc5b1",
+      "pcm_sha256": "2ff31fb6ad920b8dbc1499cc6925451f8629adb40b0653b224b184b745cf51c9",
+      "sony_pcm_sha256": "2ff31fb6ad920b8dbc1499cc6925451f8629adb40b0653b224b184b745cf51c9",
+      "exact": true
+    },
+    {
+      "id": "aal3-132--boundary-2047",
+      "family": "official",
+      "source_frames": 2047,
+      "input_sha256": "3e790e9fdbf8fd9cc4b8f258b5ba28d0e044747fa11f0d071af05665e34aacb2",
+      "pcm_sha256": "2e96359f36d2b9e413dabde4456fb755116a541a84e13a5351012a1a580e563e",
+      "sony_pcm_sha256": "2e96359f36d2b9e413dabde4456fb755116a541a84e13a5351012a1a580e563e",
+      "exact": true
+    },
+    {
+      "id": "aal3-132--boundary-2048",
+      "family": "official",
+      "source_frames": 2048,
+      "input_sha256": "b50150ee709e8c08d89230d074c9c0fea780760ef31c351c5195ed219fdea500",
+      "pcm_sha256": "d42ec8901648a500fdd747ffd0fdf8b4ec39519393aed880c1478517da3a2bae",
+      "sony_pcm_sha256": "d42ec8901648a500fdd747ffd0fdf8b4ec39519393aed880c1478517da3a2bae",
+      "exact": true
+    },
+    {
+      "id": "aal3-132--boundary-2049",
+      "family": "official",
+      "source_frames": 2049,
+      "input_sha256": "cc8de20905c3c6f035a548ff38d03d0bbe91b659c17419013161508abad787dc",
+      "pcm_sha256": "7e04271422fd6a4c81542f04671ac6118a2d920b69c18cfb24e08055b2f81139",
+      "sony_pcm_sha256": "7e04271422fd6a4c81542f04671ac6118a2d920b69c18cfb24e08055b2f81139",
+      "exact": true
+    },
+    {
+      "id": "aal3-132--boundary-4095",
+      "family": "official",
+      "source_frames": 4095,
+      "input_sha256": "efb0afeac19875c99ffd7248a488d3a8c445f1a98f1b2485e23303a94fd878c7",
+      "pcm_sha256": "66107357a5f59d0117ce2d26243a39cc224acd0f4920fb4dbb84cf3c97c6d401",
+      "sony_pcm_sha256": "66107357a5f59d0117ce2d26243a39cc224acd0f4920fb4dbb84cf3c97c6d401",
+      "exact": true
+    },
+    {
+      "id": "aal3-132--boundary-4096",
+      "family": "official",
+      "source_frames": 4096,
+      "input_sha256": "5f9cb673a297fab56575624e9e060a403d5c5cbe3e8ffbe01fb59fc77245fac0",
+      "pcm_sha256": "b5c98652a6a47d0ef0da2cf422270e82cab454373538a376e524b07f1c27aa75",
+      "sony_pcm_sha256": "b5c98652a6a47d0ef0da2cf422270e82cab454373538a376e524b07f1c27aa75",
+      "exact": true
+    },
+    {
+      "id": "aal3-132--boundary-4097",
+      "family": "official",
+      "source_frames": 4097,
+      "input_sha256": "ea4aca57179e2243fb536a60dd0680a48de997ac78d0309e56c1b4112f88d1e4",
+      "pcm_sha256": "d3b095ddf66b609e63ac4bcce6ae49491c9127a2c8fc7b6d3a7568e8421db34e",
+      "sony_pcm_sha256": "d3b095ddf66b609e63ac4bcce6ae49491c9127a2c8fc7b6d3a7568e8421db34e",
+      "exact": true
+    },
+    {
+      "id": "aal3-132--boundary-44117",
+      "family": "official",
+      "source_frames": 44117,
+      "input_sha256": "3f5ca573f058cd6880661b0579ba69a2e2b8c135c8db8240ab56e84b70ccb619",
+      "pcm_sha256": "919eb0dbadce82b63bb03f80b8327bbe2a331b970b42537a51c92c07eaafec58",
+      "sony_pcm_sha256": "919eb0dbadce82b63bb03f80b8327bbe2a331b970b42537a51c92c07eaafec58",
+      "exact": true
+    },
+    {
+      "id": "aal3-132--boundary-8191",
+      "family": "official",
+      "source_frames": 8191,
+      "input_sha256": "dcfcd9185a149fddba1dcf0f71a1d16dea59b4e78caf95de6f66ea11be049050",
+      "pcm_sha256": "c2c1d8625978d6f3a65d14f307e72c286e15723e7e59bfb8e6e60c3af4f4b5ae",
+      "sony_pcm_sha256": "c2c1d8625978d6f3a65d14f307e72c286e15723e7e59bfb8e6e60c3af4f4b5ae",
+      "exact": true
+    },
+    {
+      "id": "aal3-132--boundary-8192",
+      "family": "official",
+      "source_frames": 8192,
+      "input_sha256": "33fb20f842779d35dd8dc71f1033cb9ad7ddc0b94a08a67b358d39265383612b",
+      "pcm_sha256": "321295c249b908646ce229c50a29b5967577723bfd30e46e14bbc0217878cfb6",
+      "sony_pcm_sha256": "321295c249b908646ce229c50a29b5967577723bfd30e46e14bbc0217878cfb6",
+      "exact": true
+    },
+    {
+      "id": "aal3-132--boundary-8193",
+      "family": "official",
+      "source_frames": 8193,
+      "input_sha256": "069db77ad7530b2a221994e1e01537ca9a052c0a0a7af967c4857496b5a7fab9",
+      "pcm_sha256": "989c8d85b6bcc2546ae56e90bc8cf524c9589c1aa72de8ec92432e69ec6efd11",
+      "sony_pcm_sha256": "989c8d85b6bcc2546ae56e90bc8cf524c9589c1aa72de8ec92432e69ec6efd11",
+      "exact": true
+    },
+    {
+      "id": "aal3-132--fullscale-alternating",
+      "family": "official",
+      "source_frames": 8192,
+      "input_sha256": "742f2dd734032a99a1778c71905a2da5c6308faa0514b52eb89f3834e97fce95",
+      "pcm_sha256": "e46f948a8bb1a37109c5f73e7d09f78580cfd72a3269dfee8dea0c5c74e27fb7",
+      "sony_pcm_sha256": "e46f948a8bb1a37109c5f73e7d09f78580cfd72a3269dfee8dea0c5c74e27fb7",
+      "exact": true
+    },
+    {
+      "id": "aal3-132--fullscale-negative",
+      "family": "official",
+      "source_frames": 4096,
+      "input_sha256": "16942d5f3b73d07ef31d20b1c7dc95c4220e6d4c2d56e9011e8121566ad2aae2",
+      "pcm_sha256": "d15bf5ad303b3a1cbb2976d2109116d88ce77ebd3c6dbfff814530f06b9f906f",
+      "sony_pcm_sha256": "d15bf5ad303b3a1cbb2976d2109116d88ce77ebd3c6dbfff814530f06b9f906f",
+      "exact": true
+    },
+    {
+      "id": "aal3-132--fullscale-positive",
+      "family": "official",
+      "source_frames": 4096,
+      "input_sha256": "c5ff68cad19a9b2034d75890e85e0ba431bc7385046b04cb9d304a2d55ef8c34",
+      "pcm_sha256": "4920e1f3d7b1ea9929bdf186a352e3e1cf0ddfc443d96173de33f28fe6e151c3",
+      "sony_pcm_sha256": "4920e1f3d7b1ea9929bdf186a352e3e1cf0ddfc443d96173de33f28fe6e151c3",
+      "exact": true
+    },
+    {
+      "id": "aal3-132--impulse-left",
+      "family": "official",
+      "source_frames": 8192,
+      "input_sha256": "be918ea7fe03fb8b767cfde4712bcab8774fc9d4a613e91c1ee2dc026f563715",
+      "pcm_sha256": "ddd81090b7715764ed96a5f545ed92f0ba0bafdef9a114d928597d447e2e12a2",
+      "sony_pcm_sha256": "ddd81090b7715764ed96a5f545ed92f0ba0bafdef9a114d928597d447e2e12a2",
+      "exact": true
+    },
+    {
+      "id": "aal3-132--impulse-right",
+      "family": "official",
+      "source_frames": 8192,
+      "input_sha256": "a4a79ae273f302ac1264bfd1e1e5bef77fc469104e3a5912f7ca95f06ca18876",
+      "pcm_sha256": "d44c604378bebfac019b2c6fc174bdff01630f7cec2928f101f9aeceb222ab73",
+      "sony_pcm_sha256": "d44c604378bebfac019b2c6fc174bdff01630f7cec2928f101f9aeceb222ab73",
+      "exact": true
+    },
+    {
+      "id": "aal3-132--lowlevel",
+      "family": "official",
+      "source_frames": 8192,
+      "input_sha256": "ecb27fb34678f9cad980b0d05345ea5571f6c8fc6a50743bf607eea35bcde4f2",
+      "pcm_sha256": "25e2ebd88874ed4b76733e9fac390d71cfedc973f3fc9c81c4faeebfdd7cc482",
+      "sony_pcm_sha256": "25e2ebd88874ed4b76733e9fac390d71cfedc973f3fc9c81c4faeebfdd7cc482",
+      "exact": true
+    },
+    {
+      "id": "aal3-132--mix-8193",
+      "family": "official",
+      "source_frames": 8193,
+      "input_sha256": "2526dcdcd69dd21d7783c316761b780676440d986d455b5aeb491f8f64d42516",
+      "pcm_sha256": "5ef8d8782b9bbe0bf4cc11c1ea84ab4c0da9452cb770c411a44d47987948d3dc",
+      "sony_pcm_sha256": "5ef8d8782b9bbe0bf4cc11c1ea84ab4c0da9452cb770c411a44d47987948d3dc",
+      "exact": true
+    },
+    {
+      "id": "aal3-132--mix-long",
+      "family": "official",
+      "source_frames": 441000,
+      "input_sha256": "22b2a1080dc2b7955b4606122bd0bc6571208a701f39e9e12e375883e2008e84",
+      "pcm_sha256": "e89b6f151968ff1f2c96bcf56dbb5d27283baf10936f16eeadf5485f70f82e70",
+      "sony_pcm_sha256": "e89b6f151968ff1f2c96bcf56dbb5d27283baf10936f16eeadf5485f70f82e70",
+      "exact": true
+    },
+    {
+      "id": "aal3-132--multitone",
+      "family": "official",
+      "source_frames": 16384,
+      "input_sha256": "3877886dd6fe83b3a169cdef45c0a455399b4bf7b7d20cd85c94fbcbf46f4191",
+      "pcm_sha256": "847dd7c3409f781db4f627b52113b247ed13d620b09deed933e4281872c4e32b",
+      "sony_pcm_sha256": "847dd7c3409f781db4f627b52113b247ed13d620b09deed933e4281872c4e32b",
+      "exact": true
+    },
+    {
+      "id": "aal3-132--noise",
+      "family": "official",
+      "source_frames": 8192,
+      "input_sha256": "ee1f01760883d53ab598c8403252677944055a58b0bcf8d8a0ad49d3a58749cc",
+      "pcm_sha256": "5bb7d801fb12728eba40036851fa40f115741ff468ab6d85b9d21a24279f4f0c",
+      "sony_pcm_sha256": "5bb7d801fb12728eba40036851fa40f115741ff468ab6d85b9d21a24279f4f0c",
+      "exact": true
+    },
+    {
+      "id": "aal3-132--same-phase",
+      "family": "official",
+      "source_frames": 8192,
+      "input_sha256": "234bd86cb3fdc2d987846a42deb75b48a9e4fcca17e55f9363fb99f7829ec376",
+      "pcm_sha256": "ba9f11281445f21606df65513ca85d69664b087e607ff03cb9e3529741ed4b7f",
+      "sony_pcm_sha256": "ba9f11281445f21606df65513ca85d69664b087e607ff03cb9e3529741ed4b7f",
+      "exact": true
+    },
+    {
+      "id": "aal3-132--silence",
+      "family": "official",
+      "source_frames": 8192,
+      "input_sha256": "60a725b1012883bb7ee193ed7615793d727586fc01f1aea9e3b8f8ec45f751db",
+      "pcm_sha256": "c35020473aed1b4642cd726cad727b63fff2824ad68cedd7ffb73c7cbd890479",
+      "sony_pcm_sha256": "c35020473aed1b4642cd726cad727b63fff2824ad68cedd7ffb73c7cbd890479",
+      "exact": true
+    },
+    {
+      "id": "aal3-132--sine",
+      "family": "official",
+      "source_frames": 8192,
+      "input_sha256": "f9248af60f8caa4bae9038f8d35dc822c21e102ac473acfd0c68c5d60e9c580d",
+      "pcm_sha256": "46f43655639a1c8db1cd33abc6a7a3c1630d482d4eae182c39d2bcbcc8f387ed",
+      "sony_pcm_sha256": "46f43655639a1c8db1cd33abc6a7a3c1630d482d4eae182c39d2bcbcc8f387ed",
+      "exact": true
+    },
+    {
+      "id": "atrac3-132--mix-8193--aal--1",
+      "family": "official",
+      "source_frames": 8193,
+      "input_sha256": "652fd7b4077aba7230623687da7bf133f76c5b01340aa8734eff60a03110a513",
+      "pcm_sha256": "5ef8d8782b9bbe0bf4cc11c1ea84ab4c0da9452cb770c411a44d47987948d3dc",
+      "sony_pcm_sha256": "5ef8d8782b9bbe0bf4cc11c1ea84ab4c0da9452cb770c411a44d47987948d3dc",
+      "exact": true
+    },
+    {
+      "id": "atrac3plus-48--mix-8193--aal--1",
+      "family": "official",
+      "source_frames": 8193,
+      "input_sha256": "31a12c4ccba59325373cab4bef18c670e4f7757fd6f9b22aefe258bce194e78c",
+      "pcm_sha256": "5ef8d8782b9bbe0bf4cc11c1ea84ab4c0da9452cb770c411a44d47987948d3dc",
+      "sony_pcm_sha256": "5ef8d8782b9bbe0bf4cc11c1ea84ab4c0da9452cb770c411a44d47987948d3dc",
+      "exact": true
+    },
+    {
+      "id": "atrac3plus-64--mix-8193--aal--1",
+      "family": "official",
+      "source_frames": 8193,
+      "input_sha256": "8776f0c347451870dcd47655ba36c800859cf6b91674f67cbae0aa074f696fb4",
+      "pcm_sha256": "5ef8d8782b9bbe0bf4cc11c1ea84ab4c0da9452cb770c411a44d47987948d3dc",
+      "sony_pcm_sha256": "5ef8d8782b9bbe0bf4cc11c1ea84ab4c0da9452cb770c411a44d47987948d3dc",
+      "exact": true
+    },
+    {
+      "id": "atrac3plus-96--mix-8193--aal--1",
+      "family": "official",
+      "source_frames": 8193,
+      "input_sha256": "f9728b68d9b6a2e982368d66b943927d505f3141dda7c31528fa8df989bffa92",
+      "pcm_sha256": "5ef8d8782b9bbe0bf4cc11c1ea84ab4c0da9452cb770c411a44d47987948d3dc",
+      "sony_pcm_sha256": "5ef8d8782b9bbe0bf4cc11c1ea84ab4c0da9452cb770c411a44d47987948d3dc",
+      "exact": true
+    },
+    {
+      "id": "atrac3plus-128--mix-8193--aal--1",
+      "family": "official",
+      "source_frames": 8193,
+      "input_sha256": "725694104288966f78f13d7de94e0ecb09783812831d2ca629b61ebb2621c0e3",
+      "pcm_sha256": "5ef8d8782b9bbe0bf4cc11c1ea84ab4c0da9452cb770c411a44d47987948d3dc",
+      "sony_pcm_sha256": "5ef8d8782b9bbe0bf4cc11c1ea84ab4c0da9452cb770c411a44d47987948d3dc",
+      "exact": true
+    },
+    {
+      "id": "atrac3plus-160--mix-8193--aal--1",
+      "family": "official",
+      "source_frames": 8193,
+      "input_sha256": "7cf8eea0f1599c01c92723b72a991463ab979ccd23443619dc9469b595b6bba3",
+      "pcm_sha256": "5ef8d8782b9bbe0bf4cc11c1ea84ab4c0da9452cb770c411a44d47987948d3dc",
+      "sony_pcm_sha256": "5ef8d8782b9bbe0bf4cc11c1ea84ab4c0da9452cb770c411a44d47987948d3dc",
+      "exact": true
+    },
+    {
+      "id": "atrac3plus-192--mix-8193--aal--1",
+      "family": "official",
+      "source_frames": 8193,
+      "input_sha256": "61fb963ab5bd0201fc47263af6e953ebd5dbeae5071aeb75fcd21105ecfa0198",
+      "pcm_sha256": "5ef8d8782b9bbe0bf4cc11c1ea84ab4c0da9452cb770c411a44d47987948d3dc",
+      "sony_pcm_sha256": "5ef8d8782b9bbe0bf4cc11c1ea84ab4c0da9452cb770c411a44d47987948d3dc",
+      "exact": true
+    },
+    {
+      "id": "atrac3plus-256--mix-8193--aal--1",
+      "family": "official",
+      "source_frames": 8193,
+      "input_sha256": "22154e7053417bd8df022d3d9cd7883ae818d0afe4d7249ff99ef84474e33770",
+      "pcm_sha256": "5ef8d8782b9bbe0bf4cc11c1ea84ab4c0da9452cb770c411a44d47987948d3dc",
+      "sony_pcm_sha256": "5ef8d8782b9bbe0bf4cc11c1ea84ab4c0da9452cb770c411a44d47987948d3dc",
+      "exact": true
+    },
+    {
+      "id": "atrac3plus-320--mix-8193--aal--1",
+      "family": "official",
+      "source_frames": 8193,
+      "input_sha256": "091b5e0ef87bf58d88c8c1eb80b44e35222aa0acdb98417355cda655d6eaffb2",
+      "pcm_sha256": "5ef8d8782b9bbe0bf4cc11c1ea84ab4c0da9452cb770c411a44d47987948d3dc",
+      "sony_pcm_sha256": "5ef8d8782b9bbe0bf4cc11c1ea84ab4c0da9452cb770c411a44d47987948d3dc",
+      "exact": true
+    },
+    {
+      "id": "atrac3plus-352--mix-8193--aal--1",
+      "family": "official",
+      "source_frames": 8193,
+      "input_sha256": "c9be7bfd17559bbbfb4198382e3750b1a1f32b582901df18f2f5422074e3ff2e",
+      "pcm_sha256": "5ef8d8782b9bbe0bf4cc11c1ea84ab4c0da9452cb770c411a44d47987948d3dc",
+      "sony_pcm_sha256": "5ef8d8782b9bbe0bf4cc11c1ea84ab4c0da9452cb770c411a44d47987948d3dc",
+      "exact": true
+    },
+    {
+      "id": "atrac3plus-352--silence--aal--1",
+      "family": "official",
+      "source_frames": 8192,
+      "input_sha256": "391d2d89d2811a930f603722e919369a8863c638d2bb418d27e865be91f8f7d7",
+      "pcm_sha256": "c35020473aed1b4642cd726cad727b63fff2824ad68cedd7ffb73c7cbd890479",
+      "sony_pcm_sha256": "c35020473aed1b4642cd726cad727b63fff2824ad68cedd7ffb73c7cbd890479",
+      "exact": true
+    },
+    {
+      "id": "atrac3plus-352--impulse-left--aal--1",
+      "family": "official",
+      "source_frames": 8192,
+      "input_sha256": "b594f8732399571d9b0ddfc7c72725bfba71a1ce830899799fc9d6642abe7fc6",
+      "pcm_sha256": "ddd81090b7715764ed96a5f545ed92f0ba0bafdef9a114d928597d447e2e12a2",
+      "sony_pcm_sha256": "ddd81090b7715764ed96a5f545ed92f0ba0bafdef9a114d928597d447e2e12a2",
+      "exact": true
+    },
+    {
+      "id": "atrac3plus-352--impulse-right--aal--1",
+      "family": "official",
+      "source_frames": 8192,
+      "input_sha256": "f084fa88bbcbe444e3b31b5675e8ce25791cb85d7dec41321156252c036c8d1b",
+      "pcm_sha256": "d44c604378bebfac019b2c6fc174bdff01630f7cec2928f101f9aeceb222ab73",
+      "sony_pcm_sha256": "d44c604378bebfac019b2c6fc174bdff01630f7cec2928f101f9aeceb222ab73",
+      "exact": true
+    },
+    {
+      "id": "atrac3plus-352--fullscale-positive--aal--1",
+      "family": "official",
+      "source_frames": 4096,
+      "input_sha256": "9bcc1af420f5c99ffc54cdf2bd75e84d602380a71f4b26d32b344dcd04d8ab28",
+      "pcm_sha256": "4920e1f3d7b1ea9929bdf186a352e3e1cf0ddfc443d96173de33f28fe6e151c3",
+      "sony_pcm_sha256": "4920e1f3d7b1ea9929bdf186a352e3e1cf0ddfc443d96173de33f28fe6e151c3",
+      "exact": true
+    },
+    {
+      "id": "atrac3plus-352--fullscale-negative--aal--1",
+      "family": "official",
+      "source_frames": 4096,
+      "input_sha256": "74115cc4278a5fabed38d90e9f64cba0cfe665779452d7b931afc67aee66ed8e",
+      "pcm_sha256": "d15bf5ad303b3a1cbb2976d2109116d88ce77ebd3c6dbfff814530f06b9f906f",
+      "sony_pcm_sha256": "d15bf5ad303b3a1cbb2976d2109116d88ce77ebd3c6dbfff814530f06b9f906f",
+      "exact": true
+    },
+    {
+      "id": "atrac3plus-352--fullscale-alternating--aal--1",
+      "family": "official",
+      "source_frames": 8192,
+      "input_sha256": "34c0853ffe698f6d9b8d35c898c628bdc127703cf9d6f69f184444c9056a329f",
+      "pcm_sha256": "e46f948a8bb1a37109c5f73e7d09f78580cfd72a3269dfee8dea0c5c74e27fb7",
+      "sony_pcm_sha256": "e46f948a8bb1a37109c5f73e7d09f78580cfd72a3269dfee8dea0c5c74e27fb7",
+      "exact": true
+    },
+    {
+      "id": "atrac3plus-352--lowlevel--aal--1",
+      "family": "official",
+      "source_frames": 8192,
+      "input_sha256": "b34b4324937dfa162796ad5d534cbfc8f55b013716711c932f4be4fb6e4c954c",
+      "pcm_sha256": "25e2ebd88874ed4b76733e9fac390d71cfedc973f3fc9c81c4faeebfdd7cc482",
+      "sony_pcm_sha256": "25e2ebd88874ed4b76733e9fac390d71cfedc973f3fc9c81c4faeebfdd7cc482",
+      "exact": true
+    },
+    {
+      "id": "atrac3plus-352--sine--aal--1",
+      "family": "official",
+      "source_frames": 8192,
+      "input_sha256": "fc2a6d0de105c57195e1a192eb12e34f522b8ca57f56584c60904d0997b25b17",
+      "pcm_sha256": "46f43655639a1c8db1cd33abc6a7a3c1630d482d4eae182c39d2bcbcc8f387ed",
+      "sony_pcm_sha256": "46f43655639a1c8db1cd33abc6a7a3c1630d482d4eae182c39d2bcbcc8f387ed",
+      "exact": true
+    },
+    {
+      "id": "atrac3plus-352--multitone--aal--1",
+      "family": "official",
+      "source_frames": 16384,
+      "input_sha256": "52f4e4f6cced5881aa24bc7914f11d25d9256bf334dc862e67d2da88abde43ae",
+      "pcm_sha256": "847dd7c3409f781db4f627b52113b247ed13d620b09deed933e4281872c4e32b",
+      "sony_pcm_sha256": "847dd7c3409f781db4f627b52113b247ed13d620b09deed933e4281872c4e32b",
+      "exact": true
+    },
+    {
+      "id": "atrac3plus-352--same-phase--aal--1",
+      "family": "official",
+      "source_frames": 8192,
+      "input_sha256": "edeff843590af828038fcbd49a60e510591b95866925c47c9970b0835442e7e0",
+      "pcm_sha256": "ba9f11281445f21606df65513ca85d69664b087e607ff03cb9e3529741ed4b7f",
+      "sony_pcm_sha256": "ba9f11281445f21606df65513ca85d69664b087e607ff03cb9e3529741ed4b7f",
+      "exact": true
+    },
+    {
+      "id": "atrac3plus-352--anti-phase--aal--1",
+      "family": "official",
+      "source_frames": 8192,
+      "input_sha256": "ebac5a3155053ceaf21411fa10bd1d281cf427ab68a0a07e12f34f14b042da59",
+      "pcm_sha256": "201ac7f88277939127ee8393c770918c2a466344e31e866911a3af06fce1ddc7",
+      "sony_pcm_sha256": "201ac7f88277939127ee8393c770918c2a466344e31e866911a3af06fce1ddc7",
+      "exact": true
+    },
+    {
+      "id": "atrac3plus-352--noise--aal--1",
+      "family": "official",
+      "source_frames": 8192,
+      "input_sha256": "bad103daac118d94a09763f845acfd1e1fea791f2602a00c4b943d01aab67be7",
+      "pcm_sha256": "5bb7d801fb12728eba40036851fa40f115741ff468ab6d85b9d21a24279f4f0c",
+      "sony_pcm_sha256": "5bb7d801fb12728eba40036851fa40f115741ff468ab6d85b9d21a24279f4f0c",
+      "exact": true
+    },
+    {
+      "id": "atrac3plus-352--mix-long--aal--1",
+      "family": "official",
+      "source_frames": 441000,
+      "input_sha256": "d95e4d523ad9924bb33781f0b9b32d93e2dfdd6a072a7b813a701c9587d4a075",
+      "pcm_sha256": "e89b6f151968ff1f2c96bcf56dbb5d27283baf10936f16eeadf5485f70f82e70",
+      "sony_pcm_sha256": "e89b6f151968ff1f2c96bcf56dbb5d27283baf10936f16eeadf5485f70f82e70",
+      "exact": true
+    },
+    {
+      "id": "atrac3plus-352--boundary-1--aal--1",
+      "family": "official",
+      "source_frames": 1,
+      "input_sha256": "1fea874a68a779b6d04b1f2655a45dfbeb25721895db00ce941a25e7ea444df1",
+      "pcm_sha256": "3fe082173119c71b92fc5c05c66309f012f6a3f1c8b3ec90eff83f3529603d32",
+      "sony_pcm_sha256": "3fe082173119c71b92fc5c05c66309f012f6a3f1c8b3ec90eff83f3529603d32",
+      "exact": true
+    },
+    {
+      "id": "atrac3plus-352--boundary-1680--aal--1",
+      "family": "official",
+      "source_frames": 1680,
+      "input_sha256": "72070733fab3d4ab1483509bb74545c183a86cf4e3765b62fd6efc9cd2b8094f",
+      "pcm_sha256": "2efa3b0fe30c79487052c5c1418a7a3d4efebb2c9722a86d37d8d3c7438adcd9",
+      "sony_pcm_sha256": "2efa3b0fe30c79487052c5c1418a7a3d4efebb2c9722a86d37d8d3c7438adcd9",
+      "exact": true
+    },
+    {
+      "id": "atrac3plus-352--boundary-1681--aal--1",
+      "family": "official",
+      "source_frames": 1681,
+      "input_sha256": "1c677b339d7c41addb049afb4846aaba47b24eee1e5b0311202f41632126a212",
+      "pcm_sha256": "2ff31fb6ad920b8dbc1499cc6925451f8629adb40b0653b224b184b745cf51c9",
+      "sony_pcm_sha256": "2ff31fb6ad920b8dbc1499cc6925451f8629adb40b0653b224b184b745cf51c9",
+      "exact": true
+    },
+    {
+      "id": "atrac3plus-352--boundary-2048--aal--1",
+      "family": "official",
+      "source_frames": 2048,
+      "input_sha256": "c2d9857196a0233c48fc4616dbe7ca5ed77f80690679d6bde84eef6bab4a2866",
+      "pcm_sha256": "d42ec8901648a500fdd747ffd0fdf8b4ec39519393aed880c1478517da3a2bae",
+      "sony_pcm_sha256": "d42ec8901648a500fdd747ffd0fdf8b4ec39519393aed880c1478517da3a2bae",
+      "exact": true
+    },
+    {
+      "id": "atrac3plus-352--boundary-2049--aal--1",
+      "family": "official",
+      "source_frames": 2049,
+      "input_sha256": "33cf1ab570f7183ea65534e0d843f86b54041d3d281588337aa9d58807ce9878",
+      "pcm_sha256": "7e04271422fd6a4c81542f04671ac6118a2d920b69c18cfb24e08055b2f81139",
+      "sony_pcm_sha256": "7e04271422fd6a4c81542f04671ac6118a2d920b69c18cfb24e08055b2f81139",
+      "exact": true
+    },
+    {
+      "id": "feature-aalp-48",
+      "family": "synthetic-syntax",
+      "source_frames": 128656,
+      "input_sha256": "7f3c84629e1ba593cdb2b0be01dcb9c3c87f705393ac19bf1301eafad9f20ac0",
+      "pcm_sha256": "19ab2a3f895a076a9dd39a8989a8d98292b9504b5dd8547f883cc923e078ceb1",
+      "sony_pcm_sha256": "19ab2a3f895a076a9dd39a8989a8d98292b9504b5dd8547f883cc923e078ceb1",
+      "exact": true
+    },
+    {
+      "id": "feature-aalp-64",
+      "family": "synthetic-syntax",
+      "source_frames": 128656,
+      "input_sha256": "740fe153473b7021de7582854582d716920e331f8b4d24530dc4018ef409e805",
+      "pcm_sha256": "19ab2a3f895a076a9dd39a8989a8d98292b9504b5dd8547f883cc923e078ceb1",
+      "sony_pcm_sha256": "19ab2a3f895a076a9dd39a8989a8d98292b9504b5dd8547f883cc923e078ceb1",
+      "exact": true
+    },
+    {
+      "id": "feature-aalp-96",
+      "family": "synthetic-syntax",
+      "source_frames": 128656,
+      "input_sha256": "945adb1e012613a0cce35bdd8c756ce1e47efd62a652b456d43960715fc3a6d9",
+      "pcm_sha256": "19ab2a3f895a076a9dd39a8989a8d98292b9504b5dd8547f883cc923e078ceb1",
+      "sony_pcm_sha256": "19ab2a3f895a076a9dd39a8989a8d98292b9504b5dd8547f883cc923e078ceb1",
+      "exact": true
+    },
+    {
+      "id": "feature-aalp-128",
+      "family": "synthetic-syntax",
+      "source_frames": 128656,
+      "input_sha256": "264087715369ed3b02259da893255d67d2ce268bf930daa10e17d6084ee55c71",
+      "pcm_sha256": "19ab2a3f895a076a9dd39a8989a8d98292b9504b5dd8547f883cc923e078ceb1",
+      "sony_pcm_sha256": "19ab2a3f895a076a9dd39a8989a8d98292b9504b5dd8547f883cc923e078ceb1",
+      "exact": true
+    },
+    {
+      "id": "feature-aalp-160",
+      "family": "synthetic-syntax",
+      "source_frames": 128656,
+      "input_sha256": "c381a0f818896677e60294596a7906eed5cbc57dcb7979afcd13367e29568bbd",
+      "pcm_sha256": "19ab2a3f895a076a9dd39a8989a8d98292b9504b5dd8547f883cc923e078ceb1",
+      "sony_pcm_sha256": "19ab2a3f895a076a9dd39a8989a8d98292b9504b5dd8547f883cc923e078ceb1",
+      "exact": true
+    },
+    {
+      "id": "feature-aalp-192",
+      "family": "synthetic-syntax",
+      "source_frames": 128656,
+      "input_sha256": "bb99a1fedbc9c1e011912c9a7370d6d36f8cd85bb8e63b4a861749fb520b7ecd",
+      "pcm_sha256": "19ab2a3f895a076a9dd39a8989a8d98292b9504b5dd8547f883cc923e078ceb1",
+      "sony_pcm_sha256": "19ab2a3f895a076a9dd39a8989a8d98292b9504b5dd8547f883cc923e078ceb1",
+      "exact": true
+    },
+    {
+      "id": "feature-aalp-256",
+      "family": "synthetic-syntax",
+      "source_frames": 128656,
+      "input_sha256": "a80103519f55971b6afd84b0a6e8d5abc24e55743c6ea29570767c96e1a31b72",
+      "pcm_sha256": "19ab2a3f895a076a9dd39a8989a8d98292b9504b5dd8547f883cc923e078ceb1",
+      "sony_pcm_sha256": "19ab2a3f895a076a9dd39a8989a8d98292b9504b5dd8547f883cc923e078ceb1",
+      "exact": true
+    },
+    {
+      "id": "feature-aalp-320",
+      "family": "synthetic-syntax",
+      "source_frames": 128656,
+      "input_sha256": "219b7978ffe954fe131a097c44b800a37cfea832f7e51facf6d1460c7c444062",
+      "pcm_sha256": "19ab2a3f895a076a9dd39a8989a8d98292b9504b5dd8547f883cc923e078ceb1",
+      "sony_pcm_sha256": "19ab2a3f895a076a9dd39a8989a8d98292b9504b5dd8547f883cc923e078ceb1",
+      "exact": true
+    },
+    {
+      "id": "feature-aalp-352",
+      "family": "synthetic-syntax",
+      "source_frames": 128656,
+      "input_sha256": "345bdc5d2f7b97e41ebc6183b556fd62bcb371a7823d51cef1a285c3bd37b8e0",
+      "pcm_sha256": "19ab2a3f895a076a9dd39a8989a8d98292b9504b5dd8547f883cc923e078ceb1",
+      "sony_pcm_sha256": "19ab2a3f895a076a9dd39a8989a8d98292b9504b5dd8547f883cc923e078ceb1",
+      "exact": true
+    },
+    {
+      "id": "independent--default-profile-odd-junk",
+      "family": "independent-0.2",
+      "source_frames": 4097,
+      "input_sha256": "8efc841932f672f33a3f6811ab96375069f62f582e524f6517f0b0fb05caa609",
+      "pcm_sha256": "8ab83f87b75b6aabb5142b6f65eb03725b1bbf846a124d08393064486fc9318e",
+      "sony_pcm_sha256": "8ab83f87b75b6aabb5142b6f65eb03725b1bbf846a124d08393064486fc9318e",
+      "exact": true
+    },
+    {
+      "id": "independent--aalp-192--native-cap-regression",
+      "family": "independent-0.2",
+      "source_frames": 8192,
+      "input_sha256": "5cb171e4682fffa5cf27d1bacd1734e1ec71ee71a3681744c98dd0d57e5fe32c",
+      "pcm_sha256": "7d506370002e2c0ec04573466453b8d719e92b226f2ec656376dee099ae08a09",
+      "sony_pcm_sha256": "7d506370002e2c0ec04573466453b8d719e92b226f2ec656376dee099ae08a09",
+      "exact": true
+    },
+    {
+      "id": "independent--aalp-352--silence",
+      "family": "independent-0.2",
+      "source_frames": 4097,
+      "input_sha256": "8571e49cd2134d445149b5cbd0f2c447ef52278839afd3bb194194a84144f148",
+      "pcm_sha256": "b815d7028f96923cddafd95a57213c77ad0d693121ad04f59ac1273c04510f21",
+      "sony_pcm_sha256": "b815d7028f96923cddafd95a57213c77ad0d693121ad04f59ac1273c04510f21",
+      "exact": true
+    },
+    {
+      "id": "independent--aalp-352--noise",
+      "family": "independent-0.2",
+      "source_frames": 4097,
+      "input_sha256": "c81e35c348ffb9eca3da2ff1152d006fe93e7d69e6525025c89733cd66bee5a5",
+      "pcm_sha256": "deb7daf080a324117817fd85ec62128ff9e081ccdc8b29e9c2ad7138e270c498",
+      "sony_pcm_sha256": "deb7daf080a324117817fd85ec62128ff9e081ccdc8b29e9c2ad7138e270c498",
+      "exact": true
+    },
+    {
+      "id": "independent--aalp-352--fullscale-impulses-alternating",
+      "family": "independent-0.2",
+      "source_frames": 4097,
+      "input_sha256": "68f2c2e23339927194e6c64fa38f35f872afd3bc7df42bd6e583fae8b85e7441",
+      "pcm_sha256": "7e73e191fda80219b9990a80bbe26ddbbe599a167ecbac6b9a64ec4b825c3aae",
+      "sony_pcm_sha256": "7e73e191fda80219b9990a80bbe26ddbbe599a167ecbac6b9a64ec4b825c3aae",
+      "exact": true
+    },
+    {
+      "id": "independent--aalp-352--low-level",
+      "family": "independent-0.2",
+      "source_frames": 4097,
+      "input_sha256": "e626c540e2b8ff761d75393634c1b125441fc181274f1b8df0dfc22e435ebdf7",
+      "pcm_sha256": "3e6232b498ce9dbd972360a98ac5d5ad83952d88cb6016f59fac19c65614c5b8",
+      "sony_pcm_sha256": "3e6232b498ce9dbd972360a98ac5d5ad83952d88cb6016f59fac19c65614c5b8",
+      "exact": true
+    },
+    {
+      "id": "independent--aalp-352--multitone-chirp",
+      "family": "independent-0.2",
+      "source_frames": 16384,
+      "input_sha256": "af899f993e6f4b2091dbedc283139a1f7041dd6e22b37c551971f1d5fee84d74",
+      "pcm_sha256": "d2c5f11cd779eb3c8f29080655704121bd3ee2421b8b693b3c3445641872ec65",
+      "sony_pcm_sha256": "d2c5f11cd779eb3c8f29080655704121bd3ee2421b8b693b3c3445641872ec65",
+      "exact": true
+    },
+    {
+      "id": "independent--aalp-352--speech-like",
+      "family": "independent-0.2",
+      "source_frames": 16384,
+      "input_sha256": "1ed684c48065aa369a066a9c86bd12fb0e72d6030dda6c057b85c2c130b53342",
+      "pcm_sha256": "fb8f7ddfcd6d8e0e08c358fe423de40baea8aa7a915808180bf611257359d511",
+      "sony_pcm_sha256": "fb8f7ddfcd6d8e0e08c358fe423de40baea8aa7a915808180bf611257359d511",
+      "exact": true
+    },
+    {
+      "id": "independent--aal3-132--silence",
+      "family": "independent-0.2",
+      "source_frames": 4097,
+      "input_sha256": "c2d1df0a4399edcace5469f89f0b1d3d58ea31158b1b8e41f8ba3ad7bb16b820",
+      "pcm_sha256": "b815d7028f96923cddafd95a57213c77ad0d693121ad04f59ac1273c04510f21",
+      "sony_pcm_sha256": "b815d7028f96923cddafd95a57213c77ad0d693121ad04f59ac1273c04510f21",
+      "exact": true
+    },
+    {
+      "id": "independent--aal3-132--noise",
+      "family": "independent-0.2",
+      "source_frames": 4097,
+      "input_sha256": "8a31ac34d78734f8f515fc13d8da66196311fef3a39ad1030cd224ef85b5caa6",
+      "pcm_sha256": "deb7daf080a324117817fd85ec62128ff9e081ccdc8b29e9c2ad7138e270c498",
+      "sony_pcm_sha256": "deb7daf080a324117817fd85ec62128ff9e081ccdc8b29e9c2ad7138e270c498",
+      "exact": true
+    },
+    {
+      "id": "independent--aal3-132--fullscale-impulses-alternating",
+      "family": "independent-0.2",
+      "source_frames": 4097,
+      "input_sha256": "8466b55f0848e1833c5a6568813a5b943e7bb75941eeb20ce88bc385858b60fa",
+      "pcm_sha256": "7e73e191fda80219b9990a80bbe26ddbbe599a167ecbac6b9a64ec4b825c3aae",
+      "sony_pcm_sha256": "7e73e191fda80219b9990a80bbe26ddbbe599a167ecbac6b9a64ec4b825c3aae",
+      "exact": true
+    },
+    {
+      "id": "independent--aal3-132--low-level",
+      "family": "independent-0.2",
+      "source_frames": 4097,
+      "input_sha256": "99a08f99ca9ebf0ef5e3b55a87023fcce4a36c14c4f2c77611dd466c4b4b7524",
+      "pcm_sha256": "3e6232b498ce9dbd972360a98ac5d5ad83952d88cb6016f59fac19c65614c5b8",
+      "sony_pcm_sha256": "3e6232b498ce9dbd972360a98ac5d5ad83952d88cb6016f59fac19c65614c5b8",
+      "exact": true
+    },
+    {
+      "id": "independent--aal3-132--multitone-chirp",
+      "family": "independent-0.2",
+      "source_frames": 16384,
+      "input_sha256": "decf67f967c8cfa81d2a868577fa1151a8b1c0be7b02e8a9b3fad0d7181024e5",
+      "pcm_sha256": "d2c5f11cd779eb3c8f29080655704121bd3ee2421b8b693b3c3445641872ec65",
+      "sony_pcm_sha256": "d2c5f11cd779eb3c8f29080655704121bd3ee2421b8b693b3c3445641872ec65",
+      "exact": true
+    },
+    {
+      "id": "independent--aal3-132--speech-like",
+      "family": "independent-0.2",
+      "source_frames": 16384,
+      "input_sha256": "fecb1bbf03bc2a991b8c8473a814b39b7639b10a196a36ec7c75ad049bcc7656",
+      "pcm_sha256": "fb8f7ddfcd6d8e0e08c358fe423de40baea8aa7a915808180bf611257359d511",
+      "sony_pcm_sha256": "fb8f7ddfcd6d8e0e08c358fe423de40baea8aa7a915808180bf611257359d511",
+      "exact": true
+    },
+    {
+      "id": "independent--aalp-48--silence",
+      "family": "independent-0.2",
+      "source_frames": 4097,
+      "input_sha256": "21fd1f3164e58790ecdfe4df4f8d17003cd9d8f73b1cc262fc5ce8b133705c30",
+      "pcm_sha256": "b815d7028f96923cddafd95a57213c77ad0d693121ad04f59ac1273c04510f21",
+      "sony_pcm_sha256": "b815d7028f96923cddafd95a57213c77ad0d693121ad04f59ac1273c04510f21",
+      "exact": true
+    },
+    {
+      "id": "independent--aalp-48--noise",
+      "family": "independent-0.2",
+      "source_frames": 4097,
+      "input_sha256": "d3b41aaa5c6d95900c17c7116035897668aeb994630e9b10e43d9f778e771802",
+      "pcm_sha256": "deb7daf080a324117817fd85ec62128ff9e081ccdc8b29e9c2ad7138e270c498",
+      "sony_pcm_sha256": "deb7daf080a324117817fd85ec62128ff9e081ccdc8b29e9c2ad7138e270c498",
+      "exact": true
+    },
+    {
+      "id": "independent--aalp-48--fullscale-impulses-alternating",
+      "family": "independent-0.2",
+      "source_frames": 4097,
+      "input_sha256": "bc6b298516fc67c3e83b8ee6f37d8196ff691391a15de1d3793f4abd49f58a2c",
+      "pcm_sha256": "7e73e191fda80219b9990a80bbe26ddbbe599a167ecbac6b9a64ec4b825c3aae",
+      "sony_pcm_sha256": "7e73e191fda80219b9990a80bbe26ddbbe599a167ecbac6b9a64ec4b825c3aae",
+      "exact": true
+    },
+    {
+      "id": "independent--aalp-48--low-level",
+      "family": "independent-0.2",
+      "source_frames": 4097,
+      "input_sha256": "092d437decb3c51395e029e697f87093cc753ec7097ff404be85a30325aac67f",
+      "pcm_sha256": "3e6232b498ce9dbd972360a98ac5d5ad83952d88cb6016f59fac19c65614c5b8",
+      "sony_pcm_sha256": "3e6232b498ce9dbd972360a98ac5d5ad83952d88cb6016f59fac19c65614c5b8",
+      "exact": true
+    },
+    {
+      "id": "independent--aalp-48--multitone-chirp",
+      "family": "independent-0.2",
+      "source_frames": 16384,
+      "input_sha256": "9ebd3b5b16d789c11b8ead11c3ddce0124bc49663cc577f0a1af42908e8e9a0b",
+      "pcm_sha256": "d2c5f11cd779eb3c8f29080655704121bd3ee2421b8b693b3c3445641872ec65",
+      "sony_pcm_sha256": "d2c5f11cd779eb3c8f29080655704121bd3ee2421b8b693b3c3445641872ec65",
+      "exact": true
+    },
+    {
+      "id": "independent--aalp-48--speech-like",
+      "family": "independent-0.2",
+      "source_frames": 16384,
+      "input_sha256": "8597feda9b05785fea16dcaa6d5eb6a7dd4354d75761e0a75a93067348da4c11",
+      "pcm_sha256": "fb8f7ddfcd6d8e0e08c358fe423de40baea8aa7a915808180bf611257359d511",
+      "sony_pcm_sha256": "fb8f7ddfcd6d8e0e08c358fe423de40baea8aa7a915808180bf611257359d511",
+      "exact": true
+    },
+    {
+      "id": "independent--aalp-64--silence",
+      "family": "independent-0.2",
+      "source_frames": 4097,
+      "input_sha256": "158536b0a9f133290fe2e053516f30e240cc3596e5a0690c77cebbc6d8764a7f",
+      "pcm_sha256": "b815d7028f96923cddafd95a57213c77ad0d693121ad04f59ac1273c04510f21",
+      "sony_pcm_sha256": "b815d7028f96923cddafd95a57213c77ad0d693121ad04f59ac1273c04510f21",
+      "exact": true
+    },
+    {
+      "id": "independent--aalp-64--noise",
+      "family": "independent-0.2",
+      "source_frames": 4097,
+      "input_sha256": "6ce3b648addd62597c096ca2bb91ddc16f62d497602bcb234ac0b0209a210b92",
+      "pcm_sha256": "deb7daf080a324117817fd85ec62128ff9e081ccdc8b29e9c2ad7138e270c498",
+      "sony_pcm_sha256": "deb7daf080a324117817fd85ec62128ff9e081ccdc8b29e9c2ad7138e270c498",
+      "exact": true
+    },
+    {
+      "id": "independent--aalp-64--fullscale-impulses-alternating",
+      "family": "independent-0.2",
+      "source_frames": 4097,
+      "input_sha256": "9e96dea3ccb6719cad4111b0b54f4c94c877554087500ba7ba7f2ac89d858e92",
+      "pcm_sha256": "7e73e191fda80219b9990a80bbe26ddbbe599a167ecbac6b9a64ec4b825c3aae",
+      "sony_pcm_sha256": "7e73e191fda80219b9990a80bbe26ddbbe599a167ecbac6b9a64ec4b825c3aae",
+      "exact": true
+    },
+    {
+      "id": "independent--aalp-64--low-level",
+      "family": "independent-0.2",
+      "source_frames": 4097,
+      "input_sha256": "f9da77b13545cea6a1ae55ada5d074e928668247b102e6e4548a20c093eb4287",
+      "pcm_sha256": "3e6232b498ce9dbd972360a98ac5d5ad83952d88cb6016f59fac19c65614c5b8",
+      "sony_pcm_sha256": "3e6232b498ce9dbd972360a98ac5d5ad83952d88cb6016f59fac19c65614c5b8",
+      "exact": true
+    },
+    {
+      "id": "independent--aalp-64--multitone-chirp",
+      "family": "independent-0.2",
+      "source_frames": 16384,
+      "input_sha256": "93aea4e349ab4a23fe77b8ac1121e58cab17a6876b29d9b0603a86e2895c57e5",
+      "pcm_sha256": "d2c5f11cd779eb3c8f29080655704121bd3ee2421b8b693b3c3445641872ec65",
+      "sony_pcm_sha256": "d2c5f11cd779eb3c8f29080655704121bd3ee2421b8b693b3c3445641872ec65",
+      "exact": true
+    },
+    {
+      "id": "independent--aalp-64--speech-like",
+      "family": "independent-0.2",
+      "source_frames": 16384,
+      "input_sha256": "b2a8021f4f80a3c49d9c6c8f997da19d6ed6e252522ec13b8eaa2c9be7a87cf9",
+      "pcm_sha256": "fb8f7ddfcd6d8e0e08c358fe423de40baea8aa7a915808180bf611257359d511",
+      "sony_pcm_sha256": "fb8f7ddfcd6d8e0e08c358fe423de40baea8aa7a915808180bf611257359d511",
+      "exact": true
+    },
+    {
+      "id": "independent--aalp-96--silence",
+      "family": "independent-0.2",
+      "source_frames": 4097,
+      "input_sha256": "bb1b5bed1b44cac6d0d21916c8d237a01957ccdc71443d7030731fbaaed5b936",
+      "pcm_sha256": "b815d7028f96923cddafd95a57213c77ad0d693121ad04f59ac1273c04510f21",
+      "sony_pcm_sha256": "b815d7028f96923cddafd95a57213c77ad0d693121ad04f59ac1273c04510f21",
+      "exact": true
+    },
+    {
+      "id": "independent--aalp-96--noise",
+      "family": "independent-0.2",
+      "source_frames": 4097,
+      "input_sha256": "04a80c62c19630aafec11f29875c5ba8d011a0d019e5a23038b7b4d549565878",
+      "pcm_sha256": "deb7daf080a324117817fd85ec62128ff9e081ccdc8b29e9c2ad7138e270c498",
+      "sony_pcm_sha256": "deb7daf080a324117817fd85ec62128ff9e081ccdc8b29e9c2ad7138e270c498",
+      "exact": true
+    },
+    {
+      "id": "independent--aalp-96--fullscale-impulses-alternating",
+      "family": "independent-0.2",
+      "source_frames": 4097,
+      "input_sha256": "cce994e26cb812ae65b7574d932686124b8ea558695320ba80f4d6b5954606b8",
+      "pcm_sha256": "7e73e191fda80219b9990a80bbe26ddbbe599a167ecbac6b9a64ec4b825c3aae",
+      "sony_pcm_sha256": "7e73e191fda80219b9990a80bbe26ddbbe599a167ecbac6b9a64ec4b825c3aae",
+      "exact": true
+    },
+    {
+      "id": "independent--aalp-96--low-level",
+      "family": "independent-0.2",
+      "source_frames": 4097,
+      "input_sha256": "75ab323eeeb274890d4de4e2263bf52f68704885cd638a87b948097c23e49b21",
+      "pcm_sha256": "3e6232b498ce9dbd972360a98ac5d5ad83952d88cb6016f59fac19c65614c5b8",
+      "sony_pcm_sha256": "3e6232b498ce9dbd972360a98ac5d5ad83952d88cb6016f59fac19c65614c5b8",
+      "exact": true
+    },
+    {
+      "id": "independent--aalp-96--multitone-chirp",
+      "family": "independent-0.2",
+      "source_frames": 16384,
+      "input_sha256": "4069fc5f527cde555a5e41996a0f5451cf25ed2a6c07c353ef384523b9af30fd",
+      "pcm_sha256": "d2c5f11cd779eb3c8f29080655704121bd3ee2421b8b693b3c3445641872ec65",
+      "sony_pcm_sha256": "d2c5f11cd779eb3c8f29080655704121bd3ee2421b8b693b3c3445641872ec65",
+      "exact": true
+    },
+    {
+      "id": "independent--aalp-96--speech-like",
+      "family": "independent-0.2",
+      "source_frames": 16384,
+      "input_sha256": "628c1ca63ff4f0ada1bf43b9a171663cb0379f6f519590ab567d8a0eb99f1f0a",
+      "pcm_sha256": "fb8f7ddfcd6d8e0e08c358fe423de40baea8aa7a915808180bf611257359d511",
+      "sony_pcm_sha256": "fb8f7ddfcd6d8e0e08c358fe423de40baea8aa7a915808180bf611257359d511",
+      "exact": true
+    },
+    {
+      "id": "independent--aalp-128--silence",
+      "family": "independent-0.2",
+      "source_frames": 4097,
+      "input_sha256": "9b0ed42c10c58d293d97d44e00376a810509f2a74a2bc04263cacb74ebc3a33c",
+      "pcm_sha256": "b815d7028f96923cddafd95a57213c77ad0d693121ad04f59ac1273c04510f21",
+      "sony_pcm_sha256": "b815d7028f96923cddafd95a57213c77ad0d693121ad04f59ac1273c04510f21",
+      "exact": true
+    },
+    {
+      "id": "independent--aalp-128--noise",
+      "family": "independent-0.2",
+      "source_frames": 4097,
+      "input_sha256": "73fbb97ae4ffb3ab07f4f30d295f246b6b0cd012e64c9e252cd31e9ebc9ece42",
+      "pcm_sha256": "deb7daf080a324117817fd85ec62128ff9e081ccdc8b29e9c2ad7138e270c498",
+      "sony_pcm_sha256": "deb7daf080a324117817fd85ec62128ff9e081ccdc8b29e9c2ad7138e270c498",
+      "exact": true
+    },
+    {
+      "id": "independent--aalp-128--fullscale-impulses-alternating",
+      "family": "independent-0.2",
+      "source_frames": 4097,
+      "input_sha256": "77ea35ff08090ea214b9ae5c4144e5aed4a4f462c5f3b1e4ed586465d6e27309",
+      "pcm_sha256": "7e73e191fda80219b9990a80bbe26ddbbe599a167ecbac6b9a64ec4b825c3aae",
+      "sony_pcm_sha256": "7e73e191fda80219b9990a80bbe26ddbbe599a167ecbac6b9a64ec4b825c3aae",
+      "exact": true
+    },
+    {
+      "id": "independent--aalp-128--low-level",
+      "family": "independent-0.2",
+      "source_frames": 4097,
+      "input_sha256": "83bcc347ad31fdab469e78c6e2b668d9dcd7e03674ebb7db02457e8f9f13d4da",
+      "pcm_sha256": "3e6232b498ce9dbd972360a98ac5d5ad83952d88cb6016f59fac19c65614c5b8",
+      "sony_pcm_sha256": "3e6232b498ce9dbd972360a98ac5d5ad83952d88cb6016f59fac19c65614c5b8",
+      "exact": true
+    },
+    {
+      "id": "independent--aalp-128--multitone-chirp",
+      "family": "independent-0.2",
+      "source_frames": 16384,
+      "input_sha256": "3488a6818cce6e7e8d0fb507c7f2ea7d2bb0840ad298b81f733c367e1e69d01f",
+      "pcm_sha256": "d2c5f11cd779eb3c8f29080655704121bd3ee2421b8b693b3c3445641872ec65",
+      "sony_pcm_sha256": "d2c5f11cd779eb3c8f29080655704121bd3ee2421b8b693b3c3445641872ec65",
+      "exact": true
+    },
+    {
+      "id": "independent--aalp-128--speech-like",
+      "family": "independent-0.2",
+      "source_frames": 16384,
+      "input_sha256": "ad972cdbda31453fe6f481178ed1ca01993f3a75d6e5b8c99ce67a84e23ed79d",
+      "pcm_sha256": "fb8f7ddfcd6d8e0e08c358fe423de40baea8aa7a915808180bf611257359d511",
+      "sony_pcm_sha256": "fb8f7ddfcd6d8e0e08c358fe423de40baea8aa7a915808180bf611257359d511",
+      "exact": true
+    },
+    {
+      "id": "independent--aalp-160--silence",
+      "family": "independent-0.2",
+      "source_frames": 4097,
+      "input_sha256": "2ba1f53c5b1817fe6cee3e5b8905d24bc3589dd65bc58a820bb7dc5ad7dbaa6a",
+      "pcm_sha256": "b815d7028f96923cddafd95a57213c77ad0d693121ad04f59ac1273c04510f21",
+      "sony_pcm_sha256": "b815d7028f96923cddafd95a57213c77ad0d693121ad04f59ac1273c04510f21",
+      "exact": true
+    },
+    {
+      "id": "independent--aalp-160--noise",
+      "family": "independent-0.2",
+      "source_frames": 4097,
+      "input_sha256": "a9ddf80e056c60432b4155819ab240fd66a02d63a7f328134f22fb03e58fd6f8",
+      "pcm_sha256": "deb7daf080a324117817fd85ec62128ff9e081ccdc8b29e9c2ad7138e270c498",
+      "sony_pcm_sha256": "deb7daf080a324117817fd85ec62128ff9e081ccdc8b29e9c2ad7138e270c498",
+      "exact": true
+    },
+    {
+      "id": "independent--aalp-160--fullscale-impulses-alternating",
+      "family": "independent-0.2",
+      "source_frames": 4097,
+      "input_sha256": "782fa3da1c6845b29494fe8f8250fbc38805235f6fc57b154d50d4cbd05045d8",
+      "pcm_sha256": "7e73e191fda80219b9990a80bbe26ddbbe599a167ecbac6b9a64ec4b825c3aae",
+      "sony_pcm_sha256": "7e73e191fda80219b9990a80bbe26ddbbe599a167ecbac6b9a64ec4b825c3aae",
+      "exact": true
+    },
+    {
+      "id": "independent--aalp-160--low-level",
+      "family": "independent-0.2",
+      "source_frames": 4097,
+      "input_sha256": "1db2086b61de67597470def1537fe6ce58af64e1f440fe2a03b675c9f7cd4f5c",
+      "pcm_sha256": "3e6232b498ce9dbd972360a98ac5d5ad83952d88cb6016f59fac19c65614c5b8",
+      "sony_pcm_sha256": "3e6232b498ce9dbd972360a98ac5d5ad83952d88cb6016f59fac19c65614c5b8",
+      "exact": true
+    },
+    {
+      "id": "independent--aalp-160--multitone-chirp",
+      "family": "independent-0.2",
+      "source_frames": 16384,
+      "input_sha256": "ef1bc477d44e0d5ab455683d9f900b1f5943dd8432845b4258c8d44b3d361691",
+      "pcm_sha256": "d2c5f11cd779eb3c8f29080655704121bd3ee2421b8b693b3c3445641872ec65",
+      "sony_pcm_sha256": "d2c5f11cd779eb3c8f29080655704121bd3ee2421b8b693b3c3445641872ec65",
+      "exact": true
+    },
+    {
+      "id": "independent--aalp-160--speech-like",
+      "family": "independent-0.2",
+      "source_frames": 16384,
+      "input_sha256": "ccfd8b820a9e1d149d9729c44c4f5be21c1c01528e7021a73aa5fc95d2cc8f9e",
+      "pcm_sha256": "fb8f7ddfcd6d8e0e08c358fe423de40baea8aa7a915808180bf611257359d511",
+      "sony_pcm_sha256": "fb8f7ddfcd6d8e0e08c358fe423de40baea8aa7a915808180bf611257359d511",
+      "exact": true
+    },
+    {
+      "id": "independent--aalp-192--silence",
+      "family": "independent-0.2",
+      "source_frames": 4097,
+      "input_sha256": "397ef6890b90e24ac37f6d0c10638461b9d8ca812e5a4b19fe56262a9c6e9104",
+      "pcm_sha256": "b815d7028f96923cddafd95a57213c77ad0d693121ad04f59ac1273c04510f21",
+      "sony_pcm_sha256": "b815d7028f96923cddafd95a57213c77ad0d693121ad04f59ac1273c04510f21",
+      "exact": true
+    },
+    {
+      "id": "independent--aalp-192--noise",
+      "family": "independent-0.2",
+      "source_frames": 4097,
+      "input_sha256": "2e69abbf0f623f5bfc0bef8ff4bd3a42deb786e8406904c6cb1ed303905ab94c",
+      "pcm_sha256": "deb7daf080a324117817fd85ec62128ff9e081ccdc8b29e9c2ad7138e270c498",
+      "sony_pcm_sha256": "deb7daf080a324117817fd85ec62128ff9e081ccdc8b29e9c2ad7138e270c498",
+      "exact": true
+    },
+    {
+      "id": "independent--aalp-192--fullscale-impulses-alternating",
+      "family": "independent-0.2",
+      "source_frames": 4097,
+      "input_sha256": "fe684e7a427e0f1fbca1541d04d54f42e42ca00227496365cdab39d04ca96b53",
+      "pcm_sha256": "7e73e191fda80219b9990a80bbe26ddbbe599a167ecbac6b9a64ec4b825c3aae",
+      "sony_pcm_sha256": "7e73e191fda80219b9990a80bbe26ddbbe599a167ecbac6b9a64ec4b825c3aae",
+      "exact": true
+    },
+    {
+      "id": "independent--aalp-192--low-level",
+      "family": "independent-0.2",
+      "source_frames": 4097,
+      "input_sha256": "0b40bf7804ffd3a4d1f1dc5b7820b6cf2add5a8664f45c61832d292cf1ccaefc",
+      "pcm_sha256": "3e6232b498ce9dbd972360a98ac5d5ad83952d88cb6016f59fac19c65614c5b8",
+      "sony_pcm_sha256": "3e6232b498ce9dbd972360a98ac5d5ad83952d88cb6016f59fac19c65614c5b8",
+      "exact": true
+    },
+    {
+      "id": "independent--aalp-192--multitone-chirp",
+      "family": "independent-0.2",
+      "source_frames": 16384,
+      "input_sha256": "89fabcd6396929002da5548d06ca84fb34262d31085e89ea7acfa8ce8525b20f",
+      "pcm_sha256": "d2c5f11cd779eb3c8f29080655704121bd3ee2421b8b693b3c3445641872ec65",
+      "sony_pcm_sha256": "d2c5f11cd779eb3c8f29080655704121bd3ee2421b8b693b3c3445641872ec65",
+      "exact": true
+    },
+    {
+      "id": "independent--aalp-192--speech-like",
+      "family": "independent-0.2",
+      "source_frames": 16384,
+      "input_sha256": "27394db4e9db02afb4bbfb7dd035f6cafd234cc4fc7bfb6513d7b435d34eda44",
+      "pcm_sha256": "fb8f7ddfcd6d8e0e08c358fe423de40baea8aa7a915808180bf611257359d511",
+      "sony_pcm_sha256": "fb8f7ddfcd6d8e0e08c358fe423de40baea8aa7a915808180bf611257359d511",
+      "exact": true
+    },
+    {
+      "id": "independent--aalp-256--silence",
+      "family": "independent-0.2",
+      "source_frames": 4097,
+      "input_sha256": "cc5b1b48067bad0d8eb2aba12a3f4a18b9678b1ee8e2a4ebc0c0c19818a6c034",
+      "pcm_sha256": "b815d7028f96923cddafd95a57213c77ad0d693121ad04f59ac1273c04510f21",
+      "sony_pcm_sha256": "b815d7028f96923cddafd95a57213c77ad0d693121ad04f59ac1273c04510f21",
+      "exact": true
+    },
+    {
+      "id": "independent--aalp-256--noise",
+      "family": "independent-0.2",
+      "source_frames": 4097,
+      "input_sha256": "01483beb2d52d46a7e0c694ada1faec20d2c330443a5f4f2f3e0a30f50e9af4b",
+      "pcm_sha256": "deb7daf080a324117817fd85ec62128ff9e081ccdc8b29e9c2ad7138e270c498",
+      "sony_pcm_sha256": "deb7daf080a324117817fd85ec62128ff9e081ccdc8b29e9c2ad7138e270c498",
+      "exact": true
+    },
+    {
+      "id": "independent--aalp-256--fullscale-impulses-alternating",
+      "family": "independent-0.2",
+      "source_frames": 4097,
+      "input_sha256": "f67276c9acd0cb2008d549d74b05f403b00cbfd1f3abe31ea45b2f55599391db",
+      "pcm_sha256": "7e73e191fda80219b9990a80bbe26ddbbe599a167ecbac6b9a64ec4b825c3aae",
+      "sony_pcm_sha256": "7e73e191fda80219b9990a80bbe26ddbbe599a167ecbac6b9a64ec4b825c3aae",
+      "exact": true
+    },
+    {
+      "id": "independent--aalp-256--low-level",
+      "family": "independent-0.2",
+      "source_frames": 4097,
+      "input_sha256": "8f189071f3e9c5ac68af2f14a414a2436c2360f26559a4a9d018fec0db5b91f2",
+      "pcm_sha256": "3e6232b498ce9dbd972360a98ac5d5ad83952d88cb6016f59fac19c65614c5b8",
+      "sony_pcm_sha256": "3e6232b498ce9dbd972360a98ac5d5ad83952d88cb6016f59fac19c65614c5b8",
+      "exact": true
+    },
+    {
+      "id": "independent--aalp-256--multitone-chirp",
+      "family": "independent-0.2",
+      "source_frames": 16384,
+      "input_sha256": "651b8bc650487746e82da7cd6ff4981c1c81d254b9b1bbfd696c007f4c892ac8",
+      "pcm_sha256": "d2c5f11cd779eb3c8f29080655704121bd3ee2421b8b693b3c3445641872ec65",
+      "sony_pcm_sha256": "d2c5f11cd779eb3c8f29080655704121bd3ee2421b8b693b3c3445641872ec65",
+      "exact": true
+    },
+    {
+      "id": "independent--aalp-256--speech-like",
+      "family": "independent-0.2",
+      "source_frames": 16384,
+      "input_sha256": "e384fac6e8d5fcd59268f24a52002e3e3679a637ca3c5155d17fa26648a7583b",
+      "pcm_sha256": "fb8f7ddfcd6d8e0e08c358fe423de40baea8aa7a915808180bf611257359d511",
+      "sony_pcm_sha256": "fb8f7ddfcd6d8e0e08c358fe423de40baea8aa7a915808180bf611257359d511",
+      "exact": true
+    },
+    {
+      "id": "independent--aalp-320--silence",
+      "family": "independent-0.2",
+      "source_frames": 4097,
+      "input_sha256": "fe28b103391ad36b391c8fd27a37bd45b6ba6d03c7f6c163dbb71ddc5508f523",
+      "pcm_sha256": "b815d7028f96923cddafd95a57213c77ad0d693121ad04f59ac1273c04510f21",
+      "sony_pcm_sha256": "b815d7028f96923cddafd95a57213c77ad0d693121ad04f59ac1273c04510f21",
+      "exact": true
+    },
+    {
+      "id": "independent--aalp-320--noise",
+      "family": "independent-0.2",
+      "source_frames": 4097,
+      "input_sha256": "f6f145e1e5c8762c5c7b885d50a17668fa630365a38c193f61de008bf4ec232f",
+      "pcm_sha256": "deb7daf080a324117817fd85ec62128ff9e081ccdc8b29e9c2ad7138e270c498",
+      "sony_pcm_sha256": "deb7daf080a324117817fd85ec62128ff9e081ccdc8b29e9c2ad7138e270c498",
+      "exact": true
+    },
+    {
+      "id": "independent--aalp-320--fullscale-impulses-alternating",
+      "family": "independent-0.2",
+      "source_frames": 4097,
+      "input_sha256": "affaba6af818c0fbb9b52378af817b213fdebfc0a77d73ae1ae255129a43af14",
+      "pcm_sha256": "7e73e191fda80219b9990a80bbe26ddbbe599a167ecbac6b9a64ec4b825c3aae",
+      "sony_pcm_sha256": "7e73e191fda80219b9990a80bbe26ddbbe599a167ecbac6b9a64ec4b825c3aae",
+      "exact": true
+    },
+    {
+      "id": "independent--aalp-320--low-level",
+      "family": "independent-0.2",
+      "source_frames": 4097,
+      "input_sha256": "b7dc6abebffe676d52a2b8b0ec082a182c34e3041d33f61496abcf137a5364c3",
+      "pcm_sha256": "3e6232b498ce9dbd972360a98ac5d5ad83952d88cb6016f59fac19c65614c5b8",
+      "sony_pcm_sha256": "3e6232b498ce9dbd972360a98ac5d5ad83952d88cb6016f59fac19c65614c5b8",
+      "exact": true
+    },
+    {
+      "id": "independent--aalp-320--multitone-chirp",
+      "family": "independent-0.2",
+      "source_frames": 16384,
+      "input_sha256": "6b32d75263429fef241a16ff2b547f3a951b3c284bd4afec420abcf9ef67fc34",
+      "pcm_sha256": "d2c5f11cd779eb3c8f29080655704121bd3ee2421b8b693b3c3445641872ec65",
+      "sony_pcm_sha256": "d2c5f11cd779eb3c8f29080655704121bd3ee2421b8b693b3c3445641872ec65",
+      "exact": true
+    },
+    {
+      "id": "independent--aalp-320--speech-like",
+      "family": "independent-0.2",
+      "source_frames": 16384,
+      "input_sha256": "52d21ddbc42aa278700d7ed5ab1700d7016d4bec10d5b159d4eb74ed81ad6615",
+      "pcm_sha256": "fb8f7ddfcd6d8e0e08c358fe423de40baea8aa7a915808180bf611257359d511",
+      "sony_pcm_sha256": "fb8f7ddfcd6d8e0e08c358fe423de40baea8aa7a915808180bf611257359d511",
+      "exact": true
+    },
+    {
+      "id": "independent--aalp-352--boundary-1",
+      "family": "independent-0.2",
+      "source_frames": 1,
+      "input_sha256": "6fc1a39465502ffc136c362a7fd4d8ccebbb9397ae958a1929d5b551a6617cb9",
+      "pcm_sha256": "3fe082173119c71b92fc5c05c66309f012f6a3f1c8b3ec90eff83f3529603d32",
+      "sony_pcm_sha256": "3fe082173119c71b92fc5c05c66309f012f6a3f1c8b3ec90eff83f3529603d32",
+      "exact": true
+    },
+    {
+      "id": "independent--aalp-352--boundary-367",
+      "family": "independent-0.2",
+      "source_frames": 367,
+      "input_sha256": "85f886f0a35d831f9b66c44cf636379a7fe0554e3aa099d05b9bcb1bcf2df878",
+      "pcm_sha256": "c4d30c0966b3d52d0ff55e148f1315e41e24a1e9265579aadb41482f950541b1",
+      "sony_pcm_sha256": "c4d30c0966b3d52d0ff55e148f1315e41e24a1e9265579aadb41482f950541b1",
+      "exact": true
+    },
+    {
+      "id": "independent--aalp-352--boundary-368",
+      "family": "independent-0.2",
+      "source_frames": 368,
+      "input_sha256": "6725fd0fb3f034483d36a19186f8c977252cc34867b9e7e68829b851277896c7",
+      "pcm_sha256": "eb33be04e36fe8e3bfab25939099bc47ef2a1c961d79f8af876d43f479861618",
+      "sony_pcm_sha256": "eb33be04e36fe8e3bfab25939099bc47ef2a1c961d79f8af876d43f479861618",
+      "exact": true
+    },
+    {
+      "id": "independent--aalp-352--boundary-369",
+      "family": "independent-0.2",
+      "source_frames": 369,
+      "input_sha256": "231901975ddfd043bc7a850656eb504f58617ec09e1fb30d5c5bb436342d2392",
+      "pcm_sha256": "4bcdecbdfd8b00180de213648444a5de815fda48a8757fb5355c0ccf6d842bd7",
+      "sony_pcm_sha256": "4bcdecbdfd8b00180de213648444a5de815fda48a8757fb5355c0ccf6d842bd7",
+      "exact": true
+    },
+    {
+      "id": "independent--aalp-352--boundary-1679",
+      "family": "independent-0.2",
+      "source_frames": 1679,
+      "input_sha256": "d9fcafa6c85ae243230b8affe4cf0dfa6ad4c623e52e584768da44d73887bc1b",
+      "pcm_sha256": "44a27e23a724e300791b9a95ab9ba5a53341623f44f47e185288087522a52af4",
+      "sony_pcm_sha256": "44a27e23a724e300791b9a95ab9ba5a53341623f44f47e185288087522a52af4",
+      "exact": true
+    },
+    {
+      "id": "independent--aalp-352--boundary-1680",
+      "family": "independent-0.2",
+      "source_frames": 1680,
+      "input_sha256": "fe81e915d35f86250b70c2921640436f60274ab75b26fe94077158a07accdc51",
+      "pcm_sha256": "007b1de0efdb6f1e48288e3c4ad3a5393ed075849140d80030721371011a7bd5",
+      "sony_pcm_sha256": "007b1de0efdb6f1e48288e3c4ad3a5393ed075849140d80030721371011a7bd5",
+      "exact": true
+    },
+    {
+      "id": "independent--aalp-352--boundary-1681",
+      "family": "independent-0.2",
+      "source_frames": 1681,
+      "input_sha256": "0e996e9a308f6e0b919f5a09207bfbc060ff1dca1a7a7e67da28927cf869db95",
+      "pcm_sha256": "a301a21e45539ed6e0414902592de28a161a929c0f7898e9059daddea4220674",
+      "sony_pcm_sha256": "a301a21e45539ed6e0414902592de28a161a929c0f7898e9059daddea4220674",
+      "exact": true
+    },
+    {
+      "id": "independent--aalp-352--boundary-2047",
+      "family": "independent-0.2",
+      "source_frames": 2047,
+      "input_sha256": "ba18873eeac05fd48efb6db721f22aa358c2537372d1d6a11d567e2ecca9b5ee",
+      "pcm_sha256": "9daa078be0dc7cc82a2a3da709ad9f400ca2a229d5142a0b40728d4487fe0f86",
+      "sony_pcm_sha256": "9daa078be0dc7cc82a2a3da709ad9f400ca2a229d5142a0b40728d4487fe0f86",
+      "exact": true
+    },
+    {
+      "id": "independent--aalp-352--boundary-2048",
+      "family": "independent-0.2",
+      "source_frames": 2048,
+      "input_sha256": "01b98f21a3d34cccf695903c74a05490753fca18c71d774f84c14e907950d706",
+      "pcm_sha256": "853e979ade861c965578f336af9307bf0852c86c6867aabd5b3dfe571d24db5f",
+      "sony_pcm_sha256": "853e979ade861c965578f336af9307bf0852c86c6867aabd5b3dfe571d24db5f",
+      "exact": true
+    },
+    {
+      "id": "independent--aalp-352--boundary-2049",
+      "family": "independent-0.2",
+      "source_frames": 2049,
+      "input_sha256": "04c5b7a1fe6a86d69b7648df61fd882a2cf88b2fdaaaf631613d74a1e551a389",
+      "pcm_sha256": "45ba0a9024100f49f118567121f9eb0105a8c2fa8074ec2276aae17e1d650cfd",
+      "sony_pcm_sha256": "45ba0a9024100f49f118567121f9eb0105a8c2fa8074ec2276aae17e1d650cfd",
+      "exact": true
+    },
+    {
+      "id": "independent--aalp-352--boundary-4095",
+      "family": "independent-0.2",
+      "source_frames": 4095,
+      "input_sha256": "db1527f7c802b01ec6e6c14f3933cacc05ef7db991989d0f2c8a70de3949cf13",
+      "pcm_sha256": "d5e6329d1c41a0d6796df4d02534ddb0e237aec43c46d7788f1f016d1417baba",
+      "sony_pcm_sha256": "d5e6329d1c41a0d6796df4d02534ddb0e237aec43c46d7788f1f016d1417baba",
+      "exact": true
+    },
+    {
+      "id": "independent--aalp-352--boundary-4096",
+      "family": "independent-0.2",
+      "source_frames": 4096,
+      "input_sha256": "92632c5b7bf86fe4f65ed1741ae691cb228cfed64257cd758e51a4ac73131997",
+      "pcm_sha256": "11305114cc0e151ff5abd65a13a771ff5b54554f626e65f2e3826927cdc558b9",
+      "sony_pcm_sha256": "11305114cc0e151ff5abd65a13a771ff5b54554f626e65f2e3826927cdc558b9",
+      "exact": true
+    },
+    {
+      "id": "independent--aalp-352--boundary-44117",
+      "family": "independent-0.2",
+      "source_frames": 44117,
+      "input_sha256": "300d7176f91a79694209270c1a29bfde29fc5ac305ac5feeb92a71fe82756b94",
+      "pcm_sha256": "cc2ee999352978c149941fff7c824745a023b40155702dd350c7a7d7b504afaf",
+      "sony_pcm_sha256": "cc2ee999352978c149941fff7c824745a023b40155702dd350c7a7d7b504afaf",
+      "exact": true
+    },
+    {
+      "id": "independent--aal3-132--boundary-1",
+      "family": "independent-0.2",
+      "source_frames": 1,
+      "input_sha256": "1da7df06ee8bba1ee2a5fb8ab2a769c0bed5dd99a9b93772d245efdb5e7402e0",
+      "pcm_sha256": "3fe082173119c71b92fc5c05c66309f012f6a3f1c8b3ec90eff83f3529603d32",
+      "sony_pcm_sha256": "3fe082173119c71b92fc5c05c66309f012f6a3f1c8b3ec90eff83f3529603d32",
+      "exact": true
+    },
+    {
+      "id": "independent--aal3-132--boundary-137",
+      "family": "independent-0.2",
+      "source_frames": 137,
+      "input_sha256": "7a10ac2b8ee472f4c2d370c3a3b539dc2a8bc3bd1ff9342318de2604529bd149",
+      "pcm_sha256": "817d581babde5f2642911c57842ddf271c703897aaecbd6eae245a51a4c3df99",
+      "sony_pcm_sha256": "817d581babde5f2642911c57842ddf271c703897aaecbd6eae245a51a4c3df99",
+      "exact": true
+    },
+    {
+      "id": "independent--aal3-132--boundary-138",
+      "family": "independent-0.2",
+      "source_frames": 138,
+      "input_sha256": "12b6822068970b2237ef25a227f44106b0bc2196f073e41e775ef01b902d9c7d",
+      "pcm_sha256": "99985520edc1e65de8c6c85bb695958399f8e5f5d224db04615f0b01d49e21a8",
+      "sony_pcm_sha256": "99985520edc1e65de8c6c85bb695958399f8e5f5d224db04615f0b01d49e21a8",
+      "exact": true
+    },
+    {
+      "id": "independent--aal3-132--boundary-139",
+      "family": "independent-0.2",
+      "source_frames": 139,
+      "input_sha256": "fe6227caa1cda19b7df603421e30f22762c4a5180fa028211c1c285dea857870",
+      "pcm_sha256": "b6d2a5c5ce3e75dc79aff8c1ab24cbb11867030dc325472dcbd7e47a1eb1a583",
+      "sony_pcm_sha256": "b6d2a5c5ce3e75dc79aff8c1ab24cbb11867030dc325472dcbd7e47a1eb1a583",
+      "exact": true
+    },
+    {
+      "id": "independent--aal3-132--boundary-885",
+      "family": "independent-0.2",
+      "source_frames": 885,
+      "input_sha256": "a1c76928660408c438fb87f5d958c2b0b8b50552657e2895cac22bbbec7f77a1",
+      "pcm_sha256": "b71e09261dc275f2063442758b02b4aab2175f01d27bbfd94838a658e9658201",
+      "sony_pcm_sha256": "b71e09261dc275f2063442758b02b4aab2175f01d27bbfd94838a658e9658201",
+      "exact": true
+    },
+    {
+      "id": "independent--aal3-132--boundary-886",
+      "family": "independent-0.2",
+      "source_frames": 886,
+      "input_sha256": "9de2f32a5dc3356326b7864bcd1fd2ed43aa328d352a640658e602cd0b805f28",
+      "pcm_sha256": "4346c9f2b135e445b32bc0ec12037b9c28f33d5a0191b894c0a338dd271b884b",
+      "sony_pcm_sha256": "4346c9f2b135e445b32bc0ec12037b9c28f33d5a0191b894c0a338dd271b884b",
+      "exact": true
+    },
+    {
+      "id": "independent--aal3-132--boundary-887",
+      "family": "independent-0.2",
+      "source_frames": 887,
+      "input_sha256": "9bec542d9766167d09cb5e5e3985d7b32620c60ccd7f045c2e2aee8067ef3065",
+      "pcm_sha256": "8404f012a06bf30cd16e4d06db258e0d92ef81bf042e0f03dfd1b9802a43e57d",
+      "sony_pcm_sha256": "8404f012a06bf30cd16e4d06db258e0d92ef81bf042e0f03dfd1b9802a43e57d",
+      "exact": true
+    },
+    {
+      "id": "independent--aal3-132--boundary-1023",
+      "family": "independent-0.2",
+      "source_frames": 1023,
+      "input_sha256": "dd4f1a89f9adc3b0a767811a65be2b10c66e83cf4c9224c0d616e54c013579ce",
+      "pcm_sha256": "e22433b7982ad0cb2b028fb9eeb1635ba5b4f620a0b63660163686af2826c82b",
+      "sony_pcm_sha256": "e22433b7982ad0cb2b028fb9eeb1635ba5b4f620a0b63660163686af2826c82b",
+      "exact": true
+    },
+    {
+      "id": "independent--aal3-132--boundary-1024",
+      "family": "independent-0.2",
+      "source_frames": 1024,
+      "input_sha256": "433cf0f759afd56192e3db028e700a4a08866d31d2056ef54eddbe4dbe23840a",
+      "pcm_sha256": "bc5fefa59ccea05c3783698afdb91db13b1340053aa19da7230f76cd1794c59c",
+      "sony_pcm_sha256": "bc5fefa59ccea05c3783698afdb91db13b1340053aa19da7230f76cd1794c59c",
+      "exact": true
+    },
+    {
+      "id": "independent--aal3-132--boundary-1025",
+      "family": "independent-0.2",
+      "source_frames": 1025,
+      "input_sha256": "5898b845ee60e34cf5c3fc761a69873793638c04f631edd7c18eea8beab25f61",
+      "pcm_sha256": "9aa91dac1944dadc87777e3b7e5cf44c06c773a6fc4f295add40ce9a4b8ce793",
+      "sony_pcm_sha256": "9aa91dac1944dadc87777e3b7e5cf44c06c773a6fc4f295add40ce9a4b8ce793",
+      "exact": true
+    },
+    {
+      "id": "independent--aal3-132--boundary-2048",
+      "family": "independent-0.2",
+      "source_frames": 2048,
+      "input_sha256": "c3626a69fd29ba37d9f9d7f39ca7c774e572d1b4d7d7423de76785330710f92b",
+      "pcm_sha256": "853e979ade861c965578f336af9307bf0852c86c6867aabd5b3dfe571d24db5f",
+      "sony_pcm_sha256": "853e979ade861c965578f336af9307bf0852c86c6867aabd5b3dfe571d24db5f",
+      "exact": true
+    },
+    {
+      "id": "independent--aal3-132--boundary-4096",
+      "family": "independent-0.2",
+      "source_frames": 4096,
+      "input_sha256": "1f35c35d6a564770f684b5ff9039853cb7183360e1afa4769d63f4e35c649a35",
+      "pcm_sha256": "11305114cc0e151ff5abd65a13a771ff5b54554f626e65f2e3826927cdc558b9",
+      "sony_pcm_sha256": "11305114cc0e151ff5abd65a13a771ff5b54554f626e65f2e3826927cdc558b9",
+      "exact": true
+    },
+    {
+      "id": "independent--aal3-132--boundary-44117",
+      "family": "independent-0.2",
+      "source_frames": 44117,
+      "input_sha256": "8b68b6421488b708189cc8b35d89124a6462f83b4816f7a7dbcfee2677024814",
+      "pcm_sha256": "cc2ee999352978c149941fff7c824745a023b40155702dd350c7a7d7b504afaf",
+      "sony_pcm_sha256": "cc2ee999352978c149941fff7c824745a023b40155702dd350c7a7d7b504afaf",
+      "exact": true
+    },
+    {
+      "id": "independent--aal3-132--boundary-44100",
+      "family": "independent-0.2",
+      "source_frames": 44100,
+      "input_sha256": "82bc1a2002314c322c8cbd68b7d01150dc39eb34dd7222507d3479620839a48e",
+      "pcm_sha256": "77b79a3d3ea31a7acdbf58670537fb3aa5db8326794e69a5882d0426bd916ec8",
+      "sony_pcm_sha256": "77b79a3d3ea31a7acdbf58670537fb3aa5db8326794e69a5882d0426bd916ec8",
+      "exact": true
+    },
+    {
+      "id": "independent--aal3-132--boundary-48001",
+      "family": "independent-0.2",
+      "source_frames": 48001,
+      "input_sha256": "f67280b48e363aec97acaa09d9bb6d7366011caacd7acf39a01e9b07bdd4515c",
+      "pcm_sha256": "c1f63a7bba5a465c6f67a2f3d94ff3f8aeeaa59ba6eadfb926fe7801202efce2",
+      "sony_pcm_sha256": "c1f63a7bba5a465c6f67a2f3d94ff3f8aeeaa59ba6eadfb926fe7801202efce2",
+      "exact": true
+    },
+    {
+      "id": "independent--aalp-48--boundary-1",
+      "family": "independent-0.2",
+      "source_frames": 1,
+      "input_sha256": "d52ba8eac41cd089a63220502d25b2d1d44599ce28722f67053cda10cbba016b",
+      "pcm_sha256": "3fe082173119c71b92fc5c05c66309f012f6a3f1c8b3ec90eff83f3529603d32",
+      "sony_pcm_sha256": "3fe082173119c71b92fc5c05c66309f012f6a3f1c8b3ec90eff83f3529603d32",
+      "exact": true
+    },
+    {
+      "id": "independent--aalp-48--boundary-2048",
+      "family": "independent-0.2",
+      "source_frames": 2048,
+      "input_sha256": "6cb0ffe7cbfa249158e833fa9f7e45e31ee67dfe46367dae98a38c5b5f9cd90b",
+      "pcm_sha256": "853e979ade861c965578f336af9307bf0852c86c6867aabd5b3dfe571d24db5f",
+      "sony_pcm_sha256": "853e979ade861c965578f336af9307bf0852c86c6867aabd5b3dfe571d24db5f",
+      "exact": true
+    },
+    {
+      "id": "independent--aalp-48--boundary-2049",
+      "family": "independent-0.2",
+      "source_frames": 2049,
+      "input_sha256": "2d35f08b71623474d684a63cd43df55c1fc7362275ba11d6559928f162378c1c",
+      "pcm_sha256": "45ba0a9024100f49f118567121f9eb0105a8c2fa8074ec2276aae17e1d650cfd",
+      "sony_pcm_sha256": "45ba0a9024100f49f118567121f9eb0105a8c2fa8074ec2276aae17e1d650cfd",
+      "exact": true
+    },
+    {
+      "id": "independent--aalp-48--boundary-44117",
+      "family": "independent-0.2",
+      "source_frames": 44117,
+      "input_sha256": "86ab1d0c3fc506b4a9da175c8fea31ddca83e78358966afa1a35aee4dedccb61",
+      "pcm_sha256": "cc2ee999352978c149941fff7c824745a023b40155702dd350c7a7d7b504afaf",
+      "sony_pcm_sha256": "cc2ee999352978c149941fff7c824745a023b40155702dd350c7a7d7b504afaf",
+      "exact": true
+    },
+    {
+      "id": "independent--aalp-64--boundary-1",
+      "family": "independent-0.2",
+      "source_frames": 1,
+      "input_sha256": "041253929fd8b1f2dca579fd850758ba382144400014ef1af833170d23a1ef62",
+      "pcm_sha256": "3fe082173119c71b92fc5c05c66309f012f6a3f1c8b3ec90eff83f3529603d32",
+      "sony_pcm_sha256": "3fe082173119c71b92fc5c05c66309f012f6a3f1c8b3ec90eff83f3529603d32",
+      "exact": true
+    },
+    {
+      "id": "independent--aalp-64--boundary-2048",
+      "family": "independent-0.2",
+      "source_frames": 2048,
+      "input_sha256": "4787af2451334c395e76b2c45f1b39e5eac752b21dfab1eee027dfcecb5fac34",
+      "pcm_sha256": "853e979ade861c965578f336af9307bf0852c86c6867aabd5b3dfe571d24db5f",
+      "sony_pcm_sha256": "853e979ade861c965578f336af9307bf0852c86c6867aabd5b3dfe571d24db5f",
+      "exact": true
+    },
+    {
+      "id": "independent--aalp-64--boundary-2049",
+      "family": "independent-0.2",
+      "source_frames": 2049,
+      "input_sha256": "95f8bad1bfd5cad6c319cb1fe76bdcb742f5b995473c4cd80c0a7346bd2e0b86",
+      "pcm_sha256": "45ba0a9024100f49f118567121f9eb0105a8c2fa8074ec2276aae17e1d650cfd",
+      "sony_pcm_sha256": "45ba0a9024100f49f118567121f9eb0105a8c2fa8074ec2276aae17e1d650cfd",
+      "exact": true
+    },
+    {
+      "id": "independent--aalp-64--boundary-44117",
+      "family": "independent-0.2",
+      "source_frames": 44117,
+      "input_sha256": "6d1d6268c1646875b0b7c3f73cadddf3d0f9130352e2437d16ae60b7c28cdfc9",
+      "pcm_sha256": "cc2ee999352978c149941fff7c824745a023b40155702dd350c7a7d7b504afaf",
+      "sony_pcm_sha256": "cc2ee999352978c149941fff7c824745a023b40155702dd350c7a7d7b504afaf",
+      "exact": true
+    },
+    {
+      "id": "independent--aalp-96--boundary-1",
+      "family": "independent-0.2",
+      "source_frames": 1,
+      "input_sha256": "a2493dda903fa2b89dc6bbdc66d2e94072e097bcf01cf20d22392a98e7598b26",
+      "pcm_sha256": "3fe082173119c71b92fc5c05c66309f012f6a3f1c8b3ec90eff83f3529603d32",
+      "sony_pcm_sha256": "3fe082173119c71b92fc5c05c66309f012f6a3f1c8b3ec90eff83f3529603d32",
+      "exact": true
+    },
+    {
+      "id": "independent--aalp-96--boundary-2048",
+      "family": "independent-0.2",
+      "source_frames": 2048,
+      "input_sha256": "99d8e16071cf374e50f04f086b1b5bd61145428da448b573cad380b74d6169b8",
+      "pcm_sha256": "853e979ade861c965578f336af9307bf0852c86c6867aabd5b3dfe571d24db5f",
+      "sony_pcm_sha256": "853e979ade861c965578f336af9307bf0852c86c6867aabd5b3dfe571d24db5f",
+      "exact": true
+    },
+    {
+      "id": "independent--aalp-96--boundary-2049",
+      "family": "independent-0.2",
+      "source_frames": 2049,
+      "input_sha256": "552858139dd1c1cceb130233889b7497050431c9d90dd8efd1d37402e5821a05",
+      "pcm_sha256": "45ba0a9024100f49f118567121f9eb0105a8c2fa8074ec2276aae17e1d650cfd",
+      "sony_pcm_sha256": "45ba0a9024100f49f118567121f9eb0105a8c2fa8074ec2276aae17e1d650cfd",
+      "exact": true
+    },
+    {
+      "id": "independent--aalp-96--boundary-44117",
+      "family": "independent-0.2",
+      "source_frames": 44117,
+      "input_sha256": "add89b289d6b72ddbb5eda6a10c4a1f5cbb366b8fdac1715a0ac808791a5a326",
+      "pcm_sha256": "cc2ee999352978c149941fff7c824745a023b40155702dd350c7a7d7b504afaf",
+      "sony_pcm_sha256": "cc2ee999352978c149941fff7c824745a023b40155702dd350c7a7d7b504afaf",
+      "exact": true
+    },
+    {
+      "id": "independent--aalp-128--boundary-1",
+      "family": "independent-0.2",
+      "source_frames": 1,
+      "input_sha256": "44f07c0f407efefbf6cb787d5fbaa190f382bad94bb7317d8934777a1f99d2aa",
+      "pcm_sha256": "3fe082173119c71b92fc5c05c66309f012f6a3f1c8b3ec90eff83f3529603d32",
+      "sony_pcm_sha256": "3fe082173119c71b92fc5c05c66309f012f6a3f1c8b3ec90eff83f3529603d32",
+      "exact": true
+    },
+    {
+      "id": "independent--aalp-128--boundary-2048",
+      "family": "independent-0.2",
+      "source_frames": 2048,
+      "input_sha256": "a42b0a576696089d6c9900c5a6177a2d73fa98f1c4871175631fa5f75b6aed33",
+      "pcm_sha256": "853e979ade861c965578f336af9307bf0852c86c6867aabd5b3dfe571d24db5f",
+      "sony_pcm_sha256": "853e979ade861c965578f336af9307bf0852c86c6867aabd5b3dfe571d24db5f",
+      "exact": true
+    },
+    {
+      "id": "independent--aalp-128--boundary-2049",
+      "family": "independent-0.2",
+      "source_frames": 2049,
+      "input_sha256": "01f4c3e2a1d5effeb0e6240241d04b1d107a9a18fc3c7e3719f4869f3e90d4f9",
+      "pcm_sha256": "45ba0a9024100f49f118567121f9eb0105a8c2fa8074ec2276aae17e1d650cfd",
+      "sony_pcm_sha256": "45ba0a9024100f49f118567121f9eb0105a8c2fa8074ec2276aae17e1d650cfd",
+      "exact": true
+    },
+    {
+      "id": "independent--aalp-128--boundary-44117",
+      "family": "independent-0.2",
+      "source_frames": 44117,
+      "input_sha256": "a2b01289ecd446bd1299b839903e420063be3580c0e09df55fbcf7572f9e1355",
+      "pcm_sha256": "cc2ee999352978c149941fff7c824745a023b40155702dd350c7a7d7b504afaf",
+      "sony_pcm_sha256": "cc2ee999352978c149941fff7c824745a023b40155702dd350c7a7d7b504afaf",
+      "exact": true
+    },
+    {
+      "id": "independent--aalp-160--boundary-1",
+      "family": "independent-0.2",
+      "source_frames": 1,
+      "input_sha256": "6bef1c94ef67816d58f26dd9d57df6e2ea95383db9af33bc57c49cdacc5a1dfa",
+      "pcm_sha256": "3fe082173119c71b92fc5c05c66309f012f6a3f1c8b3ec90eff83f3529603d32",
+      "sony_pcm_sha256": "3fe082173119c71b92fc5c05c66309f012f6a3f1c8b3ec90eff83f3529603d32",
+      "exact": true
+    },
+    {
+      "id": "independent--aalp-160--boundary-2048",
+      "family": "independent-0.2",
+      "source_frames": 2048,
+      "input_sha256": "a6ccb7cd83c178f212850895f406f0b0471b050961959db88709a7943f660cc9",
+      "pcm_sha256": "853e979ade861c965578f336af9307bf0852c86c6867aabd5b3dfe571d24db5f",
+      "sony_pcm_sha256": "853e979ade861c965578f336af9307bf0852c86c6867aabd5b3dfe571d24db5f",
+      "exact": true
+    },
+    {
+      "id": "independent--aalp-160--boundary-2049",
+      "family": "independent-0.2",
+      "source_frames": 2049,
+      "input_sha256": "2e0931182ff7279ab7b660cfa5611848a42a9cbec9a346d6985e78936c332a78",
+      "pcm_sha256": "45ba0a9024100f49f118567121f9eb0105a8c2fa8074ec2276aae17e1d650cfd",
+      "sony_pcm_sha256": "45ba0a9024100f49f118567121f9eb0105a8c2fa8074ec2276aae17e1d650cfd",
+      "exact": true
+    },
+    {
+      "id": "independent--aalp-160--boundary-44117",
+      "family": "independent-0.2",
+      "source_frames": 44117,
+      "input_sha256": "937487afd19646b2017f15bf336d89e3b03c44a3239b2a54e53dbf36113c6d40",
+      "pcm_sha256": "cc2ee999352978c149941fff7c824745a023b40155702dd350c7a7d7b504afaf",
+      "sony_pcm_sha256": "cc2ee999352978c149941fff7c824745a023b40155702dd350c7a7d7b504afaf",
+      "exact": true
+    },
+    {
+      "id": "independent--aalp-192--boundary-1",
+      "family": "independent-0.2",
+      "source_frames": 1,
+      "input_sha256": "fa8ac21e128844355d3d737be03c990055b21369cf248a101653971689513f25",
+      "pcm_sha256": "3fe082173119c71b92fc5c05c66309f012f6a3f1c8b3ec90eff83f3529603d32",
+      "sony_pcm_sha256": "3fe082173119c71b92fc5c05c66309f012f6a3f1c8b3ec90eff83f3529603d32",
+      "exact": true
+    },
+    {
+      "id": "independent--aalp-192--boundary-2048",
+      "family": "independent-0.2",
+      "source_frames": 2048,
+      "input_sha256": "1772611142f0267f663b95088d8f7b1357df6ed26756e15303b5346e9a92d1f6",
+      "pcm_sha256": "853e979ade861c965578f336af9307bf0852c86c6867aabd5b3dfe571d24db5f",
+      "sony_pcm_sha256": "853e979ade861c965578f336af9307bf0852c86c6867aabd5b3dfe571d24db5f",
+      "exact": true
+    },
+    {
+      "id": "independent--aalp-192--boundary-2049",
+      "family": "independent-0.2",
+      "source_frames": 2049,
+      "input_sha256": "73aff4f4fc5231d7e2495c9637bb73b42cae48627720d910df0a08a5de71bfc1",
+      "pcm_sha256": "45ba0a9024100f49f118567121f9eb0105a8c2fa8074ec2276aae17e1d650cfd",
+      "sony_pcm_sha256": "45ba0a9024100f49f118567121f9eb0105a8c2fa8074ec2276aae17e1d650cfd",
+      "exact": true
+    },
+    {
+      "id": "independent--aalp-192--boundary-44117",
+      "family": "independent-0.2",
+      "source_frames": 44117,
+      "input_sha256": "01f0c239e71915a6341eb6b384a525f80510b01538c28e1da448ca9f7641adb3",
+      "pcm_sha256": "cc2ee999352978c149941fff7c824745a023b40155702dd350c7a7d7b504afaf",
+      "sony_pcm_sha256": "cc2ee999352978c149941fff7c824745a023b40155702dd350c7a7d7b504afaf",
+      "exact": true
+    },
+    {
+      "id": "independent--aalp-256--boundary-1",
+      "family": "independent-0.2",
+      "source_frames": 1,
+      "input_sha256": "ddae224a6d430f18a6c8cd693b07481992d31ff295c2821cd9a1041bf97bc615",
+      "pcm_sha256": "3fe082173119c71b92fc5c05c66309f012f6a3f1c8b3ec90eff83f3529603d32",
+      "sony_pcm_sha256": "3fe082173119c71b92fc5c05c66309f012f6a3f1c8b3ec90eff83f3529603d32",
+      "exact": true
+    },
+    {
+      "id": "independent--aalp-256--boundary-2048",
+      "family": "independent-0.2",
+      "source_frames": 2048,
+      "input_sha256": "d02c0cab3fd2a74afd8aaedee19778d010d6302075b2efc4de3366932bfedc94",
+      "pcm_sha256": "853e979ade861c965578f336af9307bf0852c86c6867aabd5b3dfe571d24db5f",
+      "sony_pcm_sha256": "853e979ade861c965578f336af9307bf0852c86c6867aabd5b3dfe571d24db5f",
+      "exact": true
+    },
+    {
+      "id": "independent--aalp-256--boundary-2049",
+      "family": "independent-0.2",
+      "source_frames": 2049,
+      "input_sha256": "f16fa79a16ad2069b5078d7204acfda5c157098caa071fe2e82b2c9475963b2d",
+      "pcm_sha256": "45ba0a9024100f49f118567121f9eb0105a8c2fa8074ec2276aae17e1d650cfd",
+      "sony_pcm_sha256": "45ba0a9024100f49f118567121f9eb0105a8c2fa8074ec2276aae17e1d650cfd",
+      "exact": true
+    },
+    {
+      "id": "independent--aalp-256--boundary-44117",
+      "family": "independent-0.2",
+      "source_frames": 44117,
+      "input_sha256": "90ed8a181947efb32b77ba68f56b8d7143c5526128e9165bfff325844e6a4746",
+      "pcm_sha256": "cc2ee999352978c149941fff7c824745a023b40155702dd350c7a7d7b504afaf",
+      "sony_pcm_sha256": "cc2ee999352978c149941fff7c824745a023b40155702dd350c7a7d7b504afaf",
+      "exact": true
+    },
+    {
+      "id": "independent--aalp-320--boundary-1",
+      "family": "independent-0.2",
+      "source_frames": 1,
+      "input_sha256": "4b9b9f508714985c4d3fdb530cd3fc6075b6d178e4c4a654db25a3dcf3613845",
+      "pcm_sha256": "3fe082173119c71b92fc5c05c66309f012f6a3f1c8b3ec90eff83f3529603d32",
+      "sony_pcm_sha256": "3fe082173119c71b92fc5c05c66309f012f6a3f1c8b3ec90eff83f3529603d32",
+      "exact": true
+    },
+    {
+      "id": "independent--aalp-320--boundary-2048",
+      "family": "independent-0.2",
+      "source_frames": 2048,
+      "input_sha256": "ca8c4e2476880daf201c3e80b23578c597326adc81e5b4edf5ba9d4224b0057b",
+      "pcm_sha256": "853e979ade861c965578f336af9307bf0852c86c6867aabd5b3dfe571d24db5f",
+      "sony_pcm_sha256": "853e979ade861c965578f336af9307bf0852c86c6867aabd5b3dfe571d24db5f",
+      "exact": true
+    },
+    {
+      "id": "independent--aalp-320--boundary-2049",
+      "family": "independent-0.2",
+      "source_frames": 2049,
+      "input_sha256": "86f2650738c31f6397358dae502a5570cb264d29a3a8b3b3d5a63da846d69321",
+      "pcm_sha256": "45ba0a9024100f49f118567121f9eb0105a8c2fa8074ec2276aae17e1d650cfd",
+      "sony_pcm_sha256": "45ba0a9024100f49f118567121f9eb0105a8c2fa8074ec2276aae17e1d650cfd",
+      "exact": true
+    },
+    {
+      "id": "independent--aalp-320--boundary-44117",
+      "family": "independent-0.2",
+      "source_frames": 44117,
+      "input_sha256": "8f386927082dfa4411ce65094c7342d93ac10011b198416551d66348b451f6b7",
+      "pcm_sha256": "cc2ee999352978c149941fff7c824745a023b40155702dd350c7a7d7b504afaf",
+      "sony_pcm_sha256": "cc2ee999352978c149941fff7c824745a023b40155702dd350c7a7d7b504afaf",
+      "exact": true
+    }
+  ]
+}

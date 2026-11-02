@@ -12,6 +12,8 @@
 #include <shlobj.h>
 
 #include "encoder_api.hpp"
+#include "decoder_api.hpp"
+#include "gui_jobs.hpp"
 #include "codec_profiles.hpp"
 #include "gui_i18n.hpp"
 
@@ -44,7 +46,7 @@ constexpr COLORREF kMuted = RGB(91, 105, 126);
 
 enum ControlId {
     AddFiles = 101, RemoveFiles, ClearQueue, FileList, OutputFolder,
-    BrowseFolder, StartEncoding, CancelWork, RunSelfTest, OpenFolder, LogBox, ProfileChoice
+    BrowseFolder, StartProcessing, CancelWork, RunSelfTest, OpenFolder, LogBox, ProfileChoice
 };
 enum class RowState { Pending, Working, Done, Failed, Cancelled };
 struct QueueRow {
@@ -130,7 +132,7 @@ void append_log(App& app, const std::wstring& message) {
 std::wstring state_name(RowState state) {
     switch (state) {
     case RowState::Pending: return tr(L"等待");
-    case RowState::Working: return tr(L"编码中");
+    case RowState::Working: return tr(L"处理中");
     case RowState::Done: return tr(L"已完成");
     case RowState::Failed: return tr(L"失败");
     case RowState::Cancelled: return tr(L"已取消");
@@ -180,9 +182,10 @@ uint32_t le32(const unsigned char* p) { return uint32_t(p[0]) | uint32_t(p[1]) <
 std::wstring wave_problem(const fs::path& path) {
     std::error_code ec;
     if (!fs::is_regular_file(path, ec)) return tr(L"不是可读取的音频文件");
+    if (atracdenc_aal_gui::is_decode_input(path)) return {};
     std::wstring extension = path.extension().wstring();
     std::transform(extension.begin(), extension.end(), extension.begin(), [](wchar_t c) { return wchar_t(std::towlower(c)); });
-    if (extension != L".wav") return tr(L"请选择 PCM WAV 文件");
+    if (extension != L".wav") return tr(L"请选择 PCM WAV 或 AAL OMA/AA3 文件");
     std::ifstream input(path, std::ios::binary);
     std::array<unsigned char, 12> riff{};
     if (!input.read(reinterpret_cast<char*>(riff.data()), riff.size())) return tr(L"WAV 文件头不完整");
@@ -242,7 +245,7 @@ void add_paths(App& app, const std::vector<fs::path>& paths) {
         refresh_row(app, size_t(index));
         ++added;
     }
-    if (added) append_log(app, tr(L"已添加 ") + std::to_wstring(added) + tr(L" 个文件。可继续添加或开始编码。"));
+    if (added) append_log(app, tr(L"已添加 ") + std::to_wstring(added) + tr(L" 个文件。可继续添加或开始转换。"));
     else if (skipped && paths.size() == 1) SetWindowTextW(app.phase, tr(L"文件未加入队列，请查看下方日志"));
     update_controls(app);
 }
@@ -252,10 +255,10 @@ void pick_files(App& app) {
     OPENFILENAMEW dialog{};
     dialog.lStructSize = sizeof dialog;
     dialog.hwndOwner = app.window;
-    dialog.lpstrFilter = tr(L"PCM WAV 音频 (*.wav)\0*.wav\0所有文件 (*.*)\0*.*\0\0");
+    dialog.lpstrFilter = tr(L"WAV / AAL 音频\0*.wav;*.oma;*.aa3\0所有文件 (*.*)\0*.*\0\0");
     dialog.lpstrFile = names.data();
     dialog.nMaxFile = DWORD(names.size());
-    dialog.lpstrTitle = tr(L"添加 44.1 kHz / 16 位 / 双声道 PCM WAV");
+    dialog.lpstrTitle = tr(L"添加 PCM WAV 或 AAL OMA/AA3");
     dialog.Flags = OFN_EXPLORER | OFN_ALLOWMULTISELECT | OFN_FILEMUSTEXIST | OFN_PATHMUSTEXIST | OFN_NOCHANGEDIR;
     if (!GetOpenFileNameW(&dialog)) {
         if (CommDlgExtendedError() == FNERR_BUFFERTOOSMALL)
@@ -280,7 +283,7 @@ void pick_output(App& app) {
     std::wstring initial = control_text(app.output);
     BROWSEINFOW dialog{};
     dialog.hwndOwner = app.window;
-    dialog.lpszTitle = tr(L"选择 AAL 文件和校验报告的保存文件夹");
+    dialog.lpszTitle = tr(L"选择转换结果的保存文件夹");
     dialog.ulFlags = BIF_RETURNONLYFSDIRS | BIF_NEWDIALOGSTYLE | BIF_EDITBOX;
     dialog.lpfn = browse_callback;
     dialog.lParam = reinterpret_cast<LPARAM>(initial.c_str());
@@ -314,7 +317,7 @@ fs::path vacant_output(const fs::path& folder, const fs::path& input) {
     std::wstring stem = input.stem().wstring();
     if (stem.empty()) stem = tr(L"音频");
     for (unsigned suffix = 1; suffix < 1000000; ++suffix) {
-        fs::path output = folder / (stem + (suffix == 1 ? L"" : L" (" + std::to_wstring(suffix) + L")") + L".oma");
+        fs::path output = folder / (stem + (suffix == 1 ? L"" : L" (" + std::to_wstring(suffix) + L")") + atracdenc_aal_gui::output_extension(input));
         fs::path report = output;
         report += L".json";
         if (!fs::exists(output) && !fs::exists(report)) return output;
@@ -353,11 +356,11 @@ void begin_work(App& app, bool test_only) {
     }
     app.cancelled.store(false);
     app.busy = true;
-    SetWindowTextW(app.phase, test_only ? tr(L"正在进行内置自检…") : tr(L"正在准备编码…"));
+    SetWindowTextW(app.phase, test_only ? tr(L"正在进行内置自检…") : tr(L"正在准备转换…"));
     SetWindowTextW(app.percent, L"0%");
     SendMessageW(app.progress, PBM_SETPOS, 0, 0);
-    append_log(app, test_only ? tr(L"开始内置自检：检查独立编码、解码与 PCM 一致性。") : tr(L"开始编码。每个文件都会完成无损一致性校验后保存。"));
-    append_log(app,tr(L"本次核心配置：")+widen(options.profile_id));
+    append_log(app, test_only ? tr(L"开始内置自检：检查独立编码、解码与 PCM 一致性。") : tr(L"开始转换：WAV 编码为 AAL，OMA/AA3 解码为 WAV。"));
+    append_log(app,tr(L"本次编码核心配置：")+widen(options.profile_id));
     update_controls(app);
     HWND window = app.window;
     try {
@@ -388,10 +391,18 @@ void begin_work(App& app, bool test_only) {
                         const fs::path output = vacant_output(folder, job.input);
                         post_event(window, {EventKind::StartFile, job.row, 0,
                             tr(L"正在处理 ") + std::to_wstring(position + 1) + L" / " + std::to_wstring(jobs.size()) + tr(L"：") + job.input.filename().wstring(), output});
-                        const auto result = independent_aal::encode_file(job.input, output, progress_for(job.row), &app.cancelled,options);
-                        post_event(window, {EventKind::FileDone, job.row, 100,
-                            tr(L"完成：") + job.input.filename().wstring() + L" → " + result.output_path.filename().wstring() +
-                            (result.verified ? tr(L"（无损校验通过，") : tr(L"（")) + megabytes(result.output_bytes) + tr(L"）"), result.output_path});
+                        if (atracdenc_aal_gui::is_decode_input(job.input)) {
+                            const auto result = independent_aal::decode_file(job.input, output, progress_for(job.row), &app.cancelled);
+                            post_event(window, {EventKind::FileDone, job.row, 100,
+                                tr(L"完成：") + job.input.filename().wstring() + L" → " + result.output_path.filename().wstring() +
+                                tr(L"（解码完成，") + megabytes(result.output_bytes) + tr(L"）"), result.output_path});
+                            post_event(window, {EventKind::Log, job.row, 100, L"PCM SHA-256: " + widen(result.pcm_sha256)});
+                        } else {
+                            const auto result = independent_aal::encode_file(job.input, output, progress_for(job.row), &app.cancelled,options);
+                            post_event(window, {EventKind::FileDone, job.row, 100,
+                                tr(L"完成：") + job.input.filename().wstring() + L" → " + result.output_path.filename().wstring() +
+                                (result.verified ? tr(L"（无损校验通过，") : tr(L"（")) + megabytes(result.output_bytes) + tr(L"）"), result.output_path});
+                        }
                         ++completed;
                     } catch (const std::exception& error) {
                         if (app.cancelled.load() || std::string(error.what()) == "Cancelled") {
@@ -401,14 +412,14 @@ void begin_work(App& app, bool test_only) {
                         }
                         ++failed;
                         post_event(window, {EventKind::FileError, job.row, 0,
-                            tr(L"编码失败：") + job.input.filename().wstring() + L" — " + widen(error.what())});
+                            tr(L"转换失败：") + job.input.filename().wstring() + L" — " + widen(error.what())});
                     }
                 }
             } catch (const std::exception& error) {
                 if (!app.cancelled.load() && std::string(error.what()) != "Cancelled") {
                     ++failed;
                     post_event(window, {EventKind::Log, size_t(-1), 0,
-                        std::wstring(test_only ? tr(L"自检失败：") : tr(L"无法开始编码：")) + widen(error.what())});
+                        std::wstring(test_only ? tr(L"自检失败：") : tr(L"无法开始转换：")) + widen(error.what())});
                 } else app.cancelled.store(true);
             } catch (...) {
                 ++failed;
@@ -573,9 +584,9 @@ void initialize(App& app) {
     app.background = CreateSolidBrush(kBackground);
     app.dpi = window_dpi(app.window);
     app.title = make_control(app, L"STATIC", L"AtracDEnc-AAL", SS_LEFT);
-    app.subtitle = make_control(app, L"STATIC", tr(L"简易测试图形界面  ·  基于 AtracDEnc 的 AAL 编码器"), SS_LEFT);
-    app.note = make_control(app, L"STATIC", tr(L"输入要求：44.1 kHz / 16-bit / 双声道 PCM WAV。编码完成前自动逐样本校验。"), SS_LEFT);
-    app.add = make_control(app, L"BUTTON", tr(L"添加 WAV(&A)…"), BS_PUSHBUTTON | WS_TABSTOP, AddFiles);
+    app.subtitle = make_control(app, L"STATIC", tr(L"简易测试图形界面  ·  基于 AtracDEnc 的 AAL 编解码器"), SS_LEFT);
+    app.note = make_control(app, L"STATIC", tr(L"PCM WAV → AAL；AAL → WAV。44.1 kHz / 16-bit / 双声道，解码自动识别配置。"), SS_LEFT);
+    app.add = make_control(app, L"BUTTON", tr(L"添加音频(&A)…"), BS_PUSHBUTTON | WS_TABSTOP, AddFiles);
     app.remove = make_control(app, L"BUTTON", tr(L"移除选中"), BS_PUSHBUTTON | WS_TABSTOP, RemoveFiles);
     app.clear = make_control(app, L"BUTTON", tr(L"清空队列"), BS_PUSHBUTTON | WS_TABSTOP, ClearQueue);
     app.drop_hint = make_control(app, L"STATIC", tr(L"编码核心"), SS_LEFT);
@@ -599,16 +610,16 @@ void initialize(App& app) {
         column.pszText = const_cast<wchar_t*>(headings[i]);
         ListView_InsertColumn(app.list, i, &column);
     }
-    app.output_label = make_control(app, L"STATIC", tr(L"输出文件夹（重名自动加序号，同时保存校验报告）"), SS_LEFT);
+    app.output_label = make_control(app, L"STATIC", tr(L"输出文件夹（重名自动加序号；编码时保存校验报告）"), SS_LEFT);
     app.output = make_control(app, L"EDIT", L"", ES_AUTOHSCROLL | WS_TABSTOP, OutputFolder, WS_EX_CLIENTEDGE);
     SendMessageW(app.output, EM_SETLIMITTEXT, 30000, 0);
     app.browse = make_control(app, L"BUTTON", tr(L"选择文件夹…"), BS_PUSHBUTTON | WS_TABSTOP, BrowseFolder);
-    app.phase = make_control(app, L"STATIC", tr(L"准备就绪：添加 44.1 kHz、16 位、双声道 PCM WAV"), SS_LEFT | SS_ENDELLIPSIS);
+    app.phase = make_control(app, L"STATIC", tr(L"准备就绪：添加 PCM WAV 或 AAL OMA/AA3"), SS_LEFT | SS_ENDELLIPSIS);
     app.percent = make_control(app, L"STATIC", L"0%", SS_RIGHT);
     app.progress = make_control(app, PROGRESS_CLASSW, L"", PBS_SMOOTH);
     SendMessageW(app.progress, PBM_SETRANGE32, 0, 100);
     SendMessageW(app.progress, PBM_SETBARCOLOR, 0, RGB(35,103,206));
-    app.start = make_control(app, L"BUTTON", tr(L"开始编码(&S)"), BS_DEFPUSHBUTTON | WS_TABSTOP, StartEncoding);
+    app.start = make_control(app, L"BUTTON", tr(L"开始转换(&S)"), BS_DEFPUSHBUTTON | WS_TABSTOP, StartProcessing);
     app.cancel = make_control(app, L"BUTTON", tr(L"取消"), BS_PUSHBUTTON | WS_TABSTOP, CancelWork);
     app.self_test = make_control(app, L"BUTTON", tr(L"内置自检"), BS_PUSHBUTTON | WS_TABSTOP, RunSelfTest);
     app.open = make_control(app, L"BUTTON", tr(L"打开输出文件夹"), BS_PUSHBUTTON | WS_TABSTOP, OpenFolder);
@@ -616,7 +627,7 @@ void initialize(App& app) {
     app.log_label = make_control(app, L"STATIC", tr(L"处理日志"), SS_LEFT);
     app.log = make_control(app, L"EDIT", L"", ES_MULTILINE | ES_READONLY | ES_AUTOVSCROLL | WS_VSCROLL | WS_TABSTOP, LogBox, WS_EX_CLIENTEDGE);
     SendMessageW(app.log, EM_SETLIMITTEXT, 500000, 0);
-    app.footer = make_control(app, L"STATIC", tr(L"实验版 0.2.0  ·  Sony X1050 / X1060 等老款 Walkman 的实机兼容性待验证"), SS_LEFT);
+    app.footer = make_control(app, L"STATIC", tr(L"实验版 0.3.0  ·  Sony X1050 / X1060 等老款 Walkman 的实机兼容性待验证"), SS_LEFT);
     wchar_t executable[32768];
     DWORD length = GetModuleFileNameW(nullptr, executable, DWORD(std::size(executable)));
     fs::path program = length && length < std::size(executable) ? fs::path(std::wstring(executable,length)).parent_path() : fs::current_path();
@@ -670,7 +681,7 @@ LRESULT CALLBACK window_proc(HWND window, UINT message, WPARAM wparam, LPARAM lp
                 if (HIWORD(wparam) == EN_CHANGE && !app->setting_output) app->output_chosen = true;
                 return 0;
             case IDOK:
-            case StartEncoding: begin_work(*app,false); return 0;
+            case StartProcessing: begin_work(*app,false); return 0;
             case RunSelfTest: begin_work(*app,true); return 0;
             case IDCANCEL:
             case CancelWork:
@@ -684,7 +695,7 @@ LRESULT CALLBACK window_proc(HWND window, UINT message, WPARAM wparam, LPARAM lp
                 fs::path folder(control_text(app->output));
                 std::error_code error;
                 if (fs::is_directory(folder,error)) ShellExecuteW(window,L"open",folder.c_str(),nullptr,nullptr,SW_SHOWNORMAL);
-                else append_log(*app,tr(L"输出文件夹尚未创建，开始编码后将自动建立。"));
+                else append_log(*app,tr(L"输出文件夹尚未创建，开始转换后将自动建立。"));
                 return 0;
             }
             }
@@ -802,7 +813,7 @@ int WINAPI wWinMain(HINSTANCE instance, HINSTANCE, PWSTR, int show) {
     HDC dc = GetDC(nullptr);
     app.dpi = dc ? unsigned(GetDeviceCaps(dc,LOGPIXELSX)) : 96;
     if (dc) ReleaseDC(nullptr,dc);
-    HWND window = CreateWindowExW(WS_EX_CONTROLPARENT,kClassName,tr(L"AtracDEnc-AAL · 简易测试图形界面 0.2.0"),
+    HWND window = CreateWindowExW(WS_EX_CONTROLPARENT,kClassName,tr(L"AtracDEnc-AAL · 简易测试图形界面 0.3.0"),
         WS_OVERLAPPEDWINDOW|WS_CLIPCHILDREN,CW_USEDEFAULT,CW_USEDEFAULT,
         px(app,1040),px(app,820),nullptr,nullptr,instance,&app);
     if (!window) {

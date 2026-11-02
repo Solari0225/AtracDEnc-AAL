@@ -25,3 +25,11 @@ Windows: powershell -File build.ps1 -Zig C:\tools\zig\zig.exe
          .\bin\aal-c-api-test.exe
          .\bin\atracdenc-aal.exe --self-test-all
 Both builds also produce the encoder CLI and static library.
+
+decoder-vectors.bin: complete independently decoded original AAL and varied
+synthetic core syntax, with exact reference signed16LE stereo PCM.
+Format: AALDV001, LE32 count. Each record: LE32 nameBytes,omaBytes,pcmBytes;
+UTF-8 name; complete unencrypted OMA (metadata removed); reference PCM.
+See decoder-vectors.json for cases, lengths, hashes and reference scope.
+Run aal-decoder-test tests/decoder-vectors.bin (add .exe on Windows).
+The decoder tests also cover ownership, C ABI, cancellation and malformed data.

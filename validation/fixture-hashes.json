@@ -6,5 +6,9 @@
   "plus-enhancement-vectors.bin": {
     "bytes": 16918876,
     "sha256": "8617e72a72e7b2cebdf3896b8b4360a759d01a24d7dfd3db94f2653303d6c55a"
+  },
+  "decoder-vectors.bin": {
+    "bytes": 3798959,
+    "sha256": "9a215d7524a67351de7c771e57f67b604d38a47ae47c30a0ca8a7c40098ef059"
   }
 }

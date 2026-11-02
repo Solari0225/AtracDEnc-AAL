@@ -1,8 +1,8 @@
 # 构建与验证 / Building and testing
 
-从项目根目录构建，所需 AtracDEnc 源码已经随仓库提供。运行编码器不需要安装音频组件。
+从项目根目录构建，所需 AtracDEnc 源码已经随仓库提供。运行编解码器不需要安装音频组件。
 
-Build from this repository's root. The required AtracDEnc source is vendored. No external audio component is required to run the encoder.
+Build from this repository's root. The required AtracDEnc source is vendored. No external audio component is required to run the encoder/decoder.
 
 ## Windows x64
 
@@ -36,6 +36,7 @@ bash build.sh
 ./bin/aal-conformance tests/plus-enhancement-vectors.bin
 ./bin/aal-c-api-test
 ./bin/aal-gui-i18n-test
+./bin/aal-decoder-test tests/decoder-vectors.bin
 ```
 
 可通过 `CC` / `CXX` 指定编译器，或向脚本追加编译选项，例如 `bash build.sh -arch arm64`。脚本为当前选定架构生成程序及 `bin/libatracdenc_aal.a`。
@@ -54,9 +55,9 @@ cmake --build build/cmake --config Release --parallel
 ctest --test-dir build/cmake -C Release --output-on-failure
 ```
 
-使用 `-DAAL_BUILD_GUI=ON` 启用 Windows GUI；核心库 CMake 目标保留为 `independent_aal`，同时提供 `AtracDEncAAL::encoder` 别名，输出库名为 `atracdenc_aal`。
+使用 `-DAAL_BUILD_GUI=ON` 启用 Windows GUI；核心库 CMake 目标保留为 `independent_aal`，同时提供 `AtracDEncAAL::encoder` 和 `AtracDEncAAL::decoder` 别名，输出库名为 `atracdenc_aal`。
 
-`-DAAL_BUILD_GUI=ON` enables the Windows GUI. The library target retains `independent_aal`, also available as `AtracDEncAAL::encoder`, with the output name `atracdenc_aal`.
+`-DAAL_BUILD_GUI=ON` enables the Windows GUI. The library target retains `independent_aal`, also available as `AtracDEncAAL::encoder` and `AtracDEncAAL::decoder`, with the output name `atracdenc_aal`.
 
 ## macOS 交叉编译 / macOS cross-compilation
 

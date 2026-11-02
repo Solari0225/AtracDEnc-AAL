@@ -40,6 +40,25 @@ aal_status aal_encode_cd16_profile(const int16_t* pcm,size_t sample_frames,
                                   aal_progress progress,void* context,
                                   char* error_utf8,size_t error_capacity);
 void aal_free(aal_buffer* buffer);
+
+typedef struct aal_pcm_buffer {
+    int16_t* data;           /* Interleaved L/R, sample_frames * 2 samples. */
+    size_t sample_frames;
+    uint32_t sample_rate;
+    uint32_t channels;
+    uint32_t bits_per_sample;
+    char profile_id[16];
+    char pcm_sha256[65];
+} aal_pcm_buffer;
+/* Decode unencrypted CD-format AAL3/AALP from a complete OMA/AA3 buffer.
+   Profile detection is automatic. Both input and decoded PCM are limited to
+   1 GiB. Output must initially be zeroed; on success free with aal_pcm_free.
+   Ordinary lossy ATRAC and encrypted OMA are not supported by this entry.
+   Existing encoder ABI and aal_free remain unchanged. */
+aal_status aal_decode_cd16(const uint8_t* oma,size_t oma_bytes,aal_pcm_buffer* output,
+                          aal_progress progress,void* context,
+                          char* error_utf8,size_t error_capacity);
+void aal_pcm_free(aal_pcm_buffer* buffer);
 #ifdef __cplusplus
 }
 #endif

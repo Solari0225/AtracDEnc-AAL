@@ -1,0 +1,125 @@
+{
+  "scope": "Independently reconstructed AAL integer predictors and physical core readers. No Sony machine code or runtime is copied.",
+  "files": [
+    {
+      "research_source": "aal_original/original_core_reader.hpp",
+      "source_sha256": "6fc7abeaaa88b589ca65fc0f4af2dd7cd15f7d42f76eb40ea80e7b8538c843ae",
+      "repository_path": "core/decode/aal3/core_reader.hpp",
+      "repository_sha256": "60bdce9dce54e9aba4f8375fa8405f7c815afeb038bf468b5882c289b6e07831"
+    },
+    {
+      "research_source": "aal_original/original_fixed_predictor.hpp",
+      "source_sha256": "200c0fe4cfe3a3de6114413c14325d5a47fabe572053a40276b6bf2e13660423",
+      "repository_path": "core/decode/aal3/fixed_predictor.hpp",
+      "repository_sha256": "74c53fdbaf6fcdbba0af81541ec3b4f4d479f5412709bbc74456cca2df6f5a6e"
+    },
+    {
+      "research_source": "aal_original/recovered_integer_gain.h",
+      "source_sha256": "cf3d98d41684ef9a001c95259eba982be7e0087e2a0c29194d00cf5c9b8cc74c",
+      "repository_path": "core/decode/aal3/integer_gain.h",
+      "repository_sha256": "cf3d98d41684ef9a001c95259eba982be7e0087e2a0c29194d00cf5c9b8cc74c"
+    },
+    {
+      "research_source": "aal_original/recovered_integer_gain.c",
+      "source_sha256": "93106d4871b366bc53853f31240b93fdb71b4142d970aed39af94d5bc160bd5f",
+      "repository_path": "core/decode/aal3/aal3_integer_gain.cpp",
+      "repository_sha256": "096ae86423aee45cac65d38750bb7af71b516e308d3ee095ff0950b435cf54d8"
+    },
+    {
+      "research_source": "spectrum/spectrum_tables.inc",
+      "source_sha256": "1e7817ec4fd1aae2906af555bb8dcdb77dd4a22a020e28e1a6d74e13f053f1b2",
+      "repository_path": "core/decode/tables/atrac3_spectrum.inc",
+      "repository_sha256": "1e7817ec4fd1aae2906af555bb8dcdb77dd4a22a020e28e1a6d74e13f053f1b2"
+    },
+    {
+      "research_source": "sideinfo/tonal_codebooks.inc",
+      "source_sha256": "3039ad53e4668734280432cdccf47d39eda1fa28ae9ece87d33fb946ae136581",
+      "repository_path": "core/decode/tables/atrac3_tones.inc",
+      "repository_sha256": "3039ad53e4668734280432cdccf47d39eda1fa28ae9ece87d33fb946ae136581"
+    },
+    {
+      "research_source": "aalp_original/original_aalp_reader.cpp",
+      "source_sha256": "253478f6c80e63c564aff451ec768cf3b3609867fc8e12b9551905ce2d96afee",
+      "repository_path": "core/decode/aalp/core_reader.cpp",
+      "repository_sha256": "ae4b80356b3524ed98639b6be18032d14568cf7b1546e467b6feda211c81a8d4"
+    },
+    {
+      "research_source": "aalp_original/original_aalp_reader.h",
+      "source_sha256": "ea3c1caa6fb6a4d254151ab588e923ea8a656b60c134c29a13b7d337dfa5ad25",
+      "repository_path": "core/decode/aalp/core_reader.h",
+      "repository_sha256": "7cffd573f9ca05cf8bf48e270e4ffbb8238b26d26b83d06fe54763fc5fcb92ab"
+    },
+    {
+      "research_source": "aalp_original/original_aalp_predictor.cpp",
+      "source_sha256": "9dc929f14fce0b2c65e62d86b7d7dcfbc1ba5529840173a30b8e3fb45808f056",
+      "repository_path": "core/decode/aalp/fixed_predictor.cpp",
+      "repository_sha256": "1d20dd5ceb1121f810afe42a4541bf9fa48d5781a3e38d9e6bbbf332ceba18af"
+    },
+    {
+      "research_source": "aalp_original/original_aalp_predictor.h",
+      "source_sha256": "32a53c8373146468a2a78f9af3b68b6f30164b2a36f16d850311dd7985ed923d",
+      "repository_path": "core/decode/aalp/fixed_predictor.h",
+      "repository_sha256": "d37777e9e84c53d7f37579f0b52348a4e6ce35d279d24f968e228975f6339589"
+    },
+    {
+      "research_source": "aalp_original/recovered_aalp_gain.c",
+      "source_sha256": "56a1d0e11199c15df4e641f3d15657d3ace316009d0faf9f64312f007a37ecad",
+      "repository_path": "core/decode/aalp/aalp_integer_gain.cpp",
+      "repository_sha256": "a835bfabdb314ff7b70b4348bda546f277f069854dd7146f09ee7d45f0a1d80b"
+    },
+    {
+      "research_source": "aalp_original/recovered_aalp_gain.h",
+      "source_sha256": "8686d210853199ec2a0bbab517289fbf60eebfa9dcd365f75e3557b6fb0ff300",
+      "repository_path": "core/decode/aalp/integer_gain.h",
+      "repository_sha256": "8686d210853199ec2a0bbab517289fbf60eebfa9dcd365f75e3557b6fb0ff300"
+    },
+    {
+      "research_source": "aalp_original/reader_math.inc",
+      "source_sha256": "f5211a436697283e501c4dc9183c792091337738d79248adf38d0aa3d73af54c",
+      "repository_path": "core/decode/aalp/reader_math.inc",
+      "repository_sha256": "f5211a436697283e501c4dc9183c792091337738d79248adf38d0aa3d73af54c"
+    },
+    {
+      "research_source": "aalp_original/gain_math.inc",
+      "source_sha256": "59ddf69099c168a4661baeb6aed6bd62b44bb2c7d8bc688075e61133ab1b3be1",
+      "repository_path": "core/decode/aalp/gain_math.inc",
+      "repository_sha256": "59ddf69099c168a4661baeb6aed6bd62b44bb2c7d8bc688075e61133ab1b3be1"
+    },
+    {
+      "research_source": "plus_fields/quant_huffman.inc",
+      "source_sha256": "18cc41cd56f4d5ca61d7758e0ddc1a70160c3835763ceea1f080bbd4b1006c46",
+      "repository_path": "core/decode/tables/quant_huffman.inc",
+      "repository_sha256": "18cc41cd56f4d5ca61d7758e0ddc1a70160c3835763ceea1f080bbd4b1006c46"
+    },
+    {
+      "research_source": "plus_fields/code_table_huffman.inc",
+      "source_sha256": "cd94bd6cda22669dae9645b5d6a3113b5324bead6b98def3f13934a1927caf7f",
+      "repository_path": "core/decode/tables/code_table_huffman.inc",
+      "repository_sha256": "cd94bd6cda22669dae9645b5d6a3113b5324bead6b98def3f13934a1927caf7f"
+    },
+    {
+      "research_source": "plus_fields/gain_huffman.inc",
+      "source_sha256": "ed9fe1b4c2763699fb03ec49f57c491b61655eb164fe6225fbd043c3a792c5ee",
+      "repository_path": "core/decode/tables/gain_huffman.inc",
+      "repository_sha256": "ed9fe1b4c2763699fb03ec49f57c491b61655eb164fe6225fbd043c3a792c5ee"
+    },
+    {
+      "research_source": "plus_fields/gain_location_huffman.inc",
+      "source_sha256": "274db0f651fb974938db08021a699a938297f9b14733640935cfdbf52d9b4ebb",
+      "repository_path": "core/decode/tables/gain_location_huffman.inc",
+      "repository_sha256": "274db0f651fb974938db08021a699a938297f9b14733640935cfdbf52d9b4ebb"
+    },
+    {
+      "research_source": "plus_fields/tone_math.inc",
+      "source_sha256": "4e949cc1f4dd574159e888a3a2c30ed457e966a0d118adb7e093b9e6d237e371",
+      "repository_path": "core/decode/tables/tone_math.inc",
+      "repository_sha256": "4e949cc1f4dd574159e888a3a2c30ed457e966a0d118adb7e093b9e6d237e371"
+    },
+    {
+      "research_source": "plus_fields/spectrum_math.inc",
+      "source_sha256": "84da27deb6709fb67ba1fc8b821edce4e20c5c5c2b411c8f5388cadcab815126",
+      "repository_path": "core/decode/tables/spectrum_math.inc",
+      "repository_sha256": "84da27deb6709fb67ba1fc8b821edce4e20c5c5c2b411c8f5388cadcab815126"
+    }
+  ]
+}

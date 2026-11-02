@@ -1,18 +1,18 @@
 # AtracDEnc-AAL
 
-**AtracDEnc-AAL 是基于 [AtracDEnc](https://github.com/dcherednik/atracdenc) 项目开发的 ATRAC Advanced Lossless（AAL）编码器。**
+**AtracDEnc-AAL 是基于 [AtracDEnc](https://github.com/dcherednik/atracdenc) 项目开发的 ATRAC Advanced Lossless（AAL）编解码器。**
 
-**AtracDEnc-AAL is an ATRAC Advanced Lossless (AAL) encoder built on the [AtracDEnc](https://github.com/dcherednik/atracdenc) project.**
+**AtracDEnc-AAL is an ATRAC Advanced Lossless (AAL) encoder/decoder built on the [AtracDEnc](https://github.com/dcherednik/atracdenc) project.**
 
-提供独立命令行、C 接口与简易 Windows 测试界面，目标平台为 Windows 和 macOS。当前版本：**0.2.0，实验版**。
+提供独立命令行、C 接口与简易 Windows 测试界面，目标平台为 Windows 和 macOS。当前版本：**0.3.0，实验版**。
 
-A standalone CLI, C API and small Windows test GUI for Windows and macOS. Current version: **0.2.0, experimental**.
+A standalone CLI, C API and small Windows test GUI for Windows and macOS. Current version: **0.3.0, experimental**.
 
 ## 项目说明 / About
 
-本项目使用 AtracDEnc 的 ATRAC3 / ATRAC3plus 兼容编码实现，并在此基础上增加 AAL3 / AALP 封装、确定性整数预测、无损增强层、位流自校验和应用集成接口。上游归属、引用代码与修改范围见 [UPSTREAM.md](UPSTREAM.md) 和 [第三方声明](THIRD-PARTY-NOTICES.txt)。
+本项目使用 AtracDEnc 的 ATRAC3 / ATRAC3plus 兼容编码实现，并在此基础上增加 AAL3 / AALP 封装、确定性整数预测、无损增强层、位流自校验、独立 AAL 解码和应用集成接口。上游归属、引用代码与修改范围见 [UPSTREAM.md](UPSTREAM.md) 和 [第三方声明](THIRD-PARTY-NOTICES.txt)。
 
-This project uses AtracDEnc's compatible ATRAC3 / ATRAC3plus encoding implementations and adds AAL3 / AALP framing, deterministic integer prediction, lossless enhancement coding, bitstream verification and application integration. See [UPSTREAM.md](UPSTREAM.md) and [third-party notices](THIRD-PARTY-NOTICES.txt) for attribution and the modification scope.
+This project uses AtracDEnc's compatible ATRAC3 / ATRAC3plus encoding implementations and adds AAL3 / AALP framing, deterministic integer prediction, lossless enhancement coding, bitstream verification, independent AAL decoding and application integration. See [UPSTREAM.md](UPSTREAM.md) and [third-party notices](THIRD-PARTY-NOTICES.txt) for attribution and the modification scope.
 
 运行时不需要安装或调用 Sony SMLE、TraConv、Sony 编解码 DLL、FFmpeg 或 .NET。Sony 软件仅用作开发阶段的外部验证参考，不包含在项目或发行包中。本项目不由 Sony 开发或背书。
 
@@ -42,7 +42,9 @@ All ten configurations were individually confirmed against the Sony SMLE 7.1 enc
 - 输入 / Input：**44,100 Hz、16-bit、双声道整数 PCM RIFF/WAV**；文件上限 / maximum input file size：**1 GiB**。
 - 输出 / Output：未加密的 **OMA / AAL3 或 AALP**，以及包含配置、PCM / OMA SHA-256 和校验结果的 JSON 报告。Unencrypted **OMA / AAL3 or AALP**, plus a JSON report with profile, PCM / OMA SHA-256 and verification results.
 - 编码器在保存前重新读取实际输出位流，逐样本核对 PCM；不覆盖已有输出。The encoder rereads its emitted bitstream and checks every PCM sample before saving; existing outputs are never overwritten.
-- 当前不包含重采样、位深转换、DRM、播放器传输或独立解码命令。Resampling, bit-depth conversion, DRM, device transfer and a standalone decode command are not included.
+- 解码 / Decoding：通过 `--decode` 将官方或本项目生成的未加密 AAL OMA/AA3 还原为 **44.1 kHz / 16-bit / 双声道 PCM WAV**，自动识别全部十档，输出 PCM SHA-256。Decode official or independently encoded unencrypted AAL to PCM WAV, with automatic detection of all ten profiles and a PCM SHA-256.
+- 解码输入和输出 PCM 各自上限为 **1 GiB**，精确保留源采样长度。Decoded input and output PCM are each limited to **1 GiB**, preserving exact source length.
+- 当前不包含重采样、位深转换、DRM、普通有损 ATRAC 解码或播放器传输。Resampling, bit-depth conversion, DRM, ordinary lossy ATRAC decoding and device transfer are not included.
 
 ## 快速开始 / Quick start
 
@@ -55,6 +57,7 @@ Windows：
 .\atracdenc-aal.exe --self-test-all
 .\atracdenc-aal.exe --profile aalp-352 "input.wav" "output.oma"
 .\atracdenc-aal.exe --profile aal3-132 "input.wav" "output.oma"
+.\atracdenc-aal.exe --decode "input.oma" "decoded.wav"
 ```
 
 macOS：
@@ -63,15 +66,16 @@ macOS：
 chmod +x atracdenc-aal
 ./atracdenc-aal --self-test-all
 ./atracdenc-aal --profile aalp-352 "input.wav" "output.oma"
+./atracdenc-aal --decode "input.oma" "decoded.wav"
 ```
 
-不指定配置时使用 `aalp-352`。也可使用 `--codec aalp --bitrate 352`；`352000` 同样有效。`--profile` 不与 `--codec` / `--bitrate` 混用。`Ctrl+C` 可取消命令行编码。
+不指定配置时使用 `aalp-352`。也可使用 `--codec aalp --bitrate 352`；`352000` 同样有效。`--profile` 不与 `--codec` / `--bitrate` 混用。`Ctrl+C` 可取消编码或解码。解码不使用编码配置选项，详见 [DECODING.md](docs/DECODING.md)。
 
-The default is `aalp-352`. `--codec aalp --bitrate 352` is equivalent; `352000` is also accepted. Do not combine `--profile` with `--codec` / `--bitrate`. Press `Ctrl+C` to cancel CLI encoding.
+The default is `aalp-352`. `--codec aalp --bitrate 352` is equivalent; `352000` is also accepted. Do not combine `--profile` with `--codec` / `--bitrate`. Press `Ctrl+C` to cancel encoding or decoding. Decode mode uses no encoding profile options; see [DECODING.md](docs/DECODING.md).
 
-Windows 的 `AtracDEnc-AAL-GUI.exe` 是**简易测试图形界面**，提供配置选择、文件队列、输出目录、进度和取消操作，直接调用同一编码引擎。启动时按 Windows 首选显示语言在中英文之间自适应，无匹配时回退英文；界面、日志和编码进度均提供中英文本。也可显式选择语言：
+Windows 的 `AtracDEnc-AAL-GUI.exe` 是**简易测试图形界面**，提供配置选择、文件队列、输出目录、进度和取消操作，直接调用同一编解码引擎。加入 WAV 时编码为 AAL，加入 OMA/AA3 时解码为 WAV；解码自动识别配置。启动时按 Windows 首选显示语言在中英文之间自适应，无匹配时回退英文；界面、日志和编码进度均提供中英文本。也可显式选择语言：
 
-On Windows, `AtracDEnc-AAL-GUI.exe` is a **simple test GUI** providing profile selection, a file queue, an output directory, progress and cancellation through the same directly linked engine. At startup it selects Chinese or English from Windows' preferred display languages, falling back to English. Interface text, logs and encoding progress have both translations. An explicit override is also available:
+On Windows, `AtracDEnc-AAL-GUI.exe` is a **simple test GUI** providing profile selection, a file queue, an output directory, progress and cancellation through the same directly linked engine. WAV files encode to AAL; OMA/AA3 files decode to WAV with automatic profile detection. At startup it selects Chinese or English from Windows' preferred display languages, falling back to English. Interface text, logs and encoding progress have both translations. An explicit override is also available:
 
 ```powershell
 .\AtracDEnc-AAL-GUI.exe --lang auto
@@ -95,9 +99,11 @@ Baseline validation covers all ten profiles: 122 positive cases decoded by Sony 
 
 **The lossy core uses AtracDEnc's compatible implementations, whose encoding decisions differ from Sony's. Complete files are not Sony byte-identical, and compression sizes can differ.** Full-file acceptance is exact PCM reconstruction; enhancement byte equality refers to the recorded identical residual inputs.
 
-Windows x64 已执行本地验证。[首次 GitHub CI](https://github.com/Solari0225/AtracDEnc-AAL/actions/runs/41318128062) 也已通过 Windows x64、macOS arm64 和 macOS Intel 的原生构建与完整离线测试。发行附件中的 macOS universal 二进制仍是交叉编译版本，最低 macOS 11；该预构建文件本身尚未在 Mac 上直接执行。NW-X1050 / X1060 的实机播放、跳转和传输数据库尚未验证。详细范围见 [CI 记录](validation/github-ci-2026-11-01.json)。
+0.3.0 解码验收记录见 [decoder-validation.json](validation/decoder-validation.json)；包含官方文件、自制文件和特殊核心语法的逐样本对照。Decoder acceptance includes official files, independent files and varied core syntax; see the linked record.
 
-The [first GitHub CI run](https://github.com/Solari0225/AtracDEnc-AAL/actions/runs/41318128062) passed native builds and all offline tests on Windows x64, macOS arm64 and macOS Intel, in addition to local Windows checks. The macOS universal release asset remains a cross-compiled binary targeting macOS 11 or later; that specific prebuilt file has not been directly executed on a Mac. Physical NW-X1050 / X1060 playback, seeking and transfer remain untested. See the [CI record](validation/github-ci-2026-11-01.json) for the exact scope.
+以下为 0.2.0 的历史验证记录：Windows x64 已执行本地验证。[首次 GitHub CI](https://github.com/Solari0225/AtracDEnc-AAL/actions/runs/41318128062) 也已通过 Windows x64、macOS arm64 和 macOS Intel 的原生构建与完整离线测试。发行附件中的 macOS universal 二进制仍是交叉编译版本，最低 macOS 11；该预构建文件本身尚未在 Mac 上直接执行。NW-X1050 / X1060 的实机播放、跳转和传输数据库尚未验证。详细范围见 [CI 记录](validation/github-ci-2026-11-01.json)。
+
+For the historical 0.2.0 release, the [first GitHub CI run](https://github.com/Solari0225/AtracDEnc-AAL/actions/runs/41318128062) passed native builds and all offline tests on Windows x64, macOS arm64 and macOS Intel, in addition to local Windows checks. The macOS universal release asset remains a cross-compiled binary targeting macOS 11 or later; that specific prebuilt file has not been directly executed on a Mac. Physical NW-X1050 / X1060 playback, seeking and transfer remain untested. See the [CI record](validation/github-ci-2026-11-01.json) for the exact scope.
 
 ## 编译与集成 / Build and integration
 
@@ -125,9 +131,9 @@ Windows，使用 Zig 0.14.1 / Windows with Zig 0.14.1：
 
 A CMake project is also included; see [BUILDING.md](docs/BUILDING.md). Use this project's root build entry points; the upstream audio-I/O frontend is not required.
 
-其他应用可静态链接库，调用 [C 接口](include/independent_aal.h)：`aal_profile_count`、`aal_profile_get`、`aal_encode_cd16_profile`、`aal_encode_cd16` 和 `aal_free`。现有 `aal_*` ABI 及头文件名称保留，默认配置为 `aalp-352`。示例见 [encode_buffer.c](examples/encode_buffer.c)，线程、内存和 CMake 集成说明见 [INTEGRATION.md](docs/INTEGRATION.md)。
+其他应用可静态链接库，调用 [C 接口](include/independent_aal.h)：`aal_profile_count`、`aal_profile_get`、`aal_encode_cd16_profile`、`aal_encode_cd16`、`aal_free`、`aal_decode_cd16` 和 `aal_pcm_free`。现有 `aal_*` ABI 及头文件名称保留，默认配置为 `aalp-352`。示例见 [encode_buffer.c](examples/encode_buffer.c)，线程、内存和 CMake 集成说明见 [INTEGRATION.md](docs/INTEGRATION.md)。
 
-Applications can statically link the library through the [C API](include/independent_aal.h): `aal_profile_count`, `aal_profile_get`, `aal_encode_cd16_profile`, `aal_encode_cd16` and `aal_free`. Existing `aal_*` ABI identifiers and the header name are retained; the default is `aalp-352`. See [encode_buffer.c](examples/encode_buffer.c) and [INTEGRATION.md](docs/INTEGRATION.md).
+Applications can statically link the library through the [C API](include/independent_aal.h): `aal_profile_count`, `aal_profile_get`, `aal_encode_cd16_profile`, `aal_encode_cd16`, `aal_free`, `aal_decode_cd16` and `aal_pcm_free`. Existing `aal_*` ABI identifiers and the header name are retained; the default is `aalp-352`. See [encode_buffer.c](examples/encode_buffer.c) and [INTEGRATION.md](docs/INTEGRATION.md).
 
 ## 许可证与致谢 / License and credits
 
@@ -137,4 +143,4 @@ The project is licensed under **LGPL-2.1-or-later**, matching the AtracDEnc code
 
 感谢 AtracDEnc 项目及其贡献者提供 ATRAC 编码基础。Thank you to the AtracDEnc project and its contributors for the ATRAC encoding foundation.
 
-[更新记录 / Changelog](CHANGELOG.md) · [贡献说明 / Contributing](CONTRIBUTING.md) · [发布说明 / Release notes](docs/releases/v0.2.0.md)
+[更新记录 / Changelog](CHANGELOG.md) · [贡献说明 / Contributing](CONTRIBUTING.md) · [发布说明 / Release notes](docs/releases/v0.3.0.md)

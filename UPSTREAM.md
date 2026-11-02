@@ -31,6 +31,7 @@ Within the vendored code, `src/atrac/at3p/at3p_bitstream.h` and `.cpp` expose th
 This project adds:
 
 - `core/core_adapter.cpp`、`core/plus/`：核心适配与确定性整数重建 / core adapters and deterministic integer reconstruction.
+- `core/decode/`：根据官方行为独立重建的 AAL3 / AALP 解析器、增益与整数预测 / independently reconstructed AAL3 / AALP readers, gain and integer prediction.
 - `compression/`：AAL 无损增强编码与解码 / AAL lossless enhancement coding and decoding.
 - `src/`：AAL3 / AALP 封装、CLI、文件自校验及 Windows 测试界面 / framing, CLI, file verification and Windows test GUI.
 - `include/`、`examples/`：宿主应用 C 接口与示例 / C API and integration example.

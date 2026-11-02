@@ -12,7 +12,8 @@ commands = [
     ['aal-conformance'+suffix, str(root/'tests/enhancement-vectors.bin')],
     ['aal-conformance'+suffix, str(root/'tests/plus-enhancement-vectors.bin')],
     ['aal-c-api-test'+suffix],
-    ['aal-gui-i18n-test'+suffix]]
+    ['aal-gui-i18n-test'+suffix],
+    ['aal-decoder-test'+suffix, str(root/'tests/decoder-vectors.bin')]]
 checks = []
 for command in commands:
     result = subprocess.run([str(args.bin_dir.resolve()/command[0]), *command[1:]], cwd=root,

@@ -161,7 +161,7 @@ EncodeSummary encode_file(const std::filesystem::path& input,const std::filesyst
     auto encoded=encode_pcm(wave,profile,callback,cancelled);check(cancelled);
     const std::string file_hash=sha256(encoded.bytes.data(),encoded.bytes.size());
     std::ostringstream json;
-    json<<"{\n  \"encoder\": \"AtracDEnc-AAL 0.2.0\",\n"
+    json<<"{\n  \"encoder\": \"AtracDEnc-AAL 0.3.0\",\n"
         <<"  \"input\": "<<json_string(source.u8string())<<",\n"
         <<"  \"output\": "<<json_string(destination.u8string())<<",\n"
         <<"  \"format\": \""<<profile.container_name<<" / OMA, unencrypted\",\n"

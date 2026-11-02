@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 3.16)
-project(AtracDEnc_AAL VERSION 0.2.0 LANGUAGES C CXX)
+project(AtracDEnc_AAL VERSION 0.3.0 LANGUAGES C CXX)
 if(APPLE AND NOT CMAKE_OSX_DEPLOYMENT_TARGET)
     set(CMAKE_OSX_DEPLOYMENT_TARGET "11.0" CACHE STRING "Minimum supported macOS version")
 endif()
@@ -26,8 +26,15 @@ add_library(independent_aal STATIC ${CORE_SOURCES} ${FFT_SOURCES}
     core/plus/plus_core_adapter.cpp core/plus/parser/plus_core_parser.cpp
     core/plus/fixed_plus_predictor.cpp core/plus/dequant/independent_plus_dequant.cpp
     core/plus/imdct/independent_plus_transform.cpp core/plus/ipqf/independent_plus_ipqf.cpp
-    src/encoder.cpp src/c_api.cpp)
+    src/encoder.cpp src/c_api.cpp
+    core/decode/aal3/aal3_integer_gain.cpp
+    core/decode/aalp/core_reader.cpp
+    core/decode/aalp/fixed_predictor.cpp
+    core/decode/aalp/aalp_integer_gain.cpp
+    src/decoder.cpp
+    src/decoder_c_api.cpp)
 add_library(AtracDEncAAL::encoder ALIAS independent_aal)
+add_library(AtracDEncAAL::decoder ALIAS independent_aal)
 set_target_properties(independent_aal PROPERTIES OUTPUT_NAME atracdenc_aal)
 target_include_directories(independent_aal PUBLIC include PRIVATE
     ${VENDOR} ${VENDOR}/lib ${VENDOR}/lib/fft/kissfft_impl core core/plus)
@@ -75,4 +82,7 @@ if(BUILD_TESTING)
     endif()
     add_test(NAME gui_language_selection COMMAND aal-gui-i18n-test)
     add_test(NAME encoder_round_trip_all_profiles COMMAND atracdenc-aal --self-test-all)
+    add_executable(aal-decoder-test tests/check_decoder.cpp tests/check_decode_c_api.c)
+    target_link_libraries(aal-decoder-test PRIVATE independent_aal)
+    add_test(NAME official_aal_decode COMMAND aal-decoder-test ${CMAKE_CURRENT_SOURCE_DIR}/tests/decoder-vectors.bin)
 endif()
