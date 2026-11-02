@@ -1,0 +1,88 @@
+{
+  "project": "AtracDEnc-AAL",
+  "version": "0.4.0",
+  "passed": true,
+  "checks": [
+    {
+      "program": "atracdenc-aal.exe",
+      "arguments": [
+        "--self-test-all"
+      ],
+      "exit_code": 0,
+      "stdout": "PASS aal3-132 pcm_sha256=8b317fc60a72bbb6fc7ec8b50345a63e3cdbc0aa8a5453bab53341c53ce5a31a\nPASS aalp-48 pcm_sha256=8b317fc60a72bbb6fc7ec8b50345a63e3cdbc0aa8a5453bab53341c53ce5a31a\nPASS aalp-64 pcm_sha256=8b317fc60a72bbb6fc7ec8b50345a63e3cdbc0aa8a5453bab53341c53ce5a31a\nPASS aalp-96 pcm_sha256=8b317fc60a72bbb6fc7ec8b50345a63e3cdbc0aa8a5453bab53341c53ce5a31a\nPASS aalp-128 pcm_sha256=8b317fc60a72bbb6fc7ec8b50345a63e3cdbc0aa8a5453bab53341c53ce5a31a\nPASS aalp-160 pcm_sha256=8b317fc60a72bbb6fc7ec8b50345a63e3cdbc0aa8a5453bab53341c53ce5a31a\nPASS aalp-192 pcm_sha256=8b317fc60a72bbb6fc7ec8b50345a63e3cdbc0aa8a5453bab53341c53ce5a31a\nPASS aalp-256 pcm_sha256=8b317fc60a72bbb6fc7ec8b50345a63e3cdbc0aa8a5453bab53341c53ce5a31a\nPASS aalp-320 pcm_sha256=8b317fc60a72bbb6fc7ec8b50345a63e3cdbc0aa8a5453bab53341c53ce5a31a\nPASS aalp-352 pcm_sha256=8b317fc60a72bbb6fc7ec8b50345a63e3cdbc0aa8a5453bab53341c53ce5a31a\n",
+      "stderr": "2% 编码 ATRAC3 音乐核心\n42% 计算精确整数预测与无损残差\n56% 按原版方法压缩：声道去相关、预测与 Rice 编码\n80% 读取实际输出位流并逐样本自校验\n100% 自检通过：8443 个立体声采样帧无损往返\n2% 编码 ATRAC3plus 音乐核心\n42% 计算精确整数预测与无损残差\n56% 按原版方法压缩：声道去相关、预测与 Rice 编码\n80% 读取实际输出位流并逐样本自校验\n100% 自检通过：8443 个立体声采样帧无损往返\n2% 编码 ATRAC3plus 音乐核心\n42% 计算精确整数预测与无损残差\n56% 按原版方法压缩：声道去相关、预测与 Rice 编码\n80% 读取实际输出位流并逐样本自校验\n100% 自检通过：8443 个立体声采样帧无损往返\n2% 编码 ATRAC3plus 音乐核心\n42% 计算精确整数预测与无损残差\n56% 按原版方法压缩：声道去相关、预测与 Rice 编码\n80% 读取实际输出位流并逐样本自校验\n100% 自检通过：8443 个立体声采样帧无损往返\n2% 编码 ATRAC3plus 音乐核心\n42% 计算精确整数预测与无损残差\n56% 按原版方法压缩：声道去相关、预测与 Rice 编码\n80% 读取实际输出位流并逐样本自校验\n100% 自检通过：8443 个立体声采样帧无损往返\n2% 编码 ATRAC3plus 音乐核心\n42% 计算精确整数预测与无损残差\n56% 按原版方法压缩：声道去相关、预测与 Rice 编码\n80% 读取实际输出位流并逐样本自校验\n100% 自检通过：8443 个立体声采样帧无损往返\n2% 编码 ATRAC3plus 音乐核心\n42% 计算精确整数预测与无损残差\n56% 按原版方法压缩：声道去相关、预测与 Rice 编码\n80% 读取实际输出位流并逐样本自校验\n100% 自检通过：8443 个立体声采样帧无损往返\n2% 编码 ATRAC3plus 音乐核心\n42% 计算精确整数预测与无损残差\n56% 按原版方法压缩：声道去相关、预测与 Rice 编码\n80% 读取实际输出位流并逐样本自校验\n100% 自检通过：8443 个立体声采样帧无损往返\n2% 编码 ATRAC3plus 音乐核心\n42% 计算精确整数预测与无损残差\n56% 按原版方法压缩：声道去相关、预测与 Rice 编码\n80% 读取实际输出位流并逐样本自校验\n100% 自检通过：8443 个立体声采样帧无损往返\n2% 编码 ATRAC3plus 音乐核心\n42% 计算精确整数预测与无损残差\n56% 按原版方法压缩：声道去相关、预测与 Rice 编码\n80% 读取实际输出位流并逐样本自校验\n100% 自检通过：8443 个立体声采样帧无损往返\n",
+      "passed": true
+    },
+    {
+      "program": "aal-conformance.exe",
+      "arguments": [
+        "enhancement-vectors.bin"
+      ],
+      "exit_code": 0,
+      "stdout": "PASS: 3017 official enhancement packets, 5855736 payload bytes and all padding fields are exact.\n",
+      "stderr": "",
+      "passed": true
+    },
+    {
+      "program": "aal-conformance.exe",
+      "arguments": [
+        "plus-enhancement-vectors.bin"
+      ],
+      "exit_code": 0,
+      "stdout": "PASS: 1566 official enhancement packets, 4071400 payload bytes and all padding fields are exact.\n",
+      "stderr": "",
+      "passed": true
+    },
+    {
+      "program": "aal-c-api-test.exe",
+      "arguments": [],
+      "exit_code": 0,
+      "stdout": "PASS: C ABI, 10 profiles, default AALP352, headers, PCM hashes, cancellation and invalid input\n",
+      "stderr": "",
+      "passed": true
+    },
+    {
+      "program": "aal-gui-i18n-test.exe",
+      "arguments": [],
+      "exit_code": 0,
+      "stdout": "PASS: GUI language selection, overrides, 108 bilingual catalog entries, engine progress and Unicode paths; no window launched\n",
+      "stderr": "",
+      "passed": true
+    },
+    {
+      "program": "aal-decoder-test.exe",
+      "arguments": [
+        "decoder-vectors.bin"
+      ],
+      "exit_code": 0,
+      "stdout": "PASS: 38 official/syntax AAL files, 973416 signed16 samples exact; ownership, cancellation, 11 malformed inputs, 512 bounded core/residual mutations and C ABI\n",
+      "stderr": "",
+      "passed": true
+    },
+    {
+      "program": "aal-converter-test.exe",
+      "arguments": [],
+      "exit_code": 0,
+      "stdout": "PASS: shared native converter; 3 Unicode file round trips, PCM format rejection, collision protection and cancellation; no window launched\n",
+      "stderr": "",
+      "passed": true
+    },
+    {
+      "program": "AtracDEnc-AAL-GUI.exe",
+      "arguments": [
+        "--self-test",
+        "--lang",
+        "en"
+      ],
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": "",
+      "passed": true
+    }
+  ],
+  "sony_runtime_used": false,
+  "hardware_tested": false,
+  "platform": "Windows x64",
+  "test_scope": "Eight headless checks, including the actual native converter entry point. No GUI window was created or controlled.",
+  "codec_algorithms_changed": false
+}

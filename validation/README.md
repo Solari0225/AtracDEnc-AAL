@@ -56,3 +56,9 @@ The fixtures contain **4,583 packets / 9,927,136 payload bytes**: 3,017 AAL3 and
 有损核心决策不同于 Sony；因此完整文件字节和压缩体积可能不同。0.2.0 发布后的 [GitHub CI](github-ci-2026-11-01.json) 已通过 Windows x64、macOS arm64 和 macOS Intel 的原生构建与全部离线检查。该结果验证 CI 现场构建的程序；不表示交叉编译的 universal 发行文件已经在 Mac 上直接执行，也不表示 NW-X1050 / X1060 实机播放、跳转或传输已验证。
 
 Lossy-core decisions differ from Sony's; full-file bytes and compression sizes can differ. The historical 0.2.0 [GitHub CI](github-ci-2026-11-01.json) passed native builds and all offline checks on Windows x64, macOS arm64 and macOS Intel. This validates the programs built in CI; it does not establish direct Mac execution of the cross-compiled universal release file or physical NW-X1050 / X1060 playback, seeking or transfer.
+
+## 0.4.0 转换器 / Converters
+
+[本地 Windows 无窗口记录](converter-local-v0.4.0.json) 包含八项检查；未创建或操作 GUI 窗口。新转换器共用预检查与安全命名，不修改编解码算法或 C ABI。发行版附带 `RELEASE-VALIDATION.json`，记录三个原生平台的实际结果及最终通用附件的 Apple Silicon 执行。GUI 视觉/交互与物理 Walkman 验证不包含在这些检查中。
+
+The [local Windows record](converter-local-v0.4.0.json) contains eight headless checks; no GUI window was created or controlled. The converters share preflight/naming and do not change codec algorithms or the C ABI. Releases attach `RELEASE-VALIDATION.json` with actual three-platform results and final universal execution on Apple Silicon. GUI interaction and physical Walkman validation are outside these checks.

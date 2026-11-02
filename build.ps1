@@ -58,6 +58,10 @@ $decoderCObject=Join-Path $objectsDir 'check_decode_c_api.o'
 if($LASTEXITCODE -ne 0){throw 'Decoder C ABI test compilation failed.'}
 & $Zig c++ @common -std=c++17 -s @include (Join-Path $PSScriptRoot 'tests\check_decoder.cpp') $decoderCObject @objects -o (Join-Path $bin $decoderTestName)
 if($LASTEXITCODE -ne 0){throw 'Decoder test link failed.'}
+$converterName='aal-converter-test-'+$Target
+if($Target -match 'windows'){$converterName='aal-converter-test.exe'}
+& $Zig c++ @common -std=c++17 -s @include (Join-Path $PSScriptRoot 'tests\check_converter.cpp') @objects -o (Join-Path $bin $converterName)
+if($LASTEXITCODE -ne 0){throw 'Converter pipeline test link failed.'}
 if($Gui) {
     if($Target -notmatch 'windows'){throw 'The optional test GUI is Windows only.'}
     $guiCommon=@($common | Where-Object {$_ -ne '-DNDEBUG'})

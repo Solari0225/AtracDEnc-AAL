@@ -4,6 +4,16 @@ on:
   push:
   pull_request:
   workflow_dispatch:
+    inputs:
+      publish_release:
+        description: 'After all native checks pass, publish this version as an experimental release'
+        type: boolean
+        required: true
+        default: false
+
+concurrency:
+  group: build-${{ github.ref }}
+  cancel-in-progress: true
 
 permissions:
   contents: read
@@ -29,11 +39,11 @@ jobs:
           if ((Get-FileHash -LiteralPath $archive -Algorithm SHA256).Hash.ToLower() -ne $expected) { throw 'Zig archive checksum mismatch' }
           Expand-Archive -LiteralPath $archive -DestinationPath $destination
           Join-Path $destination 'zig-x86_64-windows-0.14.1' | Out-File -FilePath $env:GITHUB_PATH -Append -Encoding utf8
-      - name: Build CLI, library, tests and Windows test GUI
+      - name: Build CLI, library, tests and Windows native converter
         shell: pwsh
         run: .\build.ps1 -Gui
       - name: Run all offline checks
-        run: python tools/run_checks.py --bin-dir bin
+        run: python tools/run_checks.py --bin-dir bin --require-gui
       - name: Verify public repository
         run: python tools/verify_repository.py
       - name: Package build artifact
@@ -63,11 +73,13 @@ jobs:
         with:
           python-version: '3.12'
       - name: Configure native build
-        run: cmake -S . -B build/native -DCMAKE_BUILD_TYPE=Release
+        run: cmake -S . -B build/native -DCMAKE_BUILD_TYPE=Release -DAAL_BUILD_GUI=ON
       - name: Build
         run: cmake --build build/native --parallel 3
+      - name: Ad-hoc sign native converter
+        run: codesign --force --sign - build/native/AtracDEnc-AAL-GUI.app
       - name: Run native offline conformance
-        run: python tools/run_checks.py --bin-dir build/native
+        run: python tools/run_checks.py --bin-dir build/native --require-gui
       - name: Verify public repository
         run: python tools/verify_repository.py
       - name: Package build artifact
@@ -77,3 +89,33 @@ jobs:
           name: AtracDEnc-AAL-${{ matrix.platform }}
           path: dist/*
           if-no-files-found: error
+
+  publish:
+    if: github.event_name == 'workflow_dispatch' && inputs.publish_release && github.ref == 'refs/heads/main'
+    needs: [windows, macos]
+    runs-on: macos-15
+    timeout-minutes: 20
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@ece7cb06caefa5fff74198d8649806c4678c61a1 # v6
+        with:
+          python-version: '3.12'
+      - uses: actions/download-artifact@37930b1c2abaa49bbe596cd826c3c89aef350131 # v7
+        with:
+          pattern: AtracDEnc-AAL-*
+          path: build/native-artifacts
+      - name: Assemble universal app, verify native hashes and test final Apple Silicon executables
+        run: python tools/assemble_release.py --artifacts build/native-artifacts
+      - uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9 # v7
+        with:
+          name: AtracDEnc-AAL-release
+          path: dist/*
+          if-no-files-found: error
+      - name: Publish verified release assets
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: python tools/publish_release.py

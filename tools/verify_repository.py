@@ -18,7 +18,7 @@ for path in files:
     relative = path.relative_to(root).as_posix()
     if path.suffix.lower() in ('.exe', '.dll', '.pdb', '.obj', '.o', '.a', '.elf'):
         errors.append('Compiled file in source: '+relative)
-    if path.suffix.lower() not in ('.md', '.txt', '.json', '.yml', '.cpp', '.c', '.h', '.hpp', '.inc', '.py', '.ps1', '.sh'):
+    if path.suffix.lower() not in ('.md', '.txt', '.json', '.yml', '.cpp', '.mm', '.in', '.c', '.h', '.hpp', '.inc', '.py', '.ps1', '.sh'):
         continue
     text = path.read_text(encoding='utf-8')
     if re.search(r'[A-Za-z]:[\\/]+Users[\\/]+', text):

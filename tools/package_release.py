@@ -40,19 +40,29 @@ else:
     else:
         add(args.bin_dir/'atracdenc-aal', 'atracdenc-aal')
         add(args.bin_dir/'libatracdenc_aal.a', 'lib/libatracdenc_aal.a')
+    if args.platform.startswith('macos-'):
+        app=args.bin_dir/'AtracDEnc-AAL-GUI.app'
+        if not app.is_dir(): raise FileNotFoundError('Native macOS converter bundle is required: '+str(app))
+        for file in sorted(app.rglob('*')):
+            if file.is_file(): add(file, pathlib.Path(app.name)/file.relative_to(app))
+    checks=root/'build/offline-checks.json'
+    check_report=json.loads(checks.read_text(encoding='utf-8')) if checks.is_file() else None
+    if check_report and (not check_report['passed'] or check_report['version']!=version):
+        raise ValueError('Offline checks failed or belong to a different version')
     files['BUILD-INFO.json'] = (json.dumps({
         'project': 'AtracDEnc-AAL', 'version': version, 'package_platform': args.platform,
         'packaging_host': platform.system()+'/'+platform.machine(),
         'created_utc': datetime.datetime.now(datetime.timezone.utc).isoformat(),
         'binary_sha256': {key: hashlib.sha256(value).hexdigest() for key, value in files.items()
-                          if key.endswith(('.exe', '.a')) or key == 'atracdenc-aal'},
+                          if key.endswith(('.exe', '.a', '/Contents/MacOS/AtracDEnc-AAL-GUI')) or key == 'atracdenc-aal'},
+        'offline_checks': check_report,
         'validation_scope': 'See validation/README.md. Packaging does not itself establish native execution or hardware compatibility.'},
         ensure_ascii=False, indent=2)+'\n').encode()
 with zipfile.ZipFile(destination, 'w', compression=zipfile.ZIP_DEFLATED, compresslevel=9) as package:
     for relative, data in sorted(files.items()):
         item = zipfile.ZipInfo(name+'/'+relative, (2026, 11, 1, 0, 0, 0))
         item.create_system = 3
-        executable = relative.endswith(('.sh', '.exe')) or relative == 'atracdenc-aal'
+        executable = relative.endswith(('.sh', '.exe', '/Contents/MacOS/AtracDEnc-AAL-GUI')) or relative == 'atracdenc-aal'
         item.external_attr = (stat.S_IFREG | (0o755 if executable else 0o644)) << 16
         item.compress_type = zipfile.ZIP_DEFLATED
         package.writestr(item, data)

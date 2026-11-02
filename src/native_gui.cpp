@@ -174,39 +174,10 @@ void set_output(App& app, const fs::path& path) {
     app.setting_output = false;
 }
 
-uint16_t le16(const unsigned char* p) { return uint16_t(p[0]) | uint16_t(p[1]) << 8; }
-uint32_t le32(const unsigned char* p) { return uint32_t(p[0]) | uint32_t(p[1]) << 8 | uint32_t(p[2]) << 16 | uint32_t(p[3]) << 24; }
-
-// Early user-facing validation. The engine repeats all format checks before
-// encoding; this does not replace the engine's authoritative validation.
+// Shared bounded preflight; the engine validates the complete bitstream again.
 std::wstring wave_problem(const fs::path& path) {
-    std::error_code ec;
-    if (!fs::is_regular_file(path, ec)) return tr(L"不是可读取的音频文件");
-    if (atracdenc_aal_gui::is_decode_input(path)) return {};
-    std::wstring extension = path.extension().wstring();
-    std::transform(extension.begin(), extension.end(), extension.begin(), [](wchar_t c) { return wchar_t(std::towlower(c)); });
-    if (extension != L".wav") return tr(L"请选择 PCM WAV 或 AAL OMA/AA3 文件");
-    std::ifstream input(path, std::ios::binary);
-    std::array<unsigned char, 12> riff{};
-    if (!input.read(reinterpret_cast<char*>(riff.data()), riff.size())) return tr(L"WAV 文件头不完整");
-    if (std::memcmp(riff.data(), "RIFF", 4) || std::memcmp(riff.data() + 8, "WAVE", 4)) return tr(L"需要标准 RIFF / PCM WAV 文件");
-    for (unsigned chunks = 0; chunks < 4096; ++chunks) {
-        std::array<unsigned char, 8> chunk{};
-        if (!input.read(reinterpret_cast<char*>(chunk.data()), chunk.size())) break;
-        const uint32_t size = le32(chunk.data() + 4);
-        if (!std::memcmp(chunk.data(), "fmt ", 4)) {
-            std::array<unsigned char, 16> format{};
-            if (size < 16 || !input.read(reinterpret_cast<char*>(format.data()), format.size())) return tr(L"WAV 格式信息不完整");
-            if (le16(format.data()) != 1 || le16(format.data() + 2) != 2 ||
-                le32(format.data() + 4) != 44100 || le16(format.data() + 14) != 16 ||
-                le16(format.data() + 12) != 4 || le32(format.data() + 8) != 176400)
-                return tr(L"仅支持 44.1 kHz、16 位、双声道 PCM WAV");
-            return {};
-        }
-        input.seekg(std::streamoff(size) + (size & 1u), std::ios::cur);
-        if (!input) break;
-    }
-    return tr(L"未找到有效的 PCM 格式信息");
+    const wchar_t* problem=atracdenc_aal_gui::input_problem(path);
+    return problem?tr(problem):L"";
 }
 
 bool same_path(const fs::path& left, const fs::path& right) {
@@ -314,15 +285,7 @@ void post_event(HWND window, WorkerEvent event) {
 }
 
 fs::path vacant_output(const fs::path& folder, const fs::path& input) {
-    std::wstring stem = input.stem().wstring();
-    if (stem.empty()) stem = tr(L"音频");
-    for (unsigned suffix = 1; suffix < 1000000; ++suffix) {
-        fs::path output = folder / (stem + (suffix == 1 ? L"" : L" (" + std::to_wstring(suffix) + L")") + atracdenc_aal_gui::output_extension(input));
-        fs::path report = output;
-        report += L".json";
-        if (!fs::exists(output) && !fs::exists(report)) return output;
-    }
-    throw std::runtime_error("No unused output filename is available.");
+    return atracdenc_aal_gui::vacant_output(folder,input);
 }
 
 std::wstring megabytes(uint64_t bytes) {
@@ -551,13 +514,13 @@ void layout(App& app) {
     };
     place(app.title, margin, 20, available, 38);
     place(app.subtitle, margin, 65, available, 22);
-    place(app.note, margin, 92, available, 20);
-    place(app.add, margin, 122, 130, 30);
-    place(app.remove, margin + 142, 122, 104, 30);
-    place(app.clear, margin + 258, 122, 104, 30);
-    place(app.drop_hint, margin + 385, 129, 64, 20);
-    place(app.profile, margin + 454, 122, available - 454, 300);
-    place(app.list, margin, 164, available, std::max(130, output_label - 177));
+    place(app.note, margin, 92, available, 38);
+    place(app.add, margin, 140, 130, 30);
+    place(app.remove, margin + 142, 140, 104, 30);
+    place(app.clear, margin + 258, 140, 104, 30);
+    place(app.drop_hint, margin + 385, 147, 64, 20);
+    place(app.profile, margin + 454, 140, available - 454, 300);
+    place(app.list, margin, 182, available, std::max(120, output_label - 195));
     place(app.output_label, margin, output_label, available, 22);
     place(app.output, margin, output, available - 132, 32);
     place(app.browse, width - margin - 120, output, 120, 32);
@@ -584,8 +547,8 @@ void initialize(App& app) {
     app.background = CreateSolidBrush(kBackground);
     app.dpi = window_dpi(app.window);
     app.title = make_control(app, L"STATIC", L"AtracDEnc-AAL", SS_LEFT);
-    app.subtitle = make_control(app, L"STATIC", tr(L"简易测试图形界面  ·  基于 AtracDEnc 的 AAL 编解码器"), SS_LEFT);
-    app.note = make_control(app, L"STATIC", tr(L"PCM WAV → AAL；AAL → WAV。44.1 kHz / 16-bit / 双声道，解码自动识别配置。"), SS_LEFT);
+    app.subtitle = make_control(app, L"STATIC", tr(L"简易测试文件转换器 · 基于 AtracDEnc 的独立 AAL 编解码器"), SS_LEFT);
+    app.note = make_control(app, L"STATIC", tr(L"编码输入：44,100 Hz / 16-bit / 双声道整数 PCM RIFF/WAV，≤1 GiB。\n解码输入：未加密 AAL3/AALP OMA/AA3；输出为相同规格 WAV。无重采样或位深转换。"), SS_LEFT);
     app.add = make_control(app, L"BUTTON", tr(L"添加音频(&A)…"), BS_PUSHBUTTON | WS_TABSTOP, AddFiles);
     app.remove = make_control(app, L"BUTTON", tr(L"移除选中"), BS_PUSHBUTTON | WS_TABSTOP, RemoveFiles);
     app.clear = make_control(app, L"BUTTON", tr(L"清空队列"), BS_PUSHBUTTON | WS_TABSTOP, ClearQueue);
@@ -627,7 +590,7 @@ void initialize(App& app) {
     app.log_label = make_control(app, L"STATIC", tr(L"处理日志"), SS_LEFT);
     app.log = make_control(app, L"EDIT", L"", ES_MULTILINE | ES_READONLY | ES_AUTOVSCROLL | WS_VSCROLL | WS_TABSTOP, LogBox, WS_EX_CLIENTEDGE);
     SendMessageW(app.log, EM_SETLIMITTEXT, 500000, 0);
-    app.footer = make_control(app, L"STATIC", tr(L"实验版 0.3.0  ·  Sony X1050 / X1060 等老款 Walkman 的实机兼容性待验证"), SS_LEFT);
+    app.footer = make_control(app, L"STATIC", tr(L"实验版 0.4.0 · 仅支持 High-Speed Transfer 双层 AAL；不支持 Standard。"), SS_LEFT);
     wchar_t executable[32768];
     DWORD length = GetModuleFileNameW(nullptr, executable, DWORD(std::size(executable)));
     fs::path program = length && length < std::size(executable) ? fs::path(std::wstring(executable,length)).parent_path() : fs::current_path();
@@ -779,12 +742,17 @@ int WINAPI wWinMain(HINSTANCE instance, HINSTANCE, PWSTR, int show) {
         for (int i = 1; i < argument_count; ++i) arguments.emplace_back(raw_arguments[i]);
         LocalFree(raw_arguments);
     }
+    bool headless=false;
+    arguments.erase(std::remove_if(arguments.begin(),arguments.end(),[&](const auto& value){
+        if(value==L"--self-test"){headless=true;return true;}return false;
+    }),arguments.end());
     atracdenc_aal_gui::Startup startup;
     if (!atracdenc_aal_gui::parse_arguments(arguments, atracdenc_aal_gui::language, startup)) {
         MessageBoxW(nullptr, tr(L"语言参数无效。请使用 --lang auto、zh 或 en。"), L"AtracDEnc-AAL", MB_OK|MB_ICONERROR);
         return 4;
     }
     atracdenc_aal_gui::language = startup.language;
+    if(headless){try{independent_aal::self_test();return 0;}catch(...){return 1;}}
     using SetDpiContext = BOOL (WINAPI*)(HANDLE);
     const auto address = GetProcAddress(GetModuleHandleW(L"user32.dll"),"SetProcessDpiAwarenessContext");
     SetDpiContext set_dpi_context = nullptr;
@@ -813,7 +781,7 @@ int WINAPI wWinMain(HINSTANCE instance, HINSTANCE, PWSTR, int show) {
     HDC dc = GetDC(nullptr);
     app.dpi = dc ? unsigned(GetDeviceCaps(dc,LOGPIXELSX)) : 96;
     if (dc) ReleaseDC(nullptr,dc);
-    HWND window = CreateWindowExW(WS_EX_CONTROLPARENT,kClassName,tr(L"AtracDEnc-AAL · 简易测试图形界面 0.3.0"),
+    HWND window = CreateWindowExW(WS_EX_CONTROLPARENT,kClassName,tr(L"AtracDEnc-AAL · 简易测试文件转换器 0.4.0"),
         WS_OVERLAPPEDWINDOW|WS_CLIPCHILDREN,CW_USEDEFAULT,CW_USEDEFAULT,
         px(app,1040),px(app,820),nullptr,nullptr,instance,&app);
     if (!window) {

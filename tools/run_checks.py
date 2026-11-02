@@ -5,6 +5,7 @@ root = pathlib.Path(__file__).resolve().parents[1]
 parser = argparse.ArgumentParser()
 parser.add_argument('--bin-dir', type=pathlib.Path, default=root/'bin')
 parser.add_argument('--report', type=pathlib.Path, default=root/'build/offline-checks.json')
+parser.add_argument('--require-gui', action='store_true')
 args = parser.parse_args()
 suffix = '.exe' if sys.platform == 'win32' else ''
 commands = [
@@ -13,7 +14,11 @@ commands = [
     ['aal-conformance'+suffix, str(root/'tests/plus-enhancement-vectors.bin')],
     ['aal-c-api-test'+suffix],
     ['aal-gui-i18n-test'+suffix],
-    ['aal-decoder-test'+suffix, str(root/'tests/decoder-vectors.bin')]]
+    ['aal-decoder-test'+suffix, str(root/'tests/decoder-vectors.bin')],
+    ['aal-converter-test'+suffix]]
+gui = pathlib.Path('AtracDEnc-AAL-GUI.exe' if sys.platform=='win32' else 'AtracDEnc-AAL-GUI.app/Contents/MacOS/AtracDEnc-AAL-GUI')
+if (args.bin_dir/gui).is_file(): commands.append([str(gui),'--self-test','--lang','en'])
+elif args.require_gui: raise SystemExit('Native converter is missing: '+str(args.bin_dir/gui))
 checks = []
 for command in commands:
     result = subprocess.run([str(args.bin_dir.resolve()/command[0]), *command[1:]], cwd=root,

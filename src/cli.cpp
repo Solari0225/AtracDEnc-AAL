@@ -16,13 +16,15 @@ BOOL WINAPI stop(DWORD type) {
 void stop(int){cancelled.store(true);}
 #endif
 void help() {
-    std::cout<<"AtracDEnc-AAL 0.3.0\n"
+    std::cout<<"AtracDEnc-AAL 0.4.0\n"
         <<"Usage:\n  atracdenc-aal input.wav output.oma\n  atracdenc-aal --profile aalp-352 -i input.wav -o output.oma\n"
         <<"  atracdenc-aal --codec aal3 --bitrate 132 input.wav output.oma\n"
         <<"  atracdenc-aal --decode input.oma output.wav\n"
         <<"  atracdenc-aal --list-profiles\n  atracdenc-aal --self-test [--profile aalp-352]\n  atracdenc-aal --self-test-all\n\n"
         <<"Input: 44100 Hz, 16-bit, stereo integer PCM RIFF/WAV; at most 1 GiB.\n"
         <<"Decode: unencrypted 44100 Hz / 16-bit / stereo AAL3 or AALP; automatic profile detection.\n"
+        <<"Mode: High-Speed Transfer (two-layer AAL); Standard is not supported.\n"
+        <<"No resampling or bit-depth conversion; 24-bit, float, mono and non-44100 Hz WAV are rejected.\n"
         <<"Default: AALP / ATRAC3plus 352 kbps core with lossless enhancement.\n"
         <<"AAL3: 132 kbps. AALP: 48/64/96/128/160/192/256/320/352 kbps.\n"
         <<"--bitrate accepts nominal kbps or bps, e.g. 352 or 352000.\n"
@@ -60,7 +62,7 @@ int run(const std::vector<std::string>& args) {
             if(arg=="--self-test"){test=true;continue;}
             if(arg=="--self-test-all"){test=true;all_tests=true;continue;}
             if(arg=="--list-profiles"){list=true;continue;}
-            if(arg=="--version"){std::cout<<"AtracDEnc-AAL 0.3.0\n";return 0;}
+            if(arg=="--version"){std::cout<<"AtracDEnc-AAL 0.4.0\n";return 0;}
             if(arg=="--profile"||arg=="--codec"||arg=="--bitrate") {
                 if(++i>=argc)throw std::runtime_error("Missing profile option value.");
                 if(arg=="--profile") {if(explicit_profile)throw std::runtime_error("Repeated --profile.");options.profile_id=args[i];explicit_profile=true;}

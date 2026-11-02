@@ -44,4 +44,13 @@ ar rcs bin/libatracdenc_aal.a "${objects[@]}"
 "$cxx" "${common[@]}" -std=c++17 "$@" tests/check_gui_i18n.cpp -o bin/aal-gui-i18n-test
 "$cc" "${common[@]}" "$@" -c tests/check_decode_c_api.c -o build/native/obj/check_decode_c_api.o
 "$cxx" "${common[@]}" -std=c++17 "${include[@]}" "$@" tests/check_decoder.cpp build/native/obj/check_decode_c_api.o "${objects[@]}" -o bin/aal-decoder-test
+"$cxx" "${common[@]}" -std=c++17 "${include[@]}" "$@" tests/check_converter.cpp "${objects[@]}" -o bin/aal-converter-test
+if [[ "$(uname -s)" == Darwin && "${AAL_BUILD_GUI:-1}" != 0 ]]; then
+    app="bin/AtracDEnc-AAL-GUI.app"
+    mkdir -p "$app/Contents/MacOS"
+    version="$(cat VERSION)"
+    sed "s/@PROJECT_VERSION@/$version/g" tools/macos/Info.plist.in > "$app/Contents/Info.plist"
+    "$cxx" -O2 -std=c++17 -fobjc-arc -fblocks -mmacosx-version-min=11.0 -ffp-contract=off "${include[@]}" "$@" src/macos_gui.mm "${objects[@]}" -framework AppKit -Wl,-dead_strip -o "$app/Contents/MacOS/AtracDEnc-AAL-GUI"
+    codesign --force --sign - "$app"
+fi
 echo "Built the CLI, static library, conformance, C API and GUI language tests in bin/"

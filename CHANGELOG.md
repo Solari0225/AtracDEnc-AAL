@@ -1,5 +1,13 @@
 # 更新记录 / Changelog
 
+## 0.4.0 — 2026-11-02
+
+- 新增 macOS AppKit 原生简易测试文件转换器，配套 Windows Win32 版本；两者直接链接同一核心并中英文自适应。Added a native AppKit converter alongside the Win32 converter, sharing the codec and automatic Chinese/English selection.
+- 界面与文档明确 WAV 的 44.1 kHz / signed16 / 双声道整数 PCM、未加密双层 AAL 及 1 GiB 限制；无自动格式降级。Displayed strict input requirements and resource limits; no automatic conversion of unsupported PCM formats.
+- 两平台共享文件头预检查与防覆盖命名，新增实际文件往返、Unicode 路径、不支持规格与取消检查。Shared bounded preflight and collision-safe naming, with complete-file, Unicode-path, rejection and cancellation checks.
+- 新增双语 AAL 两种模式综述、分模式技术资料与来源；明确仅支持 High-Speed Transfer，Standard 未实现且无已核验产品/服务应用证据。Added bilingual mode/evidence documentation; only High-Speed Transfer is implemented and Standard deployment is unverified.
+- 编解码算法及 C ABI 不变；不新增 Sony 运行时依赖。Codec algorithms and C ABI are unchanged; no Sony runtime dependency is introduced.
+
 ## 0.3.0 — 2026-11-02
 
 - 新增不依赖 Sony 或第三方音频组件的 AAL3 / AALP 独立解码器，支持全部十档 44.1 kHz / 16-bit / 双声道未加密文件。Independent, component-free decoding for all ten unencrypted CD-format AAL3 / AALP profiles.
@@ -19,4 +27,4 @@
 - 加入中英文 README、上游来源、构建与集成文档、贡献模板、GitHub CI、发行打包工具及校验记录。Bilingual README, upstream provenance, build/integration guides, contribution templates, GitHub CI, release packaging and verification records.
 - 保留 4583 个官方增强包的离线数据夹具，并清理公开资料中的本机路径。Retained offline fixtures for 4,583 official enhancement packets and normalized local paths in public metadata.
 
-完整文件与 Sony 官方字节不一致；Mac 实机与 Walkman 硬件测试仍未完成。Full files are not Sony byte-identical; native Mac and physical Walkman testing remain outstanding.
+完整文件与 Sony 官方字节不一致；历史版本中的验证范围以各版本记录为准。GUI 视觉交互与 Walkman 实机验证仍由用户执行。Full files are not Sony byte-identical. Historical validation follows each release record; GUI interaction and physical Walkman testing remain with the user.

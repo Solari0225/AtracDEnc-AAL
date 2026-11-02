@@ -4,9 +4,33 @@
 
 **AtracDEnc-AAL is an ATRAC Advanced Lossless (AAL) encoder/decoder built on the [AtracDEnc](https://github.com/dcherednik/atracdenc) project.**
 
-提供独立命令行、C 接口与简易 Windows 测试界面，目标平台为 Windows 和 macOS。当前版本：**0.3.0，实验版**。
+提供独立命令行、C 接口与 **Windows / macOS 双平台简易测试文件转换器**。当前版本：**0.4.0，实验版**。
 
-A standalone CLI, C API and small Windows test GUI for Windows and macOS. Current version: **0.3.0, experimental**.
+A standalone CLI, C API and **small native test file converters for Windows and macOS**. Current version: **0.4.0, experimental**.
+
+## 转换器与输入要求 / Converter and input requirements
+
+从 [GitHub Releases](https://github.com/Solari0225/AtracDEnc-AAL/releases) 下载：Windows x64 ZIP 内打开 **`AtracDEnc-AAL-GUI.exe`**；macOS universal ZIP 内打开 **`AtracDEnc-AAL-GUI.app`**（Apple Silicon / Intel，macOS 11+）。两者均为**简易测试图形界面**，按系统首选语言自动显示中文或英文，不需要安装 Sony 组件或其他音频工具。
+
+Download a [release](https://github.com/Solari0225/AtracDEnc-AAL/releases). Open **`AtracDEnc-AAL-GUI.exe`** on Windows x64, or **`AtracDEnc-AAL-GUI.app`** from the macOS universal package (Apple Silicon / Intel, macOS 11+). Both are **simple test GUIs**, automatically selecting Chinese or English, with no Sony component or external audio-tool installation.
+
+| 转换 / Conversion | 输入规格 / Required input | 输出 / Output |
+| --- | --- | --- |
+| WAV → AAL | **44,100 Hz / signed 16-bit / 双声道 stereo / 整数 integer PCM RIFF/WAV，format tag 1，≤1 GiB** | 未加密 AAL3/AALP `.oma` ＋ JSON 校验报告 / unencrypted AAL plus verification report |
+| AAL → WAV | **未加密 unencrypted AAL3/AALP `.oma` / `.aa3`，本项目十档配置 / ten supported profiles，≤1 GiB** | **44,100 Hz / signed 16-bit / stereo PCM WAV**，PCM ≤1 GiB |
+
+**24/32-bit、浮点、单声道、多声道和其他采样率的 WAV 会被拒绝；不自动重采样或转换位深。MP3/FLAC/AAC/AIFF 等不是直接输入。** 1 GiB 是当前程序的资源限制，不是 AAL 格式上限。详见 [输入规格与拒绝规则](docs/INPUT-FORMATS.md)。
+
+**24/32-bit, float, mono, multichannel and other-rate WAV are rejected; there is no automatic resampling or bit-depth conversion. MP3/FLAC/AAC/AIFF are not direct inputs.** The 1 GiB limit belongs to this implementation, not the AAL format. See [input requirements](docs/INPUT-FORMATS.md).
+
+## AAL 两种模式 / Two AAL modes
+
+- **High-Speed Transfer**：有损 ATRAC3/ATRAC3plus 核心＋无损增强层。**本项目支持此模式的十档 CD 规格配置。** A lossy ATRAC3/ATRAC3plus core plus lossless enhancement. **This project implements ten CD-format profiles of this mode.**
+- **Standard**：不依赖有损基础层的独立无损模式。**本项目未实现；目前没有可核验的实际证据证明 RFC 定义的 Standard 模式曾在真实产品或服务中应用。** Standalone lossless without a lossy base layer. **Not implemented here; no verified actual evidence currently establishes product/service use of the RFC-defined Standard mode.**
+
+AAL3 与 AALP 是第一种模式中使用不同核心的配置，并非上述两种模式。广播 **AAL for Broadcasting** 的实验记录也未证明与 RFC Standard 等价，不能用来宣称 Standard 已实际部署。定义依据为 [RFC 5584 §3 / §7.3](https://www.rfc-editor.org/rfc/rfc5584.html)。完整说明、技术资料和证据边界见 [模式与来源](docs/AAL-MODES.md)、[High-Speed Transfer 技术说明](docs/modes/HIGH-SPEED-TRANSFER.md)、[Standard 技术资料](docs/modes/STANDARD.md)。
+
+AAL3 and AALP are different core configurations of the first mode, not the two modes above. The **AAL for Broadcasting** trial does not establish equivalence with RFC Standard or its deployment. Definitions follow [RFC 5584 §3 / §7.3](https://www.rfc-editor.org/rfc/rfc5584.html). See [modes and evidence](docs/AAL-MODES.md), [High-Speed Transfer notes](docs/modes/HIGH-SPEED-TRANSFER.md) and [Standard references](docs/modes/STANDARD.md).
 
 ## 项目说明 / About
 
@@ -73,17 +97,21 @@ chmod +x atracdenc-aal
 
 The default is `aalp-352`. `--codec aalp --bitrate 352` is equivalent; `352000` is also accepted. Do not combine `--profile` with `--codec` / `--bitrate`. Press `Ctrl+C` to cancel encoding or decoding. Decode mode uses no encoding profile options; see [DECODING.md](docs/DECODING.md).
 
-Windows 的 `AtracDEnc-AAL-GUI.exe` 是**简易测试图形界面**，提供配置选择、文件队列、输出目录、进度和取消操作，直接调用同一编解码引擎。加入 WAV 时编码为 AAL，加入 OMA/AA3 时解码为 WAV；解码自动识别配置。启动时按 Windows 首选显示语言在中英文之间自适应，无匹配时回退英文；界面、日志和编码进度均提供中英文本。也可显式选择语言：
+Windows 的 `AtracDEnc-AAL-GUI.exe` 和 macOS 的 `AtracDEnc-AAL-GUI.app` 均为**简易测试图形界面**，直接链接同一引擎，支持文件队列、输出目录、十档核心选择、进度、取消和自检。WAV 自动编码为 AAL，OMA/AA3 自动解码为 WAV。输入要求直接显示在界面中。启动时按系统首选语言顺序选择中文或英文，无匹配时回退英文；可使用 `--lang auto|zh|en` 覆盖。重名输出自动加序号。
 
-On Windows, `AtracDEnc-AAL-GUI.exe` is a **simple test GUI** providing profile selection, a file queue, an output directory, progress and cancellation through the same directly linked engine. WAV files encode to AAL; OMA/AA3 files decode to WAV with automatic profile detection. At startup it selects Chinese or English from Windows' preferred display languages, falling back to English. Interface text, logs and encoding progress have both translations. An explicit override is also available:
+Both native **simple test GUIs** directly link the same engine, with a queue, output folder, ten core choices, progress, cancellation and self-test. WAV encodes to AAL; OMA/AA3 decodes to WAV. Input requirements are displayed in the window. System language preferences select Chinese or English, with English fallback and an optional `--lang auto|zh|en` override. Output collisions receive a numbered filename.
 
 ```powershell
-.\AtracDEnc-AAL-GUI.exe --lang auto
-.\AtracDEnc-AAL-GUI.exe --lang zh
 .\AtracDEnc-AAL-GUI.exe --lang en
 ```
 
-详细操作与语言行为见 [GUI.md](docs/GUI.md)。See [GUI.md](docs/GUI.md) for usage and language behavior.
+```bash
+open AtracDEnc-AAL-GUI.app --args --lang zh
+```
+
+界面仅用于测试与基本文件转换；实际窗口显示和交互由用户测试。其他应用可以继续直接使用 C API。详见 [转换器操作与语言说明](docs/GUI.md)。
+
+The interfaces are for testing and basic file conversion. Window appearance and interaction are left for user testing; other applications can use the C API. See [converter usage](docs/GUI.md).
 
 ## 与官方一致的范围 / Conformance scope
 
@@ -145,4 +173,4 @@ The project is licensed under **LGPL-2.1-or-later**, matching the AtracDEnc code
 
 感谢 AtracDEnc 项目及其贡献者提供 ATRAC 编码基础。Thank you to the AtracDEnc project and its contributors for the ATRAC encoding foundation.
 
-[更新记录 / Changelog](CHANGELOG.md) · [贡献说明 / Contributing](CONTRIBUTING.md) · [发布说明 / Release notes](docs/releases/v0.3.0.md)
+[更新记录 / Changelog](CHANGELOG.md) · [贡献说明 / Contributing](CONTRIBUTING.md) · [发布说明 / Release notes](docs/releases/v0.4.0.md)

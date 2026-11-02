@@ -1,45 +1,56 @@
-# 简易测试图形界面 / Simple test GUI
+# 简易测试文件转换器 / Simple test file converters
 
-`AtracDEnc-AAL-GUI.exe` 是用于手动验证编解码器的**简易测试图形界面**，直接链接 AtracDEnc-AAL 编解码核心。它不启动外部命令行程序或 Sony 组件。
+| 平台 / Platform | 程序 / Application | 实现 / Implementation |
+| --- | --- | --- |
+| Windows x64 | `AtracDEnc-AAL-GUI.exe` | Win32 原生界面 / native Win32 |
+| macOS 11+，Apple Silicon / Intel | `AtracDEnc-AAL-GUI.app` | AppKit 原生界面 / native AppKit |
 
-`AtracDEnc-AAL-GUI.exe` is a **simple test GUI** for manually exercising the encoder and decoder. It directly links the AtracDEnc-AAL engine and does not launch an external CLI or Sony component.
+两者均标注为**简易测试图形界面**，用于基本文件转换和手动验证，直接静态链接同一独立 AAL 编解码核心。无需 Sony、TraConv、FFmpeg、.NET、Python 或 Node 运行环境，不启动外部转换命令。
+
+Both are labeled **simple test GUIs** for basic conversion and manual testing. They statically link the same independent engine. No Sony component, TraConv, FFmpeg, .NET, Python or Node runtime is needed, and no external conversion process is launched.
+
+## 输入 / Input
+
+**WAV：44,100 Hz / signed 16-bit / 双声道整数 PCM RIFF/WAV，format tag 1，≤1 GiB。AAL：未加密的 AAL3/AALP OMA/AA3，十档配置，≤1 GiB；解码 PCM ≤1 GiB。** 不自动重采样、转换位深或混合声道；不支持 Standard、DRM、普通有损 ATRAC、MP3、FLAC 等直接输入。完整要求见 [INPUT-FORMATS.md](INPUT-FORMATS.md)。
+
+**WAV: 44,100 Hz / signed 16-bit / stereo integer PCM RIFF/WAV, format tag 1, up to 1 GiB. AAL: unencrypted AAL3/AALP OMA/AA3 in the ten supported profiles, up to 1 GiB; decoded PCM up to 1 GiB.** No resampling, bit-depth conversion or channel mixing. Standard, DRM, ordinary lossy ATRAC, MP3 and FLAC direct input are unsupported. See [INPUT-FORMATS.md](INPUT-FORMATS.md).
+
+## 使用 / Use
+
+1. 添加或拖入文件；不合规格的文件会被跳过并在日志中说明。Add or drop files; unsupported inputs are skipped with a log entry.
+2. 编码选择核心，默认 `aalp-352`；解码自动识别，忽略该选项。Choose an encoding core (default `aalp-352`); decoding detects the profile automatically.
+3. 选择输出目录，点击“开始转换 / Convert”。首次加入文件后，空的默认目录设为首个音源旁的 `AAL` 文件夹。Choose an output folder and start conversion. Initially, an empty output field defaults to an `AAL` folder beside the first source.
+4. WAV→OMA 并生成 `.oma.json`；AAL→WAV，日志提供 PCM SHA-256。WAV encodes to OMA plus a JSON report; AAL decodes to WAV with its PCM SHA-256 in the log.
+
+同名音频或编码报告存在时自动选择带序号的新文件名。取消或关闭正在处理的窗口会先请求引擎停止并清理临时文件，再退出；已完成结果保留。内置自检使用当前选择的配置执行内存往返，不需要输入文件。
+
+Existing audio/report names cause a numbered output name. Cancellation or closing a busy window first stops the engine and cleans up temporary files before exit; completed results remain. Self-test performs an in-memory round trip using the selected profile, without an input file.
 
 ## 语言 / Language
 
-启动时读取 Windows 首选显示语言，按其顺序选取支持的中文或英文；没有匹配时使用英文。中文显示语言使用简体中文界面，英文显示语言使用英文界面。重启程序后会重新判断。
+按 Windows 或 macOS 的系统首选语言顺序选择首个支持的中文/英文；其他语言回退英文。中文地区均使用简体中文翻译。重新启动后重新判断，不修改系统设置。
 
-At startup, the app reads Windows' ordered preferred display languages and chooses the first supported Chinese or English language, falling back to English. Chinese uses the Simplified Chinese translation. The selection is evaluated again when the app is restarted.
+The first supported Chinese or English language in the system's ordered preferences is selected; other languages fall back to English. Chinese preferences use Simplified Chinese. This is reevaluated on restart and does not modify system settings.
 
 ```powershell
-# 跟随 Windows / Follow Windows
-.\AtracDEnc-AAL-GUI.exe
 .\AtracDEnc-AAL-GUI.exe --lang auto
-
-# 仅对本次程序启动指定语言 / Override this app launch only
-.\AtracDEnc-AAL-GUI.exe --lang zh
+.\AtracDEnc-AAL-GUI.exe --lang zh "input.wav"
 .\AtracDEnc-AAL-GUI.exe --lang en
-
-# 同时加入文件 / Also queue files
-.\AtracDEnc-AAL-GUI.exe --lang en "input.wav"
 ```
 
-此选项不修改 Windows 的语言设置。界面标签、状态、日志、选择器标题和编解码进度均随所选语言变化。文件名和路径保持原样；底层系统或编解码器诊断保留其原始文本。
+```bash
+open AtracDEnc-AAL-GUI.app --args --lang zh
+open AtracDEnc-AAL-GUI.app --args --lang en
+```
 
-This option does not change Windows language settings. Labels, status, logs, picker titles and encoding/decoding progress use the selected language. Filenames and paths are preserved; underlying system or codec diagnostics retain their original text.
+文件名、路径及底层系统/编解码诊断保持原文。Filenames, paths and underlying system/codec diagnostics retain their original text.
 
-## 手动操作 / Manual use
+## 检查边界 / Validation boundary
 
-1. 添加或拖入 PCM WAV 或未加密的 AAL OMA/AA3 文件。WAV 编码为 AAL，OMA/AA3 解码为 WAV；当前均限 44.1 kHz、16-bit、双声道。Add PCM WAV or unencrypted AAL OMA/AA3; WAV encodes to AAL and OMA/AA3 decodes to WAV, at 44.1 kHz / 16-bit / stereo.
-2. 编码时选择核心配置，默认 `aalp-352`；解码从输入文件自动识别，忽略编码配置。Choose an encoding profile (default `aalp-352`); decoding detects its profile automatically.
-3. 选择输出文件夹并开始转换；取消按钮可终止当前批次。Choose an output folder and start conversion; Cancel stops the current batch.
-4. 编码输出 OMA 与 JSON 校验报告；解码输出 WAV，日志提供 PCM SHA-256。Encoding writes OMA plus a JSON report; decoding writes WAV and logs its PCM SHA-256.
+无窗口检查覆盖语言选择、翻译、两平台共用的文件预检查、Unicode 路径、编码→完整解码文件往返、防覆盖与取消。`--self-test` 可在程序入口执行链接核心的诊断并返回退出码，不创建窗口。
 
-“内置自检 / Self-test”使用当前选定配置执行内存编码与 PCM 精确往返，不需要音频文件或 Sony 软件。界面是测试辅助工具；其他应用可通过 [C API](INTEGRATION.md) 接入相同核心。
+Headless checks cover language selection/translations, shared input preflight, Unicode paths, complete-file round trips, collision protection and cancellation. `--self-test` runs linked-engine diagnostics from the application entry point and returns an exit code without creating a window.
 
-Self-test performs an in-memory encode and exact PCM round trip with the selected profile, without an input file or Sony software. The GUI is a test aid; other applications can use the same core through the [C API](INTEGRATION.md).
+**编译成功和无窗口检查不等于 GUI 视觉或交互验证；窗口操作由用户自行测试。** macOS `.app` 发行构建使用本地 ad-hoc 签名，没有 Developer ID 签名或公证。核心库集成见 [INTEGRATION.md](INTEGRATION.md)。
 
-## 已执行的检查 / Checks performed
-
-语言优先级、`--lang` 参数、全部翻译、进度映射、文件选择器过滤字符串和 Unicode 文件名保留有独立的无窗口测试。该测试不创建、显示或操作 GUI 窗口；实际显示与交互交由用户验证。
-
-Headless tests cover language priority, `--lang` arguments, all translation entries, progress mapping, file-filter strings and Unicode filename preservation. They do not create, show or control a GUI window. Visual and interaction testing is left to the user.
+**Compilation and headless checks do not establish visual/interactive GUI validation; the user performs window testing.** The macOS app is ad-hoc signed, without Developer ID signing or notarization. See [INTEGRATION.md](INTEGRATION.md) for library use.

@@ -39,9 +39,9 @@ bash build.sh
 ./bin/aal-decoder-test tests/decoder-vectors.bin
 ```
 
-可通过 `CC` / `CXX` 指定编译器，或向脚本追加编译选项，例如 `bash build.sh -arch arm64`。脚本为当前选定架构生成程序及 `bin/libatracdenc_aal.a`。
+可通过 `CC` / `CXX` 指定编译器，或向脚本追加编译选项，例如 `bash build.sh -arch arm64`。脚本为当前选定架构生成 CLI、`bin/AtracDEnc-AAL-GUI.app` 及 `bin/libatracdenc_aal.a`；设置 `AAL_BUILD_GUI=0` 可只构建命令行和测试。GUI 使用系统 AppKit，不需要第三方界面框架。
 
-Use `CC` / `CXX` to select compilers or pass extra compiler options, such as `bash build.sh -arch arm64`. The script produces executables and `bin/libatracdenc_aal.a` for the selected architecture.
+Use `CC` / `CXX` to select compilers or pass extra compiler options, such as `bash build.sh -arch arm64`. The script produces the CLI, `bin/AtracDEnc-AAL-GUI.app` and static library for the selected architecture; set `AAL_BUILD_GUI=0` to omit the GUI. The interface uses system AppKit, with no third-party GUI framework.
 
 ## CMake
 
@@ -50,14 +50,14 @@ Use `CC` / `CXX` to select compilers or pass extra compiler options, such as `ba
 A CMake 3.16+ / C++17 project is included. These commands cover a native macOS build; local Windows validation uses the Zig script above.
 
 ```bash
-cmake -S . -B build/cmake -DCMAKE_BUILD_TYPE=Release
+cmake -S . -B build/cmake -DCMAKE_BUILD_TYPE=Release -DAAL_BUILD_GUI=ON
 cmake --build build/cmake --config Release --parallel
 ctest --test-dir build/cmake -C Release --output-on-failure
 ```
 
-使用 `-DAAL_BUILD_GUI=ON` 启用 Windows GUI；核心库 CMake 目标保留为 `independent_aal`，同时提供 `AtracDEncAAL::encoder` 和 `AtracDEncAAL::decoder` 别名，输出库名为 `atracdenc_aal`。
+使用 `-DAAL_BUILD_GUI=ON` 启用 Windows 或 macOS 原生简易测试转换器；核心库 CMake 目标保留为 `independent_aal`，同时提供 `AtracDEncAAL::encoder` 和 `AtracDEncAAL::decoder` 别名，输出库名为 `atracdenc_aal`。
 
-`-DAAL_BUILD_GUI=ON` enables the Windows GUI. The library target retains `independent_aal`, also available as `AtracDEncAAL::encoder` and `AtracDEncAAL::decoder`, with the output name `atracdenc_aal`.
+`-DAAL_BUILD_GUI=ON` enables the native Windows or macOS simple test converter. The library target retains `independent_aal`, also available as `AtracDEncAAL::encoder` and `AtracDEncAAL::decoder`, with the output name `atracdenc_aal`.
 
 ## macOS 交叉编译 / macOS cross-compilation
 
@@ -71,9 +71,9 @@ The same Zig compiler can cross-compile both Mac architectures on Windows:
 python tools/make_universal_macos.py
 ```
 
-通用文件为 `bin/atracdenc-aal-macos-universal`。交叉编译不等于实机执行，仍需在目标 Mac 上运行测试。
+该交叉编译入口仅构建 CLI、库和控制台测试，不能在没有 Apple SDK 的 Windows 环境中构建 AppKit `.app`。通用 CLI 为 `bin/atracdenc-aal-macos-universal`。发行版 GUI 则由原生 macOS CI 构建两个架构并使用系统 `lipo` 合并。
 
-The universal executable is `bin/atracdenc-aal-macos-universal`. Cross-compilation does not establish native execution; tests must still be run on the target Mac.
+This cross-build entry builds the CLI, library and console tests only; it cannot build AppKit without an Apple SDK. The universal CLI is `bin/atracdenc-aal-macos-universal`. Release GUIs are built on both native macOS architectures and assembled with system `lipo`.
 
 ## 离线检查 / Offline checks
 
@@ -86,15 +86,15 @@ python tools/run_checks.py --bin-dir bin
 python tools/verify_repository.py
 ```
 
-`run_checks.py` 执行十档内存往返、两套官方增强数据对照、C ABI 和 GUI 语言无窗口测试。两套夹具必须分别得到 **3017 包 / 5,855,736 字节**、**1566 包 / 4,071,400 字节**全部一致。
+`run_checks.py` 执行十档内存往返、两套官方增强数据对照、C ABI、GUI 语言、完整文件解码与转换器文件流程测试；存在 GUI 时还执行 `--self-test` 入口诊断。CI 使用 `--require-gui` 要求全部八项通过，均不创建窗口。两套夹具必须分别得到 **3017 包 / 5,855,736 字节**、**1566 包 / 4,071,400 字节**全部一致。
 
-`run_checks.py` runs ten-profile in-memory round trips, both official enhancement fixtures, the C ABI test and headless GUI language checks. The fixture results must be **3,017 packets / 5,855,736 bytes** and **1,566 packets / 4,071,400 bytes**, with exact payload and padding matches.
+`run_checks.py` runs ten-profile round trips, both enhancement fixtures, C ABI, GUI language, complete decoding and converter file-pipeline checks. If the GUI exists its headless entry point is checked too. CI requires all eight checks with `--require-gui`; no window is created. The fixture results must be **3,017 packets / 5,855,736 bytes** and **1,566 packets / 4,071,400 bytes**, with exact payload and padding matches.
 
 ## GitHub CI
 
-[CI 工作流](../.github/workflows/ci.yml) 在 Windows x64、macOS arm64 和 macOS Intel 上构建与执行离线测试，并保存构建产物。它不安装 Sony 工具、不测试 Walkman 硬件，也不自动创建 GitHub Release。Actions 与编译器版本固定；首次远程运行之前不将其记为已通过。
+[CI 工作流](../.github/workflows/ci.yml) 在 Windows x64、macOS arm64 和 macOS Intel 上构建与执行离线测试，并保存构建产物。普通 push/PR 构建不安装 Sony 工具、不测试 Walkman 硬件、不发布 Release。只有手动运行并明确启用 `publish_release` 时，才在三平台检查全部通过后，合并 macOS 通用程序、执行最终附件诊断并发布实验版。Actions 与编译器版本固定；首次远程运行之前不将其记为已通过。
 
-The [CI workflow](../.github/workflows/ci.yml) builds and runs offline tests on Windows x64, macOS arm64 and macOS Intel, then uploads artifacts. It does not install Sony tools, test Walkman hardware or automatically create a GitHub Release. Action and compiler versions are pinned; CI is not recorded as passing before an actual run.
+The [CI workflow](../.github/workflows/ci.yml) builds and runs offline tests on Windows x64, macOS arm64 and macOS Intel, then uploads artifacts. Normal push/PR builds do not install Sony tools, test Walkman hardware or publish releases. A manual run with explicit `publish_release` enabled assembles the universal macOS app, checks the final executables and publishes an experimental release only after all three platforms pass. Action and compiler versions are pinned; CI is not recorded as passing before an actual run.
 
 ## 本地发行打包 / Local release packaging
 

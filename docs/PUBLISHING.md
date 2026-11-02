@@ -1,37 +1,41 @@
 # 发布与维护 / Publishing and maintenance
 
-项目仓库 / Repository: [Solari0225/AtracDEnc-AAL](https://github.com/Solari0225/AtracDEnc-AAL).
+Repository: [Solari0225/AtracDEnc-AAL](https://github.com/Solari0225/AtracDEnc-AAL).
 
-AtracDEnc-AAL 是基于 AtracDEnc 开发的 AAL3 / AALP 编解码器，提供 Windows/macOS 命令行、C API 与中英文简易 Windows 测试界面。An AAL3 / AALP encoder/decoder based on AtracDEnc, with a Windows/macOS CLI, C API and simple bilingual Windows test GUI.
+提供基于 AtracDEnc 的独立 AAL 编解码器、CLI、C API 和 Windows/macOS 中英文自适应简易测试转换器。仅支持 High-Speed Transfer 双层 AAL；输入规格见 [INPUT-FORMATS.md](INPUT-FORMATS.md)，模式与实际应用证据边界见 [AAL-MODES.md](AAL-MODES.md)。
 
-## 发布检查 / Release checks
+An independent AtracDEnc-based codec, CLI, C API and bilingual native test converters for Windows/macOS. High-Speed Transfer two-layer AAL only; see [input requirements](INPUT-FORMATS.md) and [modes/evidence](AAL-MODES.md).
 
-从项目根目录构建并运行 `python tools/run_checks.py --bin-dir bin` 与 `python tools/verify_repository.py`。GitHub CI 在 Windows x64、macOS arm64 和 macOS Intel 上独立构建、执行离线检查并打包 Actions 产物；工作流不自动发布 Release。
+## 验证 / Validation
 
-Build from the project root, run the combined offline checks and repository verifier. GitHub CI independently builds, tests and packages artifacts on Windows x64, macOS arm64 and macOS Intel. It does not publish a Release automatically.
+Windows 使用 `build.ps1 -Gui`；macOS 使用 `build.sh` 或带 `-DAAL_BUILD_GUI=ON` 的 CMake。运行 `python tools/run_checks.py --bin-dir <build-directory> --require-gui` 和 `python tools/verify_repository.py`。全部八项必须通过；GUI 入口使用 `--self-test` 诊断，不创建窗口。
 
-涉及解码行为的改动还需要对照官方文件、原始 PCM 和外部 Sony 解码参考，记录实际样本值与长度。Sony 参考软件只用于私有开发验收，不能加入公开源码、运行路径或离线测试依赖。更新 `validation/` 中的真实结果；保留历史记录与已发布版本。
+Build with `build.ps1 -Gui` on Windows, or `build.sh`/CMake with GUI enabled on macOS. Run the combined checks with `--require-gui` and verify the repository. All eight checks must pass. The GUI entry point is diagnosed with `--self-test`, without creating a window.
 
-Decoder changes also require comparison against official files, original PCM and an external Sony decode reference, including exact samples and lengths. Reference software is used only by a separate private acceptance harness; do not add it to public source, runtime paths or offline dependencies. Record observed results and retain release history.
+涉及编解码算法的改动还需要私有官方参考对照，记录样本值、长度和实际验证范围；不能把 Sony 工具、DLL 或运行时依赖加入公开项目。GUI 外观和交互、物理 Walkman 行为分别由用户测试。
 
-## 打包 / Packaging
+Codec algorithm changes also need private official-reference comparison of exact samples and lengths. Sony tools/DLLs must not become public source or runtime dependencies. GUI interaction and physical Walkman behavior are tested separately by the user.
 
-```bash
-python tools/package_release.py --platform windows-x64
-python tools/package_release.py --platform macos-universal
-python tools/package_release.py --platform source
-```
+## GitHub Actions 发布 / Actions publication
 
-脚本读取 `VERSION`，输出三个 ZIP 和 `SHA256SUMS.txt`。macOS universal 打包前先构建两个架构并运行 `python tools/make_universal_macos.py`。Windows 包包含 CLI、简易测试 GUI 和静态库；macOS 包包含通用 CLI 及两个架构的静态库；源码包包含完整生产源、许可证、文档与离线夹具。
+普通 push/PR 仅执行三平台原生构建、无窗口检查及产物上传，默认不发布。由项目维护者明确授权发布后，在 main 上手动运行 **Build and offline conformance**，将 **publish_release** 设为 true。
 
-The packager reads `VERSION` and writes ZIPs plus checksums. Assemble the macOS universal executable from both built slices first. Binary packages include the CLI and static libraries, plus the Windows test GUI. Source includes all production code, licenses, documentation and offline fixtures.
+Normal push/PR runs build, execute headless checks on three native platforms and upload artifacts; they do not publish by default. After explicit maintainer authorization, manually run **Build and offline conformance** on main with **publish_release=true**.
 
-## GitHub Release
+发布任务仅在 Windows x64、macOS arm64、macOS Intel 均通过后执行。它校验原生 ZIP 内的文件摘要，使用系统 `lipo` 合并 macOS CLI 和 `.app`，ad-hoc 签名，检查双架构/签名，并在 Apple Silicon 执行最终通用 CLI 和 GUI 的无窗口诊断。
 
-通过构建与验收后，为相应提交创建 `v<VERSION>` 标签和 Release。正文使用 `docs/releases/v<VERSION>.md`，上传三个 ZIP 和 `SHA256SUMS.txt`。当前项目保留实验版标识；实际测试结果决定说明中的兼容范围。
+The publication job requires successful Windows x64, macOS arm64 and macOS Intel jobs. It verifies native package hashes, assembles universal CLI/app binaries with system `lipo`, ad-hoc signs and checks architectures/signatures, then executes final universal CLI/GUI headless diagnostics on Apple Silicon.
 
-After build and acceptance checks pass, tag the selected commit and create a Release using its versioned notes. Upload all three ZIPs and the checksum file. Retain experimental status and describe the observed compatibility scope.
+最后创建当前提交的版本标签与 draft Release，上传并通过 GitHub 返回的 SHA-256 验证三个 ZIP、`SHA256SUMS.txt` 和 `RELEASE-VALIDATION.json`，再发布为实验版。已公开的 Release 不会被脚本覆盖；失败时保留 draft 以便检查和重试。写权限仅授予手动发布任务的 job-scoped GitHub token。
 
-编码器的 PCM 一致性不能改写为与 Sony 完整编码字节或压缩体积一致。交叉编译、原生 CI 执行、特定预构建附件执行和 Walkman 实机测试各自记录。
+It then creates a version tag and draft release for the checked commit, uploads three ZIPs, checksums and the validation record, verifies GitHub-reported SHA-256 digests, and publishes a prerelease. Already published releases are never overwritten; failed uploads retain a draft for inspection/retry. Only the manual publishing job receives a job-scoped token with write permission.
 
-Exact PCM reconstruction is separate from complete Sony encoding-byte or compression-size equality. Record cross-compilation, native CI execution, execution of a specific prebuilt asset and physical Walkman testing separately.
+## 发行内容 / Release contents
+
+Windows 包含 GUI、CLI、GNU/Zig 静态库；macOS universal 包含原生双架构 GUI、CLI 和两架构静态库；源码包包含完整生产代码、许可证、文档与离线夹具。Python、Node、CMake 和编译器只用于开发/打包，不是产品运行依赖。
+
+Windows packages contain the GUI, CLI and GNU/Zig static library. macOS universal packages contain both native architectures of the app/CLI and per-architecture libraries. Source includes production code, licenses, documentation and offline fixtures. Python, Node, CMake and compilers are development tools, not product runtime dependencies.
+
+不能将 PCM 一致性写成完整文件与 Sony 逐字节或压缩体积相同；不能将广播 AAL 试验、容器枚举或 RFC 示例写成 Standard 已落地的证据。具体源提交、原生执行、通用附件执行和未执行的测试以发布记录为准。
+
+Exact PCM equality is not complete Sony-byte or compression-size equality. Broadcast AAL trials, container enums and RFC examples do not establish Standard deployment. Record the exact source, native/universal execution and unperformed tests accurately.
