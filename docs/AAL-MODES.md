@@ -27,9 +27,9 @@ Structure follows RFC 5584 §3 and parameters follow §7.3.[S1] Both modes aim a
 ## 本项目实际支持范围 / Implemented scope
 
 - 编码、完整无损解码：AAL3 / ATRAC3 **132 kbps**；AALP / ATRAC3plus **48、64、96、128、160、192、256、320、352 kbps**。默认 AALP 352。所有数字都是**核心**码率。
-- 仅未加密的 OMA/AA3，以及 44.1 kHz / signed 16-bit / 双声道整数 PCM。输入限制、拒绝规则与 1 GiB 资源上限见 [输入规格](INPUT-FORMATS.md)。
+- 仅未加密的 OMA/AA3，以及 44.1 kHz / signed 16-bit / 双声道整数 PCM。输入限制、拒绝规则、RIFF/RF64 与容器边界见 [输入规格](INPUT-FORMATS.md)。
 - Windows/macOS CLI、C API 和简易测试文件转换器共用独立引擎。没有 Sony 运行时依赖；没有 Standard、RTP 传输、DRM、普通有损 ATRAC 解码、独立核心提取或设备传输 API。
-- 完整文件以精确 PCM 往返验收；有损核心的编码决策及完整文件大小不保证与 Sony 相同。增强层逐字节对照仅适用于已记录的相同残差输入，见 [验证记录](../validation/README.md)。
+- 0.5.0 的文件转换使用有界流式缓冲并移除固定 1 GiB 限制。完整文件以精确 PCM 往返验收；有损核心的编码决策及完整文件大小不保证与 Sony 相同。增强层逐字节对照仅适用于已记录的相同残差输入，见 [验证记录](../validation/README.md)。
 
 Encoding and complete lossless decoding cover AAL3 / ATRAC3 at **132 kbps**, and AALP / ATRAC3plus at **48, 64, 96, 128, 160, 192, 256, 320 and 352 kbps**; the default is AALP 352. These are **core** rates. Only unencrypted CD-format stereo is supported. The CLI, C API and both native converters share the independent engine. Standard, RTP transport, DRM, ordinary lossy ATRAC decoding, a core-extraction API and device transfer are not implemented. Complete-file acceptance is exact PCM reconstruction, not Sony byte or compression-size equality; see the [validation record](../validation/README.md).
 

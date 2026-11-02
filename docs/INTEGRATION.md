@@ -44,9 +44,9 @@ if (status == AAL_OK) {
 }
 ```
 
-`aal_decode_cd16()` 自动识别全部十档未加密 AAL，返回 44.1 kHz、signed16 交错双声道 PCM 及精确帧数、配置和 PCM SHA-256。输入为完整 OMA / AA3 文件；输入与输出 PCM 各自上限 1 GiB。原有编码 ABI 保持不变；解码结果使用独立的 `aal_pcm_free()`，不能传给编码缓冲区的 `aal_free()`。
+`aal_decode_cd16()` 自动识别全部十档未加密 AAL，返回 44.1 kHz、signed16 交错双声道 PCM 及精确帧数、配置和 PCM SHA-256。输入为完整 OMA / AA3 缓冲区；固定 1 GiB 上限已移除，但完整结果仍占内存。原有编码 ABI 保持不变；解码结果使用独立的 `aal_pcm_free()`，不能传给编码缓冲区的 `aal_free()`。
 
-`aal_decode_cd16()` detects all ten unencrypted AAL profiles and returns 44.1 kHz signed16 interleaved stereo PCM, exact frame count, profile and PCM SHA-256. Supply the complete OMA / AA3 file; input and output PCM are each limited to 1 GiB. The encoder ABI is unchanged. Free decoded PCM with `aal_pcm_free()`, not the encoder buffer's `aal_free()`.
+`aal_decode_cd16()` detects all ten unencrypted AAL profiles and returns 44.1 kHz signed16 interleaved stereo PCM, exact frame count, profile and PCM SHA-256. Supply the complete OMA / AA3 buffer; the fixed 1 GiB cap is removed, but the complete result still occupies memory. The encoder ABI is unchanged. Free decoded PCM with `aal_pcm_free()`, not the encoder buffer's `aal_free()`.
 
 解码也支持相同的进度与取消回调。输出结构先初始化为零，调用结束前保持输入有效；失败或取消不返回部分 PCM。完整示例见 [decode_buffer.c](../examples/decode_buffer.c)，算法与支持范围见 [DECODING.md](DECODING.md)。
 
@@ -77,4 +77,6 @@ target_link_libraries(your_application PRIVATE AtracDEncAAL::encoder)
 
 Replace the path and application target with those in the host project. The API is C-compatible, but the implementation uses C++17 and needs a C++ linker and its standard library. Prebuilt Windows `.a` archives target the Zig / GNU ABI.
 
-编码接口返回完整文件，解码接口返回完整 PCM；当前未公开增量流式接口。Encoding returns an entire file and decoding returns the entire PCM buffer; incremental streaming is not currently exposed.
+0.5.0 新增 `aal_encode_cd16_stream` / `aal_decode_cd16_stream`，通过读写回调处理已知长度的输入，维持有界工作缓冲；原整缓冲函数 ABI 不变。输出回调失败或取消时可能已收到前缀，宿主必须丢弃未完成结果。接口、回调单位及示例见 [STREAMING.md](STREAMING.md)。
+
+Version 0.5.0 adds callback streaming APIs for known-length inputs with bounded codec working buffers, preserving the original whole-buffer ABI. A failed/cancelled output callback may already have received a prefix; discard incomplete output. See [streaming contracts and example](STREAMING.md).

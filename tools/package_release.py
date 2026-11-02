@@ -29,6 +29,7 @@ else:
     add(root/'include/independent_aal.h')
     add(root/'examples/encode_buffer.c')
     add(root/'examples/decode_buffer.c')
+    add(root/'examples/stream_callbacks.c')
     if args.platform == 'windows-x64':
         add(args.bin_dir/'atracdenc-aal.exe', 'atracdenc-aal.exe')
         add(args.bin_dir/'AtracDEnc-AAL-GUI.exe', 'AtracDEnc-AAL-GUI.exe')
@@ -47,6 +48,8 @@ else:
             if file.is_file(): add(file, pathlib.Path(app.name)/file.relative_to(app))
     checks=root/'build/offline-checks.json'
     check_report=json.loads(checks.read_text(encoding='utf-8')) if checks.is_file() else None
+    large_checks=root/'build/large-file-validation.json'
+    large_report=json.loads(large_checks.read_text(encoding='utf-8')) if large_checks.is_file() else None
     if check_report and (not check_report['passed'] or check_report['version']!=version):
         raise ValueError('Offline checks failed or belong to a different version')
     files['BUILD-INFO.json'] = (json.dumps({
@@ -56,6 +59,7 @@ else:
         'binary_sha256': {key: hashlib.sha256(value).hexdigest() for key, value in files.items()
                           if key.endswith(('.exe', '.a', '/Contents/MacOS/AtracDEnc-AAL-GUI')) or key == 'atracdenc-aal'},
         'offline_checks': check_report,
+        'large_file_checks': large_report,
         'validation_scope': 'See validation/README.md. Packaging does not itself establish native execution or hardware compatibility.'},
         ensure_ascii=False, indent=2)+'\n').encode()
 with zipfile.ZipFile(destination, 'w', compression=zipfile.ZIP_DEFLATED, compresslevel=9) as package:

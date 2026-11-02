@@ -15,7 +15,8 @@ commands = [
     ['aal-c-api-test'+suffix],
     ['aal-gui-i18n-test'+suffix],
     ['aal-decoder-test'+suffix, str(root/'tests/decoder-vectors.bin')],
-    ['aal-converter-test'+suffix]]
+    ['aal-converter-test'+suffix],
+    ['aal-streaming-test'+suffix]]
 gui = pathlib.Path('AtracDEnc-AAL-GUI.exe' if sys.platform=='win32' else 'AtracDEnc-AAL-GUI.app/Contents/MacOS/AtracDEnc-AAL-GUI')
 if (args.bin_dir/gui).is_file(): commands.append([str(gui),'--self-test','--lang','en'])
 elif args.require_gui: raise SystemExit('Native converter is missing: '+str(args.bin_dir/gui))

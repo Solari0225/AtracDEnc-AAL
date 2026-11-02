@@ -28,12 +28,18 @@ for platform in ('windows-x64','macos-arm64','macos-x86_64'):
     folder=destination/f'AtracDEnc-AAL-v{version}-{platform}'
     info=json.loads((folder/'BUILD-INFO.json').read_text())
     checks=info['offline_checks']
-    if checks['version']!=version or not checks['passed'] or len(checks['checks'])!=8:
+    if checks['version']!=version or not checks['passed'] or len(checks['checks'])!=9:
         raise SystemExit('Missing successful native checks: '+platform)
+    large=info.get('large_file_checks')
+    if not large or large['version']!=version or not large['passed'] or not all(large[k] for k in
+            ('pcm_exact','input_above_1gib','oma_above_1gib','decoded_pcm_above_1gib')) or len(large['runs'])!=2:
+        raise SystemExit('Missing native large-file/memory acceptance: '+platform)
+    if not all(r['passed'] and r['peak_rss_bytes']<=64*(1<<20) for r in large['runs']):
+        raise SystemExit('Native streaming memory budget exceeded: '+platform)
     for name,digest in info['binary_sha256'].items():
         if hashlib.sha256((folder/name).read_bytes()).hexdigest()!=digest:
             raise SystemExit('Native artifact binary hash mismatch: '+name)
-    reports[platform]={'checks':checks,'native_package_sha256':hashlib.sha256(matches[0].read_bytes()).hexdigest()}
+    reports[platform]={'checks':checks,'large_file':large,'native_package_sha256':hashlib.sha256(matches[0].read_bytes()).hexdigest()}
 
 bin_dir=stage/'universal';bin_dir.mkdir()
 arm=stage/'macos-arm64'/f'AtracDEnc-AAL-v{version}-macos-arm64'

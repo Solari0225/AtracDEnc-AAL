@@ -4,6 +4,20 @@
 
 This directory distinguishes predecessor encoding conformance from checks on the current renamed release. Sony was an external reference, not a runtime dependency. The project, CI and offline tests neither distribute nor invoke Sony programs.
 
+## 0.5.0 流式实现 / Streaming implementation
+
+[流式回归清单](../tests/streaming-vectors.json) 与 [冻结摘要](../tests/streaming_vectors.hpp) 包含十档 70 个整数合成 PCM 边界用例，要求编码完整 AAL 的长度与 SHA-256 保持 0.4.0 基线，并完整解码比较 PCM。新增 C/C++ 分片回调、已知大长度准入、溢出、I/O 失败、文件中途取消及临时文件清理、RF64 完整往返和长度边界检查。九项离线检查全部为无窗口测试。
+
+The streaming regression list and frozen hashes cover 70 integer-generated PCM boundary cases across all ten profiles. Complete AAL length/SHA-256 must match the 0.4.0 baseline, and reconstructed PCM must match exactly. Checks also cover fragmented C/C++ callbacks, admission of large declared lengths, overflow, I/O failure, mid-file cancellation/temporary cleanup, RF64 round trips and length fields. All nine offline checks are headless.
+
+[0.5.0 私有 Sony 参考摘要](streaming-sony-reference-v0.5.0.json) 记录 Windows 下十档各 8443 帧：Sony 解码新文件、项目解码 Sony 文件均精确还原长度和 PCM；同输入新文件仍与 0.4.0 相同。Sony 程序只用于开发者外部验证，不进入仓库、产品、公开测试或 CI。
+
+The private Sony-reference summary covers ten 8443-frame cases on Windows: Sony decodes the new output exactly, and the new decoder restores Sony output exactly, including length. Same-input complete bytes remain equal to 0.4.0. Sony software is an external development reference only.
+
+发行附件 `RELEASE-VALIDATION.json` 和原生包 `BUILD-INFO.json` 保存该次源提交的实际 CI 结果；发布门槛包括 Windows x64、macOS arm64、macOS Intel 各自完成真实 >1 GiB PCM → >1 GiB AAL → >1 GiB PCM，并校验长度/SHA-256、CLI 峰值工作集/RSS ≤64 MiB。实测值仅说明指定进程与用例，不含 GUI、系统文件缓存或实机。RF64 >4 GiB 目前验证头部字段和小文件往返，本轮完整大文件约 1 GiB。设计与重现步骤见 [STREAMING.md](../docs/STREAMING.md)、[BUILDING.md](../docs/BUILDING.md)。
+
+Release validation and native package metadata retain actual results for the checked commit. Publication requires all three native platforms to complete real >1 GiB PCM/AAL/PCM round trips with exact lengths/hashes and peak CLI working set/RSS ≤64 MiB. These observations concern the measured processes/cases, excluding GUI, system file caches and hardware. RF64 >4 GiB fields and small complete RF64 files are tested; the complete large-file case is about 1 GiB. See the linked design and reproduction instructions.
+
 ## 0.3.0 解码器 / Decoder
 
 [0.3.0 GitHub CI](github-ci-v0.3.0.json)：Windows x64、macOS arm64 和 macOS Intel 原生构建及全部六项离线检查通过。All three native builds and all six offline checks passed.
@@ -41,11 +55,11 @@ b23059203b4003606d51d3f9119f6770790fc02467314bcbc0f4e6e3b6145b46
 
 Local paths were removed or normalized in public records. Fixture bytes are unchanged and contain no Sony machine code.
 
-## 当前发行版 / Current release
+## 历史 0.3.0 发行版 / Historical 0.3.0 release
 
-[release-verification.json](release-verification.json) 记录当前 0.3.0 程序版本、二进制哈希、完整文件解码验收与离线检查；历史编码输出一致性保留在 0.2.0 记录中。它不把旧版二进制哈希当作新程序哈希。
+[release-verification.json](release-verification.json) 记录历史 0.3.0 程序版本、二进制哈希、完整文件解码验收与离线检查；历史编码输出一致性保留在 0.2.0 记录中。它不把旧版二进制哈希当作新程序哈希。
 
-[release-verification.json](release-verification.json) records the current 0.3.0 version, binary hashes, complete-file decoder acceptance and offline checks; historical encoder output equivalence remains in the0.2.0 record. It does not present predecessor binary hashes as current ones.
+[release-verification.json](release-verification.json) records the historical 0.3.0 version, binary hashes, complete-file decoder acceptance and offline checks; historical encoder output equivalence remains in the 0.2.0 record. It does not present predecessor binary hashes as current ones.
 
 ## 范围 / Scope
 

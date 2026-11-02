@@ -6,8 +6,8 @@
 #include <fstream>
 #include <stdexcept>
 #include <string>
+#include "stream_io.hpp"
 namespace atracdenc_aal_gui {
-inline constexpr uint64_t max_input_bytes = 1024ULL * 1024 * 1024;
 inline std::string extension(const std::filesystem::path& input) {
     auto value = input.extension().u8string();
     for (char& c : value) if (c >= 'A' && c <= 'Z') c = char(c + ('a' - 'A'));
@@ -31,7 +31,6 @@ inline const wchar_t* input_problem(const std::filesystem::path& path) {
     if (!std::filesystem::is_regular_file(path, ec)) return L"不是可读取的音频文件";
     const auto bytes = std::filesystem::file_size(path, ec);
     if (ec) return L"不是可读取的音频文件";
-    if (bytes > max_input_bytes) return L"输入文件超过 1 GiB 上限";
     std::ifstream input(path, std::ios::binary);
     if (!input) return L"不是可读取的音频文件";
     if (is_decode_input(path)) {
@@ -43,7 +42,7 @@ inline const wchar_t* input_problem(const std::filesystem::path& path) {
                 if (header[i] & 0x80) return L"AAL 文件头不完整";
                 offset = (offset << 7) | header[i];
             }
-            offset += 10;
+            offset += 10+((header[5]&0x10)?10:0);
         }
         if (offset > bytes || bytes - offset < header.size()) return L"AAL 文件头不完整";
         input.seekg(std::streamoff(offset));
@@ -53,29 +52,11 @@ inline const wchar_t* input_problem(const std::filesystem::path& path) {
         return nullptr;
     }
     if (extension(path) != ".wav") return L"请选择 PCM WAV 或 AAL OMA/AA3 文件";
-    std::array<unsigned char, 12> riff{};
-    if (!input.read(reinterpret_cast<char*>(riff.data()), riff.size())) return L"WAV 文件头不完整";
-    if (std::memcmp(riff.data(), "RIFF", 4) || std::memcmp(riff.data()+8, "WAVE", 4))
-        return L"需要标准 RIFF / PCM WAV 文件";
-    uint64_t offset=12;
-    for (unsigned chunks=0; chunks<4096 && offset+8<=bytes; ++chunks) {
-        std::array<unsigned char, 8> chunk{};
-        input.seekg(std::streamoff(offset));
-        if (!input.read(reinterpret_cast<char*>(chunk.data()), chunk.size())) break;
-        const uint32_t size=read_le32(chunk.data()+4);
-        if (size > bytes-offset-8) return L"WAV 格式信息不完整";
-        if (!std::memcmp(chunk.data(), "fmt ", 4)) {
-            std::array<unsigned char, 16> format{};
-            if (size<16 || !input.read(reinterpret_cast<char*>(format.data()), format.size())) return L"WAV 格式信息不完整";
-            if (read_le16(format.data())!=1 || read_le16(format.data()+2)!=2 ||
-                read_le32(format.data()+4)!=44100 || read_le16(format.data()+14)!=16 ||
-                read_le16(format.data()+12)!=4 || read_le32(format.data()+8)!=176400)
-                return L"仅支持 44.1 kHz、16 位、双声道 PCM WAV";
-            return nullptr;
-        }
-        offset+=8ULL+size+(size&1u);
-    }
-    return L"未找到有效的 PCM 格式信息";
+    try {
+        independent_aal::FileInput source(path);
+        independent_aal::wave_info(source);
+        return nullptr;
+    }catch(const std::exception&) {return L"仅支持 44.1 kHz、16 位、双声道 PCM WAV";}
 }
 inline std::filesystem::path vacant_output(const std::filesystem::path& folder, const std::filesystem::path& input) {
     auto stem=input.stem();

@@ -84,4 +84,64 @@ inline void publish_new(const std::filesystem::path& temporary,const std::filesy
     if(unlink(temporary.c_str()))throw std::runtime_error("Cannot remove temporary output link.");
 #endif
 }
+
+// Exclusive, bounded writes. The owner always removes its temporary name,
+// including on callback failure/cancellation. Publication keeps the new name.
+class NewFile {
+    std::filesystem::path name;
+#ifdef _WIN32
+    HANDLE handle=INVALID_HANDLE_VALUE;
+#else
+    int handle=-1;
+#endif
+    bool owned=false;
+public:
+    explicit NewFile(const std::filesystem::path& path):name(path) {
+#ifdef _WIN32
+        handle=CreateFileW(path.c_str(),GENERIC_WRITE,0,nullptr,CREATE_NEW,FILE_ATTRIBUTE_NORMAL,nullptr);
+        owned=handle!=INVALID_HANDLE_VALUE;
+#else
+        handle=open(path.c_str(),O_WRONLY|O_CREAT|O_EXCL,0666);
+        owned=handle>=0;
+#endif
+        if(!owned)throw std::runtime_error("Cannot exclusively create temporary output.");
+    }
+    NewFile(const NewFile&)=delete;
+    NewFile& operator=(const NewFile&)=delete;
+    ~NewFile() {
+#ifdef _WIN32
+        if(handle!=INVALID_HANDLE_VALUE)CloseHandle(handle);
+#else
+        if(handle>=0)close(handle);
+#endif
+        if(owned)remove_owned_file(name);
+    }
+    void write_bytes(const void* data,size_t count) {
+        const auto* bytes=static_cast<const uint8_t*>(data);
+        while(count) {
+            const size_t n=std::min<size_t>(count,65536);
+#ifdef _WIN32
+            DWORD done=0;
+            if(handle==INVALID_HANDLE_VALUE||!WriteFile(handle,bytes,DWORD(n),&done,nullptr)||!done)
+                throw std::runtime_error("Incomplete streaming output write.");
+#else
+            const auto done=::write(handle,bytes,n);
+            if(done<0&&errno==EINTR)continue;
+            if(done<=0)throw std::runtime_error("Incomplete streaming output write.");
+#endif
+            bytes+=done;count-=size_t(done);
+        }
+    }
+    void finish() {
+#ifdef _WIN32
+        if(handle==INVALID_HANDLE_VALUE||!FlushFileBuffers(handle))throw std::runtime_error("Cannot flush streaming output.");
+        if(!CloseHandle(handle)){handle=INVALID_HANDLE_VALUE;throw std::runtime_error("Cannot close streaming output.");}
+        handle=INVALID_HANDLE_VALUE;
+#else
+        if(handle<0||fsync(handle))throw std::runtime_error("Cannot flush streaming output.");
+        const int result=close(handle);handle=-1;
+        if(result)throw std::runtime_error("Cannot close streaming output.");
+#endif
+    }
+};
 }

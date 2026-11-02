@@ -1,0 +1,100 @@
+{
+  "project": "AtracDEnc-AAL",
+  "version": "0.5.0",
+  "scope": "Windows local: ten 8443-frame synthetic inputs; complete same-input 0.4.0 byte regression and bidirectional Sony PCM reference. No Sony binaries/audio included.",
+  "cli_sha256": "060d931d47fd10cfcb63fc5973ea0fcb59900366fe173546f2308e6d2f45a73d",
+  "sony_reference_exe_sha256": "88622173b1a7c91fc38ceedc846a59c8f7593515183550d897811f53c293d993",
+  "cases": [
+    {
+      "profile": "aal3-132",
+      "sample_frames": 8443,
+      "pcm_sha256": "ea79c0b1218ae0d75b695629ac0d5d4016236dc92379b2decd1004703d3a0814",
+      "oma_sha256": "6e4622136aea232f6204b4e24092c8a1dd0f7ff0386d26c6e0580e1ddf5f0bf4",
+      "same_complete_bytes_as_0_4_0": true,
+      "sony_decodes_independent_pcm_exact": true,
+      "independent_decodes_sony_pcm_exact": true
+    },
+    {
+      "profile": "aalp-48",
+      "sample_frames": 8443,
+      "pcm_sha256": "ea79c0b1218ae0d75b695629ac0d5d4016236dc92379b2decd1004703d3a0814",
+      "oma_sha256": "1746154cb81c59bf1b0178346abc16464442ab609b12caf2740518327982dd5c",
+      "same_complete_bytes_as_0_4_0": true,
+      "sony_decodes_independent_pcm_exact": true,
+      "independent_decodes_sony_pcm_exact": true
+    },
+    {
+      "profile": "aalp-64",
+      "sample_frames": 8443,
+      "pcm_sha256": "ea79c0b1218ae0d75b695629ac0d5d4016236dc92379b2decd1004703d3a0814",
+      "oma_sha256": "74a47eef04d7e1f1d48e88d2d37f4c01d576ce32abf9f4c47cf09b96d58ae4ea",
+      "same_complete_bytes_as_0_4_0": true,
+      "sony_decodes_independent_pcm_exact": true,
+      "independent_decodes_sony_pcm_exact": true
+    },
+    {
+      "profile": "aalp-96",
+      "sample_frames": 8443,
+      "pcm_sha256": "ea79c0b1218ae0d75b695629ac0d5d4016236dc92379b2decd1004703d3a0814",
+      "oma_sha256": "8b9e23f7a2c6653dd7ed1a8bc625f63698a5f9d10de43a499396e6857bb65981",
+      "same_complete_bytes_as_0_4_0": true,
+      "sony_decodes_independent_pcm_exact": true,
+      "independent_decodes_sony_pcm_exact": true
+    },
+    {
+      "profile": "aalp-128",
+      "sample_frames": 8443,
+      "pcm_sha256": "ea79c0b1218ae0d75b695629ac0d5d4016236dc92379b2decd1004703d3a0814",
+      "oma_sha256": "29bb2933a22397a64896aece44417d27e482b43b04258539c3e796c34827f7f5",
+      "same_complete_bytes_as_0_4_0": true,
+      "sony_decodes_independent_pcm_exact": true,
+      "independent_decodes_sony_pcm_exact": true
+    },
+    {
+      "profile": "aalp-160",
+      "sample_frames": 8443,
+      "pcm_sha256": "ea79c0b1218ae0d75b695629ac0d5d4016236dc92379b2decd1004703d3a0814",
+      "oma_sha256": "0f099160a00c49edddea2dba788b20faa005a55efef7c5942980d776ac9f1a6f",
+      "same_complete_bytes_as_0_4_0": true,
+      "sony_decodes_independent_pcm_exact": true,
+      "independent_decodes_sony_pcm_exact": true
+    },
+    {
+      "profile": "aalp-192",
+      "sample_frames": 8443,
+      "pcm_sha256": "ea79c0b1218ae0d75b695629ac0d5d4016236dc92379b2decd1004703d3a0814",
+      "oma_sha256": "e0bf49f16de44fe4ff2a06546f4d387dba5fc768119a905d8d9b75c2c1fb1fea",
+      "same_complete_bytes_as_0_4_0": true,
+      "sony_decodes_independent_pcm_exact": true,
+      "independent_decodes_sony_pcm_exact": true
+    },
+    {
+      "profile": "aalp-256",
+      "sample_frames": 8443,
+      "pcm_sha256": "ea79c0b1218ae0d75b695629ac0d5d4016236dc92379b2decd1004703d3a0814",
+      "oma_sha256": "0859c413a69d3cb58aa71dc99909b8052ae6cae00cb09d6b65dc1c157ea3c918",
+      "same_complete_bytes_as_0_4_0": true,
+      "sony_decodes_independent_pcm_exact": true,
+      "independent_decodes_sony_pcm_exact": true
+    },
+    {
+      "profile": "aalp-320",
+      "sample_frames": 8443,
+      "pcm_sha256": "ea79c0b1218ae0d75b695629ac0d5d4016236dc92379b2decd1004703d3a0814",
+      "oma_sha256": "106abbd4586b08e60898eaa9c4acd204f02c601b47a2c19729a71a28ca2e2630",
+      "same_complete_bytes_as_0_4_0": true,
+      "sony_decodes_independent_pcm_exact": true,
+      "independent_decodes_sony_pcm_exact": true
+    },
+    {
+      "profile": "aalp-352",
+      "sample_frames": 8443,
+      "pcm_sha256": "ea79c0b1218ae0d75b695629ac0d5d4016236dc92379b2decd1004703d3a0814",
+      "oma_sha256": "14c5913b4324853c311a7eec0c4d7efe8c8409caefa03d029597cd0a5925c891",
+      "same_complete_bytes_as_0_4_0": true,
+      "sony_decodes_independent_pcm_exact": true,
+      "independent_decodes_sony_pcm_exact": true
+    }
+  ],
+  "passed": true
+}

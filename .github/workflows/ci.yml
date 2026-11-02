@@ -44,6 +44,8 @@ jobs:
         run: .\build.ps1 -Gui
       - name: Run all offline checks
         run: python tools/run_checks.py --bin-dir bin --require-gui
+      - name: Verify real files above 1 GiB and bounded process RSS
+        run: python tools/check_large_file.py --cli bin/atracdenc-aal.exe --output-dir build/large-file
       - name: Verify public repository
         run: python tools/verify_repository.py
       - name: Package build artifact
@@ -80,6 +82,8 @@ jobs:
         run: codesign --force --sign - build/native/AtracDEnc-AAL-GUI.app
       - name: Run native offline conformance
         run: python tools/run_checks.py --bin-dir build/native --require-gui
+      - name: Verify real files above 1 GiB and bounded process RSS
+        run: python tools/check_large_file.py --cli build/native/atracdenc-aal --output-dir build/large-file
       - name: Verify public repository
         run: python tools/verify_repository.py
       - name: Package build artifact

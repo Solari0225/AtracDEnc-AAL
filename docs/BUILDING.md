@@ -86,9 +86,9 @@ python tools/run_checks.py --bin-dir bin
 python tools/verify_repository.py
 ```
 
-`run_checks.py` 执行十档内存往返、两套官方增强数据对照、C ABI、GUI 语言、完整文件解码与转换器文件流程测试；存在 GUI 时还执行 `--self-test` 入口诊断。CI 使用 `--require-gui` 要求全部八项通过，均不创建窗口。两套夹具必须分别得到 **3017 包 / 5,855,736 字节**、**1566 包 / 4,071,400 字节**全部一致。
+`run_checks.py` 执行十档内存往返、两套官方增强数据对照、C ABI、GUI 语言、完整文件解码、转换器文件流程和流式回归测试；流式回归包含十档 70 项冻结 AAL 摘要、分片回调、取消清理及 RF64 检查。存在 GUI 时还执行 `--self-test` 入口诊断。CI 使用 `--require-gui` 要求全部九项通过，均不创建窗口。两套夹具必须分别得到 **3017 包 / 5,855,736 字节**、**1566 包 / 4,071,400 字节**全部一致。
 
-`run_checks.py` runs ten-profile round trips, both enhancement fixtures, C ABI, GUI language, complete decoding and converter file-pipeline checks. If the GUI exists its headless entry point is checked too. CI requires all eight checks with `--require-gui`; no window is created. The fixture results must be **3,017 packets / 5,855,736 bytes** and **1,566 packets / 4,071,400 bytes**, with exact payload and padding matches.
+`run_checks.py` runs ten-profile round trips, both enhancement fixtures, C ABI, GUI language, complete decoding, converter file-pipeline and streaming regression checks. Streaming checks include 70 frozen AAL hashes across ten profiles, fragmented callbacks, cancellation cleanup and RF64. If the GUI exists its headless entry point is checked too. CI requires all nine checks with `--require-gui`; no window is created. The fixture results must be **3,017 packets / 5,855,736 bytes** and **1,566 packets / 4,071,400 bytes**, with exact payload and padding matches.
 
 ## GitHub CI
 
@@ -107,3 +107,10 @@ python tools/package_release.py --platform source
 按实际已构建的平台选择命令，文件写入 `dist/` 并附 SHA-256。源码包排除 `bin/`、`build/`、`dist/` 和本地 Git 元数据，保留完整生产源、许可证和两套数据夹具。
 
 Choose the platform actually built. Packages and SHA-256 checksums are written to `dist/`. Source archives exclude build outputs and local Git metadata while retaining the complete production source, licenses and both data fixtures.
+
+
+## 0.5.0 大文件与内存验收 / Large-file and memory acceptance
+
+三平台原生 CI 均运行 `python tools/check_large_file.py --cli <CLI-path> --output-dir build/large-file`。默认生成 1 GiB + 4 MiB 的确定性噪声 PCM，实际编码大于 1 GiB 的 AAL、完整解码并比较 PCM 长度/摘要；进程峰值工作集/RSS 需 ≤64 MiB。结果保存到 `build/large-file-validation.json`，打包进入 BUILD-INFO，发布任务逐平台核验并附入 RELEASE-VALIDATION。输入/输出仅在新建测试目录生成，成功后只清理该工具创建的音频文件。Python 3.9+ 仅用于测试。
+
+All three native CI jobs run the large-file tool. Its default fixture is 1 GiB + 4 MiB deterministic noise PCM. It actually encodes an AAL file larger than 1 GiB, fully decodes it, checks exact PCM length/hash and requires peak CLI working set/RSS ≤64 MiB. Native package metadata and the final release validation retain the observed results. Test audio is created only in a new directory and removed on success; `--keep-files` retains it. Python 3.9+ is a testing dependency only.

@@ -9,13 +9,14 @@ struct DecodeBuffer {
 };
 struct DecodeSummary {
     std::filesystem::path output_path;
-    uint32_t sample_frames = 0;
+    uint64_t sample_frames = 0;
     uint64_t output_bytes = 0;
     std::string pcm_sha256;
     std::string profile_id;
 };
 // Unencrypted, 44.1 kHz / signed16 / stereo AAL3 or AALP. Input and decoded
-// PCM are each limited to 1 GiB. No foreign codec, process or component.
+// PCM use caller-sized whole buffers; there is no fixed 1 GiB cap.
+// File and streaming entry points use bounded working buffers instead.
 DecodeBuffer decode_aal(const uint8_t* data, size_t bytes,
                         const Progress& progress = Progress(),
                         const std::atomic_bool* cancelled = nullptr);

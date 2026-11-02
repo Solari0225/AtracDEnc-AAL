@@ -129,7 +129,7 @@ static NSStackView* horizontal(NSArray<NSView*>* views) {
     _window=[[NSWindow alloc] initWithContentRect:NSMakeRect(0,0,920,750)
         styleMask:NSWindowStyleMaskTitled|NSWindowStyleMaskClosable|NSWindowStyleMaskMiniaturizable|NSWindowStyleMaskResizable
         backing:NSBackingStoreBuffered defer:NO];
-    _window.title=text(L"AtracDEnc-AAL · 简易测试文件转换器 0.4.0");
+    _window.title=text(L"AtracDEnc-AAL · 简易测试文件转换器 0.5.0");
     _window.contentMinSize=NSMakeSize(840,720);
     _window.delegate=self;
     _window.releasedWhenClosed=NO;
@@ -151,7 +151,7 @@ static NSStackView* horizontal(NSArray<NSView*>* views) {
     title.font=[NSFont boldSystemFontOfSize:23];
     [column addArrangedSubview:title];
     [column addArrangedSubview:label(text(L"简易测试文件转换器 · 基于 AtracDEnc 的独立 AAL 编解码器"))];
-    NSTextField* requirements=label(text(L"编码输入：44,100 Hz / 16-bit / 双声道整数 PCM RIFF/WAV，≤1 GiB。\n解码输入：未加密 AAL3/AALP OMA/AA3；输出为相同规格 WAV。无重采样或位深转换。"),12);
+    NSTextField* requirements=label(text(L"编码：44,100 Hz / 16-bit / 双声道整数 PCM WAV（RIFF / RF64）。\n解码：未加密 AAL3/AALP；流式处理，无固定 1 GiB 上限。"),12);
     requirements.textColor=NSColor.secondaryLabelColor;
     [column addArrangedSubview:requirements];
     _add=button(text(L"添加音频…"),self,@selector(pickFiles:));
@@ -208,7 +208,7 @@ static NSStackView* horizontal(NSArray<NSView*>* views) {
     logs.documentView=_log;
     [logs.heightAnchor constraintEqualToConstant:110].active=YES;
     [column addArrangedSubview:logs];
-    NSTextField* footer=label(text(L"实验版 0.4.0 · 仅支持 High-Speed Transfer 双层 AAL；不支持 Standard。"),11);
+    NSTextField* footer=label(text(L"实验版 0.5.0 · 仅支持 High-Speed Transfer 双层 AAL；不支持 Standard。"),11);
     footer.textColor=NSColor.secondaryLabelColor; [column addArrangedSubview:footer];
     for (NSView* view in @[requirements,toolbar,list,folder,_phase,_progress,actions,logs,footer])
         [view.widthAnchor constraintEqualToAnchor:column.widthAnchor].active=YES;

@@ -8,7 +8,7 @@ An independent AtracDEnc-based codec, CLI, C API and bilingual native test conve
 
 ## 验证 / Validation
 
-Windows 使用 `build.ps1 -Gui`；macOS 使用 `build.sh` 或带 `-DAAL_BUILD_GUI=ON` 的 CMake。运行 `python tools/run_checks.py --bin-dir <build-directory> --require-gui` 和 `python tools/verify_repository.py`。全部八项必须通过；GUI 入口使用 `--self-test` 诊断，不创建窗口。
+Windows 使用 `build.ps1 -Gui`；macOS 使用 `build.sh` 或带 `-DAAL_BUILD_GUI=ON` 的 CMake。运行 `python tools/run_checks.py --bin-dir <build-directory> --require-gui` 和 `python tools/verify_repository.py`。全部九项必须通过；GUI 入口使用 `--self-test` 诊断，不创建窗口。
 
 Build with `build.ps1 -Gui` on Windows, or `build.sh`/CMake with GUI enabled on macOS. Run the combined checks with `--require-gui` and verify the repository. All eight checks must pass. The GUI entry point is diagnosed with `--self-test`, without creating a window.
 
@@ -39,3 +39,10 @@ Windows packages contain the GUI, CLI and GNU/Zig static library. macOS universa
 不能将 PCM 一致性写成完整文件与 Sony 逐字节或压缩体积相同；不能将广播 AAL 试验、容器枚举或 RFC 示例写成 Standard 已落地的证据。具体源提交、原生执行、通用附件执行和未执行的测试以发布记录为准。
 
 Exact PCM equality is not complete Sony-byte or compression-size equality. Broadcast AAL trials, container enums and RFC examples do not establish Standard deployment. Record the exact source, native/universal execution and unperformed tests accurately.
+
+
+## 0.5.0 大文件与内存验收 / Large-file and memory acceptance
+
+三平台原生 CI 均运行 `python tools/check_large_file.py --cli <CLI-path> --output-dir build/large-file`。默认生成 1 GiB + 4 MiB 的确定性噪声 PCM，实际编码大于 1 GiB 的 AAL、完整解码并比较 PCM 长度/摘要；进程峰值工作集/RSS 需 ≤64 MiB。结果保存到 `build/large-file-validation.json`，打包进入 BUILD-INFO，发布任务逐平台核验并附入 RELEASE-VALIDATION。输入/输出仅在新建测试目录生成，成功后只清理该工具创建的音频文件。Python 3.9+ 仅用于测试。
+
+All three native CI jobs run the large-file tool. Its default fixture is 1 GiB + 4 MiB deterministic noise PCM. It actually encodes an AAL file larger than 1 GiB, fully decodes it, checks exact PCM length/hash and requires peak CLI working set/RSS ≤64 MiB. Native package metadata and the final release validation retain the observed results. Test audio is created only in a new directory and removed on success; `--keep-files` retains it. Python 3.9+ is a testing dependency only.

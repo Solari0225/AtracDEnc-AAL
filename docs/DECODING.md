@@ -23,8 +23,8 @@ The profile is detected from the file. Do not select `--profile`, `--codec` or `
 
 - AAL3 / ATRAC3 132 kbps，以及 AALP / ATRAC3plus 48、64、96、128、160、192、256、320、352 kbps。AAL3 / ATRAC3 132 kbps and all nine listed AALP / ATRAC3plus profiles.
 - 当前支持 44.1 kHz、16-bit、双声道、未加密的完整文件。Input must be a complete, unencrypted 44.1 kHz, 16-bit stereo file.
-- 输入文件及解码 PCM 各自上限为 1 GiB；应用接口返回整个 PCM 缓冲区。Input and decoded PCM are each limited to 1 GiB; the application API returns the entire PCM buffer.
-- 普通有损 ATRAC1 / ATRAC3 / ATRAC3plus、DRM、其他采样率、其他位深、多声道和流式 seek 接口不在此入口范围内。Ordinary lossy ATRAC, DRM, other sample rates or bit depths, multichannel audio and incremental seeking are outside this entry point's scope.
+- 0.5.0 起文件解码逐包读写，无固定 1 GiB 上限；大 WAV 自动使用 RF64。旧内存 API 返回完整 PCM，新回调 API 可逐块消费。Since 0.5.0, file decoding uses bounded packet/PCM buffers with no fixed 1 GiB cap and automatic RF64 for large WAV output. The legacy memory API returns complete PCM; the new callback API emits blocks.
+- 普通有损 ATRAC1 / ATRAC3 / ATRAC3plus、DRM、其他采样率、其他位深、多声道和随机 seek 接口不在此入口范围内。Ordinary lossy ATRAC, DRM, other sample rates or bit depths, multichannel audio and random seeking are outside this entry point's scope.
 
 ## 重建逻辑 / Reconstruction
 

@@ -548,7 +548,7 @@ void initialize(App& app) {
     app.dpi = window_dpi(app.window);
     app.title = make_control(app, L"STATIC", L"AtracDEnc-AAL", SS_LEFT);
     app.subtitle = make_control(app, L"STATIC", tr(L"简易测试文件转换器 · 基于 AtracDEnc 的独立 AAL 编解码器"), SS_LEFT);
-    app.note = make_control(app, L"STATIC", tr(L"编码输入：44,100 Hz / 16-bit / 双声道整数 PCM RIFF/WAV，≤1 GiB。\n解码输入：未加密 AAL3/AALP OMA/AA3；输出为相同规格 WAV。无重采样或位深转换。"), SS_LEFT);
+    app.note = make_control(app, L"STATIC", tr(L"编码：44,100 Hz / 16-bit / 双声道整数 PCM WAV（RIFF / RF64）。\n解码：未加密 AAL3/AALP；流式处理，无固定 1 GiB 上限。"), SS_LEFT);
     app.add = make_control(app, L"BUTTON", tr(L"添加音频(&A)…"), BS_PUSHBUTTON | WS_TABSTOP, AddFiles);
     app.remove = make_control(app, L"BUTTON", tr(L"移除选中"), BS_PUSHBUTTON | WS_TABSTOP, RemoveFiles);
     app.clear = make_control(app, L"BUTTON", tr(L"清空队列"), BS_PUSHBUTTON | WS_TABSTOP, ClearQueue);
@@ -590,7 +590,7 @@ void initialize(App& app) {
     app.log_label = make_control(app, L"STATIC", tr(L"处理日志"), SS_LEFT);
     app.log = make_control(app, L"EDIT", L"", ES_MULTILINE | ES_READONLY | ES_AUTOVSCROLL | WS_VSCROLL | WS_TABSTOP, LogBox, WS_EX_CLIENTEDGE);
     SendMessageW(app.log, EM_SETLIMITTEXT, 500000, 0);
-    app.footer = make_control(app, L"STATIC", tr(L"实验版 0.4.0 · 仅支持 High-Speed Transfer 双层 AAL；不支持 Standard。"), SS_LEFT);
+    app.footer = make_control(app, L"STATIC", tr(L"实验版 0.5.0 · 仅支持 High-Speed Transfer 双层 AAL；不支持 Standard。"), SS_LEFT);
     wchar_t executable[32768];
     DWORD length = GetModuleFileNameW(nullptr, executable, DWORD(std::size(executable)));
     fs::path program = length && length < std::size(executable) ? fs::path(std::wstring(executable,length)).parent_path() : fs::current_path();
@@ -781,7 +781,7 @@ int WINAPI wWinMain(HINSTANCE instance, HINSTANCE, PWSTR, int show) {
     HDC dc = GetDC(nullptr);
     app.dpi = dc ? unsigned(GetDeviceCaps(dc,LOGPIXELSX)) : 96;
     if (dc) ReleaseDC(nullptr,dc);
-    HWND window = CreateWindowExW(WS_EX_CONTROLPARENT,kClassName,tr(L"AtracDEnc-AAL · 简易测试文件转换器 0.4.0"),
+    HWND window = CreateWindowExW(WS_EX_CONTROLPARENT,kClassName,tr(L"AtracDEnc-AAL · 简易测试文件转换器 0.5.0"),
         WS_OVERLAPPEDWINDOW|WS_CLIPCHILDREN,CW_USEDEFAULT,CW_USEDEFAULT,
         px(app,1040),px(app,820),nullptr,nullptr,instance,&app);
     if (!window) {

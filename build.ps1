@@ -62,6 +62,12 @@ $converterName='aal-converter-test-'+$Target
 if($Target -match 'windows'){$converterName='aal-converter-test.exe'}
 & $Zig c++ @common -std=c++17 -s @include (Join-Path $PSScriptRoot 'tests\check_converter.cpp') @objects -o (Join-Path $bin $converterName)
 if($LASTEXITCODE -ne 0){throw 'Converter pipeline test link failed.'}
+$streamObject=Join-Path $objectsDir 'check_stream_c_api.o'
+& $Zig cc @common -c (Join-Path $PSScriptRoot 'tests\check_stream_c_api.c') -o $streamObject
+if($LASTEXITCODE -ne 0){throw 'Stream C ABI test compilation failed.'}
+$streamName=if($Target -match 'windows'){'aal-streaming-test.exe'}else{'aal-streaming-test-'+$Target}
+& $Zig c++ @common -std=c++17 -s @include (Join-Path $PSScriptRoot 'tests\check_streaming.cpp') $streamObject @objects -o (Join-Path $bin $streamName)
+if($LASTEXITCODE -ne 0){throw 'Streaming regression test link failed.'}
 if($Gui) {
     if($Target -notmatch 'windows'){throw 'The optional test GUI is Windows only.'}
     $guiCommon=@($common | Where-Object {$_ -ne '-DNDEBUG'})

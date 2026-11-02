@@ -4,9 +4,9 @@
 
 **AtracDEnc-AAL is an ATRAC Advanced Lossless (AAL) encoder/decoder built on the [AtracDEnc](https://github.com/dcherednik/atracdenc) project.**
 
-提供独立命令行、C 接口与 **Windows / macOS 双平台简易测试文件转换器**。当前版本：**0.4.0，实验版**。
+提供独立命令行、C 接口与 **Windows / macOS 双平台简易测试文件转换器**。当前版本：**0.5.0，实验版**。
 
-A standalone CLI, C API and **small native test file converters for Windows and macOS**. Current version: **0.4.0, experimental**.
+A standalone CLI, C API and **small native test file converters for Windows and macOS**. Current version: **0.5.0, experimental**.
 
 ## 转换器与输入要求 / Converter and input requirements
 
@@ -16,12 +16,24 @@ Download a [release](https://github.com/Solari0225/AtracDEnc-AAL/releases). Open
 
 | 转换 / Conversion | 输入规格 / Required input | 输出 / Output |
 | --- | --- | --- |
-| WAV → AAL | **44,100 Hz / signed 16-bit / 双声道 stereo / 整数 integer PCM RIFF/WAV，format tag 1，≤1 GiB** | 未加密 AAL3/AALP `.oma` ＋ JSON 校验报告 / unencrypted AAL plus verification report |
-| AAL → WAV | **未加密 unencrypted AAL3/AALP `.oma` / `.aa3`，本项目十档配置 / ten supported profiles，≤1 GiB** | **44,100 Hz / signed 16-bit / stereo PCM WAV**，PCM ≤1 GiB |
+| WAV → AAL | **44,100 Hz / signed 16-bit / 双声道 stereo / 整数 integer PCM RIFF/WAV 或 RF64，format tag 1；流式处理 / streaming** | 未加密 AAL3/AALP `.oma` ＋ JSON 校验报告 / unencrypted AAL plus verification report |
+| AAL → WAV | **未加密 unencrypted AAL3/AALP `.oma` / `.aa3`，本项目十档配置 / ten supported profiles；流式处理 / streaming** | **44,100 Hz / signed 16-bit / stereo PCM WAV**，大文件自动使用 RF64 / RF64 for large output |
 
-**24/32-bit、浮点、单声道、多声道和其他采样率的 WAV 会被拒绝；不自动重采样或转换位深。MP3/FLAC/AAC/AIFF 等不是直接输入。** 1 GiB 是当前程序的资源限制，不是 AAL 格式上限。详见 [输入规格与拒绝规则](docs/INPUT-FORMATS.md)。
+**24/32-bit、浮点、单声道、多声道和其他采样率的 WAV 会被拒绝；不自动重采样或转换位深。MP3/FLAC/AAC/AIFF 等不是直接输入。** 0.5.0 已移除固定 1 GiB 上限；CLI/GUI 使用有界缓冲。普通 RIFF 容量不足时解码自动输出 RF64。详见 [输入规格与拒绝规则](docs/INPUT-FORMATS.md)。
 
-**24/32-bit, float, mono, multichannel and other-rate WAV are rejected; there is no automatic resampling or bit-depth conversion. MP3/FLAC/AAC/AIFF are not direct inputs.** The 1 GiB limit belongs to this implementation, not the AAL format. See [input requirements](docs/INPUT-FORMATS.md).
+**24/32-bit, float, mono, multichannel and other-rate WAV are rejected; there is no automatic resampling or bit-depth conversion. MP3/FLAC/AAC/AIFF are not direct inputs.** Version 0.5.0 removes the fixed 1 GiB cap. CLI/GUI conversion uses bounded buffers and switches decoded output to RF64 when RIFF size fields are insufficient. See [input requirements](docs/INPUT-FORMATS.md).
+
+## 0.5.0 流式处理 / Streaming
+
+编码和解码按帧推进，保留有界 PCM 队列、编解码状态和当前包；编码逐包独立重建并逐样本比较，SHA-256 增量计算。十档配置的 70 项冻结用例检查完整 AAL 与 0.4.0 的摘要和长度一致。新增回调式 C API；旧整缓冲 ABI 保留，但其返回结果仍需调用方提供足够内存。
+
+Encoding/decoding advance frame by frame with bounded PCM queues, persistent codec state and a current packet. Encoding independently reconstructs each serialized packet and checks every sample; hashing is incremental. Seventy frozen cases cover all ten profiles and check complete AAL hashes/lengths against 0.4.0. New callback C APIs provide bounded working memory. Existing whole-buffer ABI remains available and still needs memory for its complete result.
+
+发布流程另外要求在 Windows x64、macOS arm64、macOS Intel 上完成 **PCM 输入、AAL 文件及还原 PCM 均超过 1 GiB** 的实际往返，长度和 SHA-256 一致，CLI 峰值工作集/RSS 不超过 64 MiB。具体实测值以发行附件 `RELEASE-VALIDATION.json` 为准；这不是所有环境的内存保证。RF64 超过 4 GiB 的长度字段有边界检查，小 RF64 有完整往返测试；当前大文件验收约 1 GiB，不宣称已完整测试所有最大容量。
+
+Publication also requires a real **>1 GiB input PCM, >1 GiB AAL and >1 GiB reconstructed PCM** round trip on all three native platforms, exact length/SHA-256, and CLI peak working set/RSS below 64 MiB. Actual observations are attached in `RELEASE-VALIDATION.json`, not a universal memory guarantee. RF64 >4 GiB length fields have boundary checks and small RF64 files have end-to-end tests; the current large-file acceptance is about 1 GiB, not every maximum capacity.
+
+详见 / See [流式设计与接口](docs/STREAMING.md)、[输入规格](docs/INPUT-FORMATS.md)。
 
 ## AAL 两种模式 / Two AAL modes
 
@@ -63,11 +75,11 @@ All ten configurations were individually confirmed against the Sony SMLE 7.1 enc
 
 ## 输入与输出 / Input and output
 
-- 输入 / Input：**44,100 Hz、16-bit、双声道整数 PCM RIFF/WAV**；文件上限 / maximum input file size：**1 GiB**。
+- 输入 / Input：**44,100 Hz、16-bit、双声道整数 PCM RIFF/WAV 或 RF64**；无固定 1 GiB 上限 / no fixed 1 GiB cap.
 - 输出 / Output：未加密的 **OMA / AAL3 或 AALP**，以及包含配置、PCM / OMA SHA-256 和校验结果的 JSON 报告。Unencrypted **OMA / AAL3 or AALP**, plus a JSON report with profile, PCM / OMA SHA-256 and verification results.
 - 编码器在保存前重新读取实际输出位流，逐样本核对 PCM；不覆盖已有输出。The encoder rereads its emitted bitstream and checks every PCM sample before saving; existing outputs are never overwritten.
 - 解码 / Decoding：通过 `--decode` 将官方或本项目生成的未加密 AAL OMA/AA3 还原为 **44.1 kHz / 16-bit / 双声道 PCM WAV**，自动识别全部十档，输出 PCM SHA-256。Decode official or independently encoded unencrypted AAL to PCM WAV, with automatic detection of all ten profiles and a PCM SHA-256.
-- 解码输入和输出 PCM 各自上限为 **1 GiB**，精确保留源采样长度。Decoded input and output PCM are each limited to **1 GiB**, preserving exact source length.
+- 文件解码逐包输出，精确保留源采样长度；无固定 1 GiB 上限。File decoding emits PCM incrementally with exact source length and no fixed 1 GiB cap.
 - 当前不包含重采样、位深转换、DRM、普通有损 ATRAC 解码或播放器传输。Resampling, bit-depth conversion, DRM, ordinary lossy ATRAC decoding and device transfer are not included.
 
 ## 快速开始 / Quick start
@@ -173,4 +185,4 @@ The project is licensed under **LGPL-2.1-or-later**, matching the AtracDEnc code
 
 感谢 AtracDEnc 项目及其贡献者提供 ATRAC 编码基础。Thank you to the AtracDEnc project and its contributors for the ATRAC encoding foundation.
 
-[更新记录 / Changelog](CHANGELOG.md) · [贡献说明 / Contributing](CONTRIBUTING.md) · [发布说明 / Release notes](docs/releases/v0.4.0.md)
+[更新记录 / Changelog](CHANGELOG.md) · [贡献说明 / Contributing](CONTRIBUTING.md) · [发布说明 / Release notes](docs/releases/v0.5.0.md)

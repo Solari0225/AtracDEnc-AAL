@@ -11,9 +11,9 @@ Both are labeled **simple test GUIs** for basic conversion and manual testing. T
 
 ## 输入 / Input
 
-**WAV：44,100 Hz / signed 16-bit / 双声道整数 PCM RIFF/WAV，format tag 1，≤1 GiB。AAL：未加密的 AAL3/AALP OMA/AA3，十档配置，≤1 GiB；解码 PCM ≤1 GiB。** 不自动重采样、转换位深或混合声道；不支持 Standard、DRM、普通有损 ATRAC、MP3、FLAC 等直接输入。完整要求见 [INPUT-FORMATS.md](INPUT-FORMATS.md)。
+**WAV：44,100 Hz / signed 16-bit / 双声道整数 PCM RIFF/WAV 或 RF64，format tag 1。AAL：未加密 AAL3/AALP OMA/AA3，十档配置。0.5.0 起无固定 1 GiB 上限；文件转换使用有界缓冲。** 不自动重采样、转换位深或混合声道；不支持 Standard、DRM、普通有损 ATRAC、MP3、FLAC 等直接输入。完整要求见 [INPUT-FORMATS.md](INPUT-FORMATS.md)。
 
-**WAV: 44,100 Hz / signed 16-bit / stereo integer PCM RIFF/WAV, format tag 1, up to 1 GiB. AAL: unencrypted AAL3/AALP OMA/AA3 in the ten supported profiles, up to 1 GiB; decoded PCM up to 1 GiB.** No resampling, bit-depth conversion or channel mixing. Standard, DRM, ordinary lossy ATRAC, MP3 and FLAC direct input are unsupported. See [INPUT-FORMATS.md](INPUT-FORMATS.md).
+**WAV: 44,100 Hz / signed 16-bit / stereo integer PCM RIFF/WAV or RF64, format tag 1. AAL: unencrypted AAL3/AALP OMA/AA3 in the ten profiles. Since 0.5.0, file conversion uses bounded buffers without a fixed 1 GiB cap.** No resampling, bit-depth conversion or channel mixing. Standard, DRM, ordinary lossy ATRAC, MP3 and FLAC direct input are unsupported. See [INPUT-FORMATS.md](INPUT-FORMATS.md).
 
 ## 使用 / Use
 

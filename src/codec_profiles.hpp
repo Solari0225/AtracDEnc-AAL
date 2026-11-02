@@ -3,6 +3,7 @@
 #include <cstdint>
 #include <stdexcept>
 #include <string_view>
+#include <limits>
 
 namespace independent_aal {
 enum class CoreCodec { Atrac3, Atrac3plus };
@@ -41,10 +42,16 @@ inline const EncodingProfile& profile_by_parameters(uint8_t codec,uint32_t param
     for(const auto& profile:kOfficialProfiles)if(profile.oma_codec_id==codec&&profile.core_parameters==parameters)return profile;
     throw std::invalid_argument("Unsupported AAL codec or core configuration.");
 }
-inline uint32_t profile_block_count(uint32_t samples,const EncodingProfile& profile) {
-    return uint32_t((uint64_t(samples)+profile.pcm_trim+profile.frame_samples-1)/profile.frame_samples+1);
+inline uint32_t profile_block_count(uint64_t samples,const EncodingProfile& profile) {
+    if(samples>std::numeric_limits<uint64_t>::max()-profile.pcm_trim-profile.frame_samples)
+        throw std::invalid_argument("PCM length overflows the AAL packet count.");
+    const uint64_t count=(samples+profile.pcm_trim+profile.frame_samples-1)/profile.frame_samples+1;
+    if(count>UINT32_MAX)throw std::invalid_argument("AAL packet count exceeds its 32-bit container field.");
+    const uint64_t declared=(count-2)*profile.frame_samples+(samples%profile.frame_samples?samples%profile.frame_samples:profile.frame_samples);
+    if(declared*1000/44100>UINT32_MAX)throw std::invalid_argument("AAL duration exceeds its 32-bit millisecond container field.");
+    return uint32_t(count);
 }
-inline uint16_t profile_tail(uint32_t samples,const EncodingProfile& profile) {
+inline uint16_t profile_tail(uint64_t samples,const EncodingProfile& profile) {
     return uint16_t(samples%profile.frame_samples?samples%profile.frame_samples:profile.frame_samples);
 }
 }

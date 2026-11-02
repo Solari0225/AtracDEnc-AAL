@@ -6,6 +6,7 @@
 #include <cstdlib>
 #include <cstring>
 #include <exception>
+#include "stream_codec.hpp"
 
 extern "C" aal_status aal_encode_cd16_profile(const int16_t* pcm,size_t frames,const char* profile_id,aal_buffer* output,
                                              aal_progress callback,void* context,char* error,size_t capacity) {
@@ -45,4 +46,50 @@ extern "C" int aal_profile_get(size_t index,aal_profile_description* output) {
 }
 extern "C" void aal_free(aal_buffer* buffer) {
     if(!buffer)return;std::free(buffer->data);buffer->data=nullptr;buffer->size=0;buffer->pcm_sha256[0]=0;
+}
+
+namespace {
+template<class Operation>
+aal_status stream_call(aal_stream_result* output,aal_progress callback,void* context,
+                       char* error,size_t capacity,Operation operation) {
+    if(error&&capacity)error[0]=0;
+    bool cancelled=false;
+    try {
+        if(!output)throw std::runtime_error("Missing stream result.");
+        const auto progress=[&](int percent,const std::wstring& stage) {
+            if(callback){const auto text=independent_aal::utf8(stage);if(callback(percent,text.c_str(),context)){cancelled=true;throw std::runtime_error("Cancelled");}}
+        };
+        const auto value=operation(progress);aal_stream_result result{};
+        result.sample_frames=value.sample_frames;result.output_bytes=value.bytes;
+        std::memcpy(result.profile_id,value.profile_id.c_str(),value.profile_id.size()+1);
+        std::memcpy(result.pcm_sha256,value.pcm_sha256.c_str(),65);*output=result;return AAL_OK;
+    }catch(const std::exception& failure) {
+        if(error&&capacity){const size_t n=std::min(capacity-1,std::strlen(failure.what()));std::memcpy(error,failure.what(),n);error[n]=0;}
+        return cancelled?AAL_CANCELLED:AAL_INVALID_OR_FAILED;
+    }catch(...) {
+        if(error&&capacity){const char* message="Unknown streaming failure.";const size_t n=std::min(capacity-1,std::strlen(message));std::memcpy(error,message,n);error[n]=0;}
+        return AAL_INVALID_OR_FAILED;
+    }
+}
+}
+extern "C" aal_status aal_encode_cd16_stream(uint64_t frames,const char* profile,
+    aal_pcm_read input,void* input_context,aal_byte_write output,void* output_context,
+    aal_stream_result* result,aal_progress callback,void* context,char* error,size_t capacity) {
+    return stream_call(result,callback,context,error,capacity,[&](const independent_aal::Progress& progress) {
+        if(!input||!output||!profile)throw std::runtime_error("Missing encode stream callback or profile.");
+        independent_aal::EncodeOptions options;options.profile_id=profile;
+        return independent_aal::encode_stream([&](int16_t* p,size_t n){return input(p,n,input_context);},frames,
+            [&](const uint8_t* p,size_t n){if(output(p,n,output_context))throw std::runtime_error("AAL write callback failed.");},
+            progress,nullptr,options);
+    });
+}
+extern "C" aal_status aal_decode_cd16_stream(uint64_t bytes,
+    aal_byte_read input,void* input_context,aal_pcm_write output,void* output_context,
+    aal_stream_result* result,aal_progress callback,void* context,char* error,size_t capacity) {
+    return stream_call(result,callback,context,error,capacity,[&](const independent_aal::Progress& progress) {
+        if(!input||!output)throw std::runtime_error("Missing decode stream callback.");
+        return independent_aal::decode_stream([&](uint8_t* p,size_t n){return input(p,n,input_context);},bytes,
+            [&](const int16_t* p,size_t n){if(output(p,n,output_context))throw std::runtime_error("PCM write callback failed.");},
+            progress);
+    });
 }

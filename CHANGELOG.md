@@ -1,5 +1,14 @@
 # 更新记录 / Changelog
 
+## 0.5.0 — 2026-11-02
+
+- CLI 与双平台简易测试 GUI 改用有界流式编解码，移除固定 1 GiB 输入/PCM 限制。Bounded streaming conversion removes the fixed 1 GiB caps.
+- 编码使用连续核心/预测状态、小 PCM 队列与逐包独立重建校验；解码逐包输出，SHA-256 增量计算。Persistent state, bounded queues, packet-level exact PCM verification and incremental hashing.
+- 新增 RIFF/RF64 PCM 输入，大解码输出自动写 RF64；64 位样本/字节计数及容器字段溢出检查。RIFF/RF64 input, automatic RF64 output and checked 64-bit counters.
+- 新增回调式 C 编解码 API，保留整缓冲 ABI；完整缓冲接口仍需要容纳结果的内存。New callback C APIs retain existing whole-buffer ABI.
+- 十档 70 例冻结的完整 AAL 摘要回归、碎片化读写、取消/I/O 错误与 RF64 检查；三平台发布门槛新增真实 >1 GiB 往返和 ≤64 MiB CLI 峰值工作集/RSS。Frozen whole-file regression plus native large-file/memory release gates.
+- High-Speed Transfer 模式与现有压缩算法保持；Standard 仍未实现，GUI 和 Walkman 实机交互由用户测试。Mode/codec scope unchanged; user GUI/hardware testing remains separate.
+
 ## 0.4.0 — 2026-11-02
 
 - 新增 macOS AppKit 原生简易测试文件转换器，配套 Windows Win32 版本；两者直接链接同一核心并中英文自适应。Added a native AppKit converter alongside the Win32 converter, sharing the codec and automatic Chinese/English selection.

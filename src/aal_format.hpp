@@ -31,7 +31,7 @@ inline void le32put(uint8_t* p, uint32_t n) { le16put(p,uint16_t(n)); le16put(p+
 
 struct Wave {
     std::vector<int16_t> pcm;
-    uint32_t frames() const { return uint32_t(pcm.size()/2); }
+    uint64_t frames() const { return uint64_t(pcm.size()/2); }
 };
 
 inline Wave read_wave(const Bytes& data) {
@@ -82,7 +82,7 @@ inline Bytes aal3_header(uint32_t frames, uint32_t blocks) {
     return h;
 }
 
-inline Bytes aal_header(uint32_t frames,uint32_t blocks,const EncodingProfile& profile) {
+inline Bytes aal_header(uint64_t frames,uint32_t blocks,const EncodingProfile& profile) {
     if(!frames||blocks!=profile_block_count(frames,profile))throw std::runtime_error("Invalid AAL sample and packet counts.");
     Bytes h(96);std::memcpy(h.data(),"EA3",3);h[3]=3;h[5]=96;h[6]=0xff;h[7]=0x80;
     h[32]=profile.oma_codec_id;h[33]=profile.oma_frame_parameters;be16put(h.data()+34,profile_tail(frames,profile));

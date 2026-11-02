@@ -45,6 +45,8 @@ ar rcs bin/libatracdenc_aal.a "${objects[@]}"
 "$cc" "${common[@]}" "$@" -c tests/check_decode_c_api.c -o build/native/obj/check_decode_c_api.o
 "$cxx" "${common[@]}" -std=c++17 "${include[@]}" "$@" tests/check_decoder.cpp build/native/obj/check_decode_c_api.o "${objects[@]}" -o bin/aal-decoder-test
 "$cxx" "${common[@]}" -std=c++17 "${include[@]}" "$@" tests/check_converter.cpp "${objects[@]}" -o bin/aal-converter-test
+"$cc" "${common[@]}" "$@" -c tests/check_stream_c_api.c -o build/native/obj/check_stream_c_api.o
+"$cxx" "${common[@]}" -std=c++17 "${include[@]}" "$@" tests/check_streaming.cpp build/native/obj/check_stream_c_api.o "${objects[@]}" -o bin/aal-streaming-test
 if [[ "$(uname -s)" == Darwin && "${AAL_BUILD_GUI:-1}" != 0 ]]; then
     app="bin/AtracDEnc-AAL-GUI.app"
     mkdir -p "$app/Contents/MacOS"
